@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "scryfall": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/scryfall"
+      ],
+      "env": {}
+    }
+  }
+}
