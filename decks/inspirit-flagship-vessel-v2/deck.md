@@ -2,14 +2,18 @@
 
 > Fonte de verdade da v2. Transcrição da decklist final da v1 (`decks/inspirit-flagship-vessel/deck.md`, histórico completo de mudanças ali preservado), com a classificação da auditoria própria da v2 (`02-theme.md`) e as trocas aprovadas nesta segunda rodada.
 > Total: comandante + 99 (61 não-terrenos + 38 terrenos).
+>
+> ⚠️ **São dois decks, não um.** 93 cartas são comuns; **7 slots divergem entre a versão torneio (≤ R$200) e a mesão (≤ R$350)** e estão marcados abaixo com 🔀. As tabelas listam a carta do **mesão** nesses slots (exceto o counterspell, que lista a da torneio, por ser a escolha padrão da v2). Composição completa das duas versões, estatísticas separadas e listas de exportação: **`08-versoes.md`**.
 
 ## Comandante
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
-| Inspirit, Flagship Vessel | 3 | Artefato Lendário — Spacecraft | WUR | tema, proteção | Station; +1/+1 ou 2 charges por combate; other artifacts → hexproof + indestructible |
+| ⛽ Inspirit, Flagship Vessel | 3 | Artefato Lendário — Spacecraft (criatura só a **8+**) | WUR | tema, proteção | a estática (other artifacts → hexproof + indestructible) e o gatilho 1+ (+1/+1 ou 2 charges por combate) funcionam **desde 0 contadores**; 8+ acrescenta corpo 5/5 com voar |
 
-## Criaturas (incl. artefatos-criatura e Spacecraft)
+## Criaturas (22) — e Veículos/Spacecraft (⛽), que **não** são criaturas em repouso
+
+> ⛽ marca os artefatos que só viram criatura pagando **crew** ou **station** (tapando outras criaturas suas). Eles ficam listados aqui por afinidade funcional, mas **não contam como corpos**: o deck tem 22 criaturas de verdade, não 25. Nenhum deles precisa virar criatura para dar valor — ver `08-versoes.md`, seção "Corpos de verdade × permanentes que viram criatura".
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
@@ -18,25 +22,25 @@
 | Etherium Sculptor | 2 | Criatura Artefato | U | tema, ramp | reduz custo de ~40 artefatos |
 | Third Path Iconoclast | 2 | Criatura | UR | tema | cluster "cast noncreature spell" (v2); token artefato; não-artefato (exposta) |
 | Enthusiastic Mechanaut | 2 | Criatura Artefato | UR | tema, ramp | redutor de custo; flying |
-| Brotherhood Vertibird | 3 | Artefato — Veículo | W | tema | poder = nº de artefatos → Station gigante |
+| ⛽ Brotherhood Vertibird | 3 | Artefato — Veículo (**crew 2**) | C | tema | poder = nº de artefatos; crewar por 2 e então tapá-lo para Station rende contadores = nº de artefatos — o atalho mais barato para os 8+ do Inspirit |
 | Foundry Inspector | 3 | Criatura Artefato | C | tema, ramp | redutor de custo |
-| Kilo, Apogee Mind | 3 | Criatura Lendária | UR | tema | proliferate ao ficar virado (inclusive estacionando o Inspirit); haste |
+| Kilo, Apogee Mind | 3 | Criatura **Artefato** Lendária | UR | tema | proliferate ao ficar virado (inclusive estacionando o Inspirit); haste; é artefato → protegida pelo Inspirit |
 | Malcator, Purity Overseer | 3 | Criatura Lendária | WU | tema | Golems 3/3; recompensa 3 artefatos/turno; não-artefato |
 | Master of Etherium | 3 | Criatura Artefato | U | tema, wincon | poder = nº artefatos; lord |
 | Pinnacle Emissary | 3 | Criatura Artefato | C | tema | drone por artifact spell |
 | Sai, Master Thopterist | 3 | Criatura Lendária | U | tema, draw | thopter por artifact spell; sac 2 → draw; não-artefato |
 | Surge Conductor | 3 | Criatura Artefato | C | tema | proliferate por artefato nontoken entrando — motor de counters |
 | Chrome Host Seedshark | 3 | Criatura | U | tema | cluster "cast noncreature spell" (v2); incubate = tokens com counters; não-artefato |
-| Uthros Research Craft | 3 | Artefato — Spacecraft | U | tema, draw | draw por artifact spell + charges do trigger 1+ |
-| Warmaker Gunship | 3 | Artefato — Spacecraft | R | tema, remoção | ETB: dano = nº artefatos; recebe charges |
+| ⛽ Uthros Research Craft | 3 | Artefato — Spacecraft (criatura só a **12+**) | U | tema, draw | o limiar que importa é o **3+**: compra por artifact spell + se auto-carrega; 12+ é inalcançável na prática |
+| ⛽ Warmaker Gunship | 3 | Artefato — Spacecraft (criatura a **6+**) | R | tema, remoção | ETB: dano = nº artefatos (não depende de station); 6+ dá 4/3 voador |
 | Jhoira, Weatherlight Captain | 4 | Criatura Lendária | UR | draw | draw por spell histórica (~85% do deck); não-artefato, alvo |
-| Padeem, Consul of Innovation | 4 | Criatura Lendária | U | draw, proteção | draw/upkeep (maior MV de artefato) + **hexproof ao Inspirit** |
+| 🔀 Padeem, Consul of Innovation | 4 | Criatura Lendária | U | draw, proteção | **mesão** — draw/upkeep (maior MV de artefato) + **hexproof ao Inspirit**. Torneio: **Reconnaissance Mission** (Encantamento, {2}{U}{U}, US$0,28) — só draw por dano de combate, sem hexproof |
 | Leonin Abunas | 4 | Criatura — Cat Cleric | W | proteção | 2/5; "artifacts you control have hexproof" — 2ª camada estática proposital (redundância com Padeem contra remoção pontual), cobre o próprio Inspirit |
 | Crystalline Crawler | 4 | Criatura Artefato | C | tema, ramp | +1/+1 counters = mana colorida; recarrega via trigger/proliferate |
 | Alibou, Ancient Witness | 5 | Criatura Lendária | WR | tema, remoção, wincon | haste ao time; dano+scry por artefatos virados (inclui Station) |
 | Deepglow Skate | 5 | Criatura | U | tema | dobra counters (estaciona Inspirit; liga Lux Cannon) |
 | Kappa Cannoneer | 6 | Criatura Artefato | U | tema, wincon | cresce por artefato; unblockable; ward 4; improvise |
-| Cyberdrive Awakener | 6 | Criatura | U | tema, wincon | anima rocks/Bridges em 4/4 hexproof indestrutíveis |
+| 🔀 Cyberdrive Awakener | 6 | Criatura **Artefato** | U | tema, wincon | **mesão** — anima rocks/Bridges em 4/4 hexproof indestrutíveis (wincon C) + dá voar às outras criaturas-artefato. Torneio: **Chief of the Foundry** (Criatura Artefato, {3}, US$0,21) — anthem +1/+1, sem wincon C |
 | Thought Monitor | 7 | Criatura Artefato | U | tema, draw | affinity; draw 2 + voador |
 
 ## Artefatos (não-criatura)
@@ -52,13 +56,13 @@
 | Glass Casket | 2 | Artefato | W | remoção | exílio protegido pelo Inspirit = quase definitivo |
 | Pentad Prism | 2 | Artefato | C | ramp, tema | charge counters recarregáveis = mana colorida |
 | Boros Signet | 2 | Artefato | C | ramp | fixação R/W — as 2 cores mais escassas do deck nos básicos (5 Mountain, 6 Plains) |
-| Cloud Key | 3 | Artefato | C | tema, ramp | redutor de custo |
+| 🔀 Cloud Key | 3 | Artefato | C | tema, ramp | **mesão** — 4º redutor de custo. Torneio: **Prophetic Prism** (Artefato, {2}, US$0,21) — fixação de qualquer cor + cantrip no ETB, não reduz custo |
 | Perilous Snare | 3 | Artefato | W | remoção, tema | exílio de não-terreno; protegido = definitivo |
-| Reckoner Bankbuster | 2 | Artefato — Veículo | C | draw, tema | trigger 1+ do Inspirit recarrega as charges → draw perpétuo protegido |
+| 🔀⛽ Reckoner Bankbuster | 2 | Artefato — Veículo (**crew 3**) | C | draw, tema | **mesão** — o draw não exige crew; trigger 1+ do Inspirit recarrega as charges → draw perpétuo protegido. Torneio: **Bident of Thassa** (Encantamento **Artefato** Lendário, {2}{U}{U}, US$0,39) — draw por dano de combate; também é artefato, então também fica protegido |
 | Midnight Clock | 3 | Artefato | C | ramp, draw, tema | rock + hour counters (proliferate acelera o "compre 7") |
 | Lux Artillery | 4 | Artefato | C | wincon, tema | sunburst + 10 dmg/oponente aos 30 counters |
 | Lux Cannon | 4 | Artefato | C | remoção, tema | 2 charges/turno via trigger 1+; destrói permanente recorrente |
-| Thousand Moons Smithy | 4 | Artefato Lendário | W | tema, wincon | token */* proporcional; vira terreno-fábrica |
+| 🔀 Thousand Moons Smithy | 4 | Artefato Lendário (MDFC — `// Barracks of the Thousand`) | W | tema, wincon | **mesão** — token */* proporcional; vira terreno-fábrica. Torneio: **Master Trinketeer** (Criatura {2}{W}, US$0,29) — anthem de Servos/Thopters + fábrica de Servos por {3}{W}; ⚠️ não é artefato, fica exposta |
 
 ## Encantamentos
 
@@ -81,19 +85,19 @@
 | Swords to Plowshares | 1 | Instantâneo | W | remoção | melhor remoção branca |
 | Loran's Escape | 1 | Instantâneo | W | proteção | funciona no Inspirit + scry |
 | Blacksmith's Skill | 1 | Instantâneo | W | proteção | funciona no Inspirit (permanente alvo) |
-| Restoration Magic | 1 | Instantâneo | W | proteção | funciona no Inspirit; salva de wipes |
+| 🔀 Restoration Magic | 1 | Instantâneo | W | proteção | **mesão** — funciona no Inspirit; salva de wipes (3º one-shot). Torneio: **One with the Machine** (Feitiço {3}{U}, US$0,25) — compra igual ao maior MV entre seus artefatos; troca proteção por draw |
 | Unwanted Remake | 1 | Instantâneo | W | remoção | destrói criatura por {W} |
 | Disruption Protocol | 2 | Instantâneo | U | counter | counter duro ("counter target spell"); custo extra = virar 1 artefato |
-| Stoic Rebuttal | 3 | Instantâneo | U | counter | 2º counter duro; metalcraft reduz para {U}{U} (trivial no deck); não compete pelo custo extra do Disruption Protocol. Alternativa mesão: **Access Denied** ({3}{U}{U}, US$2,62) — conta como wincon/tema também: cria X Thopters (X = mana value do spell anulado), artefatos-criatura que alimentam Master of Etherium/Kappa Cannoneer/Station e são protegidos pelo Inspirit |
+| 🔀 Stoic Rebuttal | 3 | Instantâneo | U | counter | **torneio** — 2º counter duro; metalcraft reduz para {U}{U} (trivial no deck); não compete pelo custo extra do Disruption Protocol. Mesão: **Access Denied** ({3}{U}{U}, US$2,62) — conta como wincon/tema também: cria X Thopters (X = mana value do spell anulado), artefatos-criatura que alimentam Master of Etherium/Kappa Cannoneer/Station e são protegidos pelo Inspirit |
 | Invisible Force Field | 2 | Instantâneo | W | proteção | até 4 permanentes seus ganham indestructible + Rebound (recasta de graça); fecha a lacuna de indestructible do próprio Inspirit e protege o cluster de criaturas não-artefato expostas |
 | Thirst for Knowledge | 3 | Instantâneo | U | draw | draw 3 descartando artefato |
+| Stern Lesson | 3 | Instantâneo | U | draw, ramp | draw 2 + descarte 1 + Powerstone (é **Instantâneo**, estava classificada como Feitiço) |
 
 ## Feitiços
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
 | Rip Apart | 2 | Feitiço | WR | remoção | flexível: criatura/PW ou artefato/encantamento |
-| Stern Lesson | 3 | Feitiço | U | draw, ramp | draw 2 + Powerstone |
 | Tezzeret's Gambit | 4 | Feitiço | U | draw, tema | draw 2 + proliferate |
 | Chain Reaction | 4 | Feitiço | R | wipe | assimétrico: artefatos-criatura sobrevivem (indestrutíveis) |
 | Fumigate | 5 | Feitiço | W | wipe | "destroy all creatures" + ganha vida por morte; assimétrico com Inspirit em mesa (confirmado na v2) |
