@@ -46,5 +46,5 @@ Retorne ao orquestrador um resumo de até 10 linhas: os finalistas com uma frase
 ## Regras
 
 - Nomes de cartas em inglês; análise em português (Brasil).
-- Respeite orçamento do briefing (`usd<X` nas buscas, preço do comandante incluído).
+- Respeite orçamento do briefing: `usd<X` peneira a busca, mas a régua real é o **menor preço da LigaMagic** (regra 2 do `CLAUDE.md`) — preço do comandante incluído.
 - Escreva apenas `01-commander.md`; não toque em outros arquivos do deck.

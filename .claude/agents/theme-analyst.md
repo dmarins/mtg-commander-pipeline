@@ -46,6 +46,6 @@ Retorne ao orquestrador: os termos do tema + contagem do pool (ou, no improve, o
 
 ## Regras
 
-- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento).
+- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento — filtro de busca; a régua real é o menor valor da LigaMagic, ver regra 2 do `CLAUDE.md`).
 - Nomes de cartas em inglês; análise em português (Brasil).
 - Escreva apenas `02-theme.md`.

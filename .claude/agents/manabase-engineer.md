@@ -60,5 +60,5 @@ Retorne ao orquestrador: total de terrenos recomendado (com o cálculo em uma li
 
 ## Regras
 
-- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento).
+- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento — filtro de busca; a régua real é o menor valor da LigaMagic, ver regra 2 do `CLAUDE.md`).
 - Nomes de cartas em inglês; análise em português (Brasil). Escreva apenas `06-manabase.md`.

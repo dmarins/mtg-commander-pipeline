@@ -57,12 +57,20 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 ## Regras não negociáveis
 
 1. **Toda busca no Scryfall** segue `references/scryfall-search-guide.md` — leia antes de buscar. Sempre inclua `legal:commander` e `id<=<identidade do comandante>`; com orçamento definido, inclua `usd<X`.
-2. **Sinergia sobreposta**: só recomende carta que tenha **2+ pontos de sinergia** com o comandante e/ou com outras cartas já escolhidas. Justifique cada recomendação. Evite cartas que só funcionam isoladas.
-3. **Coleção pessoal primeiro**: se o briefing indicar um arquivo de coleção, priorize cartas que o usuário já possui antes de sugerir compras.
-4. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
-5. **O usuário decide**: cada fase termina com o usuário revisando e selecionando cartas. Nenhuma carta entra em `deck.md` sem aprovação.
-6. O deck final tem exatamente **100 cartas** (comandante + 99), todas dentro da identidade de cor e legais no formato.
-7. Regra da diversão: evite pacotes que impedem os oponentes de jogar (MLD, stax pesado, lock infinito) a menos que o usuário peça explicitamente.
+
+2. **Orçamento é medido pelo menor valor da LigaMagic — nunca pelo preço da Scryfall.** O `usd<X` serve só para peneirar candidatas na busca; ele **não** decide se a carta ou o deck cabem no teto. Antes de afirmar que algo cabe no orçamento, confira em `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>` e use o **primeiro** dos três números do bloco "Preço Médio de Venda no Marketplace" (menor / médio / maior). A página carrega preço via JS — WebFetch não funciona, use as ferramentas de browser. Erros do proxy medidos em 2026-08-12 chegaram a **6,5× para mais** (Restoration Magic: proxy R$1,65 × real R$10,75) e **14× para menos** (Chief of the Foundry: proxy R$1,16 × real R$0,08), nos dois sentidos — não há fator de correção possível. Ao apresentar totais, rotule sempre a origem: `estimativa (Scryfall)` ou `LigaMagic (menor)`.
+
+3. **Sinergia sobreposta**: só recomende carta que tenha **2+ pontos de sinergia** com o comandante e/ou com outras cartas já escolhidas. Justifique cada recomendação. Evite cartas que só funcionam isoladas.
+
+4. **Coleção pessoal primeiro**: se o briefing indicar um arquivo de coleção, priorize cartas que o usuário já possui antes de sugerir compras.
+
+5. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
+
+6. **O usuário decide**: cada fase termina com o usuário revisando e selecionando cartas. Nenhuma carta entra em `deck.md` sem aprovação.
+
+7. O deck final tem exatamente **100 cartas** (comandante + 99), todas dentro da identidade de cor e legais no formato.
+
+8. Regra da diversão: evite pacotes que impedem os oponentes de jogar (MLD, stax pesado, lock infinito) a menos que o usuário peça explicitamente.
 
 ## Referências
 

@@ -55,7 +55,7 @@ curl -s --get "https://api.scryfall.com/cards/search" \
 | `pow` / `tou` | Poder / resistência | `pow>=4` |
 | `is:commander` | Pode ser comandante | `is:commander id<=ur` |
 | `otag:` | Tag funcional (Scryfall Tagger) | `otag:ramp` |
-| `usd<` | Preço em dólar | `usd<5` |
+| `usd<` | Preço em dólar — **filtro de busca apenas, não é régua de orçamento** (ver abaixo) | `usd<5` |
 | `produces:` | Produz mana de | `produces:rg t:land` |
 | `is:dual`, `is:fetchland`, `is:bounceland` | Classes de terrenos | |
 | `order:edhrec` | Ordena por popularidade EDHREC | |
@@ -72,6 +72,27 @@ Funcionam: `otag:ramp`, `otag:mana-rock`, `otag:card-advantage`, `otag:draw`, `o
 ## Receitas por categoria
 
 Em todas, prefixe com `id<=<identidade> legal:commander order:edhrec` (+ `usd<X` se houver orçamento).
+
+## ⚠️ Preço: `usd<` peneira, LigaMagic decide
+
+O `usd<X` da Scryfall serve **só para reduzir o volume de candidatas na busca**. Ele **não** determina se uma carta ou um deck cabem no orçamento — a régua é o **menor valor da LigaMagic** (regra 2 do `CLAUDE.md`).
+
+- Consulta: `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>`
+- Use o **primeiro** dos três números de "Preço Médio de Venda no Marketplace" (menor / médio / maior). Confira também a linha Foil — às vezes o foil é mais barato que o normal.
+- A página monta o preço por JS: **WebFetch não pega** (retorna só o gif de loading). Use as ferramentas de browser (`claude-in-chrome`): navegar, esperar ~2,5s, ler o texto da página.
+- Se o usuário mantiver o deck cadastrado na LigaMagic (`?view=dks/deck&id=<id>`), a página do deck já traz o preço carta a carta e o total — muito mais rápido que consultar uma a uma.
+
+**Por que isso importa** (medições reais de 2026-08-12, conversão de proxy US$ × 5,5):
+
+| Carta | Proxy Scryfall | LigaMagic (menor) | Erro |
+|---|---|---|---|
+| Restoration Magic | ~R$ 1,65 | R$ 10,75 | 6,5× para mais |
+| Loran's Escape | ~R$ 2,75 | R$ 15,45 | 5,6× para mais |
+| Invisible Force Field | ~R$ 2,42 | R$ 10,94 | 4,5× para mais |
+| Chief of the Foundry | ~R$ 1,16 | R$ 0,08 | 14× para menos |
+| Reckoner Bankbuster | ~R$ 3,63 | R$ 1,90 | 1,9× para menos |
+
+Os erros vão para os dois lados — **não existe fator de correção**. Ao apresentar qualquer total, rotule a origem: `estimativa (Scryfall)` ou `LigaMagic (menor)`.
 
 **Comandantes** (commander-scout):
 - Por tema: `is:commander id<=br o:sacrifice`

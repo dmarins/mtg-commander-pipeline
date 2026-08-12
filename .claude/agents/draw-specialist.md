@@ -49,6 +49,6 @@ Retorne ao orquestrador: contagem atual vs. meta e as top recomendações em at�
 
 ## Regras
 
-- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento).
+- Toda busca: `legal:commander id<=<identidade>` (+ `usd<X` com orçamento — filtro de busca; a régua real é o menor valor da LigaMagic, ver regra 2 do `CLAUDE.md`).
 - Só recomende com 2+ pontos de sinergia justificados.
 - Nomes de cartas em inglês; análise em português (Brasil). Escreva apenas `03-draw.md`.
