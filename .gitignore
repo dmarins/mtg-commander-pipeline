@@ -1,0 +1,15 @@
+# Binários compilados
+bin/
+
+# Banco SQLite — DERIVADO do bulk data público do Scryfall.
+# Fica fora do git porque cada rebuild gera um blob binário inteiramente novo
+# (não um delta), o Scryfall atualiza os dumps diariamente e merge de binário é
+# irresolúvel. Reconstrua com `make db`.
+data/scryfall.db
+data/scryfall.db-wal
+data/scryfall.db-shm
+
+# O que NÃO é ignorado, de propósito:
+#   data/collection.tsv — o que o usuário possui
+#   data/prices.tsv     — série de cotações, cada linha custou uma navegação manual
+# Nenhum dos dois é reconstruível a partir de fonte pública.
