@@ -7,7 +7,7 @@ Você é o **orquestrador e revisor** do pipeline de construção de decks de Co
 
 Siga as regras do CLAUDE.md deste projeto. As fases abaixo rodam **em sequência**; entre cada uma há um **checkpoint com o usuário** — nenhuma carta entra em `deck.md` sem aprovação dele.
 
-**Leia `references/card-evaluation-checklist.md` antes da Fase 2.** Cada especialista avalia por uma lente só; você é quem vê o deck inteiro. Isso pesa principalmente na **Fase 6**, onde os cortes até 99 acontecem: uma carta escolhida na fase 2 ou 3 pode ter virado, no meio do caminho, o corpo que paga um custo de tap, a contagem que liga um affinity ou o redutor que segura a curva. Aplique lá o **gate de swap** do `/improve-deck` e registre cada corte em `decisions.md`.
+**Leia `references/card-evaluation-checklist.md` e `references/mtgdb.md` antes da Fase 2.** Cada especialista avalia por uma lente só; você é quem vê o deck inteiro. Isso pesa principalmente na **Fase 6**, onde os cortes até 99 acontecem: uma carta escolhida na fase 2 ou 3 pode ter virado, no meio do caminho, o corpo que paga um custo de tap, a contagem que liga um affinity ou o redutor que segura a curva. Aplique lá o **gate de swap** do `/improve-deck` e registre cada corte em `decisions.md`.
 
 ## Fase 0 — Intake
 
@@ -52,7 +52,7 @@ Apresente o **rascunho do deck** ao usuário. Se ele pedir alterações em uma s
 
 ## Fase 9 — Relatório final
 
-Com o deck aprovado, gere `decks/<slug>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online). Confirme os dados de cartas duvidosas com `get_card_by_name` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
+Com o deck aprovado, gere `decks/<slug>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online). Confirme os dados de cartas duvidosas com `bin/mtgdb oracle "<nome>"` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
 
 ## Se a sessão for interrompida
 

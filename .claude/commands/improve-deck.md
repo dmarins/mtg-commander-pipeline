@@ -7,7 +7,9 @@ Você é o **orquestrador e revisor** do pipeline de otimização de decks de Co
 
 Siga as regras do CLAUDE.md deste projeto. O princípio da otimização é o mesmo da construção: **sinergias sobrepostas** — cartas que só funcionam isoladas são as primeiras candidatas a sair.
 
-**Leia `references/card-evaluation-checklist.md` antes da Fase 1.** Em `improve` você está mexendo num deck que já funciona: toda carta presente sobreviveu a rodadas anteriores e provavelmente exerce funções que a fase atual não enxerga. Seu trabalho como orquestrador é ser o **guardião da visão multifacetada** — os especialistas veem uma lente cada; só você vê o deck inteiro.
+**Leia `references/card-evaluation-checklist.md` e `references/mtgdb.md` antes da Fase 1.** Comece rodando `bin/mtgdb deck <slug>` — ele resolve a lista inteira contra o banco local, traz os agregados (criaturas de verdade × veículos/spacecraft, corpos por poder, atritos de tap, curva, tipos) e a ficha por carta. Se o banco não existir, `make db` (~15 s).
+
+Em `improve` você está mexendo num deck que já funciona: toda carta presente sobreviveu a rodadas anteriores e provavelmente exerce funções que a fase atual não enxerga. Seu trabalho como orquestrador é ser o **guardião da visão multifacetada** — os especialistas veem uma lente cada; só você vê o deck inteiro.
 
 ## Fase 0 — Intake
 
@@ -45,7 +47,7 @@ Checkpoint após cada agente: apresente os swaps, colete aprovação e atualize 
 
 Nenhum swap sai daqui sem passar nos cinco. **Quem falha, você devolve ao especialista ou conserta você mesmo** — não repasse ao usuário para ele descobrir o furo.
 
-1. **Ficha completa** — a carta que sai tem F1–F7 preenchidos, e não só o eixo da fase que a propôs. Um corte justificado apenas por "criatura fraca" ou "não faz nada pelo tema" volta para o especialista.
+1. **Ficha completa** — a carta que sai tem F1–F7 preenchidos (confira com `bin/mtgdb oracle "<nome>"`), e não só o eixo da fase que a propôs. Um corte justificado apenas por "criatura fraca" ou "não faz nada pelo tema" volta para o especialista.
 2. **Cobertura de funções** — para cada função da carta que sai, está nomeado quem a cobre depois. Função descoberta é permitida, mas tem de estar **declarada** como custo aceito.
 3. **Simetria de critério** — as mesmas condições assumidas para elogiar a entrada foram aplicadas à saída (anthems em campo, contagem de artefatos, redutores ativos).
 4. **Histórico** — se a entrada já esteve no deck, `decisions.md` foi consultado e a proposta diz **o que mudou desde o corte**. Motivo original ainda válido = a carta não volta.

@@ -10,8 +10,9 @@ Você é um especialista em Commander (EDH) focado em **cartas temáticas e sine
 
 1. Leia `references/scryfall-search-guide.md` (obrigatório).
 2. Leia `references/card-evaluation-checklist.md` (obrigatório) — ficha de funções F1–F7, protocolo de corte e registro de decisão.
-3. Leia `decks/<slug>/decisions.md`, se existir: nenhuma carta já cortada volta sem que você declare **o que mudou desde então**.
-4. Leia `decks/<slug>/00-briefing.md` e, se existirem, `01-commander.md` e `deck.md`.
+3. Leia `references/mtgdb.md` — use `bin/mtgdb` para oracle, busca, tags, rulings, preços e coleção **antes** de recorrer ao MCP do Scryfall.
+4. Leia `decks/<slug>/decisions.md`, se existir: nenhuma carta já cortada volta sem que você declare **o que mudou desde então**.
+5. Leia `decks/<slug>/00-briefing.md` e, se existirem, `01-commander.md` e `deck.md`.
 
 ## Modo `build`
 
@@ -24,7 +25,7 @@ Você é um especialista em Commander (EDH) focado em **cartas temáticas e sine
 ## Modo `improve` (auditoria)
 
 1. Faça a análise linha a linha do comandante como acima.
-2. Para cada carta da decklist atual (em `00-briefing.md`), obtenha tipo/CMC/**texto oracle** (use `get_card_by_name`, ou a API em lote via `curl` se a lista for grande — nunca de memória) e classifique-a: `tema`, `draw`, `ramp`, `remoção`, `proteção`, `counter`, `wipe`, `wincon`, `terreno` — uma carta pode ter várias.
+2. Para cada carta da decklist atual, obtenha tipo/CMC/**texto oracle** com `bin/mtgdb deck <slug>` (resolve a lista inteira de uma vez, e já traz os agregados) ou `bin/mtgdb oracle "<nome>" ...` — nunca de memória. Depois classifique cada carta: `tema`, `draw`, `ramp`, `remoção`, `proteção`, `counter`, `wipe`, `wincon`, `terreno` — uma carta pode ter várias.
 3. **Ficha de funções** — a categoria sozinha não basta. Para cada carta, registre também os eixos F2–F7 do checklist que ela de fato ocupa: corpo tapável (crew/station/convoke/improvise/habilidades de tap), tipo que alimenta contagens do deck, receptor de contadores/anthems, facilitador (redução de custo, fixação de cor, evasão concedida), turno de entrada e atritos internos. **Esta ficha é o insumo dos outros especialistas** — é ela que impede que uma carta seja cortada pela lente de uma única fase.
 4. Aponte: cartas fora do tema ou com sinergia única/nenhuma (candidatas a corte), lacunas de sinergia, e contagens por categoria vs. as metas do pipeline (ver CLAUDE.md). Uma carta só entra na lista de candidatas a corte se a **ficha inteira** for fraca, não apenas o aspecto temático.
 

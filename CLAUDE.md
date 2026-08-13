@@ -59,7 +59,7 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 1. **Toda busca no Scryfall** segue `references/scryfall-search-guide.md` — leia antes de buscar. Sempre inclua `legal:commander` e `id<=<identidade do comandante>`; com orçamento definido, inclua `usd<X`.
 
-2. **Orçamento é medido pelo menor valor da LigaMagic — nunca pelo preço da Scryfall.** O `usd<X` serve só para peneirar candidatas na busca; ele **não** decide se a carta ou o deck cabem no teto. Antes de afirmar que algo cabe no orçamento, confira em `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>` e use o **primeiro** dos três números do bloco "Preço Médio de Venda no Marketplace" (menor / médio / maior). A página carrega preço via JS — WebFetch não funciona, use as ferramentas de browser. Erros do proxy medidos em 2026-08-12 chegaram a **6,5× para mais** (Restoration Magic: proxy R$1,65 × real R$10,75) e **14× para menos** (Chief of the Foundry: proxy R$1,16 × real R$0,08), nos dois sentidos — não há fator de correção possível. Ao apresentar totais, rotule sempre a origem: `estimativa (Scryfall)` ou `LigaMagic (menor)`.
+2. **Orçamento é medido pelo menor valor da LigaMagic — nunca pelo preço da Scryfall.** O `usd<X` serve só para peneirar candidatas na busca; ele **não** decide se a carta ou o deck cabem no teto. Antes de afirmar que algo cabe no orçamento, confira em `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>` e use o **primeiro** dos três números do bloco "Preço Médio de Venda no Marketplace" (menor / médio / maior). A página carrega preço via JS — WebFetch não funciona, use as ferramentas de browser. Erros do proxy medidos em 2026-08-12 chegaram a **6,5× para mais** (Restoration Magic: proxy R$1,65 × real R$10,75) e **14× para menos** (Chief of the Foundry: proxy R$1,16 × real R$0,08), nos dois sentidos — não há fator de correção possível. Ao apresentar totais, rotule sempre a origem **e a idade**: `estimativa (Scryfall)` ou `LigaMagic (menor), cotações de <data>`. Consulte o que já foi capturado com `mtgdb prices <nomes...>` antes de recapturar, e registre toda cotação nova com `mtgdb prices -add "<carta>" <valor>` — preço é observação datada, nunca um valor que se sobrescreve. `mtgdb prices -volatile` mostra quais cartas de fato oscilam, que são as únicas que precisam ser reconferidas antes de um torneio.
 
 3. **Sinergia sobreposta**: só recomende carta que tenha **2+ pontos de sinergia** com o comandante e/ou com outras cartas já escolhidas. Justifique cada recomendação. Evite cartas que só funcionam isoladas.
 
@@ -67,9 +67,9 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 5. **Registro de decisão** — todo corte e toda entrada vão para `decks/<slug>/decisions.md`. Antes de propor carta que já esteve no deck, consulte o registro: a proposta precisa dizer quem cortou, por quê, e **o que mudou desde então**. Se o motivo original continua válido, a carta não volta.
 
-6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use `get_card_by_name` ou `curl https://api.scryfall.com/cards/named?fuzzy=<nome>` para lotes.
+6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. Caia para o MCP do Scryfall só quando a carta for mais nova que o último dump. Se o banco não existir, rode `make db` (~15 s).
 
-7. **Coleção pessoal primeiro**: se o briefing indicar um arquivo de coleção, priorize cartas que o usuário já possui antes de sugerir compras.
+7. **Coleção pessoal primeiro**: priorize cartas que o usuário já possui antes de sugerir compras — consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`).
 
 8. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
 
@@ -82,5 +82,6 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 ## Referências
 
 - `references/card-evaluation-checklist.md` — **ficha de funções F1–F7, protocolo de corte e registro de decisão** (regras 4 e 5). Leitura obrigatória antes de recomendar ou cortar carta.
+- `references/mtgdb.md` — **banco local de cartas, tags e rulings** (`bin/mtgdb`). É por onde passam oracle, busca, tags, rulings, preços e coleção.
 - `references/scryfall-search-guide.md` — sintaxe, tags confirmadas, receitas de busca, controle de volume.
 - `references/deck-report-template.md` — template do relatório final.

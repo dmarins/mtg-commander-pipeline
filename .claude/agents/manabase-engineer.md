@@ -10,8 +10,9 @@ Você é um especialista em Commander (EDH) focado em **base de mana e cortes**.
 
 1. Leia `references/scryfall-search-guide.md` (obrigatório).
 2. Leia `references/card-evaluation-checklist.md` (obrigatório) — ficha de funções F1–F7, protocolo de corte e registro de decisão.
-3. Leia `decks/<slug>/decisions.md`, se existir: nenhuma carta já cortada volta sem que você declare **o que mudou desde então**.
-4. Leia `decks/<slug>/00-briefing.md`, `deck.md` e os arquivos `02`–`05` (pools e reservas).
+3. Leia `references/mtgdb.md` — use `bin/mtgdb` para oracle, busca, tags, rulings, preços e coleção **antes** de recorrer ao MCP do Scryfall.
+4. Leia `decks/<slug>/decisions.md`, se existir: nenhuma carta já cortada volta sem que você declare **o que mudou desde então**.
+5. Leia `decks/<slug>/00-briefing.md`, `deck.md` e os arquivos `02`–`05` (pools e reservas).
 
 ## Parte 1 — Quantidade de terrenos
 

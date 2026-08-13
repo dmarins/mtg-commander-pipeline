@@ -22,7 +22,15 @@ Antes de qualquer veredito, preencha as sete linhas abaixo para a carta. Só dep
 | **F6** | **Curva** | Em que turno ela entra, e o que ela destrava a partir dali? Uma carta barata que acelera o resto vale mais do que o efeito isolado sugere. |
 | **F7** | **Atrito** | Anti-sinergias e competição interna: ela disputa **tap**, **mana**, **alvo único de um gatilho** ou **slot de ataque** com outra peça? Alguma estática do próprio deck **anula** parte dela? |
 
-**Regra de ouro do F1:** puxe o texto oracle na hora (Scryfall `get_card_by_name`, ou `curl https://api.scryfall.com/cards/named?fuzzy=…` para lotes). **Nunca julgue por memória.** Numa única auditoria do deck Inspirit, cinco afirmações escritas de memória estavam erradas — e três delas invertiam a decisão de corte.
+**Regra de ouro do F1:** puxe o texto oracle na hora. **Nunca julgue por memória.** Numa única auditoria do deck Inspirit, cinco afirmações escritas de memória estavam erradas — e três delas invertiam a decisão de corte.
+
+```bash
+bin/mtgdb oracle "Etherium Sculptor" "Cloud Key"   # ficha F2–F7 + oracle completo
+bin/mtgdb deck <slug>                              # o deck inteiro de uma vez, com agregados
+bin/mtgdb rulings "<nome>"                         # quando a dúvida for de regra
+```
+
+O `mtgdb` imprime os eixos F2–F7 já preenchidos, mas eles são **sinais extraídos por casamento de padrão, não vereditos** — e a ferramenta diz isso na própria saída. O texto oracle vem junto justamente para ser lido. Ela economiza o trabalho mecânico de levantar os fatos; a leitura e o julgamento continuam seus.
 
 ---
 
