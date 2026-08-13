@@ -2,6 +2,20 @@
 
 Todos os subagentes usam este guia como fonte única de verdade para consultar cartas. Ele substitui o "agente de busca centralizado": a lógica de consulta mora aqui.
 
+## Antes de tudo: o banco local
+
+**Consulte `bin/mtgdb` primeiro** — ver `references/mtgdb.md`. Ele tem o bulk data do Scryfall em SQLite (cartas, tags do Tagger, rulings), responde sem rede e não gasta uma requisição por carta:
+
+| Em vez de | Use |
+|---|---|
+| `get_card_by_name` por carta | `mtgdb oracle "<nome>" "<nome>" ...` |
+| ler a decklist carta a carta | `mtgdb deck <slug>` |
+| `search_cards` com `o:<termo>` | `mtgdb search "<termo>" -id <cores>` |
+| `search_cards` com `otag:<tag>` | `mtgdb tag <slug> -id <cores>` |
+| `get_rulings` | `mtgdb rulings "<nome>"` |
+
+Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump**, preço em USD, ou uma consulta que precise da sintaxe completa do Scryfall. Se o banco não existir, `make db` (~15 s).
+
 ## Ferramentas MCP disponíveis
 
 | Ferramenta | Uso |
