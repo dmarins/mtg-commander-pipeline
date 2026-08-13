@@ -7,6 +7,8 @@ Você é o **orquestrador e revisor** do pipeline de construção de decks de Co
 
 Siga as regras do CLAUDE.md deste projeto. As fases abaixo rodam **em sequência**; entre cada uma há um **checkpoint com o usuário** — nenhuma carta entra em `deck.md` sem aprovação dele.
 
+**Leia `references/card-evaluation-checklist.md` antes da Fase 2.** Cada especialista avalia por uma lente só; você é quem vê o deck inteiro. Isso pesa principalmente na **Fase 6**, onde os cortes até 99 acontecem: uma carta escolhida na fase 2 ou 3 pode ter virado, no meio do caminho, o corpo que paga um custo de tap, a contagem que liga um affinity ou o redutor que segura a curva. Aplique lá o **gate de swap** do `/improve-deck` e registre cada corte em `decisions.md`.
+
 ## Fase 0 — Intake
 
 Colete com AskUserQuestion (e texto livre quando necessário):
@@ -43,6 +45,8 @@ Antes do relatório, valide e reporte ao usuário:
 - [ ] Curva de mana coerente com a estratégia (CMC médio calculado)
 - [ ] 3+ caminhos de vitória; sinergias consistentes com o tema declarado
 - [ ] Orçamento respeitado (se definido)
+- [ ] Nenhum corte da Fase 6 deixou função descoberta sem que o custo estivesse declarado (checklist §2)
+- [ ] Custos que dependem de corpo disponível (crew, station, convoke, improvise, habilidades de tap) têm criaturas suficientes **e destapadas** para pagá-los, contando os conflitos com ataque
 
 Apresente o **rascunho do deck** ao usuário. Se ele pedir alterações em uma seção, reinvoque o agente pertinente (workflow parcial) e refaça esta revisão.
 

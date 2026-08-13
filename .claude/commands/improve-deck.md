@@ -7,11 +7,14 @@ Você é o **orquestrador e revisor** do pipeline de otimização de decks de Co
 
 Siga as regras do CLAUDE.md deste projeto. O princípio da otimização é o mesmo da construção: **sinergias sobrepostas** — cartas que só funcionam isoladas são as primeiras candidatas a sair.
 
+**Leia `references/card-evaluation-checklist.md` antes da Fase 1.** Em `improve` você está mexendo num deck que já funciona: toda carta presente sobreviveu a rodadas anteriores e provavelmente exerce funções que a fase atual não enxerga. Seu trabalho como orquestrador é ser o **guardião da visão multifacetada** — os especialistas veem uma lente cada; só você vê o deck inteiro.
+
 ## Fase 0 — Intake
 
 1. Obtenha a decklist: arquivo em `$ARGUMENTS`, texto colado, ou peça ao usuário (formato aceito: `1 Nome da Carta` por linha; identifique o comandante).
 2. Colete com AskUserQuestion: qual o objetivo da otimização (consistência, mais rápido, power level alvo)? O que está incomodando nas partidas (trava de mana, mão morta, não fecha o jogo, sem respostas)? Orçamento para novas cartas? Arquivo de coleção? Cartas intocáveis (que ele quer manter)?
-3. Crie `decks/<slug>/` e escreva `00-briefing.md` (modo: `improve`, decklist atual completa, respostas do intake).
+3. **Traduza a queixa em alvo, não em corte.** Quando o usuário diz que uma peça é lenta ou não liga, ele quer **fazê-la funcionar** — essa peça é o alvo a consertar, nunca a candidata a sair. Registre no briefing quais permanentes estão sob essa proteção.
+4. Crie `decks/<slug>/` e escreva `00-briefing.md` (modo: `improve`, decklist atual completa, respostas do intake). Se o deck já tiver rodadas anteriores, crie ou carregue `decisions.md` com o histórico de cortes e entradas.
 
 ## Fase 1 — Auditoria
 
@@ -36,7 +39,19 @@ Confirme com o usuário **quais áreas atacar** antes de prosseguir.
 
 Invoque **apenas os agentes das áreas deficientes ou escolhidas pelo usuário**, em modo `improve` (passe diretório, modo e resumo do diagnóstico). Cada um propõe **swaps** (sai X → entra Y, justificado). Fases na ordem do pipeline quando mais de uma se aplicar: tema → draw (`draw-specialist`) → ramp (`ramp-specialist`) → interação (`interaction-specialist`) → manabase (`manabase-engineer`) → wincons (`wincon-tester`).
 
-Checkpoint após cada agente: apresente os swaps, colete aprovação e atualize `deck.md` (na primeira atualização, transcreva a decklist original para o formato do CLAUDE.md). Para ajustes na mesma área, continue o mesmo agente via SendMessage.
+Checkpoint após cada agente: apresente os swaps, colete aprovação e atualize `deck.md` (na primeira atualização, transcreva a decklist original para o formato do CLAUDE.md). Para ajustes na mesma área, continue o mesmo agente via SendMessage. Registre cada troca aprovada em `decisions.md`.
+
+### Gate de swap — rode antes de apresentar qualquer troca ao usuário
+
+Nenhum swap sai daqui sem passar nos cinco. **Quem falha, você devolve ao especialista ou conserta você mesmo** — não repasse ao usuário para ele descobrir o furo.
+
+1. **Ficha completa** — a carta que sai tem F1–F7 preenchidos, e não só o eixo da fase que a propôs. Um corte justificado apenas por "criatura fraca" ou "não faz nada pelo tema" volta para o especialista.
+2. **Cobertura de funções** — para cada função da carta que sai, está nomeado quem a cobre depois. Função descoberta é permitida, mas tem de estar **declarada** como custo aceito.
+3. **Simetria de critério** — as mesmas condições assumidas para elogiar a entrada foram aplicadas à saída (anthems em campo, contagem de artefatos, redutores ativos).
+4. **Histórico** — se a entrada já esteve no deck, `decisions.md` foi consultado e a proposta diz **o que mudou desde o corte**. Motivo original ainda válido = a carta não volta.
+5. **Alvo protegido** — o swap não corta a peça que o usuário disse querer usar (Fase 0, item 3).
+
+Recontagem obrigatória a cada troca aplicada, porque um swap raramente é neutro: contagem por categoria, artefatos/tipos que alimentam contagens do deck, curva, e as funções que a carta que saiu exercia fora da sua categoria principal.
 
 ## Fase 3 — Revisão final
 

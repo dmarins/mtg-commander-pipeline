@@ -39,6 +39,7 @@ decks/<slug>/
 ├── 06-manabase.md      # terrenos + plano de cortes
 ├── 07-wincons.md       # condições de vitória + protocolo de goldfishing
 ├── deck.md             # lista consolidada viva (fonte de verdade)
+├── decisions.md        # registro cronológico de cortes e entradas (regra 5)
 └── report.md           # relatório final
 ```
 
@@ -62,17 +63,24 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 3. **Sinergia sobreposta**: só recomende carta que tenha **2+ pontos de sinergia** com o comandante e/ou com outras cartas já escolhidas. Justifique cada recomendação. Evite cartas que só funcionam isoladas.
 
-4. **Coleção pessoal primeiro**: se o briefing indicar um arquivo de coleção, priorize cartas que o usuário já possui antes de sugerir compras.
+4. **Ficha completa antes de qualquer veredito** — leia `references/card-evaluation-checklist.md` antes de recomendar ou cortar qualquer carta. Um deck de Commander é multifacetado: a mesma carta costuma exercer 3–5 funções ao mesmo tempo (efeito escrito, corpo que pode ser tapado para crew/station/convoke/improvise, tipo que alimenta contagens, receptor de contadores e anthems, redutor de custo, fixação de cor). **Julgar por um aspecto só é a causa raiz do vai-e-vem de cartas entre rodadas.** Nenhum corte é proposto sem enumerar por escrito todas as funções da carta e nomear quem cobre cada uma. Frases como "criatura fraca" ou "corpo pequeno" não são justificativa de corte — são sinal de que a ficha não foi feita. O mesmo critério usado para defender a entrada vale para a carta que sai.
 
-5. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
+5. **Registro de decisão** — todo corte e toda entrada vão para `decks/<slug>/decisions.md`. Antes de propor carta que já esteve no deck, consulte o registro: a proposta precisa dizer quem cortou, por quê, e **o que mudou desde então**. Se o motivo original continua válido, a carta não volta.
 
-6. **O usuário decide**: cada fase termina com o usuário revisando e selecionando cartas. Nenhuma carta entra em `deck.md` sem aprovação.
+6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use `get_card_by_name` ou `curl https://api.scryfall.com/cards/named?fuzzy=<nome>` para lotes.
 
-7. O deck final tem exatamente **100 cartas** (comandante + 99), todas dentro da identidade de cor e legais no formato.
+7. **Coleção pessoal primeiro**: se o briefing indicar um arquivo de coleção, priorize cartas que o usuário já possui antes de sugerir compras.
 
-8. Regra da diversão: evite pacotes que impedem os oponentes de jogar (MLD, stax pesado, lock infinito) a menos que o usuário peça explicitamente.
+8. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
+
+9. **O usuário decide**: cada fase termina com o usuário revisando e selecionando cartas. Nenhuma carta entra em `deck.md` sem aprovação.
+
+10. O deck final tem exatamente **100 cartas** (comandante + 99), todas dentro da identidade de cor e legais no formato.
+
+11. Regra da diversão: evite pacotes que impedem os oponentes de jogar (MLD, stax pesado, lock infinito) a menos que o usuário peça explicitamente.
 
 ## Referências
 
+- `references/card-evaluation-checklist.md` — **ficha de funções F1–F7, protocolo de corte e registro de decisão** (regras 4 e 5). Leitura obrigatória antes de recomendar ou cortar carta.
 - `references/scryfall-search-guide.md` — sintaxe, tags confirmadas, receitas de busca, controle de volume.
 - `references/deck-report-template.md` — template do relatório final.
