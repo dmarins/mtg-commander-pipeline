@@ -69,7 +69,7 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. Caia para o MCP do Scryfall só quando a carta for mais nova que o último dump. Se o banco não existir, rode `make db` (~15 s).
 
-7. **Coleção pessoal primeiro**: priorize cartas que o usuário já possui antes de sugerir compras — consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`).
+7. **Coleção pessoal primeiro — prioridade de análise, não obrigação de uso.** Toda carta que o usuário já possui é avaliada **antes** de qualquer compra: consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`). Mas possuir a carta não a torna elegível: se a peça da coleção não servir ao deck, **comprar é a decisão correta**. O que a regra exige é que a coleção seja *considerada primeiro* e que a dispensa seja *justificada por escrito* — o especialista que propõe uma compra precisa nomear a carta equivalente da coleção e dizer por que ela não cobre a função. Nunca force uma carta ruim no deck só porque ela já está na caixa, e nunca proponha compra sem ter olhado a caixa.
 
 8. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
 

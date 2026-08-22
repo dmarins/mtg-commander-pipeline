@@ -1,0 +1,74 @@
+Commander
+1 Krenko, Mob Boss
+
+Deck
+1 Skirk Prospector
+1 Shared Animosity
+1 Arcane Signet
+1 Assault on Osgiliath
+1 Blitz of the Thunder-Raptor
+1 Boggart Shenanigans
+1 Purphoros, God of the Forge
+1 Burn, Burn, Tree and Fern
+1 Clamor Shaman
+1 Conspicuous Snoop
+1 Lightning Greaves
+1 Impact Tremors
+1 Outpost Siege
+1 Ember Hauler
+1 Fanatical Firebrand
+1 Ferocity of the Wilds
+1 Goblin Engineer
+1 Fists of Flame
+1 Forgotten Cave
+1 Goblin Chainwhirler
+1 Goblin Cratermaker
+1 Hammer of Purphoros
+1 Goblin Chieftain
+1 Reckless Impulse
+1 Goblin Surprise
+1 Goblin War Party
+1 Goblin Warchief
+1 Goblin Wardriver
+1 Goblin-town Flunkies
+1 Goro-Goro, Disciple of Ryusei
+1 Grishnákh, Brash Instigator
+1 Idol of Oblivion
+1 Light Up the Stage
+1 Guttersnipe
+1 Hordeling Outburst
+1 Goblin Matron
+1 Kick in the Door
+1 Krenko's Command
+1 Krenko, Baron of Tin Street
+1 Lightning Volley
+1 Castle Embereth
+1 Massive Raid
+1 Den of the Bugbear
+1 Kuldotha Rebirth
+1 Hobgoblin Bandit Lord
+1 Mogg Sentry
+1 Mudbutton Clanger
+1 Mudbutton Torchrunner
+1 Umbral Mantle
+1 Swiftfoot Boots
+1 Goblin Chirurgeon
+1 Quest for the Goblin Lord
+1 Raging Goblin
+1 Reckless Lackey
+1 Chandra, Torch of Defiance
+1 Skullclamp
+1 Urza's Incubator
+1 Skullcrack
+1 Smite the Deathless
+1 Sol Ring
+1 Squee, Goblin Nabob
+1 The Autonomous Furnace
+1 Rundvelt Hordemaster
+1 Tin Street Dodger
+1 Tormenting Voice
+1 Goblin Bombardment
+1 Zada, Hedron Grinder
+31 Mountain
+
+1 Volley Veteran

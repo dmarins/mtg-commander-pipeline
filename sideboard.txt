@@ -1,0 +1,47 @@
+1 Mercadia's Downfall (MMQ) 205
+1 Bombard (EOE) 129
+1 Searing Barrage (ELD) 140
+1 Radiating Lightning (DOM) 138
+1 Fateful End (THB) 133
+1 Smashing Success (KHM) 151
+1 Seismic Wave (NEO) 161
+1 Thrill of Possibility (THB) 159
+1 Chandra's Pyrohelix (WAR) 120
+1 Twin Bolt (DTK) 164
+1 Magma Spray (DDJ) 15
+1 Lightning Strike (XLN) 149
+1 Seize Opportunity (TDM) 119
+1 Chandra's Outrage (M14) 133
+1 Stonefury (CMR) 203
+1 Kuldotha Rebirth (SOM) 96
+1 Mad Ratter (ELD) 130
+1 Seal of Fire (DIS) 71
+1 Goblin Gathering (RNA) 104
+1 Urza's Incubator (CM2) 228
+1 Bargaining Table (MMQ) 288
+1 Thaumaton Torpedo (EOE) 246
+1 Liquimetal Coating (BRR) 28
+1 Wedgelight Rammer (EOE) 43
+1 Golden Egg (ELD) 220
+1 Instant Ramen (FIN) 259
+1 Bagel and Schmear (SPM) 161
+1 Haunted Cloak (CMR) 313
+1 Dire Flail // Dire Blunderbuss (LCI) 145
+1 Panic Spellbomb (SOM) 191
+1 Deconstruction Hammer (LCI) 9
+1 Trailblazer's Torch (CLB) 340
+1 Dragon Throne of Tarkir (PKTK) 219 *F*
+1 Armory of Iroas (CMR) 299
+1 Leonin Bola (DST) 127
+1 Oracle's Vault (PAKH) 234 *F*
+1 Squire's Lightblade (EOE) 36
+1 Steel Wrecking Ball (SPM) 177
+1 Zealous Display (EOE) 45
+1 Ancestral Blade (CMR) 5
+1 Raise the Alarm (M20) 34
+1 Seal of Cleansing (MH2) 264
+1 Inspiring Roar (CMR) 23
+1 Pride of Conquerors (RIX) 17
+1 Basri Ket (M21) 280
+1 Recruitment Officer (GDY) 7
+1 Duty Beyond Death (SOA) 4
