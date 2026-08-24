@@ -61,5 +61,5 @@ Mesma checklist do `/build-deck`: 100 cartas, identidade de cor, metas por categ
 
 ## Fase 4 — Relatório e testes
 
-1. Gere `decks/<slug>/report.md` seguindo `references/deck-report-template.md`, acrescentando no topo uma seção **"Mudanças aplicadas"** (tabela sai/entra/motivo).
+1. Gere `decks/<slug>/report.md` seguindo `references/deck-report-template.md`, acrescentando no topo uma seção **"Mudanças aplicadas"** (tabela sai/entra/motivo). Todo nome de carta — inclusive as que saem — vai como **link para a LigaMagic**, conforme o template.
 2. Entregue o protocolo de goldfishing (de `07-wincons.md`, se o `wincon-tester` rodou; senão, o protocolo padrão dele). Ofereça-se para analisar os resultados depois: nesse caso, invoque `wincon-tester` em modo `post-goldfish` com os registros do usuário.

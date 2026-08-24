@@ -52,7 +52,7 @@ Apresente o **rascunho do deck** ao usuário. Se ele pedir alterações em uma s
 
 ## Fase 9 — Relatório final
 
-Com o deck aprovado, gere `decks/<slug>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online). Confirme os dados de cartas duvidosas com `bin/mtgdb oracle "<nome>"` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
+Com o deck aprovado, gere `decks/<slug>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online, e os **links de carta para a LigaMagic** em toda menção fora do bloco de exportação). Confirme os dados de cartas duvidosas com `bin/mtgdb oracle "<nome>"` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
 
 ## Se a sessão for interrompida
 
