@@ -1,11 +1,14 @@
 # deck.md — Krenko, Mob Boss
 
-**Fonte de verdade viva.** Estado: **v3 — reforma completa aplicada (26 trocas)**.
+**Fonte de verdade viva.** Estado: **v5 em curso** — v3 fechada (26 trocas); 9 trocas da v4 em 2026-08-25
+(Metallic Mimic + pacote do vídeo + subplano Zada), **2 trocas do pacote Treasure em 2026-08-26** e
+**3 trocas da montagem física em 2026-09-01** (Howlsquad Heavy, Brightstone Ritual e Sarpadian
+Simulacrum — todas cartas que o usuário já tinha).
 Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase. Só o orquestrador edita este arquivo.
 
 - **Total: 100 cartas** · identidade **R** · todas legais em Commander
-- Artifact 9 · Creature 31 · Enchantment 10 · Instant 7 · Land 35 · Sorcery 9
-- Curva (não-terrenos): 1:13 · 2:21 · 3:22 · 4:9 — **MV médio 2.42**
+- Artifact 9 · Creature 31 · Enchantment 11 · Instant 7 · Land 35 · Sorcery 11
+- Curva (não-terrenos): 1:14 · 2:22 · 3:21 · 4:8 — **MV médio 2.34**
 
 ## Comandante (1)
 
@@ -13,33 +16,32 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 |---|---|---|---|---|---|
 | Krenko, Mob Boss | 4 | Leg. Goblin Warrior 3/3 | R | — | — |
 
-## Criaturas (30)
+## Criaturas (29)
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
 | Fanatical Firebrand | 1 | Goblin Pirate 1/1 | R | tema, remoção | 2 pts · sólida |
 | Goblin Chirurgeon | 1 | Goblin Shaman 0/2 | R | proteção, tema | 4 pts · núcleo |
-| Mogg Sentry | 1 | Goblin Warrior 1/1 | R | tema | 1 pts · marginal |
-| Mudbutton Clanger | 1 | Goblin Warrior 1/1 | R | tema | 1 pts · marginal |
-| Raging Goblin | 1 | Goblin Berserker 1/1 | R | tema | 1 pts · marginal |
 | Reckless Lackey | 1 | Goblin Pirate 1/2 | R | tema, draw, ramp | 3 pts · sólida |
 | Skirk Prospector | 1 | Goblin 1/1 | R | tema, ramp | 3 pts · sólida |
-| Tin Street Dodger | 1 | Goblin Rogue 1/1 | R | tema | 2 pts · sólida |
+| Sarpadian Simulacrum | 1 | Artifact Creature — Goblin 1/1 | C | tema, ramp, remoção | 5 pts · núcleo |
 | Conspicuous Snoop | 2 | Goblin Rogue 2/2 | R | tema, draw | 4 pts · núcleo |
 | Ember Hauler | 2 | Goblin 2/2 | R | tema, remoção | 2 pts · sólida |
 | Goblin Cratermaker | 2 | Goblin Warrior 2/2 | R | tema, remoção | 3 pts · núcleo |
 | Goblin Engineer | 2 | Goblin Artificer 1/2 | R | draw, tema, ramp | 3 pts · sólida |
 | Goblin Wardriver | 2 | Goblin Warrior 2/2 | R | tema | 2 pts · sólida |
 | Goblin-town Flunkies | 2 | Goblin Soldier 1/1 | R | tema | 2 pts · sólida |
+| Mogg War Marshal | 2 | Goblin Warrior 1/1 | R | tema, wincon | 5 pts · núcleo |
 | Goro-Goro, Disciple of Ryusei | 2 | Leg. Goblin Samurai 2/2 | R | tema | 3 pts · núcleo |
 | Rundvelt Hordemaster | 2 | Goblin Warrior 1/1 | R | tema, draw, wincon | 3 pts · sólida |
-| Clamor Shaman | 3 | Goblin Shaman 1/1 | R | tema | 2 pts · sólida |
+| Metallic Mimic | 2 | Artifact Creature — Shapeshifter 2/1 | C | tema, wincon | 4 pts · núcleo |
+| Scuzzback Scrounger | 2 | Goblin Warrior 3/2 | R | tema, ramp | 4 pts · núcleo |
 | Goblin Chainwhirler | 3 | Goblin Warrior 3/3 | R | tema, wipe, remoção | 2 pts · sólida |
 | Goblin Chieftain | 3 | Goblin 2/2 | R | tema, wincon | 4 pts · núcleo |
 | Goblin Matron | 3 | Goblin 1/1 | R | draw, tema | 3 pts · sólida |
 | Goblin Warchief | 3 | Goblin Warrior 2/2 | R | tema, ramp | 4 pts · núcleo |
-| Grishnákh, Brash Instigator | 3 | Leg. Goblin Soldier 1/1 | R | tema, remoção | 2 pts · marginal |
 | Guttersnipe | 3 | Goblin Shaman 2/2 | R | tema, wincon | 2 pts · sólida |
+| Howlsquad Heavy | 3 | Goblin Mercenary 2/3 | R | tema, ramp, wincon | 5 pts · núcleo |
 | Hobgoblin Bandit Lord | 3 | Goblin Rogue 2/3 | R | tema, wincon, remoção | 3 pts · sólida |
 | Krenko, Baron of Tin Street | 3 | Leg. Goblin 3/3 | R | tema, wincon | 3 pts · núcleo |
 | Mudbutton Torchrunner | 3 | Goblin Warrior 1/1 | R | tema, remoção | 2 pts · sólida |
@@ -54,21 +56,19 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 |---|---|---|---|---|---|
 | Chandra, Torch of Defiance | 4 | Leg. Planeswalker — Chandra | R | draw, remoção, ramp | 3 pts · sólida |
 
-## Artefatos (9)
+## Artefatos (7)
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
 | Skullclamp | 1 | Artifact — Equipment | C | draw, ramp | 4 pts · núcleo |
 | Sol Ring | 1 | Artifact | C | ramp | 3 pts · núcleo |
-| Arcane Signet | 2 | Artifact | C | ramp | 2 pts · sólida |
 | Idol of Oblivion | 2 | Artifact | C | draw | 3 pts · núcleo |
-| Lightning Greaves | 2 | Artifact — Equipment | C | proteção | 3 pts · sólida |
 | Swiftfoot Boots | 2 | Artifact — Equipment | C | proteção | 3 pts · núcleo |
 | Hammer of Purphoros | 3 | Leg. Enchantment Artifact | R | ramp, tema | 4 pts · núcleo |
 | Umbral Mantle | 3 | Artifact — Equipment | C | ramp, wincon | 3 pts · núcleo |
 | Urza's Incubator | 3 | Artifact | C | ramp | 3 pts · núcleo |
 
-## Encantamentos (8)
+## Encantamentos (9)
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
@@ -78,6 +78,7 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 | Boggart Shenanigans | 3 | Kindred Enchantment — Goblin | R | tema, wincon | 2 pts · marginal |
 | Ferocity of the Wilds | 3 | Enchantment | R | tema, wincon | 3 pts · núcleo |
 | Shared Animosity | 3 | Enchantment | R | tema, wincon | 3 pts · núcleo |
+| Fable of the Mirror-Breaker | 3 | Enchantment — Saga | R | tema, ramp, draw | 4 pts · núcleo |
 | Burn, Burn, Tree and Fern | 4 | Enchantment — Saga | R | remoção, ramp | 1 pts · marginal |
 | Outpost Siege | 4 | Enchantment | R | draw, wincon | 3 pts · sólida |
 
@@ -85,23 +86,25 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
+| Brightstone Ritual | 1 | Instant | R | ramp | 3 pts · sólida |
+| Expedite | 1 | Instant | R | draw, tema | 3 pts · sólida |
 | Blitz of the Thunder-Raptor | 2 | Instant | R | remoção | 2 pts · sólida |
 | Fists of Flame | 2 | Instant | R | draw, wincon | 3 pts · núcleo |
-| Skullcrack | 2 | Instant | R | wincon | 1 pts · marginal |
+| Battle Hymn | 2 | Instant | R | ramp | 3 pts · sólida |
 | Smite the Deathless | 2 | Instant | R | remoção | 2 pts · sólida |
-| Goblin Surprise | 3 | Instant | R | tema | 2 pts · sólida |
 | Massive Raid | 3 | Instant | R | wincon, remoção | 2 pts · sólida |
-| Lightning Volley | 4 | Instant | R | wincon | 2 pts · sólida |
 
-## Feitiços (9)
+## Feitiços (11)
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
 | Kick in the Door | 1 | Sorcery | R | tema | 3 pts · núcleo |
 | Kuldotha Rebirth | 1 | Sorcery | R | — | — |
+| Ancestral Anger | 1 | Sorcery | R | draw, tema | 2 pts · sólida |
+| Renegade Tactics | 1 | Sorcery | R | draw | 2 pts · sólida |
 | Krenko's Command | 2 | Sorcery | R | tema | 2 pts · sólida |
+| Dragon Fodder | 2 | Sorcery | R | tema | 3 pts · sólida |
 | Reckless Impulse | 2 | Sorcery | R | draw | 2 pts · sólida |
-| Tormenting Voice | 2 | Sorcery | R | draw | 2 pts · sólida |
 | Assault on Osgiliath | 3 | Sorcery | R | tema, wincon | 3 pts · núcleo |
 | Hordeling Outburst | 3 | Sorcery | R | tema | 2 pts · sólida |
 | Light Up the Stage | 3 | Sorcery | R | draw | 3 pts · sólida |
@@ -113,7 +116,8 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 |---|---|---|---|---|---|
 | Castle Embereth | — | Land | R | terreno, tema | 3 pts · sólida |
 | Den of the Bugbear | — | Land | R | terreno, tema, wincon | 4 pts · núcleo |
-| Forgotten Cave | — | Land | R | terreno, draw | 1 pts · marginal |
-| Mountain ×31 | — | Basic Land — Mountain | R | terreno | — pts · base |
+| Dwarven Mine | — | Land — Mountain | R | terreno, tema | 2 pts · sólida |
+| Sokenzan, Crucible of Defiance | — | Leg. Land | R | terreno, tema | 3 pts · sólida |
+| Mountain ×30 | — | Basic Land — Mountain | R | terreno | — pts · base |
 | The Autonomous Furnace | — | Land — Sphere | R | terreno, draw | 1 pts · marginal |
 

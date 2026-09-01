@@ -1,7 +1,7 @@
-# Relatório de Otimização — [Krenko, Mob Boss](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)
+# Relatório de Otimização — [**Krenko, Mob Boss**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)
 
-**Rodada v3 · 2026-08-22 · modo `improve`**
-Estado: **26 trocas aplicadas.** Uma decisão pendente (ver "Pendências").
+**Rodada v4 · 2026-08-25 a 2026-09-01 · modo `improve`**
+Estado: **14 trocas aplicadas nesta rodada** (9 em 25/08 + 2 do pacote Treasure em 26/08 + 3 na montagem física em 01/09); **39 trocas acumuladas desde a v1**. Deck fechado em 100 cartas. Goldfishing ainda pendente.
 
 ---
 
@@ -9,88 +9,148 @@ Estado: **26 trocas aplicadas.** Uma decisão pendente (ver "Pendências").
 
 | # | Sai | Entra | Fase | Motivo em uma linha |
 |---|---|---|---|---|
-| 1 | [Crash Through](https://www.ligamagic.com.br/?view=cards/card&card=Crash+Through) | [**Impact Tremors**](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) | lordes | trample em 1/1 = 0 de excesso → 10 dano a cada oponente por ativação |
-| 2 | [Warlord's Fury](https://www.ligamagic.com.br/?view=cards/card&card=Warlord%27s+Fury) | [**Goblin Bombardment**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) | lordes | 1º sac outlet grátis; acende [Boggart Shenanigans](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans), que era caminho morto |
-| 3 | [Goblin Rabblemaster](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Rabblemaster) | [**Goblin Chieftain**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) | lordes | sai o ataque compulsório; entra lorde +1/+1 e **haste em [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)** |
-| 4 | [Ambitious Assault](https://www.ligamagic.com.br/?view=cards/card&card=Ambitious+Assault) | [**Shared Animosity**](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) | lordes | 100% das criaturas são Goblin: +9/+0 em cada, **todo turno** |
-| 5 | [Bravado](https://www.ligamagic.com.br/?view=cards/card&card=Bravado) | [**Purphoros, God of the Forge**](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) | lordes | 20 dano a cada oponente por ativação; indestructible |
-| 6 | [Tidings of War](https://www.ligamagic.com.br/?view=cards/card&card=Tidings+of+War) | [**Rundvelt Hordemaster**](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster) | lordes | amass empilhava num só Army → lorde + motor de carta |
-| 7 | [Akki Ember-Keeper](https://www.ligamagic.com.br/?view=cards/card&card=Akki+Ember-Keeper) | [**Skirk Prospector**](https://www.ligamagic.com.br/?view=cards/card&card=Skirk+Prospector) | lordes | gatilho morto → 2º sac outlet, Goblin de 1 mana |
-| 8 | [Mob Mentality](https://www.ligamagic.com.br/?view=cards/card&card=Mob+Mentality) | [**Hobgoblin Bandit Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Hobgoblin+Bandit+Lord) | lordes | exigia ataque total → lorde + conversor repetível |
-| 9 | [Shiny Impetus](https://www.ligamagic.com.br/?view=cards/card&card=Shiny+Impetus) | [**Urza's Incubator**](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) | ramp | dava +2/+2 a criatura adversária → `{2}` off em 33 cartas · **coleção** |
-| 10 | [Mycosynth Wellspring](https://www.ligamagic.com.br/?view=cards/card&card=Mycosynth+Wellspring) | [**Umbral Mantle**](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) | ramp | falso ramp que agravava flood → mana sink sem fundo |
-| 11 | [Goblin Glasswright](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Glasswright) | [**Hammer of Purphoros**](https://www.ligamagic.com.br/?view=cards/card&card=Hammer+of+Purphoros) | ramp | Treasure adiado → haste a todos + terreno vira Golem 3/3 |
-| 12 | [Rummaging Goblin](https://www.ligamagic.com.br/?view=cards/card&card=Rummaging+Goblin) | [**Skullclamp**](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) | draw | loot net 0 → token 1/1 vira 2 cartas por 1 mana |
-| 13 | [Grotag Night-Runner](https://www.ligamagic.com.br/?view=cards/card&card=Grotag+Night-Runner) | [**Idol of Oblivion**](https://www.ligamagic.com.br/?view=cards/card&card=Idol+of+Oblivion) | draw | exigia conectar → 1 carta/turno sem gastar mana |
-| 14 | [Goblin Sky Raider](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Sky+Raider) | [**Reckless Impulse**](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Impulse) | draw | 3 manas por 1 de dano evasivo → 2 cartas por 2 |
-| 15 | [Gundabad Opportunist](https://www.ligamagic.com.br/?view=cards/card&card=Gundabad+Opportunist) | [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) | draw | impulso one-shot por 4 → 2 cartas por `{R}` efetivo |
-| 16 | [Fissure Wizard](https://www.ligamagic.com.br/?view=cards/card&card=Fissure+Wizard) | [**Goblin Engineer**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Engineer) | draw | loot net 0 → Goblin que tutora e recompra [Skullclamp](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) |
-| 17 | [Innocent Bystander](https://www.ligamagic.com.br/?view=cards/card&card=Innocent+Bystander) | [**Goblin Matron**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Matron) | draw | gatilho impossível de acionar → tutor de qualquer Goblin |
-| 18 | [Dragon Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Mantle) | [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) | draw | cantrip net 0 → draw repetível que sobrevive a wipe |
-| 19 | [Misty Mountains Raider](https://www.ligamagic.com.br/?view=cards/card&card=Misty+Mountains+Raider) | ~~[Deflecting Swat](https://www.ligamagic.com.br/?view=cards/card&card=Deflecting+Swat)~~ → [**Kuldotha Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth) | proteção | amass empilhava → 3 Goblins por `{R}` · **coleção** |
-| 20 | [Punishing Fire](https://www.ligamagic.com.br/?view=cards/card&card=Punishing+Fire) | [**Goblin Chirurgeon**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chirurgeon) | proteção | Shock sem lifegain → regeneração repetível e grátis |
-| 21 | [Pinecone Strike](https://www.ligamagic.com.br/?view=cards/card&card=Pinecone+Strike) | [**Swiftfoot Boots**](https://www.ligamagic.com.br/?view=cards/card&card=Swiftfoot+Boots) | proteção | Smite cobre melhor → hexproof + haste |
-| 22 | [Cosmotronic Wave](https://www.ligamagic.com.br/?view=cards/card&card=Cosmotronic+Wave) | [**Lightning Greaves**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Greaves) | proteção | 1 de dano não responde nada pós-T4 → equip {0} |
-| 23 | [Redcap Thief](https://www.ligamagic.com.br/?view=cards/card&card=Redcap+Thief) | [**Chandra, Torch of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Chandra%2C+Torch+of+Defiance) | proteção | taxa errada no CMC 3 → PW que atravessa wipe |
-| 24 | [Memorial to War](https://www.ligamagic.com.br/?view=cards/card&card=Memorial+to+War) | [**Den of the Bugbear**](https://www.ligamagic.com.br/?view=cards/card&card=Den+of+the+Bugbear) | manabase | MLD sai por **regra 11** → terreno que vira Goblin e gera tokens |
-| 25 | [Looming Spires](https://www.ligamagic.com.br/?view=cards/card&card=Looming+Spires) | [**Castle Embereth**](https://www.ligamagic.com.br/?view=cards/card&card=Castle+Embereth) | manabase | 0 sinergia, entrava virado → desvirado com Mountain + anthem |
-| 26 | [Mountain](https://www.ligamagic.com.br/?view=cards/card&card=Mountain) (1 de 32) | [**Volley Veteran**](https://www.ligamagic.com.br/?view=cards/card&card=Volley+Veteran) | manabase | 36→35 terrenos → remoção que escala com o enxame |
+| 1 | [Lightning Greaves](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Greaves) | [**Metallic Mimic**](https://www.ligamagic.com.br/?view=cards/card&card=Metallic+Mimic) | lordes | shroud travava Umbral Mantle, Chirurgeon e a própria Zada → 4º lorde cujo +1/+1 é **contador**, e sobrevive ao wipe |
+| 2 | [Mogg Sentry](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+Sentry) | [**Mogg War Marshal**](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+War+Marshal) | tema | corpo Goblin com bônus que não gera nada → **3 corpos Goblin** em 1 carta (ETB, morte e echo) |
+| 3 | [Mudbutton Clanger](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Clanger) | [**Dragon Fodder**](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Fodder) | tema | mesma ficha do Sentry → segunda cópia do Krenko’s Command |
+| 4 | [Mountain (1 de 31)](https://www.ligamagic.com.br/?view=cards/card&card=Mountain+%281+de+31%29) | [**Dwarven Mine**](https://www.ligamagic.com.br/?view=cards/card&card=Dwarven+Mine) | manabase | **é** Land — Mountain: vale para Castle Embereth e cria um Anão 1/1 ao entrar desvirada |
+| 5 | [Forgotten Cave](https://www.ligamagic.com.br/?view=cards/card&card=Forgotten+Cave) | [**Sokenzan, Crucible of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Sokenzan%2C+Crucible+of+Defiance) | manabase | entrava virada → entra desvirado, produz {R} e o Channel faz 2 corpos com ímpeto por {R} (7 lendárias) |
+| 6 | [Skullcrack](https://www.ligamagic.com.br/?view=cards/card&card=Skullcrack) | [**Battle Hymn**](https://www.ligamagic.com.br/?view=cards/card&card=Battle+Hymn) | ramp | 3 de dano que não escala → **{R} por criatura** em instant speed |
+| 7 | [Grishnákh, Brash Instigator](https://www.ligamagic.com.br/?view=cards/card&card=Grishn%C3%A1kh%2C+Brash+Instigator) | [**Expedite**](https://www.ligamagic.com.br/?view=cards/card&card=Expedite) | draw | amass fazia Exército **Orc**, não Goblin → ímpeto no Krenko + carta, e N cartas com Zada |
+| 8 | [Goblin Surprise](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Surprise) | [**Renegade Tactics**](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics) | draw | 2 Goblins por 3 manas → o Dragon Fodder faz igual por 2; entra draw do subplano |
+| 9 | [Lightning Volley](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Volley) | [**Ancestral Anger**](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger) | draw | wincon redundante que exigia corpos destapados → atropelar + carta, N cartas com Zada |
+| 10 | [Arcane Signet](https://www.ligamagic.com.br/?view=cards/card&card=Arcane+Signet) | [**Scuzzback Scrounger**](https://www.ligamagic.com.br/?view=cards/card&card=Scuzzback+Scrounger) | ramp · 26/08 | em mono-R é um Mountain que custa 2 → Treasure **todo turno**, e o −1/−1 mata um token de propósito |
+| 11 | [Raging Goblin](https://www.ligamagic.com.br/?view=cards/card&card=Raging+Goblin) | [**Fable of the Mirror-Breaker**](https://www.ligamagic.com.br/?view=cards/card&card=Fable+of+the+Mirror-Breaker) | tema · 26/08 | 1/1 haste vanilla → token Goblin + Treasure, filtro de 2 cartas e cópia de criatura por turno |
+| 12 | [Clamor Shaman](https://www.ligamagic.com.br/?view=cards/card&card=Clamor+Shaman) | [**Howlsquad Heavy**](https://www.ligamagic.com.br/?view=cards/card&card=Howlsquad+Heavy) | tema · 01/09 | 1/1 por 3 manas cujo gatilho exige atacar → haste ao Krenko, 1 token Goblin por combate e `{T}: {R}` por Goblin no max speed |
+| 13 | [Tormenting Voice](https://www.ligamagic.com.br/?view=cards/card&card=Tormenting+Voice) | [**Brightstone Ritual**](https://www.ligamagic.com.br/?view=cards/card&card=Brightstone+Ritual) | ramp · 01/09 | net 0 cartas e exige mão cheia → `{R}` por Goblin no campo, o Battle Hymn por 1 mana a menos |
+| 14 | [Tin Street Dodger](https://www.ligamagic.com.br/?view=cards/card&card=Tin+Street+Dodger) | [**Sarpadian Simulacrum**](https://www.ligamagic.com.br/?view=cards/card&card=Sarpadian+Simulacrum) | tema · 01/09 | mesmo 1/1 Goblin de `{R}`, mas que só se torna inbloqueável → **artefato E Goblin**: o combustível que o Baron, o Engineer e o Kuldotha Rebirth pediam |
 
-**Reversão registrada:** [Mudbutton Torchrunner](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Torchrunner) estava marcado para corte e **foi mantido** — o deck
-ganhou três sac outlets nesta rodada e ele passou de "1/1 por 3 manas" a 3 de dano dirigível à vontade.
+**Origem das entradas:** a #1 fechou a anti-sinergia herdada da v3; as #2–#6 vieram da triagem de um vídeo
+sobre o deck de [Zada, Hedron Grinder](https://www.ligamagic.com.br/?view=cards/card&card=Zada%2C+Hedron+Grinder) (45 cartas citadas, 5 aproveitáveis); as #7–#9 são a
+cota fechada do **subplano da Zada**, decidido pelo usuário em 2026-08-25; as **#10–#11** são o
+**pacote Treasure** de 2026-08-26, aberto pela pergunta do usuário sobre por que o deck não interagia
+com Treasure — o achado de processo está registrado em `decisions.md`. As **#12–#13** entraram em
+2026-09-01, durante a montagem física, junto da **#14**: são cartas que o usuário **já tinha**, avaliadas com ficha completa
+e aprovadas por ele.
+
+---
+
+## Trocas acumuladas — o que sai da caixa para cada carta comprada
+
+A tabela acima é só a **rodada v4**. Como o deck físico ainda está no estado **v1** (nenhuma compra
+montada até aqui — ver `Pendências`), o que interessa para montar é o acumulado **v1 → v4**:
+**39 trocas 1:1**, sendo **34 compras**, **2 cartas da coleção** e **3 cartas que o usuário já tinha**
+(entradas de 01/09, marcadas como `montagem`). Ordem alfabética pela carta que entra.
+
+| Entra (carta nova) | Sai (carta da caixa) | Rodada | Origem |
+|---|---|---|---|
+| [**Ancestral Anger**](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger) | [Lightning Volley](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Volley) | v4 | compra |
+| [**Battle Hymn**](https://www.ligamagic.com.br/?view=cards/card&card=Battle+Hymn) | [Skullcrack](https://www.ligamagic.com.br/?view=cards/card&card=Skullcrack) | v4 | compra |
+| [**Brightstone Ritual**](https://www.ligamagic.com.br/?view=cards/card&card=Brightstone+Ritual) | [Tormenting Voice](https://www.ligamagic.com.br/?view=cards/card&card=Tormenting+Voice) | v4 | montagem (já tinha) |
+| [**Castle Embereth**](https://www.ligamagic.com.br/?view=cards/card&card=Castle+Embereth) | [Looming Spires](https://www.ligamagic.com.br/?view=cards/card&card=Looming+Spires) | v3 | compra |
+| [**Chandra, Torch of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Chandra%2C+Torch+of+Defiance) | [Redcap Thief](https://www.ligamagic.com.br/?view=cards/card&card=Redcap+Thief) | v3 | compra |
+| [**Den of the Bugbear**](https://www.ligamagic.com.br/?view=cards/card&card=Den+of+the+Bugbear) | [Memorial to War](https://www.ligamagic.com.br/?view=cards/card&card=Memorial+to+War) | v3 | compra |
+| [**Dragon Fodder**](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Fodder) | [Mudbutton Clanger](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Clanger) | v4 | compra |
+| [**Dwarven Mine**](https://www.ligamagic.com.br/?view=cards/card&card=Dwarven+Mine) | Mountain (1 de 31) — básica | v4 | compra |
+| [**Expedite**](https://www.ligamagic.com.br/?view=cards/card&card=Expedite) | [Grishnákh, Brash Instigator](https://www.ligamagic.com.br/?view=cards/card&card=Grishn%C3%A1kh%2C+Brash+Instigator) | v4 | compra |
+| [**Fable of the Mirror-Breaker**](https://www.ligamagic.com.br/?view=cards/card&card=Fable+of+the+Mirror-Breaker) | [Raging Goblin](https://www.ligamagic.com.br/?view=cards/card&card=Raging+Goblin) | v4 | compra |
+| [**Goblin Bombardment**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) | [Warlord's Fury](https://www.ligamagic.com.br/?view=cards/card&card=Warlord%27s+Fury) | v2 | compra |
+| [**Goblin Chieftain**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) | [Goblin Rabblemaster](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Rabblemaster) | v2 | compra |
+| [**Goblin Chirurgeon**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chirurgeon) | [Punishing Fire](https://www.ligamagic.com.br/?view=cards/card&card=Punishing+Fire) | v3 | compra |
+| [**Goblin Engineer**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Engineer) | [Fissure Wizard](https://www.ligamagic.com.br/?view=cards/card&card=Fissure+Wizard) | v3 | compra |
+| [**Goblin Matron**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Matron) | [Innocent Bystander](https://www.ligamagic.com.br/?view=cards/card&card=Innocent+Bystander) | v3 | compra |
+| [**Hammer of Purphoros**](https://www.ligamagic.com.br/?view=cards/card&card=Hammer+of+Purphoros) | [Goblin Glasswright // Craft with Pride](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Glasswright+%2F%2F+Craft+with+Pride) | v2 | compra |
+| [**Hobgoblin Bandit Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Hobgoblin+Bandit+Lord) | [Mob Mentality](https://www.ligamagic.com.br/?view=cards/card&card=Mob+Mentality) | v2 | compra |
+| [**Howlsquad Heavy**](https://www.ligamagic.com.br/?view=cards/card&card=Howlsquad+Heavy) | [Clamor Shaman](https://www.ligamagic.com.br/?view=cards/card&card=Clamor+Shaman) | v4 | montagem (já tinha) |
+| [**Idol of Oblivion**](https://www.ligamagic.com.br/?view=cards/card&card=Idol+of+Oblivion) | [Grotag Night-Runner](https://www.ligamagic.com.br/?view=cards/card&card=Grotag+Night-Runner) | v3 | compra |
+| [**Impact Tremors**](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) | [Crash Through](https://www.ligamagic.com.br/?view=cards/card&card=Crash+Through) | v2 | compra |
+| [**Kuldotha Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth) | [Misty Mountains Raider](https://www.ligamagic.com.br/?view=cards/card&card=Misty+Mountains+Raider) | v3 | coleção (R$ 0) |
+| [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) | [Gundabad Opportunist](https://www.ligamagic.com.br/?view=cards/card&card=Gundabad+Opportunist) | v3 | compra |
+| [**Metallic Mimic**](https://www.ligamagic.com.br/?view=cards/card&card=Metallic+Mimic) | [Cosmotronic Wave](https://www.ligamagic.com.br/?view=cards/card&card=Cosmotronic+Wave) | v4 | compra |
+| [**Mogg War Marshal**](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+War+Marshal) | [Mogg Sentry](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+Sentry) | v4 | compra |
+| [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) | [Dragon Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Mantle) | v3 | compra |
+| [**Purphoros, God of the Forge**](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) | [Bravado](https://www.ligamagic.com.br/?view=cards/card&card=Bravado) | v2 | compra |
+| [**Reckless Impulse**](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Impulse) | [Goblin Sky Raider](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Sky+Raider) | v3 | compra |
+| [**Renegade Tactics**](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics) | [Goblin Surprise](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Surprise) | v4 | compra |
+| [**Sarpadian Simulacrum**](https://www.ligamagic.com.br/?view=cards/card&card=Sarpadian+Simulacrum) | [Tin Street Dodger](https://www.ligamagic.com.br/?view=cards/card&card=Tin+Street+Dodger) | v4 | montagem (já tinha) |
+| [**Rundvelt Hordemaster**](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster) | [Tidings of War](https://www.ligamagic.com.br/?view=cards/card&card=Tidings+of+War) | v2 | compra |
+| [**Scuzzback Scrounger**](https://www.ligamagic.com.br/?view=cards/card&card=Scuzzback+Scrounger) | [Arcane Signet](https://www.ligamagic.com.br/?view=cards/card&card=Arcane+Signet) | v4 | compra |
+| [**Shared Animosity**](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) | [Ambitious Assault](https://www.ligamagic.com.br/?view=cards/card&card=Ambitious+Assault) | v2 | compra |
+| [**Skirk Prospector**](https://www.ligamagic.com.br/?view=cards/card&card=Skirk+Prospector) | [Akki Ember-Keeper](https://www.ligamagic.com.br/?view=cards/card&card=Akki+Ember-Keeper) | v2 | compra |
+| [**Skullclamp**](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) | [Rummaging Goblin](https://www.ligamagic.com.br/?view=cards/card&card=Rummaging+Goblin) | v3 | compra |
+| [**Sokenzan, Crucible of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Sokenzan%2C+Crucible+of+Defiance) | [Forgotten Cave](https://www.ligamagic.com.br/?view=cards/card&card=Forgotten+Cave) | v4 | compra |
+| [**Swiftfoot Boots**](https://www.ligamagic.com.br/?view=cards/card&card=Swiftfoot+Boots) | [Pinecone Strike](https://www.ligamagic.com.br/?view=cards/card&card=Pinecone+Strike) | v3 | compra |
+| [**Umbral Mantle**](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) | [Mycosynth Wellspring](https://www.ligamagic.com.br/?view=cards/card&card=Mycosynth+Wellspring) | v2 | compra |
+| [**Urza's Incubator**](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) | [Shiny Impetus](https://www.ligamagic.com.br/?view=cards/card&card=Shiny+Impetus) | v2 | coleção (R$ 0) |
+| [**Volley Veteran**](https://www.ligamagic.com.br/?view=cards/card&card=Volley+Veteran) | Mountain (1 de 32) — básica | v3 | compra |
+
+**Duas cadeias foram colapsadas** — cartas que entraram e saíram antes de virarem compra, e por isso
+não aparecem na tabela: `Cosmotronic Wave → Lightning Greaves → Metallic Mimic` (o Greaves foi cortado
+na v4 por conceder shroud) e `Misty Mountains Raider → Deflecting Swat → Kuldotha Rebirth` (o Swat saiu
+na v3 ao custar R$ 414,00). Na prática: **Cosmotronic Wave** sai pelo Metallic Mimic e
+**Misty Mountains Raider** sai pelo Kuldotha Rebirth.
+
+**As duas básicas:** `Volley Veteran` e `Dwarven Mine` entraram no lugar de **Mountains**, levando o deck
+de 36 para 35 terrenos. Retire 2 Montanhas — a lista final fica com **30 Mountain**.
 
 ---
 
 ## Diagnóstico → resultado
 
-| Categoria | Antes | Depois | Meta |
+| Categoria | v3 | v4 | Leitura |
 |---|---|---|---|
-| Draw real | 5 | **12** | 12–13 ✅ |
-| Economia de mana | 2 | **6** | 6–7 ✅ |
-| Proteção | **0** | **3** | — ✅ |
-| Permanentes que atravessam wipe | 2,5 | **12** | — ✅ |
-| Lordes de Goblin | **0** | **3** | 4–5 ⚠️ |
-| Haste permanente p/ [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) | 2 (≈15%) | **5** | — ✅ |
-| Wincons que fecham **sem combate** | **0** | **3** | 3+ ✅ |
-| Resposta a encantamento | 0 | **0** | ❌ aberta |
-| Terrenos | 36 (4/4 virados) | **35** (2/4) | ✅ |
+| Corpos Goblin gerados por carta | — | **+2 a +3** | Mogg War Marshal e Dragon Fodder repõem com juros os dois 1/1 cortados |
+| Lordes de Goblin | 3 | **4** | Metallic Mimic — e o dele é **contador**, não anthem: sobrevive ao wipe |
+| Gatilhos de Zada | 2 | **5** | Fists of Flame e Kick in the Door + os 3 cantrips novos |
+| CMC 3 (o gargalo) | 22 | **20** | primeira queda real desde a v2 |
+| MV médio | 2,42 | **2,34** | |
+| Proteção | 3 | **2** | saiu o Lightning Greaves; restam Swiftfoot Boots e Goblin Chirurgeon |
+| Resposta a encantamento | 0 | **0** | ❌ segue aberta — o usuário preferiu o Mimic ao Chaos Warp |
+| Terrenos | 35 | **35** | duas trocas 1:1, nenhuma entra virada |
 
 ---
 
 ## Informações Gerais do Deck
 
-- **Comandante**: [Krenko, Mob Boss](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)
+- **Comandante**: [**Krenko, Mob Boss**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)
 - **Cores**: Mono-vermelho (identidade R)
 - **Número de Cartas**: 100 (99 + Comandante)
-- **Foco**: Goblin tribal — enxame de tokens convertido em dano por **gatilhos de ETB**, não por combate
-- Por tipo: Comandante 1 · Planeswalkers 1 · Criaturas 30 · Artefatos 9 · Encantamentos 8 ·
-  Instantâneos 8 · Feitiços 8 · Terrenos 35 (31 Mountain + 4 não-básicos)
-- Draw **12** · Economia de mana **6** · Interação **10** · Board wipes **1** (assimétrico) · Proteção **3**
+- **Foco**: Goblin tribal — enxame convertido em dano por **gatilhos de ETB**, com a cópia da Zada
+  como subplano de recursos
+- Por tipo: Comandante 1 · Planeswalkers 1 · Criaturas 29 · Artefatos 7 · Encantamentos 9 ·
+  Instantâneos 7 · Feitiços 11 · Terrenos 35 (30 Mountain + 5 não-básicos)
+- **Compra e seleção — 18 fontes, e elas não são iguais:**
+  **12** geram vantagem real · **3** são cantrips que só viram vantagem com a Zada em campo
+  ([Expedite](https://www.ligamagic.com.br/?view=cards/card&card=Expedite), [Renegade Tactics](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics), [Ancestral Anger](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger)) · **3** são filtro net-zero
+  ([Reckless Lackey](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Lackey), [The Autonomous Furnace](https://www.ligamagic.com.br/?view=cards/card&card=The+Autonomous+Furnace), [Fists of Flame](https://www.ligamagic.com.br/?view=cards/card&card=Fists+of+Flame))
+- Aceleração **15 marcações** (9 de economia real: [Sol Ring](https://www.ligamagic.com.br/?view=cards/card&card=Sol+Ring), [Scuzzback Scrounger](https://www.ligamagic.com.br/?view=cards/card&card=Scuzzback+Scrounger), [Urza's Incubator](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator), [Goblin Warchief](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Warchief), [Hammer of Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Hammer+of+Purphoros), [Umbral Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle), [Battle Hymn](https://www.ligamagic.com.br/?view=cards/card&card=Battle+Hymn), [Brightstone Ritual](https://www.ligamagic.com.br/?view=cards/card&card=Brightstone+Ritual), [Howlsquad Heavy](https://www.ligamagic.com.br/?view=cards/card&card=Howlsquad+Heavy)) ·
+  Interação **13** · Board wipes **1** (assimétrico) · Proteção **2**
 
 ## Curva de Mana
 
-- Básicos **31** · Não-básicos **4** · **CMC médio 2,42**
-- Distribuição: 0–1: **13** · 2: **21** · 3: **22** · 4: **9** · 5+: **0**
+- Básicos **30** · Não-básicos **5** · **CMC médio 2,34**
+- Distribuição: 1: **14** · 2: **22** · 3: **21** · 4: **8** · 5+: **0**
 - 100% das cartas são mono-R ou incolores.
 
-> **Ressalva honesta:** CMC 3 continua alto (22). A melhora é **efetiva**, não estrutural: com
-> [Urza's Incubator](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) em jogo, 13 dessas cartas são feitiços de criatura Goblin e passam a custar 1.
-> Sem o Incubator, o engarrafamento do turno 3 permanece.
+> **O gargalo cedeu.** O CMC 3 caiu de 22 para 20 e o CMC 4 de 9 para 8, enquanto o CMC 1 subiu de 13
+> para 14. Três dos cortes desta rodada eram justamente cartas de 3 e 4 manas de sinergia marginal.
+> Com [Urza's Incubator](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) em jogo, 12 das 20 cartas de CMC 3 são feitiços de criatura Goblin e passam a custar 1.
 
 ## Sinergias e Estratégias
 
-- **Estratégia**: montar largura de Goblins e converter **quantidade de gatilhos** em dano simultâneo
-  a todos os oponentes. O deck deixou de precisar que o dano *atravesse* bloqueadores.
-- **Sinergias principais**:
-  - [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) cria N tokens → [Impact Tremors](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) (1 cada) + [Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) (2 cada) = **3N a cada oponente**
-  - [Skullclamp](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) + token 1/1 → 2 cartas, e o token que morre dispara [Boggart Shenanigans](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans) e [Rundvelt Hordemaster](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster)
-  - [Goblin Bombardment](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) transforma o enxame — e o board wipe adversário — em dano dirigível
-  - [Shared Animosity](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity): todas as 30 criaturas são Goblin, então cada atacante recebe +1/+0 por atacante
-- **Cartas-chave**: [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) · [Goblin Chieftain](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) (haste nele) · [Impact Tremors](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) · [Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) · [Skullclamp](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp)
-- **Pontos fortes**: três caminhos que fecham sem combate; draw que escala com o enxame; 12 permanentes
-  que sobrevivem a wipe de criaturas
-- **Pontos fracos**: **0 resposta a encantamento** · CMC 3 alto · 8 dos 10 encantamentos são payoff,
-  então um [Farewell](https://www.ligamagic.com.br/?view=cards/card&card=Farewell) apaga o plano · combo dependente de [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) com haste
+- **Plano A — largura vira dano sem passar pelo combate.** [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) cria N tokens →
+  [Impact Tremors](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) (1 a cada oponente por corpo) + [Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) (2 por corpo) = **3N a cada oponente**.
+- **Plano B — o motor de sacrifício.** [Goblin Bombardment](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) transforma o enxame (e o board wipe adversário)
+  em dano dirigível; cada Goblin que morre acende [Boggart Shenanigans](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans) e [Rundvelt Hordemaster](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster).
+- **Subplano — a cópia da Zada.** Com [Zada, Hedron Grinder](https://www.ligamagic.com.br/?view=cards/card&card=Zada%2C+Hedron+Grinder) em campo e 8 criaturas, um [Expedite](https://www.ligamagic.com.br/?view=cards/card&card=Expedite)
+  de `{R}` compra **8 cartas**. São 5 gatilhos na lista. Ele **não é o plano A**: é o que transforma uma
+  mesa larga em mão cheia quando o dano ainda não fechou.
+- **Novidade da rodada:** o corte do Lightning Greaves destravou a própria Zada — com o shroud calçado
+  nela, nenhuma mágica sua poderia mirá-la.
+- **Cartas-chave**: [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) · [Impact Tremors](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) · [Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) · [Metallic Mimic](https://www.ligamagic.com.br/?view=cards/card&card=Metallic+Mimic) · [Skullclamp](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp)
+- **Pontos fortes**: quatro caminhos que fecham sem combate; 4 lordes; curva finalmente destravada;
+  saldo positivo de corpos Goblin mesmo cortando duas criaturas
+- **Pontos fracos**: **0 resposta a encantamento** · proteção caiu para 2 · dois dos cantrips novos são
+  cartas fracas sem a Zada viva
 
 ## Combos e Condições de Vitória
 
@@ -98,202 +158,214 @@ ganhou três sac outlets nesta rodada e ele passou de "1/1 por 3 manas" a 3 de d
 2. **[Goblin Bombardment](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) + [Boggart Shenanigans](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans)** — T7–8, 1 oponente, sem combate
 3. **[Umbral Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) + [Skirk Prospector](https://www.ligamagic.com.br/?view=cards/card&card=Skirk+Prospector) + [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss)** — T5–7, mesa inteira, **combo aprovado pelo usuário**
 4. **[Shared Animosity](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) + [Ferocity of the Wilds](https://www.ligamagic.com.br/?view=cards/card&card=Ferocity+of+the+Wilds)** — T6–7, mesa inteira, via combate
-5. [**Assault on Osgiliath**](https://www.ligamagic.com.br/?view=cards/card&card=Assault+on+Osgiliath) — T6+, 1–2 oponentes, via combate
+5. **[Assault on Osgiliath](https://www.ligamagic.com.br/?view=cards/card&card=Assault+on+Osgiliath)** — T6+, 1–2 oponentes, via combate
+6. **[Zada, Hedron Grinder](https://www.ligamagic.com.br/?view=cards/card&card=Zada%2C+Hedron+Grinder) + cantrip com mesa larga** — não fecha o jogo sozinho: reabastece a mão em 6–10 cartas
+   e alimenta os cinco caminhos acima
 
 ---
 
 ## Custo da rodada
 
-**R$ 488,95** — 25 compras pelo **menor valor da LigaMagic**, cotações de **2026-08-22**,
-registradas em `data/prices.tsv`. Duas entradas vieram da coleção a custo zero
-([Urza's Incubator](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator), [Kuldotha Rebirth](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth)).
+**R$ 82,54** — 11 compras pelo **menor valor da LigaMagic**, cotações de **2026-08-24 a 2026-08-26**,
+registradas em `data/prices.tsv`.
 
-Mais caras: [Goblin Chieftain](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) R$ 44,90 · [Goblin Engineer](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Engineer) R$ 39,60 · [Umbral Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) R$ 36,90 ·
-[Hobgoblin Bandit Lord](https://www.ligamagic.com.br/?view=cards/card&card=Hobgoblin+Bandit+Lord) R$ 29,97 · [Lightning Greaves](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Greaves) R$ 28,35 · [Skullclamp](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) R$ 26,89 ·
-[Shared Animosity](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) R$ 25,99 · [Purphoros](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) R$ 129,99.
+[Metallic Mimic](https://www.ligamagic.com.br/?view=cards/card&card=Metallic+Mimic) R$ 4,89 · [Mogg War Marshal](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+War+Marshal) R$ 0,25 · [Dragon Fodder](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Fodder) R$ 0,17 · [Dwarven Mine](https://www.ligamagic.com.br/?view=cards/card&card=Dwarven+Mine) R$ 0,18 · [Sokenzan, Crucible of Defiance](https://www.ligamagic.com.br/?view=cards/card&card=Sokenzan%2C+Crucible+of+Defiance) R$ 13,16 · [Battle Hymn](https://www.ligamagic.com.br/?view=cards/card&card=Battle+Hymn) R$ 6,89 · [Expedite](https://www.ligamagic.com.br/?view=cards/card&card=Expedite) R$ 0,68 · [Renegade Tactics](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics) R$ 0,27 · [Ancestral Anger](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger) R$ 0,05 · [Scuzzback Scrounger](https://www.ligamagic.com.br/?view=cards/card&card=Scuzzback+Scrounger) R$ 1,00 · [Fable of the Mirror-Breaker](https://www.ligamagic.com.br/?view=cards/card&card=Fable+of+the+Mirror-Breaker) R$ 55,00
 
-[Deflecting Swat](https://www.ligamagic.com.br/?view=cards/card&card=Deflecting+Swat) foi cortada ao custar **R$ 414,00** — 46% do total da rodada.
+Os três cantrips do subplano da Zada custaram **R$ 1,00 somados**. O item mais caro da rodada é o
+[Fable of the Mirror-Breaker](https://www.ligamagic.com.br/?view=cards/card&card=Fable+of+the+Mirror-Breaker) (R$ 55,00), escolhido pelo usuário contra a recomendação
+do orquestrador, que o havia deixado de fora justamente pelo preço.
+
+As três entradas de 01/09 **não custaram nada**: `Howlsquad Heavy` e `Brightstone Ritual` já eram do
+usuário. Cotadas para o registro em 2026-09-01 (LigaMagic menor): [Howlsquad Heavy](https://www.ligamagic.com.br/?view=cards/card&card=Howlsquad+Heavy) R$ 23,94, [Brightstone Ritual](https://www.ligamagic.com.br/?view=cards/card&card=Brightstone+Ritual)
+R$ 4,67 e [Sarpadian Simulacrum](https://www.ligamagic.com.br/?view=cards/card&card=Sarpadian+Simulacrum) R$ 0,06 — **R$ 28,67 de valor agregado sem desembolso**.
+
+**Custo acumulado v1 → v4: R$ 543,14** — as **34 compras** da tabela de trocas acumuladas, pelo menor valor
+da LigaMagic, cotações de **2026-08-22 a 2026-08-26** (as mais antigas já com 10 dias). As duas entradas
+restantes ([Urza's Incubator](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) e [Kuldotha Rebirth](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth)) saíram da coleção e custaram **R$ 0**.
 
 ---
 
 ## Pendências
 
-1. **[Lightning Greaves](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Greaves) concede shroud** — impede o Equip de [Umbral Mantle](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) em [Krenko](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) e impede
-   [Goblin Chirurgeon](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chirurgeon) de regenerá-lo. Contornável pela ordem de jogo (Mantle antes, Greaves depois).
-   **Decisão do usuário pendente:** manter, cortar por [General Kreat, the Boltbringer](https://www.ligamagic.com.br/?view=cards/card&card=General+Kreat%2C+the+Boltbringer), ou cortar e
-   devolver o slot.
-2. **Resposta a encantamento continua em 0.** [Chaos Warp](https://www.ligamagic.com.br/?view=cards/card&card=Chaos+Warp) e [Vandalblast](https://www.ligamagic.com.br/?view=cards/card&card=Vandalblast) registradas para a próxima rodada.
-3. **Lordes em 3, meta era 4–5.**
-4. **Goldfishing não executado.** Protocolo pronto em `07-wincons.md`.
+1. **Resposta a encantamento continua em 0.** Oito dos dez encantamentos do deck são payoff — um
+   [Farewell](https://www.ligamagic.com.br/?view=cards/card&card=Farewell) apaga o plano. [Chaos Warp](https://www.ligamagic.com.br/?view=cards/card&card=Chaos+Warp) (R$ 3,81) segue como a candidata registrada.
+2. **Proteção caiu para 2** com a saída do Lightning Greaves. Aceito na decisão, mas é o que o
+   goldfishing precisa medir.
+3. **Os dois cantrips condicionais estão em observação.** [Renegade Tactics](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics) e [Ancestral Anger](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger)
+   são cantrip net-zero sem a Zada em campo — mesmo defeito que cortou [Crash Through](https://www.ligamagic.com.br/?view=cards/card&card=Crash+Through) na v2.
+   Se o teste mostrar que a Zada não aparece ou não sobrevive, são os primeiros cortes.
+4. **Goldfishing não executado.** Protocolo de 8 partidas pronto em `07-wincons.md` §6.
 
 ## Lista de Cartas por Tipo
 
 ### Comandante (1)
 
-- [**Krenko, Mob Boss**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) — CMC 4 3/3 · Legendary Creature — Goblin Warrior · {T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.
+- [**Krenko, Mob Boss**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Mob+Boss) — CMC 4 · Legendary Creature — Goblin Warrior 3/3 · {T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.
+
+### Criaturas (29)
+
+- [**Fanatical Firebrand**](https://www.ligamagic.com.br/?view=cards/card&card=Fanatical+Firebrand) — CMC 1 · Creature — Goblin Pirate 1/1 · Haste (This creature can attack and {T} as soon as it comes under your control.) {T}, Sacrifice this creature: It deals 1 damage to any target.
+- [**Goblin Chirurgeon**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chirurgeon) — CMC 1 · Creature — Goblin Shaman 0/2 · Sacrifice a Goblin: Regenerate target creature.
+- [**Reckless Lackey**](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Lackey) — CMC 1 · Creature — Goblin Pirate 1/2 · First strike, haste {2}{R}, Sacrifice this creature: Draw a card and create a Treasure token. (It's an artifact with "{T}, Sacrifice this token:…
+- [**Skirk Prospector**](https://www.ligamagic.com.br/?view=cards/card&card=Skirk+Prospector) — CMC 1 · Creature — Goblin 1/1 · Sacrifice a Goblin: Add {R}.
+- [**Sarpadian Simulacrum**](https://www.ligamagic.com.br/?view=cards/card&card=Sarpadian+Simulacrum) — CMC 1 · Artifact Creature — Goblin 1/1 · Haste {3}{R}, Sacrifice this creature: It deals 4 damage to target creature.
+- [**Conspicuous Snoop**](https://www.ligamagic.com.br/?view=cards/card&card=Conspicuous+Snoop) — CMC 2 · Creature — Goblin Rogue 2/2 · Play with the top card of your library revealed. You may cast Goblin spells from the top of your library. As long as the top card of your library…
+- [**Ember Hauler**](https://www.ligamagic.com.br/?view=cards/card&card=Ember+Hauler) — CMC 2 · Creature — Goblin 2/2 · {1}, Sacrifice this creature: It deals 2 damage to any target.
+- [**Goblin Cratermaker**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Cratermaker) — CMC 2 · Creature — Goblin Warrior 2/2 · {1}, Sacrifice this creature: Choose one — • This creature deals 2 damage to target creature. • Destroy target colorless nonland permanent.
+- [**Goblin Engineer**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Engineer) — CMC 2 · Creature — Goblin Artificer 1/2 · When this creature enters, you may search your library for an artifact card, put it into your graveyard, then shuffle. {R}, {T}, Sacrifice an…
+- [**Goblin Wardriver**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Wardriver) — CMC 2 · Creature — Goblin Warrior 2/2 · Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
+- [**Goblin-town Flunkies**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin-town+Flunkies) — CMC 2 · Creature — Goblin Soldier 1/1 · Haste When this creature enters, amass Goblins 1. (Put a +1/+1 counter on an Army you control. It's also a Goblin. If you don't control an Army,…
+- [**Goro-Goro, Disciple of Ryusei**](https://www.ligamagic.com.br/?view=cards/card&card=Goro-Goro%2C+Disciple+of+Ryusei) — CMC 2 · Legendary Creature — Goblin Samurai 2/2 · {R}: Creatures you control gain haste until end of turn. {3}{R}{R}: Create a 5/5 red Dragon Spirit creature token with flying. Activate only if…
+- [**Metallic Mimic**](https://www.ligamagic.com.br/?view=cards/card&card=Metallic+Mimic) — CMC 2 · Artifact Creature — Shapeshifter 2/1 · As this creature enters, choose a creature type. This creature is the chosen type in addition to its other types. Each other creature you control…
+- [**Mogg War Marshal**](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+War+Marshal) — CMC 2 · Creature — Goblin Warrior 1/1 · Echo {1}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay…
+- [**Rundvelt Hordemaster**](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster) — CMC 2 · Creature — Goblin Warrior 1/1 · Other Goblins you control get +1/+1. Whenever this creature or another Goblin you control dies, exile the top card of your library. If it's a…
+- [**Scuzzback Scrounger**](https://www.ligamagic.com.br/?view=cards/card&card=Scuzzback+Scrounger) — CMC 2 · Creature — Goblin Warrior 3/2 · At the beginning of your first main phase, you may blight 1. If you do, create a Treasure token. (To blight 1, put a -1/-1 counter on a creature you control.)
+- [**Goblin Chainwhirler**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chainwhirler) — CMC 3 · Creature — Goblin Warrior 3/3 · First strike When this creature enters, it deals 1 damage to each opponent and each creature and planeswalker they control.
+- [**Goblin Chieftain**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) — CMC 3 · Creature — Goblin 2/2 · Haste (This creature can attack and {T} as soon as it comes under your control.) Other Goblin creatures you control get +1/+1 and have haste.
+- [**Goblin Matron**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Matron) — CMC 3 · Creature — Goblin 1/1 · When this creature enters, you may search your library for a Goblin card, reveal that card, put it into your hand, then shuffle.
+- [**Goblin Warchief**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Warchief) — CMC 3 · Creature — Goblin Warrior 2/2 · Goblin spells you cast cost {1} less to cast. Goblins you control have haste.
+- [**Guttersnipe**](https://www.ligamagic.com.br/?view=cards/card&card=Guttersnipe) — CMC 3 · Creature — Goblin Shaman 2/2 · Whenever you cast an instant or sorcery spell, this creature deals 2 damage to each opponent.
+- [**Howlsquad Heavy**](https://www.ligamagic.com.br/?view=cards/card&card=Howlsquad+Heavy) — CMC 3 · Creature — Goblin Mercenary 2/3 · Start your engines! Other Goblins you control have haste. At the beginning of combat on your turn, create a 1/1 red Goblin creature token. That token attacks this combat if able. Max speed — {T}: Add {R} for each Goblin you control.
+- [**Hobgoblin Bandit Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Hobgoblin+Bandit+Lord) — CMC 3 · Creature — Goblin Rogue 2/3 · Other Goblins you control get +1/+1. {R}, {T}: This creature deals damage equal to the number of Goblins that entered the battlefield under your…
+- [**Krenko, Baron of Tin Street**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Baron+of+Tin+Street) — CMC 3 · Legendary Creature — Goblin 3/3 · Haste {T}, Sacrifice an artifact: Put a +1/+1 counter on each Goblin you control. Whenever an artifact is put into a graveyard from the…
+- [**Mudbutton Torchrunner**](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Torchrunner) — CMC 3 · Creature — Goblin Warrior 1/1 · When this creature dies, it deals 3 damage to any target.
+- [**Squee, Goblin Nabob**](https://www.ligamagic.com.br/?view=cards/card&card=Squee%2C+Goblin+Nabob) — CMC 3 · Legendary Creature — Goblin 1/1 · At the beginning of your upkeep, you may return this card from your graveyard to your hand.
+- [**Purphoros, God of the Forge**](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) — CMC 4 · Legendary Enchantment Creature — God 6/5 · Indestructible As long as your devotion to red is less than five, Purphoros isn't a creature. Whenever another creature you control enters,…
+- [**Volley Veteran**](https://www.ligamagic.com.br/?view=cards/card&card=Volley+Veteran) — CMC 4 · Creature — Goblin Warrior 4/2 · When this creature enters, it deals damage to target creature an opponent controls equal to the number of Goblins you control.
+- [**Zada, Hedron Grinder**](https://www.ligamagic.com.br/?view=cards/card&card=Zada%2C+Hedron+Grinder) — CMC 4 · Legendary Creature — Goblin Ally 3/3 · Whenever you cast an instant or sorcery spell that targets only Zada, copy that spell for each other creature you control that the spell could…
 
 ### Planeswalkers (1)
 
-- [**Chandra, Torch of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Chandra%2C+Torch+of+Defiance) — CMC 4 · Legendary Planeswalker — Chandra · +1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each o
+- [**Chandra, Torch of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Chandra%2C+Torch+of+Defiance) — CMC 4 · Legendary Planeswalker — Chandra · +1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent. +1: Add {R}{R}. −3: Chandra…
 
-### Criaturas (30)
+### Artefatos (7)
 
-- [**Fanatical Firebrand**](https://www.ligamagic.com.br/?view=cards/card&card=Fanatical+Firebrand) — CMC 1 1/1 · Creature — Goblin Pirate · Haste (This creature can attack and {T} as soon as it comes under your control.)
-- [**Goblin Chirurgeon**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chirurgeon) — CMC 1 0/2 · Creature — Goblin Shaman · Sacrifice a Goblin: Regenerate target creature.
-- [**Mogg Sentry**](https://www.ligamagic.com.br/?view=cards/card&card=Mogg+Sentry) — CMC 1 1/1 · Creature — Goblin Warrior · Whenever an opponent casts a spell, this creature gets +2/+2 until end of turn.
-- [**Mudbutton Clanger**](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Clanger) — CMC 1 1/1 · Creature — Goblin Warrior · Kinship — At the beginning of your upkeep, you may look at the top card of your library. If it shares a creatu
-- [**Raging Goblin**](https://www.ligamagic.com.br/?view=cards/card&card=Raging+Goblin) — CMC 1 1/1 · Creature — Goblin Berserker · Haste (This creature can attack and {T} as soon as it comes under your control.)
-- [**Reckless Lackey**](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Lackey) — CMC 1 1/2 · Creature — Goblin Pirate · First strike, haste
-- [**Skirk Prospector**](https://www.ligamagic.com.br/?view=cards/card&card=Skirk+Prospector) — CMC 1 1/1 · Creature — Goblin · Sacrifice a Goblin: Add {R}.
-- [**Tin Street Dodger**](https://www.ligamagic.com.br/?view=cards/card&card=Tin+Street+Dodger) — CMC 1 1/1 · Creature — Goblin Rogue · Haste
-- [**Conspicuous Snoop**](https://www.ligamagic.com.br/?view=cards/card&card=Conspicuous+Snoop) — CMC 2 2/2 · Creature — Goblin Rogue · Play with the top card of your library revealed.
-- [**Ember Hauler**](https://www.ligamagic.com.br/?view=cards/card&card=Ember+Hauler) — CMC 2 2/2 · Creature — Goblin · {1}, Sacrifice this creature: It deals 2 damage to any target.
-- [**Goblin Cratermaker**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Cratermaker) — CMC 2 2/2 · Creature — Goblin Warrior · {1}, Sacrifice this creature: Choose one —
-- [**Goblin Engineer**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Engineer) — CMC 2 1/2 · Creature — Goblin Artificer · When this creature enters, you may search your library for an artifact card, put it into your graveyard, then 
-- [**Goblin Wardriver**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Wardriver) — CMC 2 2/2 · Creature — Goblin Warrior · Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
-- [**Goblin-town Flunkies**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin-town+Flunkies) — CMC 2 1/1 · Creature — Goblin Soldier · Haste
-- [**Goro-Goro, Disciple of Ryusei**](https://www.ligamagic.com.br/?view=cards/card&card=Goro-Goro%2C+Disciple+of+Ryusei) — CMC 2 2/2 · Legendary Creature — Goblin Samurai · {R}: Creatures you control gain haste until end of turn.
-- [**Rundvelt Hordemaster**](https://www.ligamagic.com.br/?view=cards/card&card=Rundvelt+Hordemaster) — CMC 2 1/1 · Creature — Goblin Warrior · Other Goblins you control get +1/+1.
-- [**Clamor Shaman**](https://www.ligamagic.com.br/?view=cards/card&card=Clamor+Shaman) — CMC 3 1/1 · Creature — Goblin Shaman · Riot (This creature enters with your choice of a +1/+1 counter or haste.)
-- [**Goblin Chainwhirler**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chainwhirler) — CMC 3 3/3 · Creature — Goblin Warrior · First strike
-- [**Goblin Chieftain**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Chieftain) — CMC 3 2/2 · Creature — Goblin · Haste (This creature can attack and {T} as soon as it comes under your control.)
-- [**Goblin Matron**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Matron) — CMC 3 1/1 · Creature — Goblin · When this creature enters, you may search your library for a Goblin card, reveal that card, put it into your h
-- [**Goblin Warchief**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Warchief) — CMC 3 2/2 · Creature — Goblin Warrior · Goblin spells you cast cost {1} less to cast.
-- [**Grishnákh, Brash Instigator**](https://www.ligamagic.com.br/?view=cards/card&card=Grishn%C3%A1kh%2C+Brash+Instigator) — CMC 3 1/1 · Legendary Creature — Goblin Soldier · When Grishnákh enters, amass Orcs 2. When you do, until end of turn, gain control of target nonlegendary creat
-- [**Guttersnipe**](https://www.ligamagic.com.br/?view=cards/card&card=Guttersnipe) — CMC 3 2/2 · Creature — Goblin Shaman · Whenever you cast an instant or sorcery spell, this creature deals 2 damage to each opponent.
-- [**Hobgoblin Bandit Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Hobgoblin+Bandit+Lord) — CMC 3 2/3 · Creature — Goblin Rogue · Other Goblins you control get +1/+1.
-- [**Krenko, Baron of Tin Street**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%2C+Baron+of+Tin+Street) — CMC 3 3/3 · Legendary Creature — Goblin · Haste
-- [**Mudbutton Torchrunner**](https://www.ligamagic.com.br/?view=cards/card&card=Mudbutton+Torchrunner) — CMC 3 1/1 · Creature — Goblin Warrior · When this creature dies, it deals 3 damage to any target.
-- [**Squee, Goblin Nabob**](https://www.ligamagic.com.br/?view=cards/card&card=Squee%2C+Goblin+Nabob) — CMC 3 1/1 · Legendary Creature — Goblin · At the beginning of your upkeep, you may return this card from your graveyard to your hand.
-- [**Purphoros, God of the Forge**](https://www.ligamagic.com.br/?view=cards/card&card=Purphoros%2C+God+of+the+Forge) — CMC 4 6/5 · Legendary Enchantment Creature — God · Indestructible
-- [**Volley Veteran**](https://www.ligamagic.com.br/?view=cards/card&card=Volley+Veteran) — CMC 4 4/2 · Creature — Goblin Warrior · When this creature enters, it deals damage to target creature an opponent controls equal to the number of Gobl
-- [**Zada, Hedron Grinder**](https://www.ligamagic.com.br/?view=cards/card&card=Zada%2C+Hedron+Grinder) — CMC 4 3/3 · Legendary Creature — Goblin Ally · Whenever you cast an instant or sorcery spell that targets only Zada, copy that spell for each other creature 
-
-### Artefatos (9)
-
-- [**Skullclamp**](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) — CMC 1 · Artifact — Equipment · Equipped creature gets +1/-1.
+- [**Skullclamp**](https://www.ligamagic.com.br/?view=cards/card&card=Skullclamp) — CMC 1 · Artifact — Equipment · Equipped creature gets +1/-1. Whenever equipped creature dies, draw two cards. Equip {1}
 - [**Sol Ring**](https://www.ligamagic.com.br/?view=cards/card&card=Sol+Ring) — CMC 1 · Artifact · {T}: Add {C}{C}.
-- [**Arcane Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Arcane+Signet) — CMC 2 · Artifact · {T}: Add one mana of any color in your commander's color identity.
-- [**Idol of Oblivion**](https://www.ligamagic.com.br/?view=cards/card&card=Idol+of+Oblivion) — CMC 2 · Artifact · {T}: Draw a card. Activate only if you created a token this turn.
-- [**Lightning Greaves**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Greaves) — CMC 2 · Artifact — Equipment · Equipped creature has haste and shroud. (It can't be the target of spells or abilities.)
-- [**Swiftfoot Boots**](https://www.ligamagic.com.br/?view=cards/card&card=Swiftfoot+Boots) — CMC 2 · Artifact — Equipment · Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents contro
-- [**Hammer of Purphoros**](https://www.ligamagic.com.br/?view=cards/card&card=Hammer+of+Purphoros) — CMC 3 · Legendary Enchantment Artifact · Creatures you control have haste.
-- [**Umbral Mantle**](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) — CMC 3 · Artifact — Equipment · Equipped creature has "{3}, {Q}: This creature gets +2/+2 until end of turn." ({Q} is the untap symbol.)
-- [**Urza's Incubator**](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) — CMC 3 · Artifact · As this artifact enters, choose a creature type.
+- [**Idol of Oblivion**](https://www.ligamagic.com.br/?view=cards/card&card=Idol+of+Oblivion) — CMC 2 · Artifact · {T}: Draw a card. Activate only if you created a token this turn. {8}, {T}, Sacrifice this artifact: Create a 10/10 colorless Eldrazi creature token.
+- [**Swiftfoot Boots**](https://www.ligamagic.com.br/?view=cards/card&card=Swiftfoot+Boots) — CMC 2 · Artifact — Equipment · Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter…
+- [**Hammer of Purphoros**](https://www.ligamagic.com.br/?view=cards/card&card=Hammer+of+Purphoros) — CMC 3 · Legendary Enchantment Artifact · Creatures you control have haste. {2}{R}, {T}, Sacrifice a land: Create a 3/3 colorless Golem enchantment artifact creature token.
+- [**Umbral Mantle**](https://www.ligamagic.com.br/?view=cards/card&card=Umbral+Mantle) — CMC 3 · Artifact — Equipment · Equipped creature has "{3}, {Q}: This creature gets +2/+2 until end of turn." ({Q} is the untap symbol.) Equip {0}
+- [**Urza's Incubator**](https://www.ligamagic.com.br/?view=cards/card&card=Urza%27s+Incubator) — CMC 3 · Artifact · As this artifact enters, choose a creature type. Creature spells of the chosen type cost {2} less to cast.
 
-### Encantamentos (8)
+### Encantamentos (9)
 
-- [**Quest for the Goblin Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Quest+for+the+Goblin+Lord) — CMC 1 · Enchantment · Whenever a Goblin you control enters, you may put a quest counter on this enchantment.
+- [**Quest for the Goblin Lord**](https://www.ligamagic.com.br/?view=cards/card&card=Quest+for+the+Goblin+Lord) — CMC 1 · Enchantment · Whenever a Goblin you control enters, you may put a quest counter on this enchantment. As long as this enchantment has five or more quest counters…
 - [**Goblin Bombardment**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Bombardment) — CMC 2 · Enchantment · Sacrifice a creature: This enchantment deals 1 damage to any target.
 - [**Impact Tremors**](https://www.ligamagic.com.br/?view=cards/card&card=Impact+Tremors) — CMC 2 · Enchantment · Whenever a creature you control enters, this enchantment deals 1 damage to each opponent.
-- [**Boggart Shenanigans**](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans) — CMC 3 · Kindred Enchantment — Goblin · Whenever another Goblin you control is put into a graveyard from the battlefield, you may have this enchantmen
+- [**Boggart Shenanigans**](https://www.ligamagic.com.br/?view=cards/card&card=Boggart+Shenanigans) — CMC 3 · Kindred Enchantment — Goblin · Whenever another Goblin you control is put into a graveyard from the battlefield, you may have this enchantment deal 1 damage to target player or…
 - [**Ferocity of the Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Ferocity+of+the+Wilds) — CMC 3 · Enchantment · Attacking non-Human creatures you control get +1/+0 and have trample.
-- [**Shared Animosity**](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) — CMC 3 · Enchantment · Whenever a creature you control attacks, it gets +1/+0 until end of turn for each other attacking creature tha
-- [**Burn, Burn, Tree and Fern**](https://www.ligamagic.com.br/?view=cards/card&card=Burn%2C+Burn%2C+Tree+and+Fern) — CMC 4 · Enchantment — Saga · (As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)
-- [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) — CMC 4 · Enchantment · As this enchantment enters, choose Khans or Dragons.
+- [**Shared Animosity**](https://www.ligamagic.com.br/?view=cards/card&card=Shared+Animosity) — CMC 3 · Enchantment · Whenever a creature you control attacks, it gets +1/+0 until end of turn for each other attacking creature that shares a creature type with it.
+- [**Fable of the Mirror-Breaker**](https://www.ligamagic.com.br/?view=cards/card&card=Fable+of+the+Mirror-Breaker) — CMC 3 · Enchantment — Saga // Enchantment Creature — Goblin Shaman · I — token 2/2 Goblin Shaman que cria Treasure ao atacar · II — descarta até 2 e compra o mesmo tanto · III — vira Reflection of Kiki-Jiki: {1},{T} copia criatura não-lendária.
+- [**Burn, Burn, Tree and Fern**](https://www.ligamagic.com.br/?view=cards/card&card=Burn%2C+Burn%2C+Tree+and+Fern) — CMC 4 · Enchantment — Saga · (As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.) I — This Saga deals 6 damage to target creature an…
+- [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) — CMC 4 · Enchantment · As this enchantment enters, choose Khans or Dragons. • Khans — At the beginning of your upkeep, exile the top card of your library. Until end of…
 
 ### Instantâneos (7)
 
-- [**Blitz of the Thunder-Raptor**](https://www.ligamagic.com.br/?view=cards/card&card=Blitz+of+the+Thunder-Raptor) — CMC 2 · Instant · Blitz of the Thunder-Raptor deals damage to target creature or planeswalker equal to the number of instant and
-- [**Fists of Flame**](https://www.ligamagic.com.br/?view=cards/card&card=Fists+of+Flame) — CMC 2 · Instant · Draw a card. Until end of turn, target creature gains trample and gets +1/+0 for each card you've drawn this t
-- [**Skullcrack**](https://www.ligamagic.com.br/?view=cards/card&card=Skullcrack) — CMC 2 · Instant · Players can't gain life this turn. Damage can't be prevented this turn. Skullcrack deals 3 damage to target pl
-- [**Smite the Deathless**](https://www.ligamagic.com.br/?view=cards/card&card=Smite+the+Deathless) — CMC 2 · Instant · Smite the Deathless deals 3 damage to target creature. That creature loses indestructible until end of turn. I
-- [**Goblin Surprise**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+Surprise) — CMC 3 · Instant · Choose one —
+- [**Brightstone Ritual**](https://www.ligamagic.com.br/?view=cards/card&card=Brightstone+Ritual) — CMC 1 · Instant · Add {R} for each Goblin on the battlefield.
+- [**Expedite**](https://www.ligamagic.com.br/?view=cards/card&card=Expedite) — CMC 1 · Instant · Target creature gains haste until end of turn. Draw a card.
+- [**Battle Hymn**](https://www.ligamagic.com.br/?view=cards/card&card=Battle+Hymn) — CMC 2 · Instant · Add {R} for each creature you control.
+- [**Blitz of the Thunder-Raptor**](https://www.ligamagic.com.br/?view=cards/card&card=Blitz+of+the+Thunder-Raptor) — CMC 2 · Instant · Blitz of the Thunder-Raptor deals damage to target creature or planeswalker equal to the number of instant and sorcery cards in your graveyard. If…
+- [**Fists of Flame**](https://www.ligamagic.com.br/?view=cards/card&card=Fists+of+Flame) — CMC 2 · Instant · Draw a card. Until end of turn, target creature gains trample and gets +1/+0 for each card you've drawn this turn. (A creature with trample can…
+- [**Smite the Deathless**](https://www.ligamagic.com.br/?view=cards/card&card=Smite+the+Deathless) — CMC 2 · Instant · Smite the Deathless deals 3 damage to target creature. That creature loses indestructible until end of turn. If that creature would die this turn,…
 - [**Massive Raid**](https://www.ligamagic.com.br/?view=cards/card&card=Massive+Raid) — CMC 3 · Instant · Massive Raid deals damage to any target equal to the number of creatures you control.
-- [**Lightning Volley**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Volley) — CMC 4 · Instant · Until end of turn, creatures you control gain "{T}: This creature deals 1 damage to any target."
 
-### Feitiços (9)
+### Feitiços (11)
 
-- [**Kick in the Door**](https://www.ligamagic.com.br/?view=cards/card&card=Kick+in+the+Door) — CMC 1 · Sorcery · Put a +1/+1 counter on target creature. That creature gains haste until end of turn and can't be blocked by Wa
-- [**Kuldotha Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth) — CMC 1 · Sorcery · As an additional cost to cast this spell, sacrifice an artifact.
+- [**Ancestral Anger**](https://www.ligamagic.com.br/?view=cards/card&card=Ancestral+Anger) — CMC 1 · Sorcery · Target creature gains trample and gets +X/+0 until end of turn, where X is 1 plus the number of cards named Ancestral Anger in your graveyard.…
+- [**Kick in the Door**](https://www.ligamagic.com.br/?view=cards/card&card=Kick+in+the+Door) — CMC 1 · Sorcery · Put a +1/+1 counter on target creature. That creature gains haste until end of turn and can't be blocked by Walls this turn. Venture into the…
+- [**Kuldotha Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Kuldotha+Rebirth) — CMC 1 · Sorcery · As an additional cost to cast this spell, sacrifice an artifact. Create three 1/1 red Goblin creature tokens.
+- [**Renegade Tactics**](https://www.ligamagic.com.br/?view=cards/card&card=Renegade+Tactics) — CMC 1 · Sorcery · Target creature can't block this turn. Draw a card.
+- [**Dragon Fodder**](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Fodder) — CMC 2 · Sorcery · Create two 1/1 red Goblin creature tokens.
 - [**Krenko's Command**](https://www.ligamagic.com.br/?view=cards/card&card=Krenko%27s+Command) — CMC 2 · Sorcery · Create two 1/1 red Goblin creature tokens.
 - [**Reckless Impulse**](https://www.ligamagic.com.br/?view=cards/card&card=Reckless+Impulse) — CMC 2 · Sorcery · Exile the top two cards of your library. Until the end of your next turn, you may play those cards.
-- [**Tormenting Voice**](https://www.ligamagic.com.br/?view=cards/card&card=Tormenting+Voice) — CMC 2 · Sorcery · As an additional cost to cast this spell, discard a card.
-- [**Assault on Osgiliath**](https://www.ligamagic.com.br/?view=cards/card&card=Assault+on+Osgiliath) — CMC 3 · Sorcery · Amass Orcs X, then Goblins and Orcs you control gain double strike and haste until end of turn. (To amass Orcs
+- [**Assault on Osgiliath**](https://www.ligamagic.com.br/?view=cards/card&card=Assault+on+Osgiliath) — CMC 3 · Sorcery · Amass Orcs X, then Goblins and Orcs you control gain double strike and haste until end of turn. (To amass Orcs X, put X +1/+1 counters on an Army…
 - [**Hordeling Outburst**](https://www.ligamagic.com.br/?view=cards/card&card=Hordeling+Outburst) — CMC 3 · Sorcery · Create three 1/1 red Goblin creature tokens.
-- [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) — CMC 3 · Sorcery · Spectacle {R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost li
-- [**Goblin War Party**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+War+Party) — CMC 4 · Sorcery · Choose one —
+- [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) — CMC 3 · Sorcery · Spectacle {R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.) Exile the top two…
+- [**Goblin War Party**](https://www.ligamagic.com.br/?view=cards/card&card=Goblin+War+Party) — CMC 4 · Sorcery · Choose one — • Create three 1/1 red Goblin creature tokens. • Creatures you control get +1/+1 and gain haste until end of turn. Entwine {2}{R}…
 
 ### Terrenos (35)
 
-- [**Castle Embereth**](https://www.ligamagic.com.br/?view=cards/card&card=Castle+Embereth) — — · Land · This land enters tapped unless you control a Mountain.
-- [**Den of the Bugbear**](https://www.ligamagic.com.br/?view=cards/card&card=Den+of+the+Bugbear) — — · Land · If you control two or more other lands, this land enters tapped.
-- [**Forgotten Cave**](https://www.ligamagic.com.br/?view=cards/card&card=Forgotten+Cave) — — · Land · This land enters tapped.
-- **31×** [**Mountain**](https://www.ligamagic.com.br/?view=cards/card&card=Mountain) — — · Basic Land — Mountain · ({T}: Add {R}.)
-- [**The Autonomous Furnace**](https://www.ligamagic.com.br/?view=cards/card&card=The+Autonomous+Furnace) — — · Land — Sphere · This land enters tapped.
+- [**Castle Embereth**](https://www.ligamagic.com.br/?view=cards/card&card=Castle+Embereth) — — · Land · This land enters tapped unless you control a Mountain. {T}: Add {R}. {1}{R}{R}, {T}: Creatures you control get +1/+0 until end of turn.
+- [**Den of the Bugbear**](https://www.ligamagic.com.br/?view=cards/card&card=Den+of+the+Bugbear) — — · Land · If you control two or more other lands, this land enters tapped. {T}: Add {R}. {3}{R}: Until end of turn, this land becomes a 3/2 red Goblin…
+- [**Dwarven Mine**](https://www.ligamagic.com.br/?view=cards/card&card=Dwarven+Mine) — — · Land — Mountain · ({T}: Add {R}.) This land enters tapped unless you control three or more other Mountains. When this land enters untapped, create a 1/1 red Dwarf…
+- **30×** [**Mountain**](https://www.ligamagic.com.br/?view=cards/card&card=Mountain) — — · Basic Land — Mountain · ({T}: Add {R}.)
+- [**Sokenzan, Crucible of Defiance**](https://www.ligamagic.com.br/?view=cards/card&card=Sokenzan%2C+Crucible+of+Defiance) — — · Legendary Land · {T}: Add {R}. Channel — {3}{R}, Discard this card: Create two 1/1 colorless Spirit creature tokens. They gain haste until end of turn. This…
+- [**The Autonomous Furnace**](https://www.ligamagic.com.br/?view=cards/card&card=The+Autonomous+Furnace) — — · Land — Sphere · This land enters tapped. {T}: Add {R}. {1}{R}, {T}, Sacrifice this land: Draw a card.
 
 ## Lista de Cartas para Exportação (padrão MTG Online)
 
 ```
-1 Skirk Prospector
-1 Shared Animosity
-1 Arcane Signet
-1 Assault on Osgiliath
-1 Blitz of the Thunder-Raptor
-1 Boggart Shenanigans
-1 Purphoros, God of the Forge
-1 Burn, Burn, Tree and Fern
-1 Clamor Shaman
-1 Conspicuous Snoop
-1 Lightning Greaves
-1 Impact Tremors
-1 Outpost Siege
-1 Ember Hauler
 1 Fanatical Firebrand
-1 Ferocity of the Wilds
-1 Goblin Engineer
-1 Fists of Flame
-1 Forgotten Cave
-1 Goblin Chainwhirler
+1 Goblin Chirurgeon
+1 Scuzzback Scrounger
+1 Reckless Lackey
+1 Skirk Prospector
+1 Sarpadian Simulacrum
+1 Conspicuous Snoop
+1 Ember Hauler
 1 Goblin Cratermaker
-1 Hammer of Purphoros
-1 Goblin Chieftain
-1 Reckless Impulse
-1 Goblin Surprise
-1 Goblin War Party
-1 Goblin Warchief
+1 Goblin Engineer
 1 Goblin Wardriver
 1 Goblin-town Flunkies
+1 Mogg War Marshal
 1 Goro-Goro, Disciple of Ryusei
-1 Grishnákh, Brash Instigator
-1 Idol of Oblivion
-1 Light Up the Stage
-1 Guttersnipe
-1 Hordeling Outburst
+1 Rundvelt Hordemaster
+1 Metallic Mimic
+1 Howlsquad Heavy
+1 Goblin Chainwhirler
+1 Goblin Chieftain
 1 Goblin Matron
-1 Kick in the Door
-1 Krenko's Command
-1 Krenko, Baron of Tin Street
-1 Lightning Volley
-1 Castle Embereth
-1 Massive Raid
-1 Den of the Bugbear
-1 Kuldotha Rebirth
+1 Goblin Warchief
+1 Guttersnipe
 1 Hobgoblin Bandit Lord
-1 Mogg Sentry
-1 Mudbutton Clanger
+1 Krenko, Baron of Tin Street
 1 Mudbutton Torchrunner
-1 Umbral Mantle
-1 Swiftfoot Boots
-1 Goblin Chirurgeon
-1 Quest for the Goblin Lord
-1 Raging Goblin
-1 Reckless Lackey
+1 Squee, Goblin Nabob
+1 Purphoros, God of the Forge
+1 Volley Veteran
+1 Zada, Hedron Grinder
 1 Chandra, Torch of Defiance
 1 Skullclamp
-1 Urza's Incubator
-1 Skullcrack
-1 Smite the Deathless
 1 Sol Ring
-1 Squee, Goblin Nabob
-1 The Autonomous Furnace
-1 Rundvelt Hordemaster
-1 Tin Street Dodger
-1 Tormenting Voice
+1 Fable of the Mirror-Breaker
+1 Idol of Oblivion
+1 Swiftfoot Boots
+1 Hammer of Purphoros
+1 Umbral Mantle
+1 Urza's Incubator
+1 Quest for the Goblin Lord
 1 Goblin Bombardment
-1 Zada, Hedron Grinder
-1 Volley Veteran
-31 Mountain
+1 Impact Tremors
+1 Boggart Shenanigans
+1 Ferocity of the Wilds
+1 Shared Animosity
+1 Burn, Burn, Tree and Fern
+1 Outpost Siege
+1 Expedite
+1 Blitz of the Thunder-Raptor
+1 Fists of Flame
+1 Battle Hymn
+1 Smite the Deathless
+1 Massive Raid
+1 Kick in the Door
+1 Kuldotha Rebirth
+1 Ancestral Anger
+1 Renegade Tactics
+1 Krenko's Command
+1 Dragon Fodder
+1 Reckless Impulse
+1 Brightstone Ritual
+1 Assault on Osgiliath
+1 Hordeling Outburst
+1 Light Up the Stage
+1 Goblin War Party
+1 Castle Embereth
+1 Den of the Bugbear
+1 Dwarven Mine
+1 Sokenzan, Crucible of Defiance
+30 Mountain
+1 The Autonomous Furnace
 
 1 Krenko, Mob Boss
 ```

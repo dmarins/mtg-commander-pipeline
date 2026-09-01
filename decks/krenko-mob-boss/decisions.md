@@ -61,6 +61,34 @@ Antes de propor carta que já esteve no deck, **consulte este registro**.
 | 2026-08-22 | Volley Veteran | entrada | v3 · 6 manabase | slot devolvido pela manabase: ETB causa dano igual ao nº de Goblins — remoção que ESCALA com o enxame | — |
 | 2026-08-22 | Deflecting Swat | corte | v3 · preços | R$ 414,00 na LigaMagic — 46% do custo total da rodada; decisão do usuário após ver a cotação real | proteção reativa grátis → descoberta; restam Goblin Chirurgeon, Swiftfoot Boots, Lightning Greaves |
 | 2026-08-22 | Kuldotha Rebirth | entrada | v3 · wincons | reposição de **custo zero** (coleção): 3 Goblins por {R} = 9 de dano a cada oponente com Impact Tremors + Purphoros | — |
+| 2026-08-25 | Lightning Greaves | corte | v4 · decisão do usuário | shroud bloqueia os PRÓPRIOS alvos: trava o Equip de Umbral Mantle no Krenko (combo aprovado), a regeneração do Goblin Chirurgeon, Fists of Flame, Kick in the Door e a cópia da Zada — que passa a ser subplano declarado | haste → 5 fontes restantes (Goblin Chieftain, Goblin Warchief, Hammer of Purphoros, Goro-Goro, Swiftfoot Boots); proteção por alvo → Swiftfoot Boots (hexproof não trava o próprio lado) + Goblin Chirurgeon; artefato para Kuldotha Rebirth/Goblin Engineer → 8 outros artefatos; equip {0} → NINGUÉM cobre (perda declarada e aceita) |
+| 2026-08-25 | Metallic Mimic | entrada | v4 · decisão do usuário | 4º lorde, entra no CMC 2 (degrau menos congestionado); nomeando Goblin, cada token do Krenko chega com +1/+1 PERMANENTE — sobrevive ao wipe, ao contrário de anthem. É Goblin (conta no X do Krenko, Shared Animosity, Skirk Prospector) e artefato (Kuldotha Rebirth, Goblin Engineer). R$ 4,89 LigaMagic menor, cotado em 2026-08-24 | — |
+| 2026-08-25 | Mogg Sentry | corte | v4 · vídeo Zada | ficha completa: corpo Goblin 1/1 (F2), tipo Goblin que conta no X do Krenko/Shared Animosity/Skirk Prospector (F3), recebe anthem (F4). O +2/+2 quando oponente conjura não gera gatilho, corpo nem carta | corpo Goblin de CMC 1 → Mogg War Marshal entrega 2 corpos no ETB e um 3º ao morrer; saldo de Goblins da rodada é +2 a +3 |
+| 2026-08-25 | Mogg War Marshal | entrada | v4 · vídeo Zada | 3 corpos Goblin em 1 carta (ETB + morte, e o echo não pago vira o 3º): 2–3 gatilhos de Impact Tremors/Purphoros, 2–3 comidas de Bombardment/Prospector, 2–3 saques de Skullclamp, 2–3 gatilhos de Boggart Shenanigans/Rundvelt Hordemaster. R$ 0,25 LigaMagic menor | — |
+| 2026-08-25 | Mudbutton Clanger | corte | v4 · vídeo Zada | mesma ficha do Mogg Sentry: corpo Goblin 1/1 e um kinship que só dá +1/+1 até o fim do turno | corpo Goblin de CMC 1 → coberto pelos tokens do Dragon Fodder e do Mogg War Marshal |
+| 2026-08-25 | Dragon Fodder | entrada | v4 · vídeo Zada | segunda cópia do Krenko's Command: 2 Goblins por 2 manas, 2 gatilhos de ETB. R$ 0,17 LigaMagic menor | — |
+| 2026-08-25 | Mountain (1 de 31) | corte | v4 · vídeo Zada | trocada 1:1 por terreno com upside, sem mexer na contagem de 35 | fonte de {R} e subtipo Mountain → a própria Dwarven Mine é Land — Mountain e cobre os dois |
+| 2026-08-25 | Dwarven Mine | entrada | v4 · vídeo Zada | É Land — Mountain: conta para Castle Embereth e para 'unless you control a Mountain'. Com 3+ outras Montanhas entra DESVIRADA e cria um Anão 1/1 = mais um gatilho de ETB. R$ 0,18 LigaMagic menor | — |
+| 2026-08-25 | Forgotten Cave | corte | v4 · vídeo Zada | entra virada e o cycling {R} consome a própria terra; 1 pt de sinergia | land drop e fonte de {R} → Sokenzan, que entra desvirado; cycling → NINGUÉM cobre (perda declarada, 1 carta a menos de flood relief) |
+| 2026-08-25 | Sokenzan, Crucible of Defiance | entrada | v4 · vídeo Zada | entra desvirado, produz {R}, e o Channel cria 2 Espíritos 1/1 com ímpeto custando {1} a menos por criatura lendária — o deck tem 7 lendárias, então sai por {R} da mão. R$ 13,16 LigaMagic menor | — |
+| 2026-08-25 | Skullcrack | corte | v4 · vídeo Zada | 3 de dano num jogador por 2 manas não escala com o enxame; 1 pt de sinergia | dano direto ao jogador → Massive Raid, Guttersnipe, Impact Tremors, Purphoros, Goblin Bombardment; 'jogadores não ganham vida' → NINGUÉM cobre (perda declarada) |
+| 2026-08-25 | Battle Hymn | entrada | v4 · vídeo Zada | ramp explosivo que converte largura em mana: {R} por criatura em velocidade de instantâneo. Com 8 corpos são 8 manas — liga Krenko e esvazia a mão no mesmo turno. R$ 6,89 LigaMagic menor | — |
+| 2026-08-25 | Grishnákh, Brash Instigator | corte | v4 · subplano Zada | o amass cria um Exército ORC, não Goblin: não conta no X do Krenko, não recebe os lordes, não acende Boggart Shenanigans. O roubo é temporário e condicionado ao poder do Exército | corpo Goblin lendário → saldo da rodada segue positivo; roubo temporário → NINGUÉM cobre (perda declarada); alívio de CMC 3 (22→20) é ganho colateral |
+| 2026-08-25 | Expedite | entrada | v4 · subplano Zada | REVERSÃO DECLARADA da decisão de 2026-08-22 ('não gastar slots em habilitadores de alvo único'). O que mudou: o usuário decidiu em 2026-08-25 adotar a cópia da Zada como SUBPLANO de vitória. Expedite é a melhor da classe porque tem função sozinha — dá ímpeto ao Krenko no turno em que ele entra e repõe a carta. Com Zada + 8 criaturas: 8 cartas por {R}. R$ 0,68 LigaMagic menor | — |
+| 2026-08-25 | Goblin Surprise | corte | v4 · subplano Zada | modal de CMC 3: +2/+0 no time ou 2 Goblins | 2 tokens Goblin → Dragon Fodder faz o mesmo por 1 mana a menos; +2/+0 coletivo → Shared Animosity, Ferocity of the Wilds, Quest for the Goblin Lord e os 4 lordes |
+| 2026-08-25 | Renegade Tactics | entrada | v4 · subplano Zada | com Zada é draw puro: N cartas por {R} (o 'não pode bloquear' cai nas próprias criaturas e é irrelevante). SEM Zada é cantrip net 0 — mesmo defeito que cortou Crash Through na v2, aceito conscientemente como custo do subplano. R$ 0,27 LigaMagic menor | — |
+| 2026-08-25 | Lightning Volley | corte | v4 · subplano Zada | wincon redundante: exige criaturas destapadas e sem invocação, e o deck já fecha sem combate por Impact Tremors+Purphoros, Bombardment+Shenanigans e o combo Mantle. Cortado em vez do Burn, Burn, Tree and Fern para PRESERVAR a única resposta a artefato colorido (Goblin Cratermaker só destrói permanente incolor) | dano por criatura tapada → Massive Raid e Goblin Bombardment |
+| 2026-08-25 | Ancestral Anger | entrada | v4 · subplano Zada | mesmo perfil do Renegade Tactics: com Zada, atropelar no time + N cartas por {R}; sem Zada, cantrip net 0. R$ 0,05 LigaMagic menor | — |
+| 2026-08-26 | Arcane Signet | corte | v4 · pacote Treasure | num mono-R o texto lê `{T}: Add {R}` — um Mountain que custa 2 manas e não pode ser baixado como terreno; fixação de cor é função inexistente com 35 fontes de `{R}`. A única função que o segurava era ser o **único artefato descartável** para Baron/Engineer/Kuldotha Rebirth, e o Scuzzback Scrounger cobre isso de forma renovável | 1 mana/turno → Treasure do Scrounger (também 1/turno) · artefato descartável → Scrounger, **renovável** · alvo de reanimação do Goblin Engineer (MV≤3) → perdido; o Engineer passa a mirar Skullclamp/Idol, alvos melhores |
+| 2026-08-26 | Scuzzback Scrounger | entrada | v4 · pacote Treasure | `{1}{R}` 3/2 Goblin Warrior. Treasure **todo turno, incondicional** (`blight 1`): resolve a fome de artefato descartável com fonte renovável. O custo (−1/−1) colocado num token 1/1 **mata o token de propósito**, disparando Boggart Shenanigans e Rundvelt Hordemaster. Corpo poder 3 (o deck só tinha 6). R$ 1,00 LigaMagic menor | — |
+| 2026-08-26 | Raging Goblin | corte | v4 · pacote Treasure | 1/1 haste vanilla, 1 pt de sinergia. O `07-wincons.md` §5 já a classificava como **"o corte de menor perda depois do Clanger"** — e o Clanger saiu na v4. A haste dela é redundante com Goblin Chieftain, Goblin Warchief e Hammer of Purphoros (3 fontes de haste coletiva) | corpo Goblin T1 → Fanatical Firebrand, Goblin Chirurgeon, Reckless Lackey, Skirk Prospector, Tin Street Dodger (5 outros 1-drops) · soma ao X do Krenko → o cap I da Fable devolve um token 2/2 Goblin · haste → 3 fontes coletivas |
+| 2026-08-26 | Fable of the Mirror-Breaker | entrada | v4 · decisão do usuário | **Escolhida pelo usuário contra a recomendação do orquestrador**, que a havia deixado de fora por preço (R$ 55,00 LigaMagic menor — a 2ª carta mais cara da compra, à frente do Goblin Chieftain). Cap I: token 2/2 **Goblin** que cria Treasure ao atacar · Cap II: descarta até 2 / compra 2 (filtro que alimenta Squee) · Cap III: `{1},{T}` copia criatura não-lendária — Goblin Matron vira tutor por turno, Mogg War Marshal vira 2 corpos por turno. Não copia Krenko (lendário). Sem histórico no registro | — |
+| 2026-09-01 | Clamor Shaman | corte | v5 · montagem física | ficha completa: 1/1 (2/2 com riot) por **3 manas** — pior rácio corpo/custo do deck; o gatilho *"criatura de oponente não pode bloquear"* **exige atacar**, e o plano A fecha por Impact Tremors + Purphoros, sem combate. Disputa o CMC 3 (21 cartas) com Chieftain, Warchief, Shared Animosity, Ferocity, Hordeling Outburst e Fable | corpo Goblin nontoken CMC 3 → o próprio Howlsquad Heavy, que ainda faz 1 token por combate · haste do riot → 7 fontes · **escolher qual bloqueador desligar → NINGUÉM cobre** (Tin Street Dodger e Ferocity dão evasão própria, não removem bloqueador escolhido — perda parcial declarada) |
+| 2026-09-01 | Howlsquad Heavy | entrada | v5 · montagem física | carta do usuário, entrou na montagem. `Other Goblins you control have haste` inclui **Krenko** — ele ativa no turno em que entra, como o Chieftain. Token 1/1 Goblin no início de cada combate = gatilho recorrente de Impact Tremors/Purphoros e comida de Bombardment. `Max speed — {T}: Add {R} for each Goblin` liga rápido aqui: o deck faz oponente perder vida quase todo turno (Tremors, Purphoros, Guttersnipe, Boggart). **Não recai no motivo que cortou Goblin Rabblemaster na v2**: o ataque compulsório atinge só o token que ele mesmo cria, não os outros Goblins — o X do Krenko fica intacto | — |
+| 2026-09-01 | Tormenting Voice | corte | v5 · montagem física | net **0** cartas (compra 2, descarta 1) e **exige ter carta na mão** — num deck cuja queixa nº 2 do intake era "fico sem cartas na mão", é a pior das 19 fontes. O `report.md` da v4 já a classificava como *filtro net-zero*, não vantagem real | seleção de carta → Reckless Impulse (2 cartas reais, mesmo CMC), Light Up the Stage, Fable cap II, Outpost Siege, Idol of Oblivion, Skullclamp, Chandra · gatilho de Guttersnipe e lenha do Blitz of the Thunder-Raptor → os outros 17 instant/sorcery · descarte-outlet do Squee → Fable cap II, **e o Squee se recicla melhor pelos 3 sac outlets** (Bombardment, Prospector, Chirurgeon), que o devolvem à mão todo upkeep. Nada descoberto |
+| 2026-09-01 | Brightstone Ritual | entrada | v5 · montagem física | carta do usuário. `{R}`: add `{R}` para **cada Goblin no campo** — o Battle Hymn por 1 mana a menos, e conta os Goblins dos oponentes e o Army do Goblin-town Flunkies. Segundo ritual explosivo: fica na cota de 2–3. Baixa o CMC 1 de 13 para 14, aliviando o CMC 2 | — |
+| 2026-09-01 | Tin Street Dodger | corte | v5 · montagem física | mesmo `{R}`, mesmo 1/1 Goblin e mesma haste que a entrada, mas a única coisa que ele acrescenta é evasão **para si mesmo** por `{R}` — num plano que fecha por Impact Tremors + Purphoros, sem passar pelo combate. O registro da v2 já havia declarado o combo `Bravado` + Dodger como perda aceita, então o corte não reverte nada | corpo Goblin T1 com haste → o próprio Sarpadian Simulacrum (mesmo custo, mesmo tipo, mesma haste) + Fanatical Firebrand, Goblin Chirurgeon, Reckless Lackey, Skirk Prospector · evasão → Ferocity of the Wilds dá trample a **todos** os atacantes não-humanos, Assault on Osgiliath, e o próprio Fists of Flame traz trample · alvo de Fists of Flame / Kick in the Door → qualquer criatura, com a Zada copiando. Nada descoberto |
+| 2026-09-01 | Sarpadian Simulacrum | entrada | v5 · montagem física | carta do usuário. `{R}` 1/1 **Artifact Creature — Goblin** com haste. O valor não está no corpo nem na habilidade (`{3}{R}`, sac: 4 dano a criatura — 5 manas, é a última função): está no **tipo duplo**. O achado de 2026-08-26 registrou que 3 cartas exigem sacrificar artefato (`Krenko, Baron of Tin Street`, `Goblin Engineer`, `Kuldotha Rebirth` — esta com custo obrigatório) e faltava artefato dispensável. Cobre isso **melhor que o Arcane Signet que saiu**, porque também é Goblin: conta no X do Krenko, recebe os 4 lordes, entra em Shared Animosity e Massive Raid, é munição de Skirk Prospector/Goblin Chirurgeon, a Goblin Matron acha e o Conspicuous Snoop lança do topo. Linha mais forte: `Kuldotha Rebirth` (`{R}` + sacrificar artefato) troca **um** Goblin por **três** — 9 de dano a cada oponente por 1 mana com Tremors + Purphoros. R$ 0,06 LigaMagic menor, cotado em 2026-09-01 | — |
 
 ## Decisões do usuário registradas nesta rodada
 
@@ -100,3 +128,75 @@ após o corte de `Deflecting Swat`. Confirmou-se que o erro do proxy em dólar v
   anulando a principal proteção. Ordem de jogo obrigatória: **Mantle primeiro, Greaves depois**.
   `Swiftfoot Boots` não tem o problema (hexproof só bloqueia alvos dos oponentes).
   Apontado pelo `wincon-tester`; decisão sobre manter ou cortar ainda não tomada.
+
+## Reversão de política registrada (2026-08-25)
+
+A decisão de 2026-08-22 — **"manter `Zada, Hedron Grinder` sem completar o pacote; não gastar slots
+futuros em habilitadores de alvo único (`Expedite`, `Crimson Wisps`, `Assault Strobe`)"** — foi
+**revista pelo usuário** em 2026-08-25, depois de ver o motor da Zada funcionando em vídeo.
+
+**O que mudou:** não a carta, e sim a política. A cópia da Zada passou a ser um **subplano de vitória
+declarado**, com cota fechada de **3 slots** (`Expedite`, `Renegade Tactics`, `Ancestral Anger`),
+somando-se aos 2 gatilhos que já existiam (`Fists of Flame`, `Kick in the Door`) — **5 no total**.
+
+**O custo aceito por escrito:** `Renegade Tactics` e `Ancestral Anger` são cantrip net 0 sem a Zada em
+campo — exatamente o motivo que cortou `Crash Through` na v2. Se o goldfishing mostrar que a Zada morre
+ou não aparece, estas são as **primeiras** candidatas ao corte, e o registro da v2 volta a valer.
+
+**Efeito colateral favorável:** o corte de `Lightning Greaves` (shroud) na mesma rodada destravou a
+própria Zada — com o Greaves calçado nela, nenhuma mágica poderia mirá-la.
+
+
+## Achado de processo (2026-08-26) — erro de eixo na fase de ramp da v2
+
+**Levantado pelo usuário**, ao perguntar por que o deck não interage com tokens de Treasure.
+
+O deck **tinha** quatro fontes de Treasure e o `ramp-specialist` cortou todas na v2 (`Shiny Impetus`,
+`Goblin Glasswright // Craft with Pride`, `Redcap Thief`), sempre com a mesma justificativa, textual
+do `04-ramp.md`:
+
+> Treasure (mana pontual) → `Skirk Prospector` (mana recorrente) + `Urza's Incubator` (redução
+> permanente). **Cobertura superior.**
+
+**O erro:** as fontes de Treasure foram julgadas **só como ramp** e comparadas contra outras fontes de
+mana. Treasure exerce **duas** funções neste deck — mana **e artefato descartável**. Os substitutos
+cobrem só a primeira, e o `Skirk Prospector` cobre sacrificando **Goblins**, o que ainda reduz o X da
+próxima ativação de Krenko. É exatamente a falha que a regra 4 do `CLAUDE.md` nomeia como causa-raiz.
+
+**A informação já estava na mesa.** A ficha do Baron no `02-theme.md` anotou o F7 dele como
+*"só há 3 artefatos + ~4 Treasures como combustível"*. O `theme-analyst` viu a escassez; o
+`ramp-specialist` depois removeu justamente os Treasures sem religar essa observação.
+
+**Consequência medida:** o deck ficou com **três** cartas que exigem sacrificar artefato
+(`Krenko, Baron of Tin Street`, `Goblin Engineer`, `Kuldotha Rebirth` — esta com custo adicional
+*obrigatório*) e **um único** artefato descartável (`Arcane Signet`), com dois substitutos caros:
+o Golem do `Hammer of Purphoros` (`{2}{R}` + sacrificar um terreno) e o Treasure do `Reckless Lackey`
+(`{2}{R}` + sacrificar o próprio corpo).
+
+**Regra derivada:** ao avaliar qualquer carta que produza **artefato** neste deck, contabilizar o
+artefato como função autônoma, separada do mana. O mesmo vale para Clue, Food e Blood.
+
+## Candidatos de Treasure avaliados e rejeitados (2026-08-26)
+
+| Carta | Preço (LigaMagic menor, 26/08) | Por que ficou de fora |
+|---|---|---|
+| `Professional Face-Breaker` | R$ 39,85 | **Não é Goblin** (Human Warrior). Dezesseis cartas do deck não o enxergam — X do Krenko, os 4 lordes, contador do `Metallic Mimic`, `Shared Animosity` (não recebe **nem** contribui), `Boggart Shenanigans`, `Goblin Matron`, `Volley Veteran`, desconto do `Urza's Incubator`, munição de `Skirk Prospector` e `Goblin Chirurgeon`, e trava o `Conspicuous Snoop` no topo. E `Ferocity of the Wilds` diz *"Attacking **non-Human** creatures"* — o exclui por nome de tipo. 40× o preço do Scrounger por cobertura menor |
+| `Enterprising Scallywag` | R$ 0,11 | *Descend* exige **carta** de permanente no cemitério, e **tokens não são cards** — num deck que sacrifica sobretudo tokens, liga pouco. Piora a curva (CMC 1 → 2, sendo o CMC 2 o tier mais cheio) |
+| `Breeches, Eager Pillager` | R$ 1,00 | Só rende com massa de Pirates; o deck tem 2 (`Fanatical Firebrand`, `Reckless Lackey`). Fica registrada caso o Scallywag entre numa rodada futura |
+| `Mind Stone` | R$ 2,25 | Alternativa ao `Arcane Signet` avaliada antes do pacote Treasure. Resolvido pelo Scrounger, que ainda traz corpo Goblin |
+
+## Nota da montagem física (2026-09-01)
+
+O usuário começou a montar o deck e trocou o par planejado. No plano v3, `Goblin Sky Raider` saía para
+entrar `Reckless Impulse`; na caixa, o Sky Raider saiu e **`Howlsquad Heavy` ocupou o slot**. O
+`Reckless Impulse` **não é entrada nova** — ele está aprovado desde a v3 e volta ao deck no slot do
+`Tormenting Voice`. Por isso o registro acima pareia Clamor Shaman → Howlsquad Heavy (ambos CMC 3,
+ambos Goblin, curva preservada) e Tormenting Voice → Brightstone Ritual.
+
+As três entradas **já são do usuário** — não somam ao custo de compra de R$ 543,14. Cotadas para o
+registro em 2026-09-01 (LigaMagic menor): `Howlsquad Heavy` **R$ 23,94**, `Brightstone Ritual`
+**R$ 4,67** e `Sarpadian Simulacrum` **R$ 0,06** — R$ 28,67 de valor agregado sem desembolso.
+
+Curva depois das trocas: **1:14 · 2:22 · 3:21 · 4:8**, MV 2,34. O CMC 3, gargalo histórico do deck,
+não piorou mesmo recebendo o Howlsquad, e a terceira troca é 1:1 dentro do CMC 1. Artefatos sobem de
+8 para 9 — o que o Baron, o Engineer e o Kuldotha Rebirth vinham pedindo desde o achado de 26/08.
