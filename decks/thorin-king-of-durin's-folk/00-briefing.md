@@ -5,6 +5,7 @@
 - **Tema:** Anões + equipamentos + Treasures (anthem do comandante por artifact token), storied/lendários
 - **Data do intake:** 2026-09-16
 - **Status físico:** **montado** — as cartas estão na caixa conforme a lista final de `report.md`. Confirmado pelo usuário em 2026-09-18. Carta deste deck **não está disponível** para outros decks (regra 7).
+- **Versões físicas com nome de sabor:** `Trailblazer's Boots` está na caixa na impressão **Lórien Brooch** (LTR #398 — *flavor name*). É a **mesma carta**: mesmo nome oracle, mesmo texto (nonbasic landwalk, Equip {2}). Nada muda na lista; registrado aqui só para a conferência física não tropeçar no nome. (Confirmado em 2026-09-18 via Scryfall `unique:prints`.)
 
 ## Rodadas
 
