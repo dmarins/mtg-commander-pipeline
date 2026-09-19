@@ -31,7 +31,9 @@ Você é um especialista em Commander (EDH) focado em **vantagem de cartas (draw
 
 ## Saída
 
-Escreva `decks/<slug>/03-draw.md`:
+Escreva **dentro da pasta da rodada** que o orquestrador informou na invocação (`decks/<slug>/rounds/v<N>-<data>/`) — nunca na raiz do deck, que guarda só o estado vivo (`00-briefing.md`, `deck.md`, `decisions.md`). Pastas de rodadas anteriores são somente leitura.
+
+Escreva `<pasta-da-rodada>/03-draw.md`:
 
 ```markdown
 # Vantagem de Cartas

@@ -19,7 +19,9 @@ Colete com AskUserQuestion (e texto livre quando necessário):
 4. Uso das sobressalentes: **caixa primeiro, compras permitidas** (padrão) ou **só sobressalentes, sem comprar nada**? A coleção é consultada sempre via `bin/mtgdb collection` — não há arquivo a informar.
 5. Comandantes populares ou fora do radar?
 
-Crie `decks/<slug>/` (slug = comandante em kebab-case; se ainda não houver comandante, use o tema e renomeie depois) e escreva `00-briefing.md` com tudo (modo: `build`).
+Crie `decks/<slug>/` (slug = comandante em kebab-case; se ainda não houver comandante, use o tema e renomeie depois — **nunca ponha versão no slug**, a versão é pasta) e escreva `00-briefing.md` com tudo (modo: `build`), incluindo o **status físico** (deck ainda no papel) e o índice de rodadas.
+
+Crie também a pasta da rodada: `decks/<slug>/rounds/v1-<hoje>/`. É nela que as Fases 1–7 escrevem. Se a rodada se estender por dias, a data da pasta é a do **fechamento** — renomeie no final.
 
 ## Fases 1–7 — Delegação aos especialistas
 
@@ -52,8 +54,8 @@ Apresente o **rascunho do deck** ao usuário. Se ele pedir alterações em uma s
 
 ## Fase 9 — Relatório final
 
-Com o deck aprovado, gere `decks/<slug>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online, e os **links de carta para a LigaMagic** em toda menção fora do bloco de exportação). Confirme os dados de cartas duvidosas com `bin/mtgdb oracle "<nome>"` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
+Com o deck aprovado, gere `decks/<slug>/rounds/v1-<data>/report.md` seguindo **fielmente** `references/deck-report-template.md` (todas as seções, incluindo a exportação padrão MTG Online, e os **links de carta para a LigaMagic** em toda menção fora do bloco de exportação). Confirme os dados de cartas duvidosas com `bin/mtgdb oracle "<nome>"` — não invente CMC nem texto. Mostre o relatório ao usuário e informe o caminho dos arquivos.
 
 ## Se a sessão for interrompida
 
-Todo o estado está em `decks/<slug>/`. Ao retomar, leia `00-briefing.md` e `deck.md`, identifique a última fase concluída (maior `NN-*.md` existente) e continue dali.
+Todo o estado está em `decks/<slug>/`. Ao retomar, leia `00-briefing.md` (o índice de rodadas diz qual é a corrente) e `deck.md`, identifique a última fase concluída (maior `NN-*.md` dentro da pasta da rodada) e continue dali.

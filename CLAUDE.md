@@ -30,22 +30,33 @@ Cada deck vive em `decks/<slug>/` (slug = nome do comandante em kebab-case):
 
 ```
 decks/<slug>/
-├── 00-briefing.md      # modo (build/improve), comandante, identidade de cor, tema,
-│                       # palavras-chave, orçamento, power level, uso da coleção
-│                       # (caixa primeiro × só sobressalentes), decklist atual
-├── 01-commander.md     # opções de comandante e escolha (se aplicável)
-├── 02-theme.md         # análise linha a linha + pool temático
-├── 03-draw.md          # candidatas de draw
-├── 04-ramp.md          # candidatas de ramp
-├── 05-interaction.md   # candidatas de interação e wipes
-├── 06-manabase.md      # terrenos + plano de cortes
-├── 07-wincons.md       # condições de vitória + protocolo de goldfishing
-├── deck.md             # lista consolidada viva (fonte de verdade)
-├── decisions.md        # registro cronológico de cortes e entradas (regra 5)
-└── report.md           # relatório final
+├── 00-briefing.md      # VIVO — modo (build/improve/registro), comandante, identidade de cor,
+│                       # tema, palavras-chave, orçamento, power level, uso da coleção
+│                       # (caixa primeiro × só sobressalentes), decklist atual,
+│                       # **status físico** (montado × só no papel + data + lista de referência)
+│                       # e o **índice de rodadas** (tabela: rodada, data, estado, link)
+├── deck.md             # VIVO — lista consolidada (fonte de verdade; é o que `mtgdb deck` lê)
+├── decisions.md        # VIVO — registro cronológico de cortes e entradas (regra 5)
+└── rounds/
+    └── v<N>-<AAAA-MM-DD>/   # uma pasta por rodada, criada na Fase 0 e fechada no relatório
+        ├── 01-commander.md  # opções de comandante e escolha (se aplicável)
+        ├── 02-theme.md      # análise linha a linha + pool temático
+        ├── 03-draw.md       # candidatas de draw
+        ├── 04-ramp.md       # candidatas de ramp
+        ├── 05-interaction.md# candidatas de interação e wipes
+        ├── 06-manabase.md   # terrenos + plano de cortes
+        ├── 07-wincons.md    # condições de vitória + protocolo de goldfishing
+        └── report.md        # relatório da rodada
 ```
 
-Subagentes **leem** `00-briefing.md` e `deck.md`, **escrevem** apenas o arquivo da sua fase e devolvem um resumo curto. Só o orquestrador atualiza `deck.md`.
+**A linha é a natureza do arquivo, não a rodada.** O que é *estado* fica na raiz e é único; o que é
+*retrato de um momento* vai para `rounds/v<N>-<data>/` e nunca mais é tocado. Em particular,
+`decisions.md` **não** se divide por rodada: a regra 5 exige **um** lugar para consultar antes de
+repropor uma carta, e conferência espalhada por N arquivos é conferência que não acontece.
+A data da pasta é a do **fechamento** da rodada. Não existe `report.md` na raiz — o relatório
+corrente é o da última pasta, e o índice de rodadas do briefing aponta para ele.
+
+Subagentes **leem** `00-briefing.md` e `deck.md`, **escrevem** apenas o arquivo da sua fase — dentro da pasta da rodada corrente, cujo caminho o orquestrador passa na invocação — e devolvem um resumo curto. Só o orquestrador atualiza `deck.md`, `decisions.md` e o índice de rodadas do briefing.
 
 ### Formato de `deck.md`
 
@@ -72,6 +83,11 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. Caia para o MCP do Scryfall só quando a carta for mais nova que o último dump. Se o banco não existir, rode `make db` (~15 s).
 
 7. **Coleção pessoal primeiro — prioridade de análise, não obrigação de uso.** Toda carta que o usuário já possui é avaliada **antes** de qualquer compra: consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`, atualizada por `/update-collection`). Mas possuir a carta não a torna elegível: se a peça da coleção não servir ao deck, **comprar é a decisão correta**. O que a regra exige é que a coleção seja *considerada primeiro* e que a dispensa seja *justificada por escrito* — o especialista que propõe uma compra precisa nomear a carta equivalente da coleção e dizer por que ela não cobre a função. Nunca force uma carta ruim no deck só porque ela já está na caixa, e nunca proponha compra sem ter olhado a caixa.
+
+   **Posse é declarada, nunca inferida.** Se o deck está montado fisicamente está no campo
+   `Status físico` do `00-briefing.md`, com a data da confirmação e qual arquivo é a lista real
+   (`report.md` ou `lista.txt`). `lista.txt` e `deck.md` registram o deck **aprovado** — sozinhos
+   não dizem se as cartas foram compradas. Deck sem o campo: **pergunte ao usuário**, não deduza.
 
    **Deck montado é coleção fechada.** Carta não migra de um deck para outro: se o Thorin usa um Sol Ring e o Tori também precisa de um, são duas cópias compradas. Por isso `data/collection.tsv` lista **só as sobressalentes** — cartas que saíram de um deck durante a otimização, ou que foram compradas e não entraram em nenhum. Uma carta que está dentro de outro deck **não está disponível** e não conta como "já possuo"; para usá-la aqui, compra-se outra. O que sai de um deck numa otimização vira sobressalente **se a carta existir fisicamente**; o que o usuário vende sai da coleção (`/update-collection`).
 

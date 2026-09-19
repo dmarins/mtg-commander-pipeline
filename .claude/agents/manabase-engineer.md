@@ -41,7 +41,9 @@ Terrenos ≈ 31,42 + (3,13 × CMC médio) − 0,28 × (nº de draws + ramps com 
 
 ## Saída
 
-Escreva `decks/<slug>/06-manabase.md`:
+Escreva **dentro da pasta da rodada** que o orquestrador informou na invocação (`decks/<slug>/rounds/v<N>-<data>/`) — nunca na raiz do deck, que guarda só o estado vivo (`00-briefing.md`, `deck.md`, `decisions.md`). Pastas de rodadas anteriores são somente leitura.
+
+Escreva `<pasta-da-rodada>/06-manabase.md`:
 
 ```markdown
 # Manabase e Cortes

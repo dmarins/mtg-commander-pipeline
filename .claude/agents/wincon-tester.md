@@ -40,7 +40,9 @@ Receba os registros e diagnostique: vitória tarde demais → trocar cartas "boa
 
 ## Saída
 
-Escreva `decks/<slug>/07-wincons.md`:
+Escreva **dentro da pasta da rodada** que o orquestrador informou na invocação (`decks/<slug>/rounds/v<N>-<data>/`) — nunca na raiz do deck, que guarda só o estado vivo (`00-briefing.md`, `deck.md`, `decisions.md`). Pastas de rodadas anteriores são somente leitura.
+
+Escreva `<pasta-da-rodada>/07-wincons.md`:
 
 ```markdown
 # Condições de Vitória e Testes

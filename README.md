@@ -37,7 +37,7 @@ O orquestrador conduz você por checkpoints em cada fase — nenhuma carta entra
 bin/mtgdb                               ←  dados de carta locais (SQLite + bulk Scryfall)
 references/scryfall-search-guide.md     ←  lógica de consulta centralizada
 references/card-evaluation-checklist.md ←  como julgar uma carta (ficha F1–F7, corte, histórico)
-decks/<slug>/*.md                       ←  estado compartilhado entre agentes
+decks/<slug>/                           ←  estado vivo na raiz + uma pasta por rodada em rounds/
 ```
 
 ## Começando
@@ -99,6 +99,8 @@ Para não receber prompts de permissão do MCP, crie `.claude/settings.local.jso
 .claude/agents/      # 7 subagentes especialistas
 .claude/commands/    # /build-deck e /improve-deck (orquestradores)
 references/          # guia de buscas Scryfall + checklist de avaliação + template de relatório
-decks/               # um diretório por deck (estado + decisions.md + relatório final)
+decks/               # um diretório por deck: estado vivo na raiz
+                     #   (00-briefing.md, deck.md, decisions.md)
+                     #   + rounds/v<N>-<data>/ com as fases e o relatório de cada rodada
 CLAUDE.md            # regras do pipeline (metas, formato de estado, convenções)
 ```

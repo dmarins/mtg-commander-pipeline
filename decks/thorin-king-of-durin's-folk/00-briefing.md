@@ -4,6 +4,13 @@
 - **Comandante:** Thorin, King of Durin's Folk · identidade **RW**
 - **Tema:** Anões + equipamentos + Treasures (anthem do comandante por artifact token), storied/lendários
 - **Data do intake:** 2026-09-16
+- **Status físico:** **montado** — as cartas estão na caixa conforme a lista final de `report.md`. Confirmado pelo usuário em 2026-09-18. Carta deste deck **não está disponível** para outros decks (regra 7).
+
+## Rodadas
+
+| Rodada | Data | Estado |
+|---|---|---|
+| [v1](rounds/v1-2026-09-16/report.md) | 2026-09-16 | 9 trocas (5 de custo + 4 de interação); deck fechado em 100. **Goldfishing pendente** |
 
 ## Intake
 - **Objetivo:** reduzir o custo das cartas que ainda **não foram compradas** (proxies), mantendo sinergia. Meta: **máximo de economia**. Teto R$ 200 não se aplica.

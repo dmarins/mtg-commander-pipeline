@@ -16,11 +16,13 @@ Em `improve` você está mexendo num deck que já funciona: toda carta presente 
 1. Obtenha a decklist: arquivo em `$ARGUMENTS`, texto colado, ou peça ao usuário (formato aceito: `1 Nome da Carta` por linha; identifique o comandante).
 2. Colete com AskUserQuestion: qual o objetivo da otimização (consistência, mais rápido, power level alvo)? O que está incomodando nas partidas (trava de mana, mão morta, não fecha o jogo, sem respostas)? Orçamento para novas cartas? Uso das sobressalentes — **caixa primeiro com compras permitidas** (padrão) ou **só sobressalentes**? (a coleção é consultada via `bin/mtgdb collection`, não há arquivo a informar) Cartas intocáveis (que ele quer manter)?
 3. **Traduza a queixa em alvo, não em corte.** Quando o usuário diz que uma peça é lenta ou não liga, ele quer **fazê-la funcionar** — essa peça é o alvo a consertar, nunca a candidata a sair. Registre no briefing quais permanentes estão sob essa proteção.
-4. Crie `decks/<slug>/` e escreva `00-briefing.md` (modo: `improve`, decklist atual completa, respostas do intake). Se o deck já tiver rodadas anteriores, crie ou carregue `decisions.md` com o histórico de cortes e entradas.
+4. **Pergunte o status físico** — o deck já está montado na caixa ou ainda é lista no papel? E qual arquivo é a lista real (`report.md`, `lista.txt`, a lista colada)? Nunca deduza de `lista.txt` ou `deck.md`: eles registram o deck aprovado, não o comprado. Se `00-briefing.md` já existir com o campo `Status físico`, confirme em vez de perguntar do zero.
+5. Crie `decks/<slug>/` (**nunca ponha versão no slug** — a versão é pasta; sufixo parte o `decisions.md` e quebra `mtgdb deck <slug>`) e escreva `00-briefing.md` (modo: `improve`, **status físico com data e lista de referência**, decklist atual completa, respostas do intake). Se o deck já tiver rodadas anteriores, crie ou carregue `decisions.md` com o histórico de cortes e entradas.
+6. **Abra a rodada:** olhe o índice de rodadas do briefing, pegue o maior `v<N>` e crie `decks/<slug>/rounds/v<N+1>-<hoje>/`. É nela que os especialistas da Fase 2 escrevem — passe o caminho na invocação. A data é a do **fechamento**; se a rodada se estender por dias, renomeie a pasta no final. Pastas de rodadas anteriores são **somente leitura**.
 
 ## Fase 1 — Auditoria
 
-Invoque `theme-analyst` em modo `improve`: ele fará a análise linha a linha do comandante, classificará cada carta da lista por categoria (`tema`, `draw`, `ramp`, `remoção`, `proteção`, `counter`, `wipe`, `wincon`, `terreno`) e apontará cartas sem sinergia e lacunas.
+Invoque `theme-analyst` em modo `improve` (passando a pasta da rodada como destino de escrita): ele fará a análise linha a linha do comandante, classificará cada carta da lista por categoria (`tema`, `draw`, `ramp`, `remoção`, `proteção`, `counter`, `wipe`, `wincon`, `terreno`) e apontará cartas sem sinergia e lacunas.
 
 Com o resultado, monte e apresente ao usuário o **diagnóstico**:
 
@@ -39,7 +41,7 @@ Confirme com o usuário **quais áreas atacar** antes de prosseguir.
 
 ## Fase 2 — Especialistas sob demanda
 
-Invoque **apenas os agentes das áreas deficientes ou escolhidas pelo usuário**, em modo `improve` (passe diretório, modo e resumo do diagnóstico). Cada um propõe **swaps** (sai X → entra Y, justificado). Fases na ordem do pipeline quando mais de uma se aplicar: tema → draw (`draw-specialist`) → ramp (`ramp-specialist`) → interação (`interaction-specialist`) → manabase (`manabase-engineer`) → wincons (`wincon-tester`).
+Invoque **apenas os agentes das áreas deficientes ou escolhidas pelo usuário**, em modo `improve` (passe a **pasta da rodada** como destino de escrita, o diretório do deck, o modo e o resumo do diagnóstico). Cada um propõe **swaps** (sai X → entra Y, justificado). Fases na ordem do pipeline quando mais de uma se aplicar: tema → draw (`draw-specialist`) → ramp (`ramp-specialist`) → interação (`interaction-specialist`) → manabase (`manabase-engineer`) → wincons (`wincon-tester`).
 
 Checkpoint após cada agente: apresente os swaps, colete aprovação e atualize `deck.md` (na primeira atualização, transcreva a decklist original para o formato do CLAUDE.md). Para ajustes na mesma área, continue o mesmo agente via SendMessage. Registre cada troca aprovada em `decisions.md`.
 
@@ -61,5 +63,6 @@ Mesma checklist do `/build-deck`: 100 cartas, identidade de cor, metas por categ
 
 ## Fase 4 — Relatório e testes
 
-1. Gere `decks/<slug>/report.md` seguindo `references/deck-report-template.md`, acrescentando no topo uma seção **"Mudanças aplicadas"** (tabela sai/entra/motivo). Todo nome de carta — inclusive as que saem — vai como **link para a LigaMagic**, conforme o template.
+1. Gere `decks/<slug>/rounds/v<N>-<data>/report.md` seguindo `references/deck-report-template.md`, acrescentando no topo uma seção **"Mudanças aplicadas"** (tabela sai/entra/motivo). Todo nome de carta — inclusive as que saem — vai como **link para a LigaMagic**, conforme o template.
+1b. **Feche a rodada:** confirme a data da pasta, acrescente a linha da rodada no índice do `00-briefing.md` (rodada, data, estado, link para o relatório) e confirme que `deck.md` e `decisions.md` na raiz refletem o resultado. A partir daqui a pasta é somente leitura.
 2. Entregue o protocolo de goldfishing (de `07-wincons.md`, se o `wincon-tester` rodou; senão, o protocolo padrão dele). Ofereça-se para analisar os resultados depois: nesse caso, invoque `wincon-tester` em modo `post-goldfish` com os registros do usuário.
