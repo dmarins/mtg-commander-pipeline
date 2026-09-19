@@ -171,6 +171,12 @@ var (
 	reLink    = regexp.MustCompile(`\[([^\]]+)\]\([^)]*\)`)
 	reTrailer = regexp.MustCompile(`\s*\((?:[^()]*)\)\s*$`)
 	reCount   = regexp.MustCompile(`\s*\(\d+\)\s*$`)
+	// "Bombard (EOE) 129", "Dragon Throne of Tarkir (PKTK) 219 *F*" — a exportação
+	// MTGO/Arena carimba set e número do colecionador depois do nome. O sufixo só
+	// é reconhecido quando o parêntese contém um código de set (2–6 alfanuméricos)
+	// E vem algo depois dele, para não engolir nomes como "Erase (Not the Urza's
+	// Legacy One)", cujo parêntese é texto e encerra a linha.
+	reMTGO = regexp.MustCompile(`\s+\([A-Za-z0-9]{2,6}\)\s+\S.*$`)
 )
 
 // cleanName remove marcação markdown, emojis de anotação e sufixos como "(22)".
@@ -184,6 +190,7 @@ func cleanName(s string) string {
 		return r
 	}, s)
 	s = strings.TrimSpace(s)
+	s = strings.TrimSpace(reMTGO.ReplaceAllString(s, ""))
 	// "Thousand Moons Smithy // Barracks of the Thousand" → primeira face
 	if i := strings.Index(s, " // "); i > 0 {
 		s = s[:i]
@@ -214,4 +221,12 @@ func isNoise(s string) bool {
 		return true
 	}
 	return false
+}
+
+// ParseList lê uma lista de cartas avulsa — uma exportação MTGO, um bloco
+// colado, um deck.md solto — sem exigir o diretório decks/<slug>/ que Load
+// espera. É o mesmo parser: quem atualiza a coleção recebe o mesmo formato que
+// o usuário já usa para decklist, e não deve ganhar um dialeto próprio.
+func ParseList(path string) ([]Entry, error) {
+	return parseFile(path)
 }

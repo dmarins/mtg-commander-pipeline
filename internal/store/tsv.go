@@ -184,32 +184,167 @@ func (d *DB) AppendPrice(dataDir string, p PriceObs) error {
 	return err
 }
 
+// CollectionEntry é uma linha de data/collection.tsv.
+type CollectionEntry struct {
+	Name    string
+	Qty     int
+	Note    string
+	AddedAt string
+}
+
+// CollectionDiff descreve o que um Sync fez (ou faria, em simulação).
+type CollectionDiff struct {
+	Added    []CollectionEntry // não estavam no TSV
+	Removed  []CollectionEntry // estavam e saíram — com note e added_at antigos
+	Changed  []CollectionChange
+	Kept     int
+	Unparsed int // linhas da entrada sem nome aproveitável
+}
+
+// CollectionChange é uma carta que ficou, mas mudou de quantidade.
+type CollectionChange struct {
+	Name     string
+	From, To int
+}
+
+// ReadCollection lê data/collection.tsv. Arquivo ausente devolve lista vazia —
+// a primeira sincronização de uma máquina nova é um caso normal, não um erro.
+func ReadCollection(dataDir string) ([]CollectionEntry, error) {
+	var out []CollectionEntry
+	err := readTSV(filepath.Join(dataDir, collectionFile), 1, func(rec []string, _ int) error {
+		if rec[0] == "" {
+			return nil
+		}
+		e := CollectionEntry{Name: rec[0], Qty: 1}
+		if len(rec) > 1 && rec[1] != "" {
+			if v, err := strconv.Atoi(rec[1]); err == nil {
+				e.Qty = v
+			}
+		}
+		if len(rec) > 2 {
+			e.Note = rec[2]
+		}
+		if len(rec) > 3 {
+			e.AddedAt = rec[3]
+		}
+		out = append(out, e)
+		return nil
+	})
+	return out, err
+}
+
+// WriteCollection reescreve data/collection.tsv ordenado por nome, para o diff
+// do git ficar estável entre execuções.
+func WriteCollection(dataDir string, entries []CollectionEntry) error {
+	sorted := append([]CollectionEntry(nil), entries...)
+	sort.Slice(sorted, func(i, j int) bool {
+		return strings.ToLower(sorted[i].Name) < strings.ToLower(sorted[j].Name)
+	})
+
+	var b strings.Builder
+	b.WriteString("name\tqty\tnote\tadded_at\n")
+	for _, e := range sorted {
+		b.WriteString(fmt.Sprintf("%s\t%d\t%s\t%s\n", e.Name, e.Qty, e.Note, e.AddedAt))
+	}
+	if err := os.MkdirAll(dataDir, 0o755); err != nil {
+		return err
+	}
+	return os.WriteFile(filepath.Join(dataDir, collectionFile), []byte(b.String()), 0o644)
+}
+
+// SyncCollection substitui a coleção pela lista informada: o que não está em
+// want sai do arquivo.
+//
+// É uma substituição, não um merge — a lista recebida é o retrato atual da
+// caixa. Mas note e added_at de quem permanece são preservados: essas colunas
+// são anotação manual do usuário, e uma lista de nomes não as carrega. Quem
+// entra ganha note e a data de hoje.
+//
+// dryRun calcula o diff sem tocar no disco, porque uma substituição derivada de
+// uma lista colada só é segura depois que o usuário viu o que sairia.
+func SyncCollection(dataDir string, want []CollectionEntry, note, when string, dryRun bool) (CollectionDiff, error) {
+	var diff CollectionDiff
+
+	current, err := ReadCollection(dataDir)
+	if err != nil {
+		return diff, err
+	}
+	byKey := make(map[string]CollectionEntry, len(current))
+	order := make([]string, 0, len(current))
+	for _, e := range current {
+		k := strings.ToLower(e.Name)
+		if _, dup := byKey[k]; !dup {
+			order = append(order, k)
+		}
+		byKey[k] = e
+	}
+
+	final := make([]CollectionEntry, 0, len(want))
+	seen := make(map[string]bool, len(want))
+	for _, w := range want {
+		if strings.TrimSpace(w.Name) == "" {
+			diff.Unparsed++
+			continue
+		}
+		k := strings.ToLower(w.Name)
+		if w.Qty < 1 {
+			w.Qty = 1
+		}
+		// Nome repetido na entrada: soma, como duas linhas "1 Forest" somariam.
+		if seen[k] {
+			for i := range final {
+				if strings.EqualFold(final[i].Name, w.Name) {
+					final[i].Qty += w.Qty
+					break
+				}
+			}
+			continue
+		}
+		seen[k] = true
+
+		if old, ok := byKey[k]; ok {
+			kept := CollectionEntry{Name: old.Name, Qty: w.Qty, Note: old.Note, AddedAt: old.AddedAt}
+			if old.Qty != w.Qty {
+				diff.Changed = append(diff.Changed, CollectionChange{Name: old.Name, From: old.Qty, To: w.Qty})
+			}
+			diff.Kept++
+			final = append(final, kept)
+			continue
+		}
+		e := CollectionEntry{Name: w.Name, Qty: w.Qty, Note: note, AddedAt: when}
+		if w.Note != "" {
+			e.Note = w.Note
+		}
+		diff.Added = append(diff.Added, e)
+		final = append(final, e)
+	}
+
+	for _, k := range order {
+		if !seen[k] {
+			diff.Removed = append(diff.Removed, byKey[k])
+		}
+	}
+
+	if dryRun {
+		return diff, nil
+	}
+	if err := WriteCollection(dataDir, final); err != nil {
+		return diff, err
+	}
+	return diff, nil
+}
+
 // AddToCollection acrescenta cartas a data/collection.tsv e ao banco, mantendo
 // o arquivo ordenado por nome para o diff do git ficar estável.
 func (d *DB) AddToCollection(dataDir string, names []string, note, when string) (int, error) {
-	if _, err := d.LoadCollection(dataDir); err != nil {
-		return 0, err
-	}
-
-	type entry struct {
-		qty        int
-		note, when string
-	}
-	current := map[string]entry{}
-	rows, err := d.sql.Query(`SELECT name, qty, COALESCE(note,''), COALESCE(added_at,'') FROM collection`)
+	current, err := ReadCollection(dataDir)
 	if err != nil {
 		return 0, err
 	}
-	for rows.Next() {
-		var n, no, ad string
-		var q int
-		if err := rows.Scan(&n, &q, &no, &ad); err != nil {
-			rows.Close()
-			return 0, err
-		}
-		current[n] = entry{q, no, ad}
+	index := make(map[string]int, len(current))
+	for i, e := range current {
+		index[strings.ToLower(e.Name)] = i
 	}
-	rows.Close()
 
 	added := 0
 	for _, n := range names {
@@ -217,36 +352,18 @@ func (d *DB) AddToCollection(dataDir string, names []string, note, when string) 
 		if n == "" {
 			continue
 		}
-		if e, ok := current[n]; ok {
-			e.qty++
-			current[n] = e
+		if i, ok := index[strings.ToLower(n)]; ok {
+			current[i].Qty++
 		} else {
-			current[n] = entry{1, note, when}
+			index[strings.ToLower(n)] = len(current)
+			current = append(current, CollectionEntry{Name: n, Qty: 1, Note: note, AddedAt: when})
 		}
 		added++
 	}
 
-	keys := make([]string, 0, len(current))
-	for k := range current {
-		keys = append(keys, k)
-	}
-	sort.Slice(keys, func(i, j int) bool {
-		return strings.ToLower(keys[i]) < strings.ToLower(keys[j])
-	})
-
-	var b strings.Builder
-	b.WriteString("name\tqty\tnote\tadded_at\n")
-	for _, k := range keys {
-		e := current[k]
-		b.WriteString(fmt.Sprintf("%s\t%d\t%s\t%s\n", k, e.qty, e.note, e.when))
-	}
-	if err := os.MkdirAll(dataDir, 0o755); err != nil {
+	if err := WriteCollection(dataDir, current); err != nil {
 		return 0, err
 	}
-	if err := os.WriteFile(filepath.Join(dataDir, collectionFile), []byte(b.String()), 0o644); err != nil {
-		return 0, err
-	}
-
 	_, err = d.LoadCollection(dataDir)
 	return added, err
 }

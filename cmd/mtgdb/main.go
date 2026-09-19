@@ -93,6 +93,7 @@ func reorderArgs(args []string) []string {
 	takesValue := map[string]bool{
 		"-limit": true, "-id": true, "-type": true, "-cmc-max": true, "-cmc-min": true,
 		"-stale": true, "-source": true, "-kind": true, "-date": true, "-note": true,
+		"-file": true,
 	}
 	var flags, positional []string
 	for i := 0; i < len(args); i++ {

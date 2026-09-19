@@ -76,6 +76,8 @@ mtgdb rulings "Deepglow Skate"
 
 Sobre preço: cotação **não** tem validade previsível, então `data/prices.tsv` é uma série **append-only** de observações datadas. `mtgdb prices -stale 30` mostra a idade de cada uma, e `-volatile` mostra quais cartas de fato oscilam — as únicas que precisam ser reconferidas antes de um torneio.
 
+Para atualizar a coleção depois de reexportar a caixa, use `/update-collection` (ou `bin/mtgdb collection -sync -file <lista> -dry-run`): a lista recebida é o retrato atual, e o que não estiver nela sai de `data/collection.tsv`.
+
 O banco (`data/scryfall.db`) é derivado e **não versionado**: `make db` reconstrói em ~15 s. Já `data/collection.tsv` e `data/prices.tsv` são versionados, porque são dados do usuário e não saem de fonte pública — cada linha de preço custou uma navegação manual na LigaMagic.
 
 ## Permissões (opcional)

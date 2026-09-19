@@ -24,7 +24,7 @@ A interação protege você e impede que oponentes vençam antes — o mix preci
 ## Processo
 
 1. Conte o que já existe marcado como `remoção`/`proteção`/`counter`/`wipe` em `deck.md` e no pool temático.
-2. **Coleção primeiro**, se houver.
+2. **Sobressalentes primeiro** (regra 7): rode `bin/mtgdb collection -list` e varra a caixa em busca de candidatas **antes** de buscar no Scryfall. Marque na coluna "Na coleção?". Propor compra tendo equivalente na caixa exige dizer qual é e por que ela não serve. O motivo pode ser qualquer eixo da ficha (sinergia, custo, curva, cor, tipo) — o que não vale é veredito sem ficha (regra 4). Se o briefing pedir **modo restrito**, não proponha nenhuma compra.
 3. Busque por subcategoria conforme o guia (`otag:removal`, `otag:counterspell`, `otag:protection`, `otag:boardwipe`). Priorize:
    - Eficiência: baixo custo, instant speed quando possível;
    - **Interação sinérgica** com o tema (ex.: remoção via sacrifício em aristocrats, wipe que poupa seus tokens) — sobreposição vale dobro;

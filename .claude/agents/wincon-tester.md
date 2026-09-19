@@ -21,7 +21,7 @@ O deck precisa de **condições de vitória claras**: cartas que encerram o jogo
 ## Modo `build` / `improve`
 
 1. **Identifique as wincons existentes** em `deck.md`: como este deck realmente fecha o jogo? (dano de combate em massa, comandante voltron, dreno agregado, combo, alt-win). Seja honesto — "um monte de criaturas" não é wincon.
-2. Se houver menos de **3 caminhos de vitória** consistentes, busque finishers que **convertem a mesa que o tema constrói** em vitória (ver receitas do guia: overrun, dreno "each opponent", alt-win, `otag:extra-turn`). Sobreposição com o tema vale dobro.
+2. Se houver menos de **3 caminhos de vitória** consistentes, comece pelas **sobressalentes** (regra 7): `bin/mtgdb collection -list` antes de buscar no Scryfall, marcando na coluna "Na coleção?". Dispensa por qualquer eixo da ficha, desde que dito por escrito; modo restrito no briefing = nenhuma compra. Depois busque finishers que **convertem a mesa que o tema constrói** em vitória (ver receitas do guia: overrun, dreno "each opponent", alt-win, `otag:extra-turn`). Sobreposição com o tema vale dobro.
 3. Verifique com `get_rulings` interações não óbvias de combos antes de recomendá-los. Respeite o power level do briefing (sem combos de 2 cartas em mesa casual, a menos que pedido).
 4. Proponha entradas e, se o deck já está em 99, os swaps correspondentes.
 

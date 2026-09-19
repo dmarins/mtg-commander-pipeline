@@ -21,7 +21,7 @@ Você é um especialista em Commander (EDH) focado em **vantagem de cartas (draw
 ## Processo
 
 1. Conte o que já existe: cartas em `deck.md` (e no pool temático) já marcadas como `draw`. A meta é do deck inteiro — não duplique o que o tema já cobre.
-2. **Coleção primeiro**, se houver.
+2. **Sobressalentes primeiro** (regra 7): rode `bin/mtgdb collection -list` e varra a caixa em busca de candidatas **antes** de buscar no Scryfall. Marque na coluna "Na coleção?". Propor compra tendo equivalente na caixa exige dizer qual é e por que ela não serve. O motivo pode ser qualquer eixo da ficha (sinergia, custo, curva, cor, tipo) — o que não vale é veredito sem ficha (regra 4). Se o briefing pedir **modo restrito**, não proponha nenhuma compra.
 3. Busque candidatas priorizando, nesta ordem:
    - **Draw sinérgico**: engata nos termos do tema (`otag:draw o:<termo do tema>`) — vale dobro por sobreposição;
    - **Engines recorrentes** (permanentes que compram toda rodada) sobre efeitos únicos;

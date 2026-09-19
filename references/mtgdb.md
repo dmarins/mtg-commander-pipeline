@@ -95,6 +95,24 @@ mtgdb collection -add "Titan Forge" -note "maybeboard"
 
 Torna a regra 7 do `CLAUDE.md` ("coleção pessoal primeiro") uma consulta em vez de leitura de arquivo.
 
+A coleção são as **sobressalentes**, não o acervo inteiro: decks montados são coleções fechadas e suas cartas não aparecem aqui. Um "não está na coleção" para carta que o usuário sabe ter dentro de outro deck **não é erro do arquivo** — é a resposta certa, porque usá-la neste deck exigiria comprar outra cópia.
+
+#### `-sync` — a caixa inteira de uma vez
+
+`-add` acrescenta e nunca tira. Quando o usuário reexporta a coleção, o que mudou não é só o que entrou: cartas saíram (vendidas, emprestadas, montadas em outro deck). `-sync` trata a lista recebida como **o retrato atual** — o que não está nela sai do TSV.
+
+```bash
+mtgdb collection -sync -file lista.txt -dry-run   # mostra entram/saem/requantificadas
+mtgdb collection -sync -file lista.txt            # aplica
+mtgdb collection -sync -file -                    # lê da entrada padrão
+```
+
+A lista usa o mesmo parser das decklists — exportação MTGO (`1 Bombard (EOE) 129`), `1x Nome`, nome puro ou markdown. Cartas que permanecem **mantêm `note` e `added_at`**: são anotação manual, e uma lista de nomes não as carrega.
+
+Duas travas, porque a operação apaga linhas: `-dry-run` (sempre rode antes) e a recusa de sincronizar com lista vazia, que exige `-force`. Nomes que não resolvem são gravados como vieram, com aviso — confira a grafia antes de aplicar.
+
+O slash command `/update-collection` é o fluxo completo: lista → simulação → aprovação do usuário → aplicação.
+
 ## Resolução de nomes
 
 Nomes de carta são sempre em inglês (regra 8). A resolução tenta, em ordem: nome exato → normalizado (sem acento, sem apóstrofo, sem pontuação) → face de carta dupla → prefixo → busca textual. A coluna `how` diz por onde passou; qualquer coisa diferente de `exact` merece uma conferida.

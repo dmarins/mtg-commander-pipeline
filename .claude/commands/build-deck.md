@@ -16,7 +16,7 @@ Colete com AskUserQuestion (e texto livre quando necessário):
 1. Já tem comandante? Qual? (se `$ARGUMENTS` já indicar, confirme)
 2. Preferências: cores, tema/arquétipo, tribo, mecânicas favoritas
 3. Power level da mesa (casual / mid / alto) e orçamento total ou por carta (ou sem limite)
-4. Tem arquivo de coleção pessoal? (caminho)
+4. Uso das sobressalentes: **caixa primeiro, compras permitidas** (padrão) ou **só sobressalentes, sem comprar nada**? A coleção é consultada sempre via `bin/mtgdb collection` — não há arquivo a informar.
 5. Comandantes populares ou fora do radar?
 
 Crie `decks/<slug>/` (slug = comandante em kebab-case; se ainda não houver comandante, use o tema e renomeie depois) e escreva `00-briefing.md` com tudo (modo: `build`).

@@ -28,8 +28,9 @@ Terrenos ≈ 31,42 + (3,13 × CMC médio) − 0,28 × (nº de draws + ramps com 
 
 ## Parte 2 — Composição da manabase
 
-1. **Não-básicos**: duais/fetches dentro do orçamento (`is:dual produces:<cores>`, `is:fetchland`), terrenos utilitários que sinergizam com o tema (`t:land o:<termo>`), respeitando: em decks de 1–2 cores, maioria de básicos; evite excesso de terrenos que entram virados.
-2. **Básicos por cor**: distribua proporcionalmente aos símbolos de mana (pips) das cartas do deck por cor — conte os pips em `deck.md`.
+1. **Sobressalentes primeiro** (regra 7): rode `bin/mtgdb collection -list` e veja que terrenos a caixa já tem antes de buscar no Scryfall — é na manabase que o orçamento costuma sangrar. Marque na coluna "Na coleção?". Dispensa por qualquer motivo da ficha (fixação inútil, entra virado demais, régua de custo), desde que dito por escrito. Modo restrito no briefing = nenhuma compra.
+2. **Não-básicos**: duais/fetches dentro do orçamento (`is:dual produces:<cores>`, `is:fetchland`), terrenos utilitários que sinergizam com o tema (`t:land o:<termo>`), respeitando: em decks de 1–2 cores, maioria de básicos; evite excesso de terrenos que entram virados.
+3. **Básicos por cor**: distribua proporcionalmente aos símbolos de mana (pips) das cartas do deck por cor — conte os pips em `deck.md`.
 
 ## Parte 3 — Cortes até 99
 

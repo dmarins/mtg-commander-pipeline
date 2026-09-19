@@ -14,7 +14,7 @@ Em `improve` você está mexendo num deck que já funciona: toda carta presente 
 ## Fase 0 — Intake
 
 1. Obtenha a decklist: arquivo em `$ARGUMENTS`, texto colado, ou peça ao usuário (formato aceito: `1 Nome da Carta` por linha; identifique o comandante).
-2. Colete com AskUserQuestion: qual o objetivo da otimização (consistência, mais rápido, power level alvo)? O que está incomodando nas partidas (trava de mana, mão morta, não fecha o jogo, sem respostas)? Orçamento para novas cartas? Arquivo de coleção? Cartas intocáveis (que ele quer manter)?
+2. Colete com AskUserQuestion: qual o objetivo da otimização (consistência, mais rápido, power level alvo)? O que está incomodando nas partidas (trava de mana, mão morta, não fecha o jogo, sem respostas)? Orçamento para novas cartas? Uso das sobressalentes — **caixa primeiro com compras permitidas** (padrão) ou **só sobressalentes**? (a coleção é consultada via `bin/mtgdb collection`, não há arquivo a informar) Cartas intocáveis (que ele quer manter)?
 3. **Traduza a queixa em alvo, não em corte.** Quando o usuário diz que uma peça é lenta ou não liga, ele quer **fazê-la funcionar** — essa peça é o alvo a consertar, nunca a candidata a sair. Registre no briefing quais permanentes estão sob essa proteção.
 4. Crie `decks/<slug>/` e escreva `00-briefing.md` (modo: `improve`, decklist atual completa, respostas do intake). Se o deck já tiver rodadas anteriores, crie ou carregue `decisions.md` com o histórico de cortes e entradas.
 

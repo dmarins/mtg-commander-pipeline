@@ -6,6 +6,7 @@ Pipeline de subagentes para **construção e otimização de decks de Commander 
 
 - `/build-deck [tema ou comandante]` — constrói um deck novo do zero.
 - `/improve-deck [caminho da decklist]` — audita e otimiza um deck existente.
+- `/update-collection [lista de cartas]` — substitui a coleção pela lista informada; o que não estiver nela sai.
 
 A sessão principal atua como **orquestradora** (especialista em Commander): coleta preferências, delega cada fase a um subagente especialista, apresenta os resultados para revisão do usuário e consolida o deck.
 
@@ -30,7 +31,8 @@ Cada deck vive em `decks/<slug>/` (slug = nome do comandante em kebab-case):
 ```
 decks/<slug>/
 ├── 00-briefing.md      # modo (build/improve), comandante, identidade de cor, tema,
-│                       # palavras-chave, orçamento, power level, coleção, decklist atual
+│                       # palavras-chave, orçamento, power level, uso da coleção
+│                       # (caixa primeiro × só sobressalentes), decklist atual
 ├── 01-commander.md     # opções de comandante e escolha (se aplicável)
 ├── 02-theme.md         # análise linha a linha + pool temático
 ├── 03-draw.md          # candidatas de draw
@@ -69,7 +71,15 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. Caia para o MCP do Scryfall só quando a carta for mais nova que o último dump. Se o banco não existir, rode `make db` (~15 s).
 
-7. **Coleção pessoal primeiro — prioridade de análise, não obrigação de uso.** Toda carta que o usuário já possui é avaliada **antes** de qualquer compra: consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`). Mas possuir a carta não a torna elegível: se a peça da coleção não servir ao deck, **comprar é a decisão correta**. O que a regra exige é que a coleção seja *considerada primeiro* e que a dispensa seja *justificada por escrito* — o especialista que propõe uma compra precisa nomear a carta equivalente da coleção e dizer por que ela não cobre a função. Nunca force uma carta ruim no deck só porque ela já está na caixa, e nunca proponha compra sem ter olhado a caixa.
+7. **Coleção pessoal primeiro — prioridade de análise, não obrigação de uso.** Toda carta que o usuário já possui é avaliada **antes** de qualquer compra: consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`, atualizada por `/update-collection`). Mas possuir a carta não a torna elegível: se a peça da coleção não servir ao deck, **comprar é a decisão correta**. O que a regra exige é que a coleção seja *considerada primeiro* e que a dispensa seja *justificada por escrito* — o especialista que propõe uma compra precisa nomear a carta equivalente da coleção e dizer por que ela não cobre a função. Nunca force uma carta ruim no deck só porque ela já está na caixa, e nunca proponha compra sem ter olhado a caixa.
+
+   **Deck montado é coleção fechada.** Carta não migra de um deck para outro: se o Thorin usa um Sol Ring e o Tori também precisa de um, são duas cópias compradas. Por isso `data/collection.tsv` lista **só as sobressalentes** — cartas que saíram de um deck durante a otimização, ou que foram compradas e não entraram em nenhum. Uma carta que está dentro de outro deck **não está disponível** e não conta como "já possuo"; para usá-la aqui, compra-se outra. O que sai de um deck numa otimização vira sobressalente **se a carta existir fisicamente**; o que o usuário vende sai da coleção (`/update-collection`).
+
+   **Não está num deck e não está nas sobressalentes = não existe.** Corte de otimização não entra na coleção automaticamente: boa parte das cartas que saem de um deck nunca foi comprada — foram sugestões aprovadas no papel. Registrá-las como sobressalentes inventaria cartas físicas e faria `mtgdb collection` mentir justamente na pergunta que ele existe para responder. **Nenhum processo infere posse**; a única fonte é a lista que o usuário passa em `/update-collection`.
+
+   **Vale para construção e otimização, nas duas pontas.** Em `/build-deck` e em `/improve-deck`, as sobressalentes são varridas **antes** de qualquer busca no Scryfall — é o que faz o deck sair mais barato. A dispensa precisa ser **justificada por escrito**, nomeando a sobressalente e dizendo por que ela não cobre a função. Os motivos mais frequentes são falta de sinergia (menos de 2 pontos, regra 3) e régua de custo, mas **a lista não é fechada**: curva, cor, velocidade, tipo que não alimenta as contagens do deck — qualquer eixo da ficha F1–F7 serve, desde que dito. O que não vale é o veredito sem ficha ("carta fraca", "corpo pequeno" — regra 4). Havendo justificativa, **comprar é a decisão correta** — a caixa é o ponto de partida da busca, não o teto dela.
+
+   **Modo restrito é opt-in.** Deck montado só com sobressalentes — sem nenhuma compra — só quando o usuário **pedir explicitamente**. O intake pergunta; o `00-briefing.md` registra. Sem pedido explícito, o padrão é caixa primeiro **com compras permitidas**, e nenhum especialista deve se auto-restringir às sobressalentes.
 
 8. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
    No `report.md`, todo nome de carta é **link clicável para a ficha da LigaMagic**: `[**Nome**](https://www.ligamagic.com.br/?view=cards/card&card=<nome+percent-encoded>)`, com espaço virando `+` e o resto em percent-encoding UTF-8 (`Krenko%2C+Mob+Boss`). Única exceção: o bloco de exportação padrão MTG Online, que é texto puro. Formato completo em `references/deck-report-template.md`.
