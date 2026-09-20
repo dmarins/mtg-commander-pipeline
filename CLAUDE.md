@@ -24,6 +24,36 @@ A sessão principal atua como **orquestradora** (especialista em Commander): col
 
 Uma carta pode contar para mais de uma categoria (ex.: criatura temática que compra cartas), mas o deck final precisa bater todas as metas.
 
+## Fluxo da rodada — do comando ao fechamento
+
+```
+comando inicial  →  pipeline (cada subagente escreve o relatório da sua fase)
+                 →  CONSOLIDAÇÃO: o orquestrador funde tudo em UM report.md
+                 →  validação do usuário
+                 →  OK? fecha a rodada.  Não? devolve à fase responsável e reconsolida.
+```
+
+**O entregável da rodada é `rounds/v<N>-<data>/report.md`, e é um só.** Os arquivos de fase
+(`02-theme.md` … `07-wincons.md`) são matéria-prima do orquestrador e material de consulta
+pontual — **o usuário não deve precisar abrir nenhum deles para validar o deck**. Terminar o
+pipeline entregando N arquivos e um resumo em chat é entregar pela metade.
+
+O `report.md` precisa, obrigatoriamente:
+- **nomes de carta clicáveis** para a ficha da LigaMagic (regra 8) — é assim que o usuário
+  confere preço e texto carta a carta na hora de validar;
+- **bloco de importação em texto puro** (padrão MTG Online), para colar no Moxfield/Archidekt e
+  fazer playtest;
+- a lista final completa, o que saiu com o motivo, o custo real em reais e as **pendências**;
+- rodar `bin/linkify <report.md>` no fim — a linkagem é mecânica, não se faz à mão.
+
+**Na devolução, refaça só o pedaço.** Se o usuário reprovar uma carta ou uma categoria, o
+orquestrador reinvoca **apenas o especialista daquela fase**, com o motivo da reprovação, e
+reconsolida o mesmo `report.md`. Não se reinicia o pipeline inteiro.
+
+**Não produza painéis, dashboards, artifacts ou HTML** a menos que o usuário peça. O formato
+do processo é markdown versionado no repositório, ao lado do deck. Link publicado não entra no
+git, não sobrevive à rodada e não é onde o usuário trabalha.
+
 ## Estado persistente por deck
 
 Cada deck vive em `decks/<slug>/` (slug = nome do comandante em kebab-case):
@@ -98,9 +128,16 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
    **Modo restrito é opt-in.** Deck montado só com sobressalentes — sem nenhuma compra — só quando o usuário **pedir explicitamente**. O intake pergunta; o `00-briefing.md` registra. Sem pedido explícito, o padrão é caixa primeiro **com compras permitidas**, e nenhum especialista deve se auto-restringir às sobressalentes.
 
 8. **Nomes de cartas sempre em inglês** (nome oficial do Scryfall). Textos, análises e conversa em **português (Brasil)**.
-   No `report.md`, todo nome de carta é **link clicável para a ficha da LigaMagic**: `[**Nome**](https://www.ligamagic.com.br/?view=cards/card&card=<nome+percent-encoded>)`, com espaço virando `+` e o resto em percent-encoding UTF-8 (`Krenko%2C+Mob+Boss`). Única exceção: o bloco de exportação padrão MTG Online, que é texto puro. Formato completo em `references/deck-report-template.md`.
+   Em **todo entregável que o usuário lê** — `report.md` à frente —, todo nome de carta é
+   **link clicável para a ficha da LigaMagic**. Não faça à mão: rode **`bin/linkify <arquivo>`**,
+   que valida cada nome contra o banco local, usa o nome canônico completo na URL mesmo quando o
+   texto mostra o apelido, e preserva o bloco de exportação em texto puro. `--check` lista sem
+   escrever. O formato é: `[**Nome**](https://www.ligamagic.com.br/?view=cards/card&card=<nome+percent-encoded>)`, com espaço virando `+` e o resto em percent-encoding UTF-8 (`Krenko%2C+Mob+Boss`). Única exceção: o bloco de exportação padrão MTG Online, que é texto puro. Formato completo em `references/deck-report-template.md`.
 
-9. **O usuário decide**: cada fase termina com o usuário revisando e selecionando cartas. Nenhuma carta entra em `deck.md` sem aprovação.
+9. **O usuário decide**: nenhuma carta entra em `deck.md` sem aprovação dele. A revisão acontece
+   **uma vez, sobre o `report.md` consolidado** — não fase a fase. Parar a cada especialista para
+   pedir seleção de cartas soltas é pedir decisão sem contexto: o usuário precisa ver o deck
+   inteiro, com custo e lista importável, para conseguir julgar qualquer parte.
 
 10. O deck final tem exatamente **100 cartas** (comandante + 99), todas dentro da identidade de cor e legais no formato.
 
@@ -111,4 +148,6 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 - `references/card-evaluation-checklist.md` — **ficha de funções F1–F7, protocolo de corte e registro de decisão** (regras 4 e 5). Leitura obrigatória antes de recomendar ou cortar carta.
 - `references/mtgdb.md` — **banco local de cartas, tags e rulings** (`bin/mtgdb`). É por onde passam oracle, busca, tags, rulings, preços e coleção.
 - `references/scryfall-search-guide.md` — sintaxe, tags confirmadas, receitas de busca, controle de volume.
+- `bin/linkify` — **linkagem automática de nomes de carta para a LigaMagic** (regra 8).
+  `bin/linkify report.md` escreve; `bin/linkify --check report.md` só reporta.
 - `references/deck-report-template.md` — template do relatório final, incluindo o **formato dos links de carta para a LigaMagic** (regra 8).

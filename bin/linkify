@@ -1,0 +1,233 @@
+#!/usr/bin/env python3
+"""linkify — transforma nome de carta em link da LigaMagic (regra 8 do CLAUDE.md).
+
+Uso:
+    bin/linkify [--check] <arquivo>...
+
+    --check   não escreve; só lista o que linkaria. Sai com 1 se achar algo,
+              para poder virar gate de CI.
+
+Formatos:
+    .md    **Nome**  e  `Nome`   ->  [**Nome**](https://www.ligamagic.com.br/...)
+    .html  <b>, <i>, <td class="card">, <p class="cand-name">, <p class="name">
+
+Não toca no que já está linkado, nem em blocos de código cercados (```), que é
+onde vive a exportação padrão MTG Online — ela tem de ficar em texto puro para
+importar em MTGO/Moxfield/Archidekt.
+
+Todo nome é validado contra o banco local (`bin/mtgdb oracle`) e a URL usa o
+**nome canônico completo** do Scryfall, mesmo quando o texto mostra o apelido:
+"Neyali" no corpo, `Neyali, Suns' Vanguard` na URL.
+"""
+import os
+import re
+import subprocess
+import sys
+import urllib.parse
+
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MTGDB = os.path.join(RAIZ, "bin", "mtgdb")
+BASE = "https://www.ligamagic.com.br/?view=cards/card&card="
+
+# Rótulos de categoria e cabeçalhos do pipeline que por azar também nomeiam
+# cartas de verdade ("Ramp" e "Draw" existem no Scryfall). Sem isto, todo título
+# de seção do relatório viraria link.
+NAO_CARTA = {
+    "Tema", "Draw", "Ramp", "Remoção", "Proteção", "Counter", "Wipe", "Wipes",
+    "Wincon", "Wincons", "Terreno", "Terrenos", "Interação", "Artefatos",
+    "Criaturas", "Encantamentos", "Instantâneos", "Feitiços", "Comandante",
+    "Planeswalkers", "Sinergias", "Categorias", "Cortes", "Entradas",
+}
+
+# Apelidos de uma palavra só, que a heurística de prefixo não consegue resolver
+# sem arrastar falso positivo junto, e desambiguações de legendária homônima.
+# Acrescente conforme o `--check` reclamar.
+ALIASES = {
+    "Jor Kadeen": "Jor Kadeen, the Prevailer",
+    "Tori": "Tori D'Avenant, Fury Rider",
+    "Otharri": "Otharri, Suns' Glory",
+    "Neyali": "Neyali, Suns' Vanguard",
+    "Adeline": "Adeline, Resplendent Cathar",
+    "Kwende": "Kwende, Pride of Femeref",
+    "Adriana": "Adriana, Captain of the Guard",
+    "Iroas": "Iroas, God of Victory",
+    "Éomer": "Éomer, Marshal of Rohan",
+    "Belladonna": "Belladonna Took",
+}
+
+_cache: dict[str, str | None] = {}
+AMBIGUOS: dict[str, str] = {}
+
+
+def canonico(txt: str) -> str | None:
+    """Nome oficial do Scryfall, ou None se não for carta.
+
+    Aceita o resolvido quando ele é exato, ou quando o texto é prefixo seguido
+    de ", " ou " // " — e, para textos de 2+ palavras, prefixo seguido de espaço.
+    É o que separa "Jor Kadeen" -> "Jor Kadeen, the Prevailer" (carta) de
+    "Draw" -> "Draw Team Lines" (palavra solta que por acaso nomeia uma carta).
+    """
+    if txt in _cache:
+        return _cache[txt]
+    alvo = ALIASES.get(txt, txt)
+    try:
+        r = subprocess.run([MTGDB, "oracle", alvo], capture_output=True,
+                           text=True, cwd=RAIZ, timeout=20)
+    except (OSError, subprocess.TimeoutExpired):
+        sys.exit(f"linkify: não consegui executar {MTGDB} — rode `make build`")
+    amb = re.search(r"ambíguo:\s*(.+)", r.stdout)
+    if amb:
+        # Nunca chutar entre duas legendárias homônimas — reporta e deixa passar
+        # sem link, para o operador resolver acrescentando um ALIASES.
+        AMBIGUOS[alvo] = amb.group(1).strip()
+        _cache[txt] = None
+        return None
+    linha = r.stdout.strip().split("\n")[0] if r.stdout.strip() else ""
+    nome = re.split(r"\s{2,}", linha)[0].strip() if linha else ""
+    ok = nome and (
+        nome == alvo
+        or nome.startswith(alvo + ", ")
+        or nome.startswith(alvo + " // ")
+        or (" " in alvo and nome.startswith(alvo + " "))
+    )
+    _cache[txt] = nome if ok else None
+    return _cache[txt]
+
+
+def url(nome: str) -> str:
+    return BASE + urllib.parse.quote_plus(nome)
+
+
+def plausivel(txt: str) -> bool:
+    txt = txt.strip()
+    return bool(txt) and len(txt) >= 4 and bool(
+        re.match(r"^[A-ZÀ-Þ][A-Za-zÀ-ÿ0-9',/ .\-]*$", txt)
+    ) and "  " not in txt
+
+
+class Linkador:
+    def __init__(self) -> None:
+        self.achados: list[str] = []
+
+    def resolve(self, txt: str) -> str | None:
+        if txt.strip() in NAO_CARTA or not plausivel(txt):
+            return None
+        nome = canonico(txt.strip())
+        if nome:
+            self.achados.append(txt.strip() if txt.strip() == nome
+                                else f"{txt.strip()} -> {nome}")
+        return nome
+
+
+def fatiar_md(texto: str):
+    """Gera (trecho, editavel). Bloco cercado por ``` nunca é editável."""
+    dentro = False
+    for parte in re.split(r"(?m)(^```.*$)", texto):
+        if parte.startswith("```"):
+            dentro = not dentro
+            yield parte, False
+        else:
+            yield parte, not dentro
+
+
+def processa_md(texto: str, L: Linkador) -> str:
+    def negrito(m):
+        nome = L.resolve(m.group(1))
+        return f"[**{m.group(1)}**]({url(nome)})" if nome else m.group(0)
+
+    def crase(m):
+        nome = L.resolve(m.group(1))
+        return f"[**{m.group(1)}**]({url(nome)})" if nome else m.group(0)
+
+    saida = []
+    for trecho, editavel in fatiar_md(texto):
+        if editavel:
+            # `(?<!\]\()` e `(?<!\[)` evitam mexer no que já é link
+            trecho = re.sub(r"(?<!\[)\*\*([^*\n]+)\*\*(?!\])", negrito, trecho)
+            trecho = re.sub(r"`([^`\n]+)`", crase, trecho)
+        saida.append(trecho)
+    return "".join(saida)
+
+
+PADROES_HTML = [
+    (r"<(b|i)>([^<]+)</\1>", 2,
+     lambda m, u: f'<a class="cl" href="{u}" target="_blank" rel="noopener">'
+                  f"<{m.group(1)}>{m.group(2)}</{m.group(1)}></a>"),
+    (r'<td class="card">([^<]+)</td>', 1,
+     lambda m, u: f'<td class="card"><a class="cl" href="{u}" target="_blank" '
+                  f'rel="noopener">{m.group(1)}</a></td>'),
+    (r'<p class="(cand-name|name)">([^<]+)</p>', 2,
+     lambda m, u: f'<p class="{m.group(1)}"><a class="cl" href="{u}" '
+                  f'target="_blank" rel="noopener">{m.group(2)}</a></p>'),
+]
+
+CSS = (
+    '  a.cl { color: inherit; text-decoration: none;'
+    ' border-bottom: 1px dotted var(--line-strong); }\n'
+    '  a.cl:hover { color: var(--accent); border-bottom-color: var(--accent); }\n'
+    '  a.cl > b, a.cl > i { color: inherit; }\n'
+    '  a.cl:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }\n'
+)
+
+
+def processa_html(texto: str, L: Linkador) -> str:
+    corte = texto.find("<body")
+    if corte == -1:
+        corte = texto.find('<div class="wrap">')
+    cabeca, corpo = (texto[:corte], texto[corte:]) if corte > 0 else ("", texto)
+
+    for padrao, grupo, monta in PADROES_HTML:
+        def repl(m, grupo=grupo, monta=monta):
+            nome = L.resolve(m.group(grupo))
+            return monta(m, url(nome)) if nome else m.group(0)
+        corpo = re.sub(padrao, repl, corpo)
+
+    if L.achados and "a.cl {" not in cabeca and "</style>" in cabeca:
+        cabeca = cabeca.replace("</style>", CSS + "</style>", 1)
+    return cabeca + corpo
+
+
+def main(argv: list[str]) -> int:
+    check = "--check" in argv
+    alvos = [a for a in argv if not a.startswith("-")]
+    if not alvos:
+        print(__doc__.strip(), file=sys.stderr)
+        return 2
+
+    total = 0
+    for caminho in alvos:
+        try:
+            texto = open(caminho, encoding="utf-8").read()
+        except OSError as e:
+            print(f"linkify: {e}", file=sys.stderr)
+            return 1
+        L = Linkador()
+        ext = os.path.splitext(caminho)[1].lower()
+        if ext in (".md", ".markdown"):
+            novo = processa_md(texto, L)
+        elif ext in (".html", ".htm"):
+            novo = processa_html(texto, L)
+        else:
+            print(f"linkify: {caminho}: extensão não suportada (.md ou .html)",
+                  file=sys.stderr)
+            return 1
+
+        distintas = sorted(set(L.achados))
+        total += len(L.achados)
+        verbo = "linkaria" if check else "linkadas"
+        print(f"{caminho}: {len(L.achados)} ocorrências, "
+              f"{len(distintas)} cartas distintas ({verbo})")
+        for d in distintas:
+            print(f"    {d}")
+        if AMBIGUOS:
+            print("  AMBÍGUOS (não linkados — acrescente em ALIASES):")
+            for k, v in sorted(AMBIGUOS.items()):
+                print(f"    {k}: {v}")
+        if not check and novo != texto:
+            open(caminho, "w", encoding="utf-8").write(novo)
+
+    return 1 if ((check and total) or AMBIGUOS) else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
