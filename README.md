@@ -2,6 +2,8 @@
 
 Pipeline de subagentes do Claude Code para **construir e otimizar decks de Commander (EDH)**, seguindo o processo de 7 passos: comandante → cartas temáticas → draw → ramp → interação → terrenos e cortes → condições de vitória e goldfishing. As buscas de cartas usam o [MCP do Scryfall](https://mcpmarket.com/server/scryfall) rodando localmente via Docker.
 
+**Divisão de fontes**: Scryfall (e o banco local derivado dele) responde *o que a carta é*; **preço vem só da LigaMagic**, capturado no navegador. Nenhum valor em USD do Scryfall entra em análise, filtro de busca ou total.
+
 ## Pré-requisitos
 
 - Docker com a imagem do MCP: `docker pull mcp/scryfall`

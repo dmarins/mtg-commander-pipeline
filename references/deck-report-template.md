@@ -98,6 +98,19 @@ Para cada carta: `[**Nome**](link-ligamagic) — CMC, Atributos, Habilidades res
 - **Encantamentos**: [...]
 - **Terrenos**: [...]
 
+## Custo — LigaMagic (menor), cotações de [data]
+
+**Única fonte de preço é a LigaMagic** (regra 2 do `CLAUDE.md`). Não converta USD do Scryfall, nem
+apresente valor estimado: carta sem cotação vai como `a cotar` e entra em Pendências.
+
+| Carta | R$ (menor) | Cotada em | Situação |
+|---|---|---|---|
+| [**Nome**](link-ligamagic) | 12,90 | 2026-09-18 | a comprar / na coleção / a cotar |
+
+- **Total a comprar**: R$ [valor] — LigaMagic (menor), cotações de [data mais antiga do lote]
+- **Cartas sem cotação**: [quantidade] (listadas em Pendências)
+- Cotações novas registradas com `mtgdb prices -add "<carta>" <valor>`.
+
 ## Lista de Cartas para Exportação (padrão MTG Online)
 
 **Sem links aqui** — este bloco é consumido por importadores e precisa ser texto puro.

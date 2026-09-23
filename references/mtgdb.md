@@ -2,7 +2,9 @@
 
 Binário Go que mantém um SQLite construído a partir do **bulk data do Scryfall** e responde as consultas do pipeline sem rede.
 
-**Use `mtgdb` antes de qualquer consulta ao MCP do Scryfall.** O MCP continua útil para o que o bulk não cobre (cartas lançadas depois do último dump, preços em USD), mas ficha de carta, busca por texto, tags e rulings saem daqui — instantâneos e sem gastar uma requisição por carta.
+**Use `mtgdb` antes de qualquer consulta ao MCP do Scryfall.** O MCP continua útil para o que o bulk não cobre (cartas lançadas depois do último dump, ou uma query que precise da sintaxe completa), mas ficha de carta, busca por texto, tags e rulings saem daqui — instantâneos e sem gastar uma requisição por carta.
+
+**Preço é exceção e não vem do Scryfall em hipótese nenhuma** — nem do bulk, nem do MCP. A única fonte é a LigaMagic, capturada no navegador e guardada em `data/prices.tsv` (regra 2 do `CLAUDE.md`).
 
 ## Primeiro uso
 
@@ -71,7 +73,7 @@ Nem toda carta tem ruling. Quando não tiver, o comando diz isso explicitamente 
 
 ### `prices` — cotações datadas
 
-Preço **não** tem validade previsível, então o banco guarda uma **série append-only**: cada linha é uma observação com data, nunca um valor que se sobrescreve.
+Preço **não** tem validade previsível, então o banco guarda uma **série append-only**: cada linha é uma observação com data, nunca um valor que se sobrescreve. Toda observação é do **menor valor da LigaMagic**: o bulk do Scryfall traz campos de preço em USD e o `mtgdb` **não os importa** — de propósito.
 
 ```bash
 mtgdb prices "Loran's Escape" "Cyberdrive Awakener"

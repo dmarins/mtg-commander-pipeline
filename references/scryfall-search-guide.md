@@ -2,6 +2,8 @@
 
 Todos os subagentes usam este guia como fonte única de verdade para consultar cartas. Ele substitui o "agente de busca centralizado": a lógica de consulta mora aqui.
 
+⚠️ **Scryfall é repositório de cartas, não de preço.** Daqui saem oracle, tipo, CMC, cores, tags e rulings — nunca valor. Preço vem do **menor valor da LigaMagic** (regra 2 do `CLAUDE.md`), e nem o filtro `usd<` entra nas queries. Ver "Preço não se busca aqui" abaixo.
+
 ## Antes de tudo: o banco local
 
 **Consulte `bin/mtgdb` primeiro** — ver `references/mtgdb.md`. Ele tem o bulk data do Scryfall em SQLite (cartas, tags do Tagger, rulings), responde sem rede e não gasta uma requisição por carta:
@@ -14,7 +16,7 @@ Todos os subagentes usam este guia como fonte única de verdade para consultar c
 | `search_cards` com `otag:<tag>` | `mtgdb tag <slug> -id <cores>` |
 | `get_rulings` | `mtgdb rulings "<nome>"` |
 
-Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump**, preço em USD, ou uma consulta que precise da sintaxe completa do Scryfall. Se o banco não existir, `make db` (~15 s).
+Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump**, ou uma consulta que precise da sintaxe completa do Scryfall. Se o banco não existir, `make db` (~15 s).
 
 ## Ferramentas MCP disponíveis
 
@@ -24,7 +26,6 @@ Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump*
 | `mcp__scryfall__get_card_by_name` | Dados completos de uma carta pelo nome exato em inglês |
 | `mcp__scryfall__get_card_by_id` | Dados por Scryfall ID |
 | `mcp__scryfall__get_rulings` | Rulings oficiais (por Scryfall/Oracle ID) |
-| `mcp__scryfall__get_prices_by_name` / `get_prices_by_id` | Preços (usd, eur, tix) |
 | `mcp__scryfall__random_card` | Carta aleatória (inspiração) |
 
 ## ⚠️ Controle de volume (crítico)
@@ -69,7 +70,6 @@ curl -s --get "https://api.scryfall.com/cards/search" \
 | `pow` / `tou` | Poder / resistência | `pow>=4` |
 | `is:commander` | Pode ser comandante | `is:commander id<=ur` |
 | `otag:` | Tag funcional (Scryfall Tagger) | `otag:ramp` |
-| `usd<` | Preço em dólar — **filtro de busca apenas, não é régua de orçamento** (ver abaixo) | `usd<5` |
 | `produces:` | Produz mana de | `produces:rg t:land` |
 | `is:dual`, `is:fetchland`, `is:bounceland` | Classes de terrenos | |
 | `order:edhrec` | Ordena por popularidade EDHREC | |
@@ -85,18 +85,24 @@ Funcionam: `otag:ramp`, `otag:mana-rock`, `otag:card-advantage`, `otag:draw`, `o
 
 ## Receitas por categoria
 
-Em todas, prefixe com `id<=<identidade> legal:commander order:edhrec` (+ `usd<X` se houver orçamento).
+Em todas, prefixe com `id<=<identidade> legal:commander order:edhrec`. **Nunca acrescente `usd<X`** — preço não entra em query (ver abaixo).
 
-## ⚠️ Preço: `usd<` peneira, LigaMagic decide
+## ⚠️ Preço não se busca aqui
 
-O `usd<X` da Scryfall serve **só para reduzir o volume de candidatas na busca**. Ele **não** determina se uma carta ou um deck cabem no orçamento — a régua é o **menor valor da LigaMagic** (regra 2 do `CLAUDE.md`).
+**O Scryfall não é fonte de preço neste projeto — em nenhum papel.** Não use `get_prices_by_name` / `get_prices_by_id`,
+não use `usd<` / `eur<` / `tix<` em query, e ignore campos de preço que venham junto de outro retorno. Nem como
+estimativa, nem como "ordem de grandeza", nem para peneirar candidatas antes de cotar.
 
-- Consulta: `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>`
+A única cotação válida é o **menor valor da LigaMagic** (regra 2 do `CLAUDE.md`):
+
+- Consulte primeiro o que já foi capturado: `mtgdb prices <nomes...>`.
+- O que faltar: `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>`
 - Use o **primeiro** dos três números de "Preço Médio de Venda no Marketplace" (menor / médio / maior). Confira também a linha Foil — às vezes o foil é mais barato que o normal.
 - A página monta o preço por JS: **WebFetch não pega** (retorna só o gif de loading). Use as ferramentas de browser (`claude-in-chrome`): navegar, esperar ~2,5s, ler o texto da página.
+- Registre o resultado com `mtgdb prices -add "<carta>" <valor>`.
 - Se o usuário mantiver o deck cadastrado na LigaMagic (`?view=dks/deck&id=<id>`), a página do deck já traz o preço carta a carta e o total — muito mais rápido que consultar uma a uma.
 
-**Por que isso importa** (medições reais de 2026-08-12, conversão de proxy US$ × 5,5):
+**Por que o proxy saiu de vez** (medições reais de 2026-08-12, conversão de proxy US$ × 5,5):
 
 | Carta | Proxy Scryfall | LigaMagic (menor) | Erro |
 |---|---|---|---|
@@ -106,7 +112,12 @@ O `usd<X` da Scryfall serve **só para reduzir o volume de candidatas na busca**
 | Chief of the Foundry | ~R$ 1,16 | R$ 0,08 | 14× para menos |
 | Reckoner Bankbuster | ~R$ 3,63 | R$ 1,90 | 1,9× para menos |
 
-Os erros vão para os dois lados — **não existe fator de correção**. Ao apresentar qualquer total, rotule a origem: `estimativa (Scryfall)` ou `LigaMagic (menor)`.
+Os erros vão para os dois lados e **não existe fator de correção**. As duas últimas linhas são o motivo de o filtro
+sair também da *busca*: `usd<X` descarta silenciosamente carta que na LigaMagic custa centavos. Sem o filtro,
+a triagem por custo acontece **depois** da busca — sobre cotação real, e não sobre proxy.
+
+Ao apresentar qualquer total, rotule origem e idade: `LigaMagic (menor), cotações de <data>`. Carta sem cotação
+aparece como `a cotar` — nunca com número estimado.
 
 **Comandantes** (commander-scout):
 - Por tema: `is:commander id<=br o:sacrifice`
