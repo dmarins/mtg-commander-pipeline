@@ -1,12 +1,12 @@
 # MTG Commander Pipeline
 
-Pipeline de subagentes do Claude Code para **construir e otimizar decks de Commander (EDH)**, seguindo o processo de 7 passos: comandante → cartas temáticas → draw → ramp → interação → terrenos e cortes → condições de vitória e goldfishing. As buscas de cartas usam o [MCP do Scryfall](https://mcpmarket.com/server/scryfall) rodando localmente via Docker.
+Pipeline de subagentes do Claude Code para **construir e otimizar decks de Commander (EDH)**, seguindo o processo de 7 passos: comandante → cartas temáticas → draw → ramp → interação → terrenos e cortes → condições de vitória e goldfishing. As buscas de cartas usam o MCP [`mtg-mcp`](https://github.com/nathanmartins/mtg-mcp) (Scryfall + EDHREC + Moxfield/Archidekt + Comprehensive Rules), rodando localmente via stdio.
 
 **Divisão de fontes**: Scryfall (e o banco local derivado dele) responde *o que a carta é*; **preço vem só da LigaMagic**, capturado no navegador. Nenhum valor em USD do Scryfall entra em análise, filtro de busca ou total.
 
 ## Pré-requisitos
 
-- Docker com a imagem do MCP: `docker pull mcp/scryfall`
+- Binário do MCP no `PATH` como `mtg-mcp` — baixe o release em <https://github.com/nathanmartins/mtg-mcp/releases> (ex.: `gh release download -R nathanmartins/mtg-mcp -p 'mtg-mcp_Linux_x86_64.tar.gz'`) e instale em `~/.local/bin`
 - Claude Code
 
 ## Uso
@@ -16,7 +16,7 @@ cd ~/mtg-commander-pipeline
 claude
 ```
 
-Na primeira execução, aprove o servidor MCP `scryfall` do projeto. Depois:
+Na primeira execução, aprove o servidor MCP `mtg` do projeto. Depois:
 
 - `/build-deck Krenko, Mob Boss` — constrói um deck novo (aceita comandante ou só um tema, ex.: `/build-deck goblins agressivo`)
 - `/improve-deck meu-deck.txt` — audita e otimiza uma decklist existente (formato `1 Nome da Carta` por linha)
@@ -90,7 +90,8 @@ Para não receber prompts de permissão do MCP, crie `.claude/settings.local.jso
 {
   "enableAllProjectMcpServers": true,
   "permissions": {
-    "allow": ["mcp__scryfall"]
+    "allow": ["mcp__mtg"],
+    "deny": ["mcp__mtg__get_card_price"]
   }
 }
 ```

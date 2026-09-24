@@ -10,27 +10,33 @@ Todos os subagentes usam este guia como fonte única de verdade para consultar c
 
 | Em vez de | Use |
 |---|---|
-| `get_card_by_name` por carta | `mtgdb oracle "<nome>" "<nome>" ...` |
+| `get_card_details` por carta | `mtgdb oracle "<nome>" "<nome>" ...` |
 | ler a decklist carta a carta | `mtgdb deck <slug>` |
 | `search_cards` com `o:<termo>` | `mtgdb search "<termo>" -id <cores>` |
 | `search_cards` com `otag:<tag>` | `mtgdb tag <slug> -id <cores>` |
-| `get_rulings` | `mtgdb rulings "<nome>"` |
+| `get_card_rulings` | `mtgdb rulings "<nome>"` |
 
 Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump**, ou uma consulta que precise da sintaxe completa do Scryfall. Se o banco não existir, `make db` (~15 s).
 
 ## Ferramentas MCP disponíveis
 
+Servidor `mtg` ([nathanmartins/mtg-mcp](https://github.com/nathanmartins/mtg-mcp), binário `mtg-mcp`).
+
 | Ferramenta | Uso |
 |---|---|
-| `mcp__scryfall__search_cards` | Busca full-text com sintaxe Scryfall (`query`) |
-| `mcp__scryfall__get_card_by_name` | Dados completos de uma carta pelo nome exato em inglês |
-| `mcp__scryfall__get_card_by_id` | Dados por Scryfall ID |
-| `mcp__scryfall__get_rulings` | Rulings oficiais (por Scryfall/Oracle ID) |
-| `mcp__scryfall__random_card` | Carta aleatória (inspiração) |
+| `mcp__mtg__search_cards` | Busca com sintaxe Scryfall (`query`); até 50 resultados em texto compacto |
+| `mcp__mtg__get_card_details` | Dados completos de uma carta pelo nome exato em inglês |
+| `mcp__mtg__get_card_rulings` | Rulings oficiais |
+| `mcp__mtg__check_commander_legality` | Legalidade da carta em Commander |
+| `mcp__mtg__validate_deck` | Checagem de 100 cartas, singleton e identidade de cor |
+| `mcp__mtg__get_edhrec_recommendations` / `get_edhrec_combos` | Meta do EDHREC (sinergia, inclusão, combos) — insumo de pesquisa, não veredito |
+| `mcp__mtg__search_moxfield_decks` / `search_archidekt_decks` | Listas públicas por comandante, para referência |
+| `mcp__mtg__get_rule` / `search_rules` | Comprehensive Rules |
+| ~~`mcp__mtg__get_card_price`~~ | **Fora de uso e bloqueada** — USD do Scryfall convertido por câmbio; viola a regra 2 |
 
 ## ⚠️ Controle de volume (crítico)
 
-`search_cards` retorna **a primeira página inteira do Scryfall (até 175 cartas em JSON completo, ~1 MB)**. Resultados grandes estouram o contexto e são salvos em arquivo pelo harness.
+`search_cards` retorna **até 50 cartas** em texto (nome, custo, tipo, oracle, set, legalidade). Mais leve que o JSON completo, mas 50 oracles ainda pesam no contexto — mantenha as queries estreitas.
 
 Regras:
 
@@ -89,7 +95,7 @@ Em todas, prefixe com `id<=<identidade> legal:commander order:edhrec`. **Nunca a
 
 ## ⚠️ Preço não se busca aqui
 
-**O Scryfall não é fonte de preço neste projeto — em nenhum papel.** Não use `get_prices_by_name` / `get_prices_by_id`,
+**O Scryfall não é fonte de preço neste projeto — em nenhum papel.** Não use `get_card_price` (bloqueada),
 não use `usd<` / `eur<` / `tix<` em query, e ignore campos de preço que venham junto de outro retorno. Nem como
 estimativa, nem como "ordem de grandeza", nem para peneirar candidatas antes de cotar.
 
@@ -154,6 +160,6 @@ aparece como `a cotar` — nunca com número estimado.
 
 ## Boas práticas
 
-- Confirme detalhes de carta individual com `get_card_by_name` (barato) em vez de nova busca.
+- Confirme detalhes de carta individual com `get_card_details` (barato) em vez de nova busca.
 - Anote sempre: nome exato, custo de mana, CMC, tipo e por que sinergiza (2+ pontos).
 - Rate limit: o Scryfall pede ~100 ms entre chamadas; não dispare buscas em rajada.

@@ -15,3 +15,6 @@ data/scryfall.db-shm
 #   data/collection.tsv — o que o usuário possui
 #   data/prices.tsv     — série de cotações, cada linha custou uma navegação manual
 # Nenhum dos dois é reconstruível a partir de fonte pública.
+
+# log gravado pelo servidor MCP mtg-mcp no diretório corrente
+mtg-commander-server.log

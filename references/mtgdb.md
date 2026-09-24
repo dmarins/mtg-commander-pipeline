@@ -2,7 +2,7 @@
 
 Binário Go que mantém um SQLite construído a partir do **bulk data do Scryfall** e responde as consultas do pipeline sem rede.
 
-**Use `mtgdb` antes de qualquer consulta ao MCP do Scryfall.** O MCP continua útil para o que o bulk não cobre (cartas lançadas depois do último dump, ou uma query que precise da sintaxe completa), mas ficha de carta, busca por texto, tags e rulings saem daqui — instantâneos e sem gastar uma requisição por carta.
+**Use `mtgdb` antes de qualquer consulta ao MCP `mtg`.** O MCP continua útil para o que o bulk não cobre (cartas lançadas depois do último dump, ou uma query que precise da sintaxe completa), mas ficha de carta, busca por texto, tags e rulings saem daqui — instantâneos e sem gastar uma requisição por carta.
 
 **Preço é exceção e não vem do Scryfall em hipótese nenhuma** — nem do bulk, nem do MCP. A única fonte é a LigaMagic, capturada no navegador e guardada em `data/prices.tsv` (regra 2 do `CLAUDE.md`).
 
@@ -133,6 +133,6 @@ Perder o banco não custa nada (`make db` reconstrói). Perder os TSV custa trab
 
 ## Manutenção
 
-O Scryfall atualiza os dumps diariamente. Cartas de sets muito recentes podem faltar até o próximo `make refresh` — nesse caso, e só nesse, caia para o MCP do Scryfall.
+O Scryfall atualiza os dumps diariamente. Cartas de sets muito recentes podem faltar até o próximo `make refresh` — nesse caso, e só nesse, caia para o MCP `mtg`.
 
 `SchemaVersion` em `internal/store/store.go` deve ser incrementada sempre que o schema **ou a função `Normalize`** mudar: os nomes normalizados ficam materializados no build, e uma mudança silenciosa faria cartas sumirem das buscas sem erro aparente.
