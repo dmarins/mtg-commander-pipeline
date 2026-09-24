@@ -22,17 +22,100 @@ Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump*
 
 Servidor `mtg` ([nathanmartins/mtg-mcp](https://github.com/nathanmartins/mtg-mcp), binário `mtg-mcp`).
 
-| Ferramenta | Uso |
-|---|---|
-| `mcp__mtg__search_cards` | Busca com sintaxe Scryfall (`query`); até 50 resultados em texto compacto |
-| `mcp__mtg__get_card_details` | Dados completos de uma carta pelo nome exato em inglês |
-| `mcp__mtg__get_card_rulings` | Rulings oficiais |
-| `mcp__mtg__check_commander_legality` | Legalidade da carta em Commander |
-| `mcp__mtg__validate_deck` | Checagem de 100 cartas, singleton e identidade de cor |
-| `mcp__mtg__get_edhrec_recommendations` / `get_edhrec_combos` | Meta do EDHREC (sinergia, inclusão, combos) — insumo de pesquisa, não veredito |
-| `mcp__mtg__search_moxfield_decks` / `search_archidekt_decks` | Listas públicas por comandante, para referência |
-| `mcp__mtg__get_rule` / `search_rules` | Comprehensive Rules |
-| ~~`mcp__mtg__get_card_price`~~ | **Fora de uso e bloqueada** — USD do Scryfall convertido por câmbio; viola a regra 2 |
+Estado conferido em 2026-09-23 contra o `mtg-mcp` v2.2.1. Ferramenta marcada como quebrada **não se chama** —
+é requisição perdida e resposta que parece dado. Ao atualizar o binário, reteste e atualize esta tabela.
+
+| Ferramenta | Uso | Estado |
+|---|---|---|
+| `mcp__mtg__search_cards` | Busca com sintaxe Scryfall (`query`); até 50 resultados em texto compacto | ok |
+| `mcp__mtg__get_card_details` | Dados completos de uma carta pelo nome exato em inglês | ok |
+| `mcp__mtg__get_card_rulings` | Rulings oficiais | ok |
+| `mcp__mtg__check_commander_legality` | Legalidade de **uma** carta em Commander | ok |
+| `mcp__mtg__get_banned_list` | Lista de banidas do Commander, ao vivo | ok |
+| `mcp__mtg__validate_deck` | Contagem de 100 cartas e singleton | **parcial** — apesar da descrição, **não** confere identidade de cor nem banimento (testado: `Counterspell` e `Mana Crypt` num deck mono-R passaram) |
+| `mcp__mtg__get_edhrec_recommendations` | Cartas do EDHREC para um comandante, por seção | ok, **inclusão quebrada** (ver abaixo) |
+| `mcp__mtg__search_archidekt_decks` | Listas públicas por comandante, ordenadas por visualizações | ok, com ressalvas (ver abaixo) |
+| `mcp__mtg__get_archidekt_deck` | Lista completa de um deck do Archidekt (URL ou ID); `lands_only: true` traz só os terrenos | ok |
+| `mcp__mtg__get_archidekt_user_decks` | Decks públicos de um usuário do Archidekt | não testada |
+| `mcp__mtg__get_rule` / `search_rules` | Comprehensive Rules, por número ou palavra-chave | ok |
+| `mcp__mtg__get_glossary_term` | Glossário das regras | não testada |
+| ~~`mcp__mtg__get_edhrec_combos`~~ | Combos por identidade | **quebrada** — HTTP 403 |
+| ~~`mcp__mtg__search_moxfield_decks`~~ / ~~`get_moxfield_deck`~~ / ~~`get_moxfield_user_decks`~~ | Moxfield | **quebradas** — HTTP 404 em todas |
+| ~~`mcp__mtg__get_card_price`~~ | USD do Scryfall convertido por câmbio | **fora de uso e bloqueada** — viola a regra 2 |
+| `mcp__mtg__get_card_image` | Imagem da carta | sem uso no pipeline |
+
+## Fontes de meta: EDHREC e Archidekt
+
+EDHREC e listas públicas mostram o que **outros jogadores** põem no deck — popularidade e correlação
+estatística, não análise do plano deste deck. Servem para **descobrir** candidatas que a busca por termo não
+achou e para **calibrar** números (terrenos, contagens) contra decks reais do mesmo bracket. Nunca para decidir.
+
+**Regras comuns a toda fonte de meta:**
+
+- **Mesmo filtro de qualquer candidata.** Carta vinda daqui entra só com oracle puxado na hora
+  (`bin/mtgdb oracle`), ficha F1–F7 e **2+ pontos de sinergia** justificados por você (regra 3). "Sinergia alta
+  no EDHREC", "X decks usam" ou "está na lista mais vista do Archidekt" **não é** ponto de sinergia — é o
+  motivo de você ter olhado a carta.
+- **O plano do briefing manda.** A meta reflete o arquétipo médio do comandante; se o briefing declara outro
+  eixo, a carta popular que serve ao eixo errado fica de fora, com o motivo por escrito.
+- **Preço não vem daqui.** Campo de preço em retorno de EDHREC ou Archidekt (inclusive "$100 budget" no nome
+  do deck) é ignorado (regra 2). Cotação só por `mtgdb prices`; o que faltar vai como `a cotar`.
+- **Regra 11 vale.** Combo ou peça de lock/stax/MLD que apareça na meta só entra se o briefing pedir.
+- **Rastreie a origem.** Na tabela de candidatas, cite na coluna de sinergias quando a carta veio de fonte de
+  meta (`origem: EDHREC alta sinergia`, `origem: Archidekt #3047743`). O orquestrador precisa saber o que
+  veio de estatística e o que veio de busca por termo.
+
+### EDHREC — `get_edhrec_recommendations`
+
+- **Uma chamada por comandante, por rodada, e quem faz é o `theme-analyst`.** Ele grava o retorno na seção
+  `Radar do EDHREC` do `02-theme.md`; os especialistas seguintes **leem de lá**. Só chame de novo se a seção
+  não existir (rodada antiga) ou se faltar uma seção do retorno que a sua fase precisa. O EDHREC pede
+  ~1 requisição/segundo.
+- Use `limit` 15–20: com o padrão (10) cada seção corta em 5 e esconde o resto (`...and 45 more cards`).
+- **Seções do retorno e quem as lê:**
+
+  | Seção | Fase |
+  |---|---|
+  | `High Synergy Cards`, `New Cards`, `Top Cards`, `Creatures`, `Enchantments` | tema (02) |
+  | `Instants`, `Sorceries`, `Utility Artifacts` | draw (03) e interação (05) — as seções são por **tipo**, não por função: classifique pela oracle |
+  | `Mana Artifacts` | ramp (04) |
+  | `Lands`, `Utility Lands` | manabase (06) |
+  | `Game Changers` | orquestrador e wincons (07) — cota do bracket |
+
+- **Leia a nota de sinergia, não a inclusão.** Na v2.2.1 a inclusão volta quebrada (`Total Decks: 0`,
+  `0 decks (NaN%)`); a nota `Synergy` vem correta. Não cite nem conclua nada a partir de inclusão — trate
+  como ausente. Sinergia negativa (`Sol Ring`, `Arcane Signet`) quer dizer "genérica, não específica deste
+  comandante", não "ruim".
+- **Game Changers contam para o bracket.** Marque-as (`game changer`) para o orquestrador controlar a cota
+  declarada no briefing.
+
+### Archidekt — `search_archidekt_decks` + `get_archidekt_deck`
+
+- **Filtre por `bracket`** igual ao power level do briefing. Comparar com lista de bracket 4 empurra o deck
+  para cima sem ninguém ter pedido.
+- **`limit` é ignorado:** a busca sempre devolve ~60 decks (lista curta, mas ocupa contexto). Faça uma busca
+  por comandante e escolha **2–3 listas** para abrir.
+- **A busca é aproximada:** para comandantes com nome parecido ou partes com vários comandantes, aparecem decks
+  de outro comandante (buscando Otharri veio `Esika`, `Niv`, `Kellan`). Confirme o comandante no cabeçalho do
+  `get_archidekt_deck` antes de usar a lista.
+- **`lands_only: true`** traz só os terrenos — é a chamada da manabase. Atenção à contagem: o cabeçalho
+  (`Lands (7)`) conta **linhas**, não cartas; `29x Mountain` é uma linha. Some as quantidades.
+- Lista pública é **referência de calibragem**, não molde: a meta de 38 terrenos, a fórmula e as metas de
+  categoria do pipeline continuam valendo; a comparação só entra no relatório como contexto.
+
+### Moxfield
+
+Quebrado na v2.2.1 (404 em busca, deck e usuário). Se o usuário passar um link do Moxfield, peça a exportação
+em texto (`Export → Copy for MTGO`) — não tente o MCP nem WebFetch.
+
+### Validação do deck
+
+`validate_deck` cobre **só** contagem e singleton. A checagem completa da revisão final é:
+
+1. `validate_deck` — 100 cartas, sem duplicatas além de básicos;
+2. `get_banned_list` — cruze com a lista do deck;
+3. identidade de cor — `bin/mtgdb oracle <nomes...>` (linha `identidade`) contra a do comandante; o
+   `mtgdb deck` não mostra identidade.
 
 ## ⚠️ Controle de volume (crítico)
 
@@ -162,4 +245,4 @@ aparece como `a cotar` — nunca com número estimado.
 
 - Confirme detalhes de carta individual com `get_card_details` (barato) em vez de nova busca.
 - Anote sempre: nome exato, custo de mana, CMC, tipo e por que sinergiza (2+ pontos).
-- Rate limit: o Scryfall pede ~100 ms entre chamadas; não dispare buscas em rajada.
+- Rate limit: o Scryfall pede ~100 ms entre chamadas e o EDHREC ~1 s; não dispare buscas em rajada.

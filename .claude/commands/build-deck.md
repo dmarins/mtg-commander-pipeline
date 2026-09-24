@@ -42,7 +42,8 @@ Para cada fase: invoque o agente via Agent tool passando no prompt **o diretóri
 Antes do relatório, valide e reporte ao usuário:
 
 - [ ] 100 cartas exatas (99 + comandante), sem duplicatas (exceto básicos)
-- [ ] Todas dentro da identidade de cor e legais no formato
+- [ ] Todas dentro da identidade de cor e legais no formato — `validate_deck` (contagem e singleton) **+** `get_banned_list` cruzada com a lista **+** identidade por `mtgdb oracle`; o `validate_deck` sozinho não confere identidade nem banimento (ver "Validação do deck" no guia de busca)
+- [ ] Cartas marcadas `game changer` no radar do EDHREC dentro da cota do bracket do briefing
 - [ ] Metas batidas: draw 12–13 · ramp 10–11 (+2–3 explosivos) · interação ~10 · wipes 2–4 · terrenos ≈ fórmula
 - [ ] Curva de mana coerente com a estratégia (CMC médio calculado)
 - [ ] 3+ caminhos de vitória; sinergias consistentes com o tema declarado

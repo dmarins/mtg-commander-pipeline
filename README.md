@@ -19,7 +19,7 @@ claude
 Na primeira execução, aprove o servidor MCP `mtg` do projeto. Depois:
 
 - `/build-deck Krenko, Mob Boss` — constrói um deck novo (aceita comandante ou só um tema, ex.: `/build-deck goblins agressivo`)
-- `/improve-deck meu-deck.txt` — audita e otimiza uma decklist existente (formato `1 Nome da Carta` por linha)
+- `/improve-deck meu-deck.txt` — audita e otimiza uma decklist existente (formato `1 Nome da Carta` por linha, ou link de um deck público do Archidekt)
 
 O orquestrador conduz você por checkpoints em cada fase — nenhuma carta entra no deck sem sua aprovação. Todo o estado fica em `decks/<nome-do-comandante>/`, incluindo o relatório final (`report.md`) com a lista de exportação padrão MTG Online. Se a sessão cair, rode o comando de novo: ele retoma da última fase concluída.
 

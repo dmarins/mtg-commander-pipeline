@@ -13,7 +13,7 @@ Em `improve` você está mexendo num deck que já funciona: toda carta presente 
 
 ## Fase 0 — Intake
 
-1. Obtenha a decklist: arquivo em `$ARGUMENTS`, texto colado, ou peça ao usuário (formato aceito: `1 Nome da Carta` por linha; identifique o comandante).
+1. Obtenha a decklist: arquivo em `$ARGUMENTS`, texto colado, **link do Archidekt** (`get_archidekt_deck` — o comandante vem no cabeçalho `Commanders`) ou peça ao usuário (formato aceito: `1 Nome da Carta` por linha; identifique o comandante). **Link do Moxfield não funciona** pelo MCP (HTTP 404 na v2.2.1): peça a exportação em texto (`Export → Copy for MTGO`). Lista importada de site é só a lista — status físico e orçamento continuam sendo perguntados (item 4).
 2. Colete com AskUserQuestion: qual o objetivo da otimização (consistência, mais rápido, power level alvo)? O que está incomodando nas partidas (trava de mana, mão morta, não fecha o jogo, sem respostas)? Orçamento para novas cartas? Uso das sobressalentes — **caixa primeiro com compras permitidas** (padrão) ou **só sobressalentes**? (a coleção é consultada via `bin/mtgdb collection`, não há arquivo a informar) Cartas intocáveis (que ele quer manter)?
 3. **Traduza a queixa em alvo, não em corte.** Quando o usuário diz que uma peça é lenta ou não liga, ele quer **fazê-la funcionar** — essa peça é o alvo a consertar, nunca a candidata a sair. Registre no briefing quais permanentes estão sob essa proteção.
 4. **Pergunte o status físico** — o deck já está montado na caixa ou ainda é lista no papel? E qual arquivo é a lista real (`report.md`, `lista.txt`, a lista colada)? Nunca deduza de `lista.txt` ou `deck.md`: eles registram o deck aprovado, não o comprado. Se `00-briefing.md` já existir com o campo `Status físico`, confirme em vez de perguntar do zero.
@@ -59,7 +59,7 @@ Recontagem obrigatória a cada troca aplicada, porque um swap raramente é neutr
 
 ## Fase 3 — Revisão final
 
-Mesma checklist do `/build-deck`: 100 cartas, identidade de cor, metas por categoria, curva, wincons, orçamento. Apresente o **resumo de mudanças** (todas as trocas: sai → entra, com motivo) e o deck final. Itere se o usuário pedir.
+Mesma checklist do `/build-deck`: 100 cartas, identidade de cor e banimento (`validate_deck` + `get_banned_list` + `mtgdb oracle` — o `validate_deck` sozinho não basta), cota de game changers do bracket, metas por categoria, curva, wincons, orçamento. Apresente o **resumo de mudanças** (todas as trocas: sai → entra, com motivo) e o deck final. Itere se o usuário pedir.
 
 ## Fase 4 — Relatório e testes
 

@@ -5,7 +5,7 @@ Pipeline de subagentes para **construção e otimização de decks de Commander 
 ## Como usar
 
 - `/build-deck [tema ou comandante]` — constrói um deck novo do zero.
-- `/improve-deck [caminho da decklist]` — audita e otimiza um deck existente.
+- `/improve-deck [caminho da decklist ou link do Archidekt]` — audita e otimiza um deck existente.
 - `/update-collection [lista de cartas]` — substitui a coleção pela lista informada; o que não estiver nela sai.
 
 A sessão principal atua como **orquestradora** (especialista em Commander): coleta preferências, delega cada fase a um subagente especialista, apresenta os resultados para revisão do usuário e consolida o deck.
@@ -102,6 +102,8 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 1. **Toda busca no Scryfall** segue `references/scryfall-search-guide.md` — leia antes de buscar. Sempre inclua `legal:commander` e `id<=<identidade do comandante>`. **Nunca use filtro de preço na busca** (`usd<`, `eur<`, `tix<`): o Scryfall é repositório de *cartas*, não de preço (regra 2). Para controlar volume, use `order:edhrec` e os limites do guia — a triagem por custo vem depois, com cotação da LigaMagic.
 
+   **EDHREC e Archidekt** (pelo MCP `mtg`) são fonte de **candidatas e de calibragem, nunca de veredito**: carta que vem de lá passa pelas regras 3, 4 e 6 como qualquer outra. O `theme-analyst` consulta o EDHREC **uma vez por rodada** e grava o `Radar do EDHREC` no `02-theme.md`, que as fases seguintes leem; o `manabase-engineer` compara a contagem de terrenos com listas do Archidekt no bracket do briefing. Moxfield e `get_edhrec_combos` estão quebrados na v2.2.1, e `validate_deck` não confere identidade nem banimento — estado de cada ferramenta e regras de uso em "Fontes de meta" do guia de busca.
+
 2. **Preço vem da LigaMagic; do Scryfall vem a carta.** Os dois papeis não se misturam: Scryfall (e o banco local `mtgdb`) responde o que a carta é — oracle, tipo, CMC, cores, tags, rulings; preço é **exclusivamente** o **menor valor da LigaMagic**.
 
    **Nenhum número de preço do Scryfall entra em lugar nenhum** — nem em filtro de busca, nem em tabela, nem em total, nem como "estimativa" ou "ordem de grandeza". A ferramenta `mcp__mtg__get_card_price` (USD do Scryfall convertido para BRL por câmbio) está **fora de uso** (e bloqueada em `.claude/settings.local.json`), os operadores `usd<`/`eur<`/`tix<` não entram em query, e se um campo de preço vier junto de outro retorno, ignore-o. Os erros medidos em 2026-08-12 chegaram a **6,5× para mais** (Restoration Magic: proxy R$ 1,65 × real R$ 10,75) e **14× para menos** (Chief of the Foundry: proxy R$ 1,16 × real R$ 0,08) — nos dois sentidos, sem fator de correção possível. Um proxy que erra para menos também **descarta carta barata**: por isso o filtro sai da busca, e não só do total.
@@ -153,7 +155,7 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 - `references/card-evaluation-checklist.md` — **ficha de funções F1–F7, protocolo de corte e registro de decisão** (regras 4 e 5). Leitura obrigatória antes de recomendar ou cortar carta.
 - `references/mtgdb.md` — **banco local de cartas, tags e rulings** (`bin/mtgdb`). É por onde passam oracle, busca, tags, rulings, preços e coleção.
-- `references/scryfall-search-guide.md` — sintaxe, tags confirmadas, receitas de busca, controle de volume.
+- `references/scryfall-search-guide.md` — sintaxe, tags confirmadas, receitas de busca, controle de volume, **estado das ferramentas do MCP `mtg`** e **fontes de meta** (EDHREC, Archidekt).
 - `bin/linkify` — **linkagem automática de nomes de carta para a LigaMagic** (regra 8).
   `bin/linkify report.md` escreve; `bin/linkify --check report.md` só reporta.
 - `references/deck-report-template.md` — template do relatório final, incluindo o **formato dos links de carta para a LigaMagic** (regra 8).
