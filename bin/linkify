@@ -142,8 +142,12 @@ def processa_md(texto: str, L: Linkador) -> str:
     saida = []
     for trecho, editavel in fatiar_md(texto):
         if editavel:
-            # `(?<!\]\()` e `(?<!\[)` evitam mexer no que já é link
-            trecho = re.sub(r"(?<!\[)\*\*([^*\n]+)\*\*(?!\])", negrito, trecho)
+            # `(?<!\[)` e `(?!\])` evitam mexer no que já é link. O `]` proibido
+            # no meio do nome impede um caso silencioso: numa linha com uma carta
+            # já linkada seguida de outra em negrito ("[**A**](url) | **B**"), o
+            # match ia do `**` que fecha A até o `**` que abre B, engolia a
+            # abertura de B e deixava B sem link para sempre.
+            trecho = re.sub(r"(?<!\[)\*\*([^*\n\]]+)\*\*(?!\])", negrito, trecho)
             trecho = re.sub(r"`([^`\n]+)`", crase, trecho)
         saida.append(trecho)
     return "".join(saida)
