@@ -20,12 +20,20 @@
   > distintos** (Mountain e Plains entram como 1 cada), não cópias. `Esgaroth Garrison`
   > também foi confundida com terreno — é `Creature — Human Soldier */5`. O deck está
   > **−2 na base de terrenos**, não em 38.
-- **Status físico:** **montado** — confirmado pelo usuário em **2026-09-18** e **reconfirmado em
-  2026-09-26**: o Tori não foi mexido depois da v1, e nenhuma carta da v1 foi comprada (só impressa
-  em proxy). Lista de referência: `lista.txt`. Deck construído fora do pipeline.
-  **Proxies em mãos (2026-09-26):** 8 cartas impressas na v1 que também estão na v2 — Battlefield
-  Forge, Boros Signet, Furycalm Snarl, Light Up the Stage, Palace Jailer, Talisman of Conviction,
-  Tocasia's Welcome, Tome of Legends. Servem ao playtest da v2, **continuam na lista de compra**.
+- **Status físico:** **desmontado · v2 em playtest só com proxies** — declarado pelo usuário em
+  **2026-09-26** (depois da reconfirmação de "montado" do mesmo dia). O deck físico do Tori
+  (`lista.txt`) foi desfeito; o deck de teste da v2 é **100% impresso** — nenhuma carta real do
+  Tori v1 está nele, nem as que a v2 reaproveita. Lista de referência do playtest:
+  `rounds/v2-2026-09-23/report.md`. Nenhuma carta da v2 foi comprada.
+  - **Cartas reais do Tori v1 estão soltas**, fora de qualquer deck — inclusive as que a v2
+    reaproveita (origem "Tori físico" no `report.md`). Elas **ainda não estão** em
+    `data/collection.tsv`: só entram quando o usuário as listar no `/update-collection` (regra 7 —
+    posse é declarada; o que não voltar na lista foi vendido).
+  - Na montagem real da v2, as cartas de origem "Tori físico" saem dessa pilha, sem compra.
+  - Histórico: montado confirmado em 2026-09-18 e reconfirmado em 2026-09-26 ("não mexido depois
+    da v1"). As 8 cartas impressas na v1 que também estão na v2 (Battlefield Forge, Boros Signet,
+    Furycalm Snarl, Light Up the Stage, Palace Jailer, Talisman of Conviction, Tocasia's Welcome,
+    Tome of Legends) seguem **na lista de compra**.
 
 ## Intake da otimização (2026-09-18)
 
