@@ -315,3 +315,275 @@ tivesse de escolher.
 | **6 · manabase** | **2 terrenos do meu pacote**: [**Throne of the High City**](https://www.ligamagic.com.br/?view=cards/card&card=Throne+of+the+High+City) e [**War Room**](https://www.ligamagic.com.br/?view=cards/card&card=War+Room). Ambos produzem só `{C}` — **não** contem como fonte de cor; entram como utilidade sobre os 37, não no lugar de um terreno que produz `R`/`W`. [**Valakut Awakening**](https://www.ligamagic.com.br/?view=cards/card&card=Valakut+Awakening+%2F%2F+Valakut+Stoneforge) (reserva) é MDFC e pode entrar como meio-terreno se a base ficar curta. Os 4 slots exclusivos e as duas fontes de corte estão na §7 |
 | **7 · wincon** | O pacote de saque **é** meio pacote de alcance: [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire) (7/turno), [**Monument to Endurance**](https://www.ligamagic.com.br/?view=cards/card&card=Monument+to+Endurance) (3 a cada oponente por descarte), [**Sin Prodder**](https://www.ligamagic.com.br/?view=cards/card&card=Sin+Prodder) e `Palantír` (dano por CMC quando negam a carta), [**Syr Carah**](https://www.ligamagic.com.br/?view=cards/card&card=Syr+Carah%2C+the+Bold). Todos são **fonte vermelha**, exceto [**Palace Jailer**](https://www.ligamagic.com.br/?view=cards/card&card=Palace+Jailer) — contem no cálculo do [**Torbran**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell) |
 | **Orquestrador** | (a) **8 de 14 `a cotar`**, e são as melhores — a captura da LigaMagic precisa cobrir [**Monument to Endurance**](https://www.ligamagic.com.br/?view=cards/card&card=Monument+to+Endurance), [**Palantír of Orthanc**](https://www.ligamagic.com.br/?view=cards/card&card=Palant%C3%ADr+of+Orthanc), [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse), [**Sin Prodder**](https://www.ligamagic.com.br/?view=cards/card&card=Sin+Prodder), [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun), [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire), [**Throne of the High City**](https://www.ligamagic.com.br/?view=cards/card&card=Throne+of+the+High+City), [**War Room**](https://www.ligamagic.com.br/?view=cards/card&card=War+Room). (b) A caixa tem **3** fontes de vantagem real em RW, e só 1 é motor — o pacote é de compra. (c) O deck pede 62 slots não-terreno e as fases somam 58,5 **antes** desta; a §7 nomeia os 4 que faltam e a contrapartida de cada um |
+
+---
+
+## Revisão 2026-09-24 — pacote de reanimação
+
+> **Escopo.** Devolução leve à Fase 3, modo `improve`. A lista de partida é a v2 do `report.md` §6
+> **com as 15 trocas do `02-theme.md` §12 aplicadas**. Não mexi em terrenos nem proponho trocas
+> fora de draw. As Fases 4, 5 e 6 rodam em paralelo.
+>
+> **Regra 6.** Oracle puxado nesta sessão com `bin/mtgdb oracle` (Tocasia's Welcome, Ark of Hunger,
+> Haliya, Seize Opportunity, Outpost Siege, Tome of Legends, Syr Carah, Inti, Light Up the Stage,
+> Culling Dais, Lesser Masticore, Lorehold Excavation, Reckoner Bankbuster). Rulings com
+> `bin/mtgdb rulings` (Ark, Haliya, Tome, Culling Dais, Phlage). **Regra 2.** Preços só de
+> `bin/mtgdb prices`, LigaMagic (menor). **EDHREC não chamado**: o radar é o do `08` §3.
+> **Regra 5.** `decisions.md` conferido: nenhuma das cartas desta seção (entra ou sai) tem registro
+> de corte. Nenhuma é reposição.
+
+**Fontes no deck (lista revisada da §12): 12/12–13**, no piso.
+
+| # | Fonte | MV | Situação na §12 |
+|---|---|---|---|
+| 1 | [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) | 2 | fica · **enfraquecida** (3 loots saíram, e cada descarte a menos é um impulse a menos) |
+| 2 | [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) | 2 | fica · **muito fortalecida** (ver 3.2) |
+| 3 | [**Reckoner Bankbuster**](https://www.ligamagic.com.br/?view=cards/card&card=Reckoner+Bankbuster) | 2 | fica · o crew 3 ficou pagável (Warsinger, Bearer, Broodmoth e Desdemona têm poder 3) |
+| 4 | [**Sin Prodder**](https://www.ligamagic.com.br/?view=cards/card&card=Sin+Prodder) | 3 | fica |
+| 5 | [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse) | 3 | fica |
+| 6 | [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) | 3 (`{R}`) | fica · o spectacle liga com qualquer Helix na cara |
+| 7 | [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) | 3 | **entra** (§12) |
+| 8 | [**Palace Jailer**](https://www.ligamagic.com.br/?view=cards/card&card=Palace+Jailer) | 4 | fica |
+| 9 | [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | 4 | **entra** (§12) |
+| 10 | [**Syr Carah, the Bold**](https://www.ligamagic.com.br/?view=cards/card&card=Syr+Carah%2C+the+Bold) | 5 | fica · **a mais fraca agora** (ver 3.3) |
+| 11 | [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire) | 5 | fica |
+| 12 | [**Throne of the High City**](https://www.ligamagic.com.br/?view=cards/card&card=Throne+of+the+High+City) | terreno | fica |
+
+### 1. As duas trocas da Fase 2: **confirmadas**
+
+#### 1.1 Sai Seize Opportunity → entra Tocasia's Welcome · **confirmada**
+
+**Ficha da que sai: Seize Opportunity** (caixa, R$ 0,05 na régua)
+
+| Eixo | Leitura (oracle de hoje) | Quem cobre depois do corte |
+|---|---|---|
+| F1 | modal: **impulse 2** até o fim do seu próximo turno, **ou** +2/+1 em até duas criaturas | impulse: [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) (repetível) e o `{T}` do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger); pump: o [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) põe +1/+1 e atropelar no ataque |
+| F2 | sem corpo | — |
+| F3 | instantâneo: tipo no cemitério para o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) | sobram 10 instantâneos, e o delirium só pede 4 tipos |
+| F4 | nada | — |
+| F5 | pump em combate | Inti (parcial) |
+| F6 | 3 manas, qualquer turno | — |
+| F7 | disputava a mana guardada para remoção instantânea | — |
+
+**Descoberto:** a compra **instantânea** de uma vez (lançada no fim do turno do oponente). Custo
+aceito: é 1,3 carta **uma vez**, e a Tocasia rende ~0,75 carta **por turno** com o motor girando.
+**Regra 7:** sai uma carta da caixa, que continua sobressalente.
+
+**Por que a Tocasia é mais que a Seize neste eixo.** O oracle diz *"Whenever one or more creatures
+you control with mana value 3 or less enter, draw a card. This ability triggers only once each
+turn."* O Phlage tem MV 3, então **toda reanimação dispara a Tocasia**, e com ela a mágica de
+reanimação de uma vez vira um **Helix que se paga em carta**: gasta 1, compra 1. Ela também dispara
+no **turno do oponente** (ela não diz "seu turno"): o [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal) e a [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth)
+devolvem o Phlage na hora da morte, e a persistência da [**Lesser Masticore**](https://www.ligamagic.com.br/?view=cards/card&card=Lesser+Masticore) faz o mesmo. Outras
+entradas de MV ≤ 3 na lista: [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun), [**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin), [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert),
+[**Ornithopter of Paradise**](https://www.ligamagic.com.br/?view=cards/card&card=Ornithopter+of+Paradise), [**Zookeeper Mechan**](https://www.ligamagic.com.br/?view=cards/card&card=Zookeeper+Mechan), [**Sin Prodder**](https://www.ligamagic.com.br/?view=cards/card&card=Sin+Prodder) e [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger).
+
+#### 1.2 Sai Outpost Siege → entra Ark of Hunger · **confirmada, e o Ark conta como impulse repetível**
+
+**Ficha da que sai: Outpost Siege** (compra, R$ 0,90; a cópia física está no Krenko montado)
+
+| Eixo | Leitura | Quem cobre |
+|---|---|---|
+| F1 Khans | todo upkeep, exila o topo e deixa jogar **neste turno** | `{T}` do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger): moe 1 e deixa jogar neste turno |
+| F1 Dragons | 1 de dano em qualquer alvo quando criatura sua sai do campo (cada sacrifício do Phlage) | o Ark causa 1 a cada oponente quando o Phlage sai do cemitério, e o Helix causa 3. O modo exclui o Khans, então como fonte de draw ele nunca foi escolhido |
+| F2 | sem corpo | — |
+| F3 | encantamento; o deck não conta encantamentos | — |
+| F4 | fonte vermelha ([**Torbran, Thane of Red Fell**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell) +2 no modo Dragons) | o Ark é RW, então também é fonte vermelha |
+| F6 | 4 manas, e rende a partir do upkeep **seguinte** | o Ark ativa **no turno em que entra** |
+| F7 | impulse perdido é carta exilada para sempre | — |
+
+**Descoberto:** nada que o deck use, dentro do modo Khans.
+
+**O Ark pelo meu critério (§1.1).** O critério é: impulse conta, descontado a 2/3 de realização.
+Aplicado igual aos dois lados (simetria), o Ark **ganha** do Siege em três pontos e perde em um:
+
+| Ponto | Outpost Siege (Khans) | Ark of Hunger `{T}` |
+|---|---|---|
+| Taxa de realização | ~2/3, janela "neste turno", no upkeep | ~2/3, mesma janela, **mas você escolhe quando ativar**: depois da compra do turno e com a land drop à vista |
+| Carta **não** jogada | exilada: **carta destruída** | **vai ao cemitério**: combustível para o escape, para o [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) e para o delirium |
+| Carta jogada | sai do exílio | **sai do cemitério e dispara o próprio Ark** (1 a cada oponente + 1 de vida). Ruling de 2026-03-20: vários eventos simultâneos disparam uma vez só |
+| Primeira ativação | upkeep seguinte | no turno em que entra (artefato não tem enjoo) |
+| Exposição | encantamento | **artefato**: fica mais exposto a remoção de artefato, que é mais comum em mesa. É o ponto em que perde |
+
+**Veredito: conta.** É impulse repetível de ~0,65 carta por turno, igual ao Siege, e a terça parte
+que não se realiza vira recurso em vez de sumir. Com a mágica de reanimação que o Ark moer
+acontece o mesmo: jogada do cemitério, ela dispara o Ark duas vezes, uma quando sai de lá e outra
+quando o Phlage sai.
+
+### 2. Contagem
+
+**12 → 12.** As trocas são uma por uma. O pacote fica no piso da faixa.
+
+### 3. Doze bastam? A pergunta certa é de **taxa**, e o motor mexeu nela
+
+A Fase 7 (`07` §3.4) mediu que falta **carta na mão**, não mana: 0,8 mágica por turno no T7–T11,
+com 7–9 manas sobrando. O motor novo muda os dois lados da conta.
+
+#### 3.1 O que o motor **consome**
+
+Das 10 reanimações, só as **5 de uma vez** gastam carta ([**Helping Hand**](https://www.ligamagic.com.br/?view=cards/card&card=Helping+Hand), [**Return Triumphant**](https://www.ligamagic.com.br/?view=cards/card&card=Return+Triumphant),
+[**Call a Surprise Witness**](https://www.ligamagic.com.br/?view=cards/card&card=Call+a+Surprise+Witness), [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission), [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation)). As 5 repetíveis
+([**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle), [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger), [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial),
+[**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge)) geram Helix **sem gastar carta**. E as de uma vez não são gasto novo:
+entraram no lugar de 4 remoções formais, e remoção também custava uma carta cada. **O consumo por
+turno fica igual ao da v2.** O que muda é que ele passa a ter como se pagar.
+
+#### 3.2 O que o motor **devolve** (taxa por fonte **em campo**, T6–T10)
+
+> Estimativa de mesa, com a mesma premissa dos dois lados: **~1 reanimação por turno seu** a partir
+> do T4, que é a hipótese da §12. **Não é simulação.** Quem mede é o goldfishing da Fase 7.
+
+| Fonte | v2 | Revisada (§12) | Por quê |
+|---|---|---|---|
+| [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) | ~0,4/turno | **~0,9/turno** | na v2 ganhava página no T3 e depois só com o Phlage escapado (T6–T7). Agora **toda reanimação é o comandante entrando** (*"Whenever your commander enters or attacks"*), e com a Broodmoth são 2 páginas. O limite passa a ser o `{T}`: uma compra por rodada |
+| [**Seize Opportunity**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+Opportunity) → [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) | 1,3 uma vez | **~0,75/turno** | 1 por turno com entrada de MV ≤ 3, às vezes também no turno do oponente |
+| [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) → [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | ~0,65/turno | ~0,65/turno | e a carta perdida vira combustível |
+| [**Syr Carah, the Bold**](https://www.ligamagic.com.br/?view=cards/card&card=Syr+Carah%2C+the+Bold) | ~0,65/turno a partir do T6 | ~0,65/turno a partir do T6 | é o `{T}` dela mesma que dispara o impulse. As mágicas que acertam jogador ficaram poucas ([**Lightning Helix**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Helix), [**Lightning Strike**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Strike), [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab), [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate)). O Helix do Phlage **não** dispara a Syr Carah, porque é habilidade de criatura, e ela só lê *"instant or sorcery spell"* |
+| [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) | ~0,6/turno | ~0,45/turno | saíram [**Thrill of Possibility**](https://www.ligamagic.com.br/?view=cards/card&card=Thrill+of+Possibility), [**Cathartic Reunion**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Reunion) e [**Demand Answers**](https://www.ligamagic.com.br/?view=cards/card&card=Demand+Answers) |
+| Nas quatro linhas de cima | 1,7/turno + 1,3 uma vez | **2,95/turno** | +1,25 carta por turno com as fontes em campo, sem mudar a contagem |
+
+**Conclusão: 12 bastam em número, mas não em redundância.** A taxa subiu. O ponto fraco é outro:
+só **2 cartas** devolvem carta pela reanimação ([**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) e [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends)).
+Sem nenhuma delas em campo, cada mágica de reanimação de uma vez é −1 carta. P(ver ao menos uma das
+duas), hipergeométrica sobre 99: **19,3% até o T4 · 22,9% até o T6 · 26,4% até o T8**. Com uma
+terceira, sobe para **27,6% · 32,4% · 37,0%**.
+
+#### 3.3 A fonte mais fraca do pacote é a Syr Carah
+
+Na nova lista ela custa 5 manas, rende a partir do T6 (o `{T}` sofre enjoo), não entra no motor
+(MV 5 fica fora de todas as reanimações de MV ≤ 3) e perdeu as mágicas de dano na cara que a
+alimentavam. Ela ainda é uma fonte real. Mas é a única das 12 que o eixo novo **enfraqueceu sem dar
+nada em troca**. O Inti também perdeu, mas continua multiplicando os 5 loots que ficaram.
+
+### 4. Troca proposta — em par, dentro de draw
+
+**Por que não uma 13ª fonte.** Uma 13ª exige abrir slot em outra categoria, e os três candidatos
+óbvios pertencem a fases que estão rodando agora: combustível (~11, no alvo), remoção formal (16,
+abaixo do que a Fase 5 pediu) e ramp (9/2, abaixo da meta do pipeline). Trocar a pior fonte pela
+melhor disponível rende mais taxa do que somar uma fonte média, e não toca em nenhuma outra fase.
+**Se alguma fase abrir slot, a 13ª de custo zero de compra é a Culling Dais (§5).**
+
+#### 4.1 Tabela
+
+| Carta | CMC | Tipo | Como gera vantagem | Sinergias (mín. 2) | Na coleção? | R$ |
+|---|---|---|---|---|---|---|
+| [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) | 3 (Warp `{W}`) | Legendary Creature — Human Soldier 3/3 | No **fim do seu turno**, compra 1 se você ganhou 3+ de vida. A vida é conferida **na resolução** (ruling 2025-07-25) | (1) **todo Helix dá 3 de vida**, então todo turno em que o motor gira ela compra. Ela pega o que a Tocasia não pega: o Helix de **ataque** do Phlage escapado, o [**Lightning Helix**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Helix) e o Phlage escapado que volta pelo Dial ou pela Desdemona. Ela mesma soma 1 por criatura ou artefato que entra: Phlage reanimado = 4 de vida; (2) **lendária de MV 3**: dispara a [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) ao entrar, e conjurá-la é **mágica histórica** para o [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) (também pelo Warp, então são 2 gatilhos por carta); também é alvo de toda reanimação do deck; (3) **Warp `{W}`**: no T4, Warp + [**Helping Hand**](https://www.ligamagic.com.br/?view=cards/card&card=Helping+Hand) = 2 manas para Helix + 2 cartas (Haliya e Tocasia). O gatilho de compra e o exílio do Warp disparam juntos no começo do end step, e a compra resolve mesmo com ela exilada (CR 113.7a). Depois ela volta do exílio e dispara a Tocasia de novo; (4) corpo 3/3 que bloqueia e tripula o [**Reckoner Bankbuster**](https://www.ligamagic.com.br/?view=cards/card&card=Reckoner+Bankbuster) (crew 3) · origem: EDHREC Top Cards 0,39 (`08` §3) | não | **11,88** (2026-09-24) |
+
+**Ficha F2–F7 da que entra:** F2 3/3, bloqueia, tripula crew 3 · F3 criatura (piso de 17), lendária
+(Teshar), MV 3 (Tocasia, reanimável) · F4 recebe o +1/+1 do Inti; é devolvida pela Broodmoth e pelo
+Renewal · F5 +1 de vida por criatura ou artefato, e isso completa os 3 de vida em turno sem Helix
+(rocha + criatura + ficha de Treasure do [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) ou do [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils)) · F6 T3 conjurada,
+ou `{W}` no turno do Helix · F7 o Warp tira ela de campo no fim do turno, então ele só compensa em
+turno de Helix; é lendária, mas o deck só tem uma cópia.
+
+#### 4.2 Sai: Syr Carah, the Bold — ficha completa (regra 4)
+
+Origem: **Tori físico** (R$ 0,09 na régua). Posse não é obrigação de uso (regra 7). Se ela vai
+para as sobressalentes é o usuário quem diz, na `/update-collection`. Nada aqui infere posse.
+
+| Eixo | Função | Quem cobre depois do corte |
+|---|---|---|
+| F1a | impulse 1 sempre que ela ou uma mágica instantânea/feitiço sua causa dano a **jogador** | [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light): 1 carta **garantida** (não impulse) por turno de Helix, a partir do T4 e não do T6 |
+| F1b | `{T}`: 1 de dano em qualquer alvo, **repetível e instantâneo** (3 com [**Torbran, Thane of Red Fell**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell)) | em volume, o **Helix em loop** (3 em qualquer alvo por reanimação). Criatura: `{4}` da [**Lesser Masticore**](https://www.ligamagic.com.br/?view=cards/card&card=Lesser+Masticore). Jogador: [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation) e [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger). **Descoberto:** o ping barato em velocidade de instantâneo, que mata X/1 e ficha e termina planeswalker |
+| F2 | 3/3, bloqueia, tripula crew 3 (e aí não pinga, porque o crew disputa o `{T}`) | Haliya 3/3 faz o mesmo |
+| F3 | criatura (piso de 17) · **lendária** (Teshar) · vermelha | Haliya: criatura, lendária. **O piso fica em 17.** **Descoberto:** uma fonte vermelha a menos para o Torbran |
+| F4 | recebe Inti, Renewal, Broodmoth | Haliya recebe os mesmos, e **ainda é reanimável** (MV 3). A Syr Carah não era |
+| F5 | nada | — |
+| F6 | T5, rende do T6 | Haliya: T3–T4, rende no mesmo turno |
+| F7 | o ping e o crew disputam o `{T}` · MV 5 fica fora do motor · disputa o slot de 5 com a [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire) | — |
+
+**Funções descobertas, declaradas:** (a) ping instantâneo repetível; (b) uma fonte vermelha para o
+Torbran. As duas são de outras especialidades (remoção → Fase 5; alcance com Torbran → Fase 7), então
+o corte é **condicionado** nesses dois pontos. Se uma das duas fases disser que o ping é
+insubstituível, a troca cai e a Syr Carah fica. Draw continua em 12 e a redundância segue em 2
+conversores. **Cor:** a troca passa uma mágica do vermelho para o branco (22/21 → 21/22), com custo
+`{2}{W}` no lugar de `{3}{R}{R}`. É sinal leve para a Fase 6.
+
+**Simetria (checklist §3).** Avaliei os dois lados com ~1 reanimação por turno, sem anthem, com o
+Torbran em campo como possibilidade dos dois lados (ele ajuda o ping da Syr Carah, e não ajuda a
+compra da Haliya, e isso está escrito como perda), e com a mesma régua de impulse a 2/3.
+
+#### 4.3 Efeito
+
+| | Antes | Depois |
+|---|---|---|
+| Fontes de draw | 12 | **12** |
+| Conversores de reanimação em carta | 2 (Tocasia, Tome) | **3** (Tocasia, Tome, Haliya): P(≥1 até o T6) 22,9% → **32,4%** |
+| Taxa das fontes trocadas | ~0,65/turno a partir do T6 | **~0,85–1/turno a partir do T4** |
+| Criaturas / lendárias (Teshar) | 17 / 5 | 17 / 5 |
+
+### 5. Regra 7 — a caixa antes da compra
+
+`bin/mtgdb collection -list` foi varrida de novo contra o motor novo, filtrando identidade RW e texto
+de compra, ganho de vida e reanimação. Candidatas reais em RW: [**Culling Dais**](https://www.ligamagic.com.br/?view=cards/card&card=Culling+Dais), [**Bargaining Table**](https://www.ligamagic.com.br/?view=cards/card&card=Bargaining+Table),
+[**Oracle's Vault**](https://www.ligamagic.com.br/?view=cards/card&card=Oracle%27s+Vault), [**Seize Opportunity**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+Opportunity) (a que sai). [**Melded Moxite**](https://www.ligamagic.com.br/?view=cards/card&card=Melded+Moxite), [**Ragged Short Spear**](https://www.ligamagic.com.br/?view=cards/card&card=Ragged+Short+Spear) e
+[**Prophetic Prism**](https://www.ligamagic.com.br/?view=cards/card&card=Prophetic+Prism) repõem a própria carta (troca 1 por 1), e as auras que compram ([**Angelic Gift**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Gift),
+[**Dragon Mantle**](https://www.ligamagic.com.br/?view=cards/card&card=Dragon+Mantle)) também.
+
+#### 5.1 Culling Dais — correção de leitura e o que mudou
+
+A v2 desta fase (§3.2 acima) dispensou a [**Culling Dais**](https://www.ligamagic.com.br/?view=cards/card&card=Culling+Dais) junto com outras três dizendo que *"não
+sacam"*. **Ela saca:** *"{1}, Sacrifice this artifact: Draw a card for each charge counter on this
+artifact."* Foi erro de leitura. Ela nunca esteve no deck, então não há registro no `decisions.md`.
+**O que mudou:**
+1. A leitura foi corrigida.
+2. O Phlage passou a **se sacrificar a cada reanimação**. Com o gatilho de sacrifício na pilha,
+   `{T}`, sacrifique o Phlage na Dais: +1 contador **de graça**. O Helix resolve igual, porque a
+   habilidade existe independente da fonte (CR 113.7a). Ele vai ao cemitério pronto para a próxima.
+3. Ela vira saída de sacrifício que **protege o Phlage escapado** de exílio ou roubo. Sacrificado
+   em resposta, ele vai ao cemitério e continua reanimável, sem imposto (CR 903.9a, §12.1).
+
+**Ficha:** F1 `{T}` + sacrificar criatura: contador; `{1}` + sacrificar a Dais: compra 1 por contador ·
+F2 sem corpo · F3 **artefato**: histórico para o Teshar, e a [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission), o [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) e a
+[**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) a devolvem (MV 2) · F4 recebe contadores · F5 proteção do comandante ·
+F6 T2, rende a partir do T4 · F7 é **um contador por rodada** (o `{T}`), a compra vem em bloco e
+tardia (3 cartas por volta do T7), e trazê-la de volta **disputa** o mesmo efeito de reanimação com o
+Phlage.
+
+**Por que ela não substitui a Haliya nesta troca:** ela não cobre as funções da Syr Carah que a
+Haliya cobre. Não tem corpo (o piso cai para 16), não é lendária criatura para a Tocasia e só compra
+em bloco, tarde e pagando `{1}` mais a própria carta. A Haliya compra no **mesmo turno** do Helix, a
+partir do T4. **Motivo da dispensa:** curva (F6) e corpo (F2), não "carta fraca".
+
+**Onde ela serve:** é a **13ª fonte de custo zero de compra**, se alguma fase abrir slot, e a
+**1ª reserva** se a folga for gasta antes da Haliya (aí fica a Syr Carah e a Dais entra como 13ª).
+Preço na régua: **`a cotar`** (está na caixa, mas o teto conta o valor da carta).
+
+#### 5.2 Outras reservas (sem mudança de veredito)
+
+| Carta | Por que continua reserva | Na coleção? | R$ |
+|---|---|---|---|
+| [**Oracle's Vault**](https://www.ligamagic.com.br/?view=cards/card&card=Oracle%27s+Vault) | impulse repetível, mas 4 manas e 3 turnos de `{2}` para ficar grátis. O [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) faz o mesmo de graça a partir do turno em que entra | sim | 0,25 |
+| [**Bargaining Table**](https://www.ligamagic.com.br/?view=cards/card&card=Bargaining+Table) | 5 manas; no late é compra barata, mas a curva de 5 já tem [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire) e [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) | sim | a cotar |
+| [**Dawn of Hope**](https://www.ligamagic.com.br/?view=cards/card&card=Dawn+of+Hope) | *"Whenever you gain life, you may pay {2}: draw"*: todo Helix vira compra paga, e o deck sobra 7–9 manas no T9–T11 (`07` §3.4). **Promovida a 2ª reserva de compra**: é o mesmo gatilho da Haliya, trocando o corpo por uma compra que não tem limite por turno | não | a cotar |
+
+### 6. Custo — LigaMagic (menor), cotações de 2026-08-22 a 2026-09-24
+
+| Item | R$ |
+|---|---|
+| Lista revisada (§12, com as 2 trocas de draw já dentro) | 162,12 |
+| As 2 trocas confirmadas (já contadas acima): −Seize Opportunity 0,05 −Outpost Siege 0,90 +Tocasia's Welcome 7,88 +Ark of Hunger 0,45 | (+7,38, já incluído) |
+| **Proposta: +Haliya, Guided by Light 11,88 − Syr Carah, the Bold 0,09** | **+11,79** |
+| **Total com a proposta** | **173,91** |
+| Folga no teto de R$ 200 | 37,88 → **26,09** |
+
+A folga é disputada pelas Fases 4, 5 e 6 em paralelo. Se ela acabar antes, a troca cai e a Culling
+Dais entra no lugar dela (§5.1), com compra zero e régua `a cotar`.
+
+### 7. Curva das fontes de draw (com a proposta)
+
+**mv 1–2: 3** (Inti 2 · Tome of Legends 2 · Reckoner Bankbuster 2)
+**mv 3–4: 7** (Sin Prodder 3 · Case of the Crimson Pulse 3 · Light Up the Stage 3 · Tocasia's Welcome 3 · Haliya 3 · Palace Jailer 4 · Ark of Hunger 4)
+**mv 5+: 1** (Court of Ire 5)
+**slot de terreno: 1** (Throne of the High City)
+
+Antes da proposta: 3 · 6 · 2 · 1. A fonte de 5 que sai era a única que rendia só a partir do T6.
+
+### 8. Sinais
+
+| Fase | Sinal |
+|---|---|
+| **5 · interação** | O corte da Syr Carah tira **um ping instantâneo repetível** (mata X/1, fichas e planeswalker ferido). Se vocês o contavam como remoção, o corte é condicionado a isso |
+| **6 · manabase** | Mais uma mágica branca e uma vermelha a menos (`{2}{W}` no lugar de `{3}{R}{R}`) |
+| **7 · wincons** | Uma fonte vermelha a menos para o Torbran. Métrica nova para o goldfishing: **cartas compradas por reanimação** (Tocasia, Tome, Haliya), e o turno em que o primeiro conversor aparece |
+| **Orquestrador** | (a) Cotar [**Culling Dais**](https://www.ligamagic.com.br/?view=cards/card&card=Culling+Dais) na LigaMagic (está na caixa, mas o teto conta o valor). (b) A §3.2 original desta fase dispensou a Dais por erro de leitura. A correção está em §5.1. (c) Se a folga não comportar a Haliya, a alternativa de compra zero é manter a Syr Carah e pôr a Dais como 13ª fonte, se alguma fase abrir slot |

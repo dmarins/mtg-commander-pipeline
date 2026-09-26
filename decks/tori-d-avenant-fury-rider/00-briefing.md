@@ -20,8 +20,12 @@
   > distintos** (Mountain e Plains entram como 1 cada), não cópias. `Esgaroth Garrison`
   > também foi confundida com terreno — é `Creature — Human Soldier */5`. O deck está
   > **−2 na base de terrenos**, não em 38.
-- **Status físico:** **montado** — confirmado pelo usuário em **2026-09-18**.
-  Lista de referência: `lista.txt`. Deck construído fora do pipeline.
+- **Status físico:** **montado** — confirmado pelo usuário em **2026-09-18** e **reconfirmado em
+  2026-09-26**: o Tori não foi mexido depois da v1, e nenhuma carta da v1 foi comprada (só impressa
+  em proxy). Lista de referência: `lista.txt`. Deck construído fora do pipeline.
+  **Proxies em mãos (2026-09-26):** 8 cartas impressas na v1 que também estão na v2 — Battlefield
+  Forge, Boros Signet, Furycalm Snarl, Light Up the Stage, Palace Jailer, Talisman of Conviction,
+  Tocasia's Welcome, Tome of Legends. Servem ao playtest da v2, **continuam na lista de compra**.
 
 ## Intake da otimização (2026-09-18)
 
@@ -85,7 +89,7 @@ inclusive se o comandante mudar.
 | Rodada | Data | Estado | Relatório |
 |---|---|---|---|
 | v1 | 2026-09-18 | **encerrada sem aplicação** — consolidada (20/09), testada em proxy (23/09), 7 trocas aplicadas no report; **reprovada pelo usuário em 2026-09-23** (eixo, não peças). Nada comprado, `deck.md` não escrito | `rounds/v1-2026-09-18/report.md` |
-| v2 | 2026-09-23 | **consolidada, aguardando validação** — Phlage; Fases 1–7 completas; 99 cartas a R$ 176,71 (46 compras, R$ 148,16); 4 decisões do usuário na §0 do report. Nada comprado, `deck.md` não escrito | `rounds/v2-2026-09-23/report.md` |
+| v2 | 2026-09-23 | **reconsolidada em 24/09; em playtest de proxy desde 26/09** (44 impressas + Phlage; Radiant Summit e Conflagrate mantidos; §0 aguarda o feedback de mesa) — revisão pelo EDHREC: trava "sem reanimação" revogada, eixo = reanimação em loop + escape; Fases 2–7 revisadas, 19 trocas; 99 cartas a R$ 166,98 (52 compras, R$ 141,85). Mesa morta na mediana do T13 (igual à v2), mais ativa do T4 ao T6. 2 decisões na §0 (ritmo, Fiendish Duo). Nada comprado, `deck.md` não escrito | `rounds/v2-2026-09-23/report.md` |
 
 ---
 ## ESTADO — 2026-09-19

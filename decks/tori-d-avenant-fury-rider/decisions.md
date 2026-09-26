@@ -78,5 +78,12 @@ imposto de comandante quando é carta do deck. Preço **a cotar**, junto com `Fi
 1. O custo exila **5 cartas *além* dele** — são 6 no cemitério para escapar a primeira vez.
 2. Só vale **conjurar por escape**: reanimar ou blinkar faz o gatilho de sacrifício pegar.
    **Nenhum pacote de reanimação ou blink entra neste deck.**
+   > ⚠ **Correção 2026-09-24 (orquestrador): a conclusão está errada.** O sacrifício pega, mas o
+   > Helix também dispara. Ruling oficial de 2024-06-07: *"Phlage's second ability triggers when
+   > it enters the battlefield, even if it didn't escape."* Reanimar o Phlage é um Helix por 1–2
+   > manas, e ele volta ao cemitério pronto para a próxima reanimação. É o motor das listas do
+   > EDHREC e do Archidekt. A trava fica **revogada para reanimação**. Blink continua fraco: só
+   > funciona em resposta ao sacrifício e tira o escape do Phlage escapado. Análise em
+   > `rounds/v2-2026-09-23/08-meta-edhrec.md`.
 3. Conjurado da zona de comando, o Helix (3 de dano + 3 de vida) **acontece assim mesmo** — são
    duas habilidades separadas, e o dano dispara sempre que ele entra, escapado ou não.

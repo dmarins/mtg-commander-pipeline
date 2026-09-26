@@ -417,3 +417,239 @@ do excedente de queima, não do ramp.
 5. **Correção à §4.2 da Fase 2**, para o `report.md`: o Phlage no T3 **não é garantido**. É
    **85,0%** com este pacote (75,4% sem ramp; 89,8% com 38 terrenos e 12 duais). O gargalo é land
    drop + pip, não compra.
+
+---
+
+## Revisão 2026-09-24 — pacote de reanimação
+
+**Ramp na lista revisada: 9 padrão / 2 explosivos. Proposta: 10 / 1, no mesmo número de slots.**
+Uma troca, com a carta que sai marcada como **corte condicionado à Fase 2**:
+[**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) (caixa, R$ 0,11) entra e [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) (R$ 7,65) sai. Delta **−R$ 7,54**.
+Não proponho subir o ramp tirando slot de outra categoria. A §R4 mostra que o 11º slot de ramp compra
+menos de 0,5 pp em cada marco novo.
+
+> **Por que esta seção existe.** A Fase 2 (§12 do `02-theme.md`) trocou o eixo para **reanimação
+> em loop + escape concedido + controle**, e o orquestrador (`08-meta-edhrec.md`) pediu os marcos
+> refeitos. A conclusão das §2.2 e §7 ("a 10ª rocha vale 0,0 pp, a 11ª −1,0 pp") foi medida para o
+> **escape próprio no T6**, com cada rocha nova tirando slot de **combustível**. Os dois pressupostos
+> caíram: o escape próprio virou plano B, e o combustível desceu de 14 para ~11. O que está acima desta
+> seção continua valendo como registro. **Onde houver conflito, vale esta seção.**
+>
+> **Regra 5.** `decisions.md` não tem linha para nenhuma rocha, nem para [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score), nem para
+> [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns). A [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns), porém, **saiu da v2** na Fase 6 (`06-manabase.md`
+> §5.2, C10; `report.md` §7.2) para dar o slot ao [**Zookeeper Mechan**](https://www.ligamagic.com.br/?view=cards/card&card=Zookeeper+Mechan). O que mudou desde então está na §R6.
+>
+> **Regra 6.** Oracle puxado nesta sessão com `bin/mtgdb oracle` para as 62 não-terrenos da lista
+> revisada, os 15 terrenos não-básicos e todas as candidatas citadas.
+>
+> **Regra 7.** A caixa (`mtgdb collection -list`, 116 cartas) foi varrida antes de qualquer busca.
+> Fontes de mana na caixa e fora do deck: [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns), [**Hedron Crawler**](https://www.ligamagic.com.br/?view=cards/card&card=Hedron+Crawler), [**Boros Locket**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Locket),
+> [**Manalith**](https://www.ligamagic.com.br/?view=cards/card&card=Manalith), [**Seer's Lantern**](https://www.ligamagic.com.br/?view=cards/card&card=Seer%27s+Lantern), [**Magnifying Glass**](https://www.ligamagic.com.br/?view=cards/card&card=Magnifying+Glass) e [**Prophetic Prism**](https://www.ligamagic.com.br/?view=cards/card&card=Prophetic+Prism). [**Moss Diamond**](https://www.ligamagic.com.br/?view=cards/card&card=Moss+Diamond) está
+> fora da identidade. [**Mycosynth Wellspring**](https://www.ligamagic.com.br/?view=cards/card&card=Mycosynth+Wellspring) e [**Pilgrim's Eye**](https://www.ligamagic.com.br/?view=cards/card&card=Pilgrim%27s+Eye) põem terreno na **mão**, então não são ramp.
+> As quatro primeiras foram medidas (§R7). **A troca proposta não tem compra.**
+>
+> **Regra 2.** Os preços saem de `bin/mtgdb prices` (LigaMagic, menor), com cotações de 2026-08-12
+> a 2026-09-24. [**Gold Myr**](https://www.ligamagic.com.br/?view=cards/card&card=Gold+Myr), [**Star Compass**](https://www.ligamagic.com.br/?view=cards/card&card=Star+Compass) e [**Manalith**](https://www.ligamagic.com.br/?view=cards/card&card=Manalith) estão `a cotar`, e nenhuma delas faz parte
+> da troca proposta.
+>
+> **EDHREC.** Não chamei. O `08` §3 transcreveu só `High Synergy Cards` e `Top Cards`. A seção
+> `Mana Artifacts` **não foi transcrita**, então nenhuma candidata desta revisão vem do meta. As
+> rochas da lista-modelo Budget Phlag ([**Arcane Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Arcane+Signet), [**Boros Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Signet), [**Talisman of Conviction**](https://www.ligamagic.com.br/?view=cards/card&card=Talisman+of+Conviction)) já estão no deck.
+
+### R1. O que mudou na pergunta
+
+| | Medição anterior (§2) | Plano novo (§12 do `02`) |
+|---|---|---|
+| Turno-alvo | escape próprio no T6 | Phlage no T3 → reanimação + outra jogada no T4–T5 → motor de 4 no T4–T5 → Phlage escapado pelo Dial no T5 |
+| Custo decisivo | `{R}{R}{W}{W}`, **zero genérico** | `{1}{R}{W}` (Phlage, escape do Dial ou da Desdemona) · `{W}` a `{2}{W}` (reanimação) · `{2}{X}{Y}` (motores) · `{3}` (Dial) |
+| Onde a rocha nova tirava slot | combustível, com o escape dependente de cemitério | remoção ou payoff, porque o combustível desceu para ~11 e o Dial faz vidência 3 |
+| 4-drops | 5 | **9**: [**Palace Jailer**](https://www.ligamagic.com.br/?view=cards/card&card=Palace+Jailer), Torbran, [**Celebrate the Mountain-king**](https://www.ligamagic.com.br/?view=cards/card&card=Celebrate+the+Mountain-king), [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) + Teshar, [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth), Desdemona, [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer), [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) |
+
+**Consequência para a §2.3 (pips).** Aquela medição mostrou que mana incolor não pagava o escape de
+quatro pips. Os custos do plano novo têm parte genérica, então **o incolor voltou a pagar quase tudo**.
+Na §R7, uma rocha incolor de 2 manas fica a 0,7 pp da colorida no T3 e empata nos outros marcos.
+
+### R2. Método
+
+- **Monte Carlo com 60 mil partidas por configuração, na jogada.** As 99 cartas são a lista revisada
+  (v2 do `report.md` §6 com as 15 trocas da §12 aplicadas). A base é a real: 37 terrenos, 12 Mountain e
+  12 Plains, 11 fontes duplas (Clifftop, Snarl e Summit com a condição de entrada, 5 que entram viradas)
+  e [**Blast Zone**](https://www.ligamagic.com.br/?view=cards/card&card=Blast+Zone) + Throne produzindo `{C}`. Mulligan londrino simplificado.
+- **Números aleatórios comuns.** A carta trocada ocupa a mesma posição no baralho, então duas
+  configurações jogam as mesmas partidas e só a carta muda. **Diferença abaixo de ~0,3 pp é empate.**
+- **Política de jogo:**
+  1. T1–T2: rochas e dorks primeiro.
+  2. Phlage da zona de comando assim que couber, com prioridade no T3.
+  3. Na ordem: escape pelo Dial → conjurar o Dial (e escapar no mesmo turno, se houver 6 manas) →
+     escape pela Desdemona, se ela atacou → **um** motor de 4 → **uma** reanimação, se o Phlage está
+     no cemitério → rochas → [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) / [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) → resto do mais caro para o mais barato.
+- **Detalhes do modelo:**
+  - Os loots estão modelados: [**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting), [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse), [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre), Light Up
+    the Stage, [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils), [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) e a ativação do Bankbuster.
+  - Dorks têm enjoo.
+  - A vidência 3 do Dial manda 3 cartas ao cemitério.
+  - A [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) perde um contador sempre que a mana dela é necessária.
+- **Fora do modelo:** compras da [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) e o impulse do Ark; gatilhos do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan); combate.
+  O custo de cemitério da Desdemona é dado como pago, porque o modelo só conta mágicas e descartes no
+  cemitério e subestima o real. O número dela é teto.
+- **Os números absolutos não se comparam com os da §2.** Mudaram a lista, a base e a política. A
+  comparação vale **dentro** das tabelas abaixo.
+
+### R3. Os marcos novos com o ramp atual (9 / 2)
+
+| Marco | P absoluta | P(ter a carta a tempo) | P(marco \| tem a carta) |
+|---|---|---|---|
+| Phlage da zona de comando até o T3 | **83,8%** | — | — |
+| **Motor de 4 até o T4** | **23,2%** | 39,4% (um dos 5 visto até o T4) | **58,8%** |
+| Motor de 4 até o T5 | 33,3% | | |
+| Reanimação + outra jogada no mesmo turno, **no T4** | 14,7% | | |
+| **Reanimação + outra jogada no mesmo turno, no T4 ou no T5** | **23,1%** | 41,4% (uma das 5 vista até o T5, com o Phlage conjurado até o T4) | **55,8%** |
+| **Phlage escapado pelo Dial até o T5** | **8,1%** | 10,9% (Dial visto até o T5) | **74,2%** |
+| Phlage escapado pelo Dial **ou** pela Desdemona até o T5 | 12,9% (teto) | | |
+| Motor em campo **e** reanimação conjurada até o T5 | 9,2% | | |
+| [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) pagável no T6 (`{4}{W}{W}`) | 53,9% | | |
+| Gisela pagável no T7 (`{4}{R}{W}{W}`) | 47,2% | | |
+| Mana média disponível no T6 / T8 | 5,7 / 7,0 | | |
+
+**Leitura: o gargalo dos três marcos é a carta, não a mana.** Pela hipergeométrica (99 cartas), a
+chance de ver um dos 5 motores em 10 cartas é 42%, e a de ver o Dial em 11 cartas é 11,1%. **Com a
+carta na mão, o ramp atual entrega o marco em 56–74% dos casos.** Rocha nenhuma muda a coluna do
+meio. Quem muda é o draw (Fase 3) e a redundância de peças (Fase 2).
+
+### R4. Quanto cada rocha move os marcos
+
+| Configuração | Phlage T3 | Motor T4 (\| tem) | Reanim. + outra T4–T5 (\| tem) | Dial T5 (\| tem) | Titan T6 | Gisela T7 |
+|---|---|---|---|---|---|---|
+| 8 (sem [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert)) | 82,4 | 22,5 (57,1) | 22,7 (55,2) | 8,0 (72,7) | 51,2 | 44,2 |
+| **9 / 2 atual** | **83,8** | **23,2 (58,8)** | **23,1 (55,8)** | **8,1 (74,2)** | **53,9** | **47,2** |
+| **10 / 1: Big Score → Sphere of the Suns (proposta)** | **84,8** | **23,6 (60,2)** | **23,7 (56,9)** | **8,2 (75,7)** | **55,7** | **48,6** |
+| 10 / 2: + [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) no lugar de uma remoção | 84,8 | 23,8 (60,4) | 23,4 (56,2) | 8,3 (75,6) | 56,1 | 49,7 |
+| 11 / 1: a proposta + [**Hedron Crawler**](https://www.ligamagic.com.br/?view=cards/card&card=Hedron+Crawler) no lugar de uma remoção | 85,1 | 24,0 (61,1) | 24,0 (57,4) | 8,3 (76,6) | 57,9 | 51,4 |
+| 11 / 2: + Sphere + [**Gold Myr**](https://www.ligamagic.com.br/?view=cards/card&card=Gold+Myr) no lugar de duas remoções | 85,6 | 24,2 (61,6) | 23,7 (56,5) | 8,4 (76,6) | 58,6 | 52,6 |
+
+**Três leituras:**
+
+1. **Ao contrário da medição anterior, toda rocha agora soma.** Uma rocha nova vale +1,0 pp de
+   Phlage no T3, +0,6 pp de motor no T4 e +2,2 pp de [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) no T6. Antes eram 0,0 e −1,0, porque
+   a rocha nova tirava combustível de um escape que dependia de cemitério. Agora ela tira remoção, e a
+   curva ficou mais pesada.
+2. **Mesmo assim, o ganho é pequeno: +0,3 a +1,0 pp por marco.** O 11º slot de ramp (linha 11 / 1
+   contra a proposta) compra +0,3 pp no T3, +0,4 no motor, +0,3 na reanimação e +0,1 no Dial, e custa
+   uma remoção ou um payoff. **Não proponho.** A troca seria fora da minha categoria, e o ganho fica
+   no nível do empate.
+3. **A conversão proposta captura quase todo o ganho da 10ª rocha sem gastar slot.** A razão está na §R5.
+
+### R5. O que cada peça atual faz nos marcos novos
+
+Cada peça foi trocada por uma carta em branco do mesmo tipo de custo, e a coluna mostra o que se perde:
+
+| Peça substituída por carta em branco | Phlage T3 | Motor T4 | Reanim. + outra | Dial T5 | Titan T6 | Gisela T7 | Leitura |
+|---|---|---|---|---|---|---|---|
+| [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) (→ 2-drop em branco) | −0,1 | −0,1 | +0,2 | 0,0 | −0,7 | −1,2 | **≈ 0 do T3 ao T5.** Com CMC 4, disputa o T4 com os 9 quatro-drops e quase nunca é a jogada do T4 |
+| [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) (→ 2-drop em branco) | −0,1 | −0,1 | 0,0 | −0,1 | −1,0 | −1,4 | ≈ 0 do T3 ao T5. **Fica**: é loot da Fase 2 por R$ 0,06, e o Treasure é bônus |
+| [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) (→ 3-drop em branco) | −0,1 | 0,0 | 0,0 | 0,0 | **−1,9** | **−2,7** | É a **rocha do jogo longo**. **Fica** |
+| [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert) (→ 2-drop em branco) | **−1,4** | −0,7 | −0,4 | −0,1 | −2,7 | −3,0 | As rochas de 2 manas sustentam o começo. **Fica** |
+
+**O "explosivo" deste deck não faz trabalho de explosivo.** A §6 já tinha redefinido a categoria como
+"burst de mana colado num loot" para pagar o turno do escape de 4 pips. Esse turno virou plano B.
+Nos marcos novos, os dois Treasures do [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) chegam no T4+ e não mudam nada até o T5. No topo da
+curva ([**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) 6, Gisela 7, Approach 7), a rocha permanente de 2 manas rende mais que o burst:
++1,8 pp no Titan e +1,4 pp na Gisela quando ela entra no lugar dele.
+**A meta de 2–3 explosivos não se aplica a este plano, e declaro isso aqui.** Fica 1 nominal ([**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils)).
+
+### R6. A troca proposta
+
+| Entra | Sai | R$ |
+|---|---|---|
+| [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) (caixa) | [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) — **corte condicionado à Fase 2** (combustível) | +0,11 − 7,65 = **−7,54** |
+
+**Ficha da que sai: Big Score** (`{3}{R}` instantâneo, oracle conferido)
+
+| Eixo | Função | Quem cobre depois do corte |
+|---|---|---|
+| F1 | Custo adicional de descartar 1, compra 2 e cria **2 Treasures**, em velocidade de instantâneo | Treasures: [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) (3 manas de qualquer cor, espalhadas em 3 turnos), [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) (1 Treasure) e [**Reckoner Bankbuster**](https://www.ligamagic.com.br/?view=cards/card&card=Reckoner+Bankbuster) (1 Treasure). Loot: [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) (mesmo texto, feitiço de 3), [**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting), [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre) e [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) |
+| F1 | **Saldo de +1 carta** | **Descoberto.** O [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) **não** está entre as 12 fontes de draw da Fase 3, mas a carta existia. [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) e o `{T}` do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) são os motores que ficam. Reserva que devolve a carta: [**Mind Stone**](https://www.ligamagic.com.br/?view=cards/card&card=Mind+Stone) (§R7) |
+| F2 | Sem corpo | — |
+| F3 | Instantâneo que vai ao cemitério: 2 cartas de **combustível** (ele e o descarte) e um tipo para o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) | Combustível dedicado cai de **11 para 10**, mais a vidência 3 do [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial). **Função da Fase 2 → condicionado.** O tipo instantâneo continua com outros 10 no deck |
+| F4 | Não recebe nada | — |
+| F5 | Fixação em burst (os Treasures fazem `{W}{W}`), e o descarte dispara o **Inti** (impulse) | Fixação: [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns), 6 rochas de cor à escolha e 11 duplas. Inti: [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils), [**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting), [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre), [**Lesser Masticore**](https://www.ligamagic.com.br/?view=cards/card&card=Lesser+Masticore), [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse) e o descarte de ataque do próprio Inti |
+| F6 | CMC 4, **um dos 9 quatro-drops**. Conjurado no fim do turno do oponente com a mana de remoção guardada | **Medido na §R5: ≈ 0 do T3 ao T5.** O uso no fim de turno fica **descoberto** (é o único loot instantâneo além do [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre)). Custo aceito |
+| F7 | Disputa a mana do T4 com os 5 motores, Torbran, Jailer e Celebrate. Um pip vermelho | Com o corte, os 4-drops caem de 9 para 8 |
+
+**Simetria (seção 3 do checklist).**
+- **Haliya:** a Fase 3 está propondo a [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light), que ganha 1 de vida por artefato
+  que entra. Os 2 Treasures do [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) davam +2, e a Sphere dá +1. Pesei isso dos dois lados, e não inverte.
+- **Teshar:** o critério também vale ao contrário. A Sphere é artefato, então conta como mágica
+  histórica para o [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) (21 → **22**), e o [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) não conta. Medido:
+  P(Helix do Teshar até o T8) fica igual (8,3% → 8,3%), porque as rochas são conjuradas **antes** de
+  o Teshar chegar. **É critério de desempate, não motivo.**
+
+**Ficha da que entra: Sphere of the Suns** (`{2}` artefato)
+- **F1:** entra virada com 3 contadores; `{T}` e remover um contador: 1 mana de qualquer cor.
+- **F2:** sem corpo.
+- **F3:** artefato, que conta como histórico para o Teshar. Ela nunca vai sozinha ao cemitério, então
+  [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) e [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) não a reutilizam.
+- **F4:** não recebe nada.
+- **F5:** 3 manas de qualquer cor, para `{W}{W}` (Broodmoth, [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), Jailer, [**Reduce to Memory**](https://www.ligamagic.com.br/?view=cards/card&card=Reduce+to+Memory)) e
+  `{R}{R}` (Bearer, Torbran).
+- **F6:** conjurada no T2, paga o Phlage no T3.
+- **F7:** **expira depois de 3 usos**, o que o modelo contabiliza, e entra virada. Custo medido: nenhum
+  (é a melhor linha da §R7 no T3).
+
+**O que mudou desde a saída da Sphere na Fase 6 (regra 5).** Ela saiu para dar o slot ao **Zookeeper
+Mechan**, pelo **corpo** (piso de criaturas 16–17), e a Fase 6 mediu o custo em −0,5 pp num escape
+de `{R}{R}{W}{W}`. Três coisas mudaram:
+1. Ela volta no slot do [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score), e o **Zookeeper fica**. O motivo da saída continua respeitado: as criaturas seguem 17.
+2. O custo foi medido para o escape próprio. Nos marcos novos, ela é a melhor rocha de 2 manas
+   disponível (§R7), e o slot que ela ocupa rende ≈ 0 hoje (§R5).
+3. O Teshar torna artefatos mágicas históricas.
+
+Uma função dela **não volta**: a de sacrifício para o [**Demand Answers**](https://www.ligamagic.com.br/?view=cards/card&card=Demand+Answers), que saiu na §12.
+
+**Se a Fase 2 recusar** (combustível abaixo de 11), a troca não acontece e o ramp fica em **9 / 2**.
+Nada mais depende dela.
+
+### R7. Alternativas medidas (todas no lugar do [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score)) e reservas
+
+| Entra | Phlage T3 | Motor T4 | Reanim. + outra | Titan T6 | Gisela T7 | Na coleção? | R$ | Papel |
+|---|---|---|---|---|---|---|---|---|
+| [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) | **84,8** | **23,6** | **23,7** | 55,7 | 48,6 | **sim** | 0,11 | **proposta** |
+| [**Hedron Crawler**](https://www.ligamagic.com.br/?view=cards/card&card=Hedron+Crawler) | 84,1 | 23,4 | 23,6 | 55,8 | 49,0 | **sim** | 0,10 | **1ª reserva, sem compra.** Produz `{C}`, e isso custa 0,7 pp no T3. Em troca é **permanente** e é **criatura de MV 2**: dispara a [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome), volta com a Broodmoth e leva o piso de 17 para 18. **O que mudou desde que eu a dispensei (§3.2):** o motivo era zero pip para `{R}{R}{W}{W}`, e agora os custos do plano têm parte genérica. **Se a Fase 2 quiser o corpo, ela é a escolha** |
+| [**Star Compass**](https://www.ligamagic.com.br/?view=cards/card&card=Star+Compass) | 84,8 | 23,6 | 23,7 | 56,0 | 49,1 | não | `a cotar` | empata com a Sphere e não expira. É compra, então fica atrás de duas opções da caixa |
+| [**Gold Myr**](https://www.ligamagic.com.br/?view=cards/card&card=Gold+Myr) | 84,4 | 23,6 | 23,6 | 56,0 | 49,0 | não | `a cotar` | `{W}` e corpo 1/1. É compra |
+| [**Mind Stone**](https://www.ligamagic.com.br/?view=cards/card&card=Mind+Stone) | 84,1 | 23,5 | 23,6 | 55,8 | 49,0 | não | 2,25 | **Reserva se a Fase 3 pedir a carta de volta**: é a única que mantém "sacrifica: compra 1" |
+| [**Manalith**](https://www.ligamagic.com.br/?view=cards/card&card=Manalith) / [**Boros Locket**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Locket) (caixa) | 83,8 | 23,1 | 23,1 | 55,0 | 48,7 | sim | `a cotar` / 0,18 | **CMC 3 não mexe no começo** (igual ao [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) do T3 ao T5). Dispensa por curva (F6) |
+| carta em branco de 2 manas | 83,7 | 23,1 | 23,3 | 53,2 | 46,0 | — | — | referência |
+
+**Trocas dentro do ramp, medidas e recusadas:**
+- **Commander's Sphere → Sphere of the Suns:** no começo empata com a proposta (84,9 / 23,8 / 23,7),
+  mas perde no jogo longo (Titan 54,5 × 55,7; Gisela 47,2 × 48,6). Perde também o "sacrifica:
+  compra 1", que manda a rocha ao cemitério, onde [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) e **Sevinne's
+  Reclamation** a devolvem. Recusada.
+- **Zookeeper Mechan → Gold Myr:** +0,3 pp no T3, que é empate. O Zookeeper é da caixa, é 1/3 e
+  tem o `{6}{R}` de dreno de mana. Fica.
+
+### R8. Contagem e custo depois da troca
+
+| Item | Lista revisada | Com a troca |
+|---|---|---|
+| Ramp padrão | 9 | **10**: [**Sol Ring**](https://www.ligamagic.com.br/?view=cards/card&card=Sol+Ring), [**Arcane Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Arcane+Signet), [**Boros Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Signet), [**Talisman of Conviction**](https://www.ligamagic.com.br/?view=cards/card&card=Talisman+of+Conviction), [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere), [**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin), [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert), [**Ornithopter of Paradise**](https://www.ligamagic.com.br/?view=cards/card&card=Ornithopter+of+Paradise), [**Zookeeper Mechan**](https://www.ligamagic.com.br/?view=cards/card&card=Zookeeper+Mechan), [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) |
+| Ramp explosivo | 2 | **1** ([**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils), nominal; §R5) |
+| Slots de ramp | 11 | **11** |
+| Curva (62 não-terrenos) | 2: 26 · 4: 9 · média 2,74 | 2: **27** · 4: **8** · média **2,71** |
+| Cor (não-terrenos) | vermelho 22 · incolor 11 | vermelho **21** · incolor **12** |
+| Mágicas históricas (Teshar) | 21 | **22** |
+| Custo das 99 | R$ 162,12 | **R$ 154,58** (folga R$ 37,88 → **R$ 45,42**) |
+
+Preços: LigaMagic (menor). [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) 7,65 (2026-09-23), [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) 0,11 (2026-09-23).
+
+### R9. Sinais para as outras fases
+
+| Fase | Sinal |
+|---|---|
+| **2 · tema** | **Decide o corte condicionado.** Com a troca, o combustível dedicado cai de 11 para 10, mais a vidência 3 do Dial. Se recusar, a troca cai inteira. Se quiser corpo, a [**Hedron Crawler**](https://www.ligamagic.com.br/?view=cards/card&card=Hedron+Crawler) substitui a Sphere (§R7) |
+| **3 · draw** | O [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) não está nas 12 fontes, mas o saldo de +1 carta dele sai. A reserva que devolve a carta é a [**Mind Stone**](https://www.ligamagic.com.br/?view=cards/card&card=Mind+Stone) (R$ 2,25). Para a **Haliya**: a Sphere dá +1 de vida ao entrar, e os 2 Treasures davam +2 |
+| **5 · interação** | Nada. Não tirei nenhuma remoção. As linhas da §R4 que tiram remoção são **medidas**, não propostas |
+| **6 · manabase** | Phlage no T3 medido em **83,8%** com a base real (37/11). Nada na troca depende da base |
+| **7 · wincons** | Com a troca, [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) no T6 vai de 53,9% para 55,7%, e Gisela no T7 de 47,2% para 48,6%. Os marcos do T3–T5 estão na §R3, para a re-simulação |
+| **Orquestrador** | Delta **−R$ 7,54**, sem compra. A seção `Mana Artifacts` do EDHREC nunca foi transcrita. Se quiser o radar de rochas, é a única chamada que faltou |

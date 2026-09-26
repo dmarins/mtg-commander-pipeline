@@ -36,6 +36,13 @@
 
 ### 1.1 As três travas mecânicas (dadas pelo orquestrador — respeitadas, não redescobertas)
 
+> ⚠ **Trava 2 revogada em 2026-09-24 para reanimação.** A premissa está certa (reanimar dispara o
+> sacrifício), mas a conclusão não: o Helix dispara em toda entrada (ruling WotC 2024-06-07), e o
+> Phlage sacrificado volta ao cemitério pronto para a próxima reanimação. Blink continua fora.
+> Revisão completa, com o pacote de reanimação, os cortes e a nova contagem, na **§12** deste arquivo.
+> As dispensas de Late to Dinner, Miraculous Recovery e Remember the Fallen no §8.2 foram
+> refeitas com outro motivo na §12.5.
+
 1. **6 cartas no cemitério** para o primeiro escape (5 exiladas **além** do Phlage).
 2. **Só o escape evita o sacrifício.** Reanimar ou blinkar dispara L1. → **Nenhum pacote de
    reanimação ou blink neste deck.** Consequência direta e concreta: [**Late to Dinner**](https://www.ligamagic.com.br/?view=cards/card&card=Late+to+Dinner),
@@ -535,3 +542,335 @@ reserva de cortes da Fase 6, como o processo pede.
 | **6 · manabase** | **36 terrenos não bastam** para uma base que precisa de RRWW no T5–T6 junto com mágicas de 1–2. Avaliar **terrenos com cycling** ([**Forgotten Cave**](https://www.ligamagic.com.br/?view=cards/card&card=Forgotten+Cave), [**Secluded Steppe**](https://www.ligamagic.com.br/?view=cards/card&card=Secluded+Steppe), [**Smoldering Crater**](https://www.ligamagic.com.br/?view=cards/card&card=Smoldering+Crater), [**Desert of the Fervent**](https://www.ligamagic.com.br/?view=cards/card&card=Desert+of+the+Fervent), [**Desert of the True**](https://www.ligamagic.com.br/?view=cards/card&card=Desert+of+the+True), [**Glittering Massif**](https://www.ligamagic.com.br/?view=cards/card&card=Glittering+Massif)): eles são **combustível de graça no slot de terreno** e resolvem inundação. [**Blast Zone**](https://www.ligamagic.com.br/?view=cards/card&card=Blast+Zone) (caixa) e [**Sequestered Stash**](https://www.ligamagic.com.br/?view=cards/card&card=Sequestered+Stash) como utilidade. |
 | **7 · wincon** | O eixo **não** fecha o jogo — §6 é o pacote. Requisito duro: **5–7 pingadores + 3–4 multiplicadores**. [**Torbran**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell) é o nº 1 por curva e por multiplicar +200% sobre base 1. `Gisela` fica como **nº 2** (dobra combate + metade defensiva, mas CMC 7). Goldfishing precisa medir **turno do primeiro escape** (previsão: T6, P=52%) e **turno de morte do primeiro oponente**. |
 | **Orquestrador** | (a) **37 das 48 candidatas estão `a cotar`** — a captura na LigaMagic precisa acontecer **antes** de a Fase 6 fechar cortes. (b) O eixo **descarta ~60 das 69 não-básicas do Tori**: o deck v2 é majoritariamente compra, e o custo total é **desconhecido**, não "baixo". (c) **Risco de percepção**: 27,9% de mãos sem criatura é o dobro dos 12,1% da v1 corrigida — o usuário reclamou exatamente disso, e isto precisa ser pergunta explícita no `report.md`. |
+
+---
+
+## 12. Revisão 2026-09-24 — pacote de reanimação
+
+> **Por que esta seção existe.** O usuário achou a v2 fraca. O orquestrador (`08-meta-edhrec.md`)
+> mostrou que a trava 2 do §1.1 tirava a conclusão errada de uma premissa certa, e ela foi
+> **revogada para reanimação**. Esta seção refaz **só o que o eixo muda**. O resto da análise
+> acima (§1–§11) continua valendo, e o que ela diz sobre combustível, remoção e corpos serve de base
+> para os cortes abaixo. Numerei como §12 porque o arquivo já tinha §10 (ficha) e §11 (sinais).
+>
+> **Regra 6.** Todo oracle citado foi puxado com `bin/mtgdb oracle` nesta sessão, e os rulings com
+> `bin/mtgdb rulings` (Phlage, Confession Dial, Desdemona, Luminous Broodmoth). **Regra 2.** Preços
+> saem só de `bin/mtgdb prices`, com LigaMagic (menor) e cotações de 2026-08-12 a 2026-09-24. Duas
+> cartas estão **`a cotar`**. **EDHREC** não foi chamado de novo: o radar vem do `08` §3.
+
+### 12.1 A regra, conferida
+
+| Fato | Fonte |
+|---|---|
+| O Helix dispara em **toda** entrada, escapado ou não | ruling WotC 2024-06-07: *"Phlage's second ability triggers when it enters the battlefield, even if it didn't escape."* |
+| O sacrifício pega em qualquer entrada que não seja conjuração **com habilidade de escape** | ruling WotC 2024-06-07: *"…if you didn't cast it, or if it was cast using any permission other than an escape ability."* |
+| Sacrificado, ele vai ao cemitério e **o dono escolhe deixá-lo lá** | CR 903.9a: o comandante no cemitério ou no exílio *"its owner **may** put it into the command zone"*. É opcional. Deixe no cemitério; mande à zona de comando **só** se for exilado por ódio de cemitério |
+| **Escape concedido por outra carta também conta como "escaped"** | rulings de Confession Dial e Desdemona (2023-10-13 / 2024-03-08): com várias permissões de escape, *"you choose which one to apply"*. O Phlage conjurado pelo escape de `{1}{R}{W}` delas **fica em campo** |
+
+**Consequência.** O Phlage tem **três** modos de voltar do cemitério, e os três convivem:
+
+| Modo | Custo | Resultado | Quando |
+|---|---|---|---|
+| **Reanimação** (mágica ou motor) | 1–2 manas, nenhuma carta exilada | Helix (3 + 3), ele se sacrifica e **volta ao cemitério** pronto para a próxima | a partir do **T4**, porque ele cai lá no T3 |
+| **Escape concedido** (Confession Dial, Desdemona) | `{1}{R}{W}` + exilar 3 (Dial) ou 2 (Desdemona) | Helix, e o **6/6 fica** | T5 com o Dial jogado no T4 |
+| **Escape próprio** (plano B) | `{R}{R}{W}{W}` + exilar 5 | Helix, e o 6/6 fica | T6–T7 (§3.1) |
+
+### 12.2 Eixo revisado
+
+**Antes:** controle de atrito, com o escape como única volta do Phlage e o fecho por pingadores
+multiplicados.
+**Agora:** **reanimação em loop + escape (concedido ou próprio) + controle.** Cada mágica de
+reanimação é um Lightning Helix de 1–2 manas que se repete enquanto houver mágica. O multiplicador
+passa a pesar sobre o **Helix**, e não mais sobre pingadores que dependiam de 3–5 mágicas por turno.
+A Fase 7 mediu 0,8–1,2 mágica por turno (§3.4 do `07`).
+
+**Termos de busca acrescentados ao §2:** T8 `reanimate-creature` com MV ≤ 3 (tag) · T9 escape
+concedido (`"gains escape"`) · T10 dobradores de entrada e cópia de gatilho · T11 payoffs de
+*carta sai do cemitério* e *criatura de MV ≤ 3 entra*.
+
+**Os números velhos, revistos:**
+- **Combustível (§3):** a meta de 14 foi dimensionada para o escape próprio como plano **único**.
+  Agora ele é plano B, e o escape concedido pede 3 ou 2 cartas além do Phlage, não 5. As mágicas de
+  reanimação também caem no cemitério depois de usadas. **Meta revista: ~11 fontes dedicadas.**
+- **Corpos (§4):** o pacote traz 6 criaturas. **15 → 17**, dentro da meta de 16–17 que a v2 não
+  alcançou. P(mão de 7 sem criatura) cai de 30,4% para **25,5%**.
+- **Pingadores (§6.1):** a premissa deles caiu na Fase 7. O dano espalhado passa a vir do Helix
+  multiplicado, do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) e do [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation).
+
+### 12.3 Radar do EDHREC
+
+Copiado do `08-meta-edhrec.md` §3 (orquestrador, `get_edhrec_recommendations` com `limit` 20, em
+2026-09-24). **Não chamei de novo.** Só nome e nota de sinergia; a inclusão vem quebrada e não se copia.
+O `08` transcreveu só `High Synergy Cards` e `Top Cards`. As seções `Instants`/`Sorceries`/
+`Utility Artifacts` (Fases 3 e 5) e `Mana Artifacts` (Fase 4) **não foram transcritas**. Lands/
+`Utility Lands` estão no `06` §2.3. Nenhuma carta foi marcada como `Game Changer` no retorno transcrito.
+
+**High Synergy Cards**
+
+| Carta | Synergy | No deck/pool? |
+|---|---|---|
+| [**Helping Hand**](https://www.ligamagic.com.br/?view=cards/card&card=Helping+Hand) | 0,64 | **entra** (§12.4) |
+| [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) | 0,61 | **entra** |
+| [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) | 0,58 | **entra** |
+| [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth) | 0,57 | **entra** |
+| [**Call a Surprise Witness**](https://www.ligamagic.com.br/?view=cards/card&card=Call+a+Surprise+Witness) | 0,51 | **entra** |
+| [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) | 0,50 | **entra** |
+| [**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting) | 0,48 | já no deck (v2) |
+| [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) | 0,48 | **entra** |
+| [**Panharmonicon**](https://www.ligamagic.com.br/?view=cards/card&card=Panharmonicon) | 0,47 | fora: R$ 34,45 (`08` §4.4) |
+| [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | 0,44 | **entra** |
+
+**Top Cards**
+
+| Carta | Synergy | No deck/pool? |
+|---|---|---|
+| [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) | 0,44 | **entra** |
+| [**The Gaffer**](https://www.ligamagic.com.br/?view=cards/card&card=The+Gaffer) | 0,42 | fora: R$ 63,75 (`08` §4.4) |
+| [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) | 0,41 | **entra** |
+| [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) | 0,39 | reserva (§12.5) |
+
+**Archidekt** (`08` §3, bracket 3): as listas-modelo são Usain Bolt (#8068510) e Budget Phlag
+(#25832205). Elas foram fonte de candidatas, não de veredito. Confession Dial e Desdemona **não**
+vieram do meta: saíram da busca local por escape concedido (T9).
+
+### 12.4 Pacote escolhido — 15 entradas
+
+**Dimensionamento.** Conta como **efeito de reanimação** o que tira o Phlage do cemitério e o põe em
+campo sem depender de ele já estar lá. Os dobradores ([**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth), [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal)) só
+disparam quando ele **morre**, por isso contam à parte. A hipergeométrica sobre 99, na jogada, sem
+contar os loots que aumentam as cartas vistas:
+
+| Efeitos | até T4 (10 vistas) | até T5 | até T6 | ≥2 até T6 |
+|---|---|---|---|---|
+| 8 | 58,7% | 62,5% | 65,9% | 24,9% |
+| **10 (escolhido)** | **67,4%** | **71,0%** | **74,3%** | **34,8%** |
+| 12 | 74,3% | 77,8% | 80,8% | 44,5% |
+
+**Por que 10 e não 12.** Os dois efeitos extras dão +7 pp no T4 e custam 2 slots de remoção ou de draw.
+Os loots (6 no deck) aumentam as cartas vistas, então o número real fica acima da tabela. Além
+disso, 5 dos 10 são **repetíveis** (Teshar, Sun Titan, Warsinger, Dial, Desdemona): um deles em campo
+vale por vários efeitos de uma vez só.
+
+#### A. Reanimação de uma vez (5)
+
+| Carta | Custo | Com o Phlage | Sinergias (≥2) | Origem | R$ |
+|---|---|---|---|---|---|
+| [**Helping Hand**](https://www.ligamagic.com.br/?view=cards/card&card=Helping+Hand) | `{W}` feitiço | Helix por **1 mana** | (1) o Helix mais barato do formato, deixa 3 manas livres no T4; (2) dispara [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) (criatura de MV 3 entra) e [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) (carta sai do cemitério); (3) página no [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) | EDHREC alta sinergia · Budget Phlag | 0,45 |
+| [**Return Triumphant**](https://www.ligamagic.com.br/?view=cards/card&card=Return+Triumphant) | `{1}{W}` feitiço | Helix | (1)(2)(3) iguais aos da Helping Hand; (4) com o Phlage escapado em campo, devolve [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger), que cresce com o Role ao atacar | `08` §4.1 | 0,20 |
+| [**Call a Surprise Witness**](https://www.ligamagic.com.br/?view=cards/card&card=Call+a+Surprise+Witness) | `{1}{W}` feitiço | Helix | (1)(2)(3) iguais. **F7:** o contador de voar desliga o [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth) nessa volta, porque o Phlage morre com voar. Com a Broodmoth em campo, conjure outra reanimação antes | EDHREC alta sinergia | 0,15 |
+| [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) | `{1}{W}` feitiço | Helix | (1) Helix; (2) **também devolve artefato**: [**Glass Casket**](https://www.ligamagic.com.br/?view=cards/card&card=Glass+Casket) (nova remoção), [**Sol Ring**](https://www.ligamagic.com.br/?view=cards/card&card=Sol+Ring), [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial), [**Ratchet Bomb**](https://www.ligamagic.com.br/?view=cards/card&card=Ratchet+Bomb), então nunca é carta morta com o Phlage em campo; (3) Tocasia, Ark e Tome | EDHREC alta sinergia | 1,00 |
+| [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) | `{2}{W}`, flashback `{4}{W}` | **2 Helix por carta**, um em cada conjuração. Na do cemitério, a cópia devolve **outra** permanente (terreno, rocha ou Casket), porque só existe um Phlage | (1) 2 Helix; (2) recursão de terreno e rocha; (3) o flashback é saída do cemitério e dispara o Ark. **F7:** não exile ela no escape antes de usar o flashback | EDHREC alta sinergia | 3,50 |
+
+#### B. Motores repetíveis (3)
+
+| Carta | Custo | Com o Phlage | Sinergias (≥2) | Origem | R$ |
+|---|---|---|---|---|---|
+| [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) | `{3}{W}` 2/2 voador | Helix a cada **mágica histórica** | (1) a lista revisada tem **21 históricas**: 16 artefatos (5 deles criaturas) + 5 lendárias. **Correção ao `08`**, que contou 10 + 4; (2) conjurar o Phlage **também é mágica histórica**, então o escape dispara o Teshar, que devolve outro corpo de MV ≤ 3; (3) voador, conta no piso de corpos | Budget Phlag · EDHREC | 0,60 |
+| [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) | `{4}{W}{W}` 6/6 vigilância | Helix **ao entrar e a cada ataque** | (1) motor sem gastar carta; (2) **é Giant**, então o [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) dobra o combate dele (12); (3) devolve também [**Glass Casket**](https://www.ligamagic.com.br/?view=cards/card&card=Glass+Casket), [**Seal of Cleansing**](https://www.ligamagic.com.br/?view=cards/card&card=Seal+of+Cleansing), rochas e terrenos | EDHREC alta sinergia | 2,25 |
+| [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger) | `{1}{R}{W}` 3/3 vigilância, atropelar | Helix sempre que causa **3+ de dano de combate** a um jogador | (1) o motor mais barato; (2) corpo de 3 que bloqueia (vigilância) e sobe o piso; (3) o [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) põe +1/+1 e atropelar no ataque, e isso torna os 3 de dano confiáveis. **F7:** precisa conectar, e bloqueio largo o desliga | `08` §4.2 | 0,49 |
+
+#### C. Escape concedido — o Phlage **fica** (2)
+
+| Carta | Custo | Com o Phlage | Sinergias (≥2) | Origem | R$ |
+|---|---|---|---|---|---|
+| [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) | `{3}` artefato | `{T}`: o Phlage ganha escape de **`{1}{R}{W}` + exilar 3**. Conjurado assim, ele **escapou**: 6/6 permanente + Helix | (1) **corta o escape de 4 manas + 5 cartas para 3 + 3**, todo turno. Com o Dial no T4, o Phlage fica em campo no **T5** (hoje é T6–T7); (2) ETB **vidência 3** = combustível; (3) artefato: histórico para o Teshar e alvo do [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) e do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) | busca local (T9), **não é do meta** | **`a cotar`** |
+| [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge) | `{2}{R}{W}` 3/4 vigilância | ao atacar, o Phlage ganha escape de **`{1}{R}{W}` + exilar 2** até o fim do turno. Conjura na 2ª fase principal | (1) segunda via de Phlage permanente por 3 manas; (2) lendária: histórica para o Teshar; (3) 3/4 com vigilância ataca e bloqueia. **F7:** precisa atacar e sobreviver até a declaração; o gatilho resolve mesmo se ela morrer depois | busca local (T9) | **`a cotar`** |
+
+#### D. Dobradores de entrada (2)
+
+| Carta | Custo | Com o Phlage | Sinergias (≥2) | Origem | R$ |
+|---|---|---|---|---|---|
+| [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth) | `{2}{W}{W}` 3/4 voador | toda vez que o Phlage se sacrifica, volta com contador de voar: **2 Helix por reanimação** (na segunda morte ele tem voar e fica no cemitério) | (1) dobra o motor inteiro; (2) **dor 4**: devolve toda criatura sua sem voar que morre, **inclusive no wipe em que ela morre junto** (ruling 2020-04-17), e isso faz o [**Fumigate**](https://www.ligamagic.com.br/?view=cards/card&card=Fumigate) e o [**Slaughter the Strong**](https://www.ligamagic.com.br/?view=cards/card&card=Slaughter+the+Strong) serem unilaterais; (3) voadora 3/4 que bloqueia o céu | EDHREC alta sinergia · Budget Phlag | 6,74 |
+| [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal) | `{1}{W}` encantamento | pré-paga: quando o Phlage se sacrifica, ele volta = +1 Helix. **No T3, com ela jogada no T2, a conjuração da zona de comando vira 2 Helix** | (1) Helix extra em velocidade de instantâneo (é gatilho); (2) **proteção** contra remoção pontual em [**Torbran, Thane of Red Fell**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell), [**Gisela, Blade of Goldnight**](https://www.ligamagic.com.br/?view=cards/card&card=Gisela%2C+Blade+of+Goldnight) e [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) (o "may" deixa guardá-la para quem importa); (3) vai ao cemitério quando usada | `08` §4.1 | 0,80 |
+
+> **Correção ao `08` §6 (0.4 Proteção).** Broodmoth e Renewal **não** preservam o Phlage escapado.
+> Eles o devolvem **sem** ter escapado, e ele se sacrifica de novo. Transformam a remoção do
+> oponente em mais um Helix, o que é bom, mas o 6/6 não fica. Quem protege o 6/6 continua sendo só
+> [**Gods Willing**](https://www.ligamagic.com.br/?view=cards/card&card=Gods+Willing), e quem o traz de volta **escapado** é o Dial ou a Desdemona.
+
+#### E. Multiplicador e payoffs (3)
+
+| Carta | Custo | Com o Phlage | Sinergias (≥2) | Origem | R$ |
+|---|---|---|---|---|---|
+| [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) | `{2}{R}{R}` 3/4 | o Phlage é **Elder Giant**: o dano do Helix dobra (**6**; a vida continua 3), o combate do escapado vira **12** | (1) multiplica **todo** Helix do motor, sem depender de mágica conjurada (os pingadores dependiam); (2) [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) e o próprio Bearer são Giant; (3) 3/4 bloqueia. Com [**Torbran, Thane of Red Fell**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell): quem sofre o dano ordena as substituições (CR 616.1), então o resultado é **8**, não 10 | EDHREC alta sinergia | 0,24 |
+| [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) | `{2}{W}` encantamento | compra 1 por turno em que uma criatura sua de MV ≤ 3 entra. O Phlage reanimado basta | (1) **transforma o motor em vantagem de cartas**. É o gargalo que a Fase 7 mediu (§3.4 do `07`: falta carta na mão, não mana); (2) também dispara com [**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin), [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert), [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger) e com o Phlage da zona de comando | EDHREC Top Cards | 7,88 |
+| [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | `{2}{R}{W}` artefato | 1 a cada oponente + 1 de vida sempre que cartas saem do seu cemitério: reanimação, escape, flashback, retrace do [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab) | (1) **alcance espalhado** que substitui os pingadores e dispara com eventos que o deck produz de qualquer jeito; (2) `{T}`: moer 1 **e poder jogá-la** = impulse repetível (draw) **e** combustível; (3) artefato: histórico para o Teshar | EDHREC alta sinergia | 0,45 |
+
+**Subtotal das 15 entradas:** R$ 24,75 nas 13 cotadas + [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) e [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge) **`a cotar`**.
+
+**Regra 5.** Nenhuma das 15 aparece no `decisions.md` como corte. Nenhuma é reposição.
+
+### 12.5 Varredura da caixa e dispensas (regra 7)
+
+**Caixa (`mtgdb collection`):** das 116 sobressalentes, a única reanimação é [**Emerge from the Cocoon**](https://www.ligamagic.com.br/?view=cards/card&card=Emerge+from+the+Cocoon).
+Nenhuma das 15 entradas está na caixa.
+
+**Releitura da `lista.txt`. O que mudou (regra 5):** no §8.2, [**Late to Dinner**](https://www.ligamagic.com.br/?view=cards/card&card=Late+to+Dinner), [**Miraculous Recovery**](https://www.ligamagic.com.br/?view=cards/card&card=Miraculous+Recovery) e
+[**Remember the Fallen**](https://www.ligamagic.com.br/?view=cards/card&card=Remember+the+Fallen) foram dispensadas **pela trava 2**, que caiu. Por isso reavaliei as três, agora pelo custo:
+
+| Carta | Origem | Ficha resumida | Por que não entra |
+|---|---|---|---|
+| [**Emerge from the Cocoon**](https://www.ligamagic.com.br/?view=cards/card&card=Emerge+from+the+Cocoon) | caixa | F1 devolve **qualquer** criatura + 3 de vida · F6 CMC 5 | **Curva (F6).** Um Helix de 5 manas ocupa o turno inteiro; o plano pede Helix de 1–2 manas **junto** com outra jogada. O que ela tem de único (devolver [**Gisela, Blade of Goldnight**](https://www.ligamagic.com.br/?view=cards/card&card=Gisela%2C+Blade+of+Goldnight) ou [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan)) vale menos que um slot de remoção. **1ª reserva sem compra**, se o Dial ou a Desdemona estourarem na cotação |
+| [**Late to Dinner**](https://www.ligamagic.com.br/?view=cards/card&card=Late+to+Dinner) | lista | F1 qualquer criatura + Food · F6 CMC 4 | Curva (F6): o dobro do custo de [**Return Triumphant**](https://www.ligamagic.com.br/?view=cards/card&card=Return+Triumphant) (R$ 0,20). Reserva sem compra, `a cotar` na régua |
+| [**Miraculous Recovery**](https://www.ligamagic.com.br/?view=cards/card&card=Miraculous+Recovery) | lista | F1 qualquer criatura, **instantâneo** · F6 CMC 5 | Curva. A velocidade de instantâneo é a única vantagem, e o [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal) a entrega por 2 manas |
+| [**Remember the Fallen**](https://www.ligamagic.com.br/?view=cards/card&card=Remember+the+Fallen) | lista | F1 devolve à **mão** | Mão + conjuração = 6 manas por um Helix. Continua fora |
+
+**Candidatas cotadas no `08` e deixadas de fora:**
+
+| Carta | R$ | Motivo |
+|---|---|---|
+| [**Patch Up**](https://www.ligamagic.com.br/?view=cards/card&card=Patch+Up) | 0,23 | com o Phlage, gasta todo o MV 3: é um Helix de 3 manas, pior que as quatro de 1–2. **Reserva** (fallback do Dial) |
+| [**Bishop of Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Bishop+of+Rebirth) | 0,45 | mesmo papel do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) (Helix a cada ataque), só que 3/4, sem ETB e sem ser Giant. **Reserva** (fallback da Desdemona) |
+| [**Brought Back**](https://www.ligamagic.com.br/?view=cards/card&card=Brought+Back) | 3,00 | só vale no turno em que o Phlage morreu, e pede `{W}{W}` extra nesse turno. O [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal) faz o mesmo pré-pago |
+| [**Karmic Guide**](https://www.ligamagic.com.br/?view=cards/card&card=Karmic+Guide) | 2,66 | 5 manas + echo por um Helix de ETB. O [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) repete |
+| [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) | 11,88 | compra quando você ganha 3+ de vida: todo Helix basta, inclusive o de ataque (a [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) não pega esse). **Melhor carta, pior preço.** É a 1ª opção para a folga, se o orquestrador quiser gastá-la em draw |
+| [**Pursue the Past**](https://www.ligamagic.com.br/?view=cards/card&card=Pursue+the+Past) | 0,39 | loot com flashback. Só combustível, e o combustível ficou menos crítico |
+
+**Achados da busca local e deixados de fora:**
+
+| Carta | Motivo |
+|---|---|
+| [**Excava, the Risen Past**](https://www.ligamagic.com.br/?view=cards/card&card=Excava%2C+the+Risen+Past) | devolve com **contador de finalidade**: o Phlage se sacrifica e é **exilado**, e aí só volta pela zona de comando, com imposto. Anti-sinergia |
+| [**Jolted Awake**](https://www.ligamagic.com.br/?view=cards/card&card=Jolted+Awake) · [**Lorehold Charm**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Charm) | só MV ≤ 2 (2 de energia / modo de reanimação). O Phlage tem MV 3 |
+| [**Idol of Endurance**](https://www.ligamagic.com.br/?view=cards/card&card=Idol+of+Endurance) | **exila** as criaturas de MV ≤ 3 do cemitério: tira o Phlage do alcance de toda reanimação. Anti-sinergia |
+| [**Pulsemage Advocate**](https://www.ligamagic.com.br/?view=cards/card&card=Pulsemage+Advocate) | motor repetível, mas cada uso dá 3 cartas a um oponente |
+| [**Custodi Soulcaller**](https://www.ligamagic.com.br/?view=cards/card&card=Custodi+Soulcaller) | X = jogadores atacados; exige atacar os 3 |
+| [**Roaming Throne**](https://www.ligamagic.com.br/?view=cards/card&card=Roaming+Throne) (nomeando Giant) · [**Strionic Resonator**](https://www.ligamagic.com.br/?view=cards/card&card=Strionic+Resonator) · [**Kirol, Attentive First-Year**](https://www.ligamagic.com.br/?view=cards/card&card=Kirol%2C+Attentive+First-Year) | **Reserva, `a cotar`.** Duplicam o gatilho do Helix (o Throne duplica todo gatilho do Phlage e do Sun Titan). Ficam para a Fase 7 decidir se a folga compra um 2º multiplicador |
+| [**Fuming Effigy**](https://www.ligamagic.com.br/?view=cards/card&card=Fuming+Effigy) | mesma cláusula de dano do Ark, sem o impulse. Reserva `a cotar` |
+| blink ([**Cloudshift**](https://www.ligamagic.com.br/?view=cards/card&card=Cloudshift), [**Ephemerate**](https://www.ligamagic.com.br/?view=cards/card&card=Ephemerate)) | continua fora (`08` §4.4): só funciona em resposta ao sacrifício, e no Phlage escapado tira o escape |
+
+### 12.6 Cortes — 15, com ficha (regra 4)
+
+Onde procurei, seguindo a hipótese do `08` §5: a rota R2 de pingadores, parte do combustível, o
+[**Crackle with Power**](https://www.ligamagic.com.br/?view=cards/card&card=Crackle+with+Power) e a sobreposição da remoção. Duas condições valem para os **dois** lados de cada troca
+(simetria, seção 3 do checklist):
+- **~1 mágica por turno** (Fase 7). As reanimações são feitiços, então os pingadores também
+  disparariam com elas, e contei isso a favor deles.
+- **Nenhum anthem** no deck, dos dois lados.
+
+**Cortes de especialidade alheia** (wincon, draw, remoção) vão marcados como **condicionados**: a
+fase dona confirma.
+
+#### Rota R2 de pingadores (4) · categoria `wincon` → condicionado à Fase 7
+
+| Sai | Funções (F1–F6) → quem cobre |
+|---|---|
+| [**Guttersnipe**](https://www.ligamagic.com.br/?view=cards/card&card=Guttersnipe) (R$ 5,40) | F1 **2 a cada oponente por instantâneo/feitiço** (com ~1/turno, e contando as reanimações: ~2 por oponente por turno; 4 com Torbran) → coberto pelo [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger), que dispara também com Teshar, Sun Titan, Warsinger, escape e retrace (que não são mágicas conjuradas), e pelo Helix multiplicado · F2 corpo 2/2 que bloqueia → [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger) 3/3 e [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) 3/4 · F3 criatura (piso) → as criaturas vão de 15 para **17** · F4 recebe o +2 do Torbran → o Helix recebe o mesmo · F6 T3 → Warsinger no T3. **Descoberto:** ~2 de dano por oponente em cada feitiço de reanimação. **Custo aceito**: é a 1ª reserva, se a Fase 7 medir mais de 1,5 mágica por turno |
+| [**Thermo-Alchemist**](https://www.ligamagic.com.br/?view=cards/card&card=Thermo-Alchemist) (R$ 0,55) | F1 `{T}`: 1 a cada oponente, desvira por mágica → [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation) faz o mesmo 1 por turno, em T2 e com fonte vermelha, mais o Ark · F2 **0/3 defensor no T2** → [**Zookeeper Mechan**](https://www.ligamagic.com.br/?view=cards/card&card=Zookeeper+Mechan) 1/3 (T2) e [**Ornithopter of Paradise**](https://www.ligamagic.com.br/?view=cards/card&card=Ornithopter+of+Paradise) 0/2; do T3 em diante, Warsinger, Bearer e Broodmoth · F3 criatura → piso sobe · F4 Torbran (3 por ping) → Helix com Torbran (5). **Descoberto:** um bloqueador de T2 a menos (restam 2 + Myr Convert 2/1) |
+| [**Erebor Flamesmith**](https://www.ligamagic.com.br/?view=cards/card&card=Erebor+Flamesmith) (R$ 0,33) | F1 1 a cada oponente por instantâneo/feitiço → Ark e Excavation · F2 2/1 → Warsinger · F3 criatura → piso sobe. Nada descoberto além do dano de 1 por mágica |
+| [**Firebrand Archer**](https://www.ligamagic.com.br/?view=cards/card&card=Firebrand+Archer) (R$ 0,99) | idem, pegando também rochas e encantamentos → Ark e Excavation · F2 2/1 → Warsinger · F3 → piso sobe. Nada descoberto além disso |
+
+#### Combustível (4) · categoria `tema` → minha especialidade
+
+| Sai | Funções → quem cobre |
+|---|---|
+| [**Perpetual Timepiece**](https://www.ligamagic.com.br/?view=cards/card&card=Perpetual+Timepiece) (R$ 0,65) | F1 `{T}`: moer 2 → [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) (moe 1 **e** deixa jogar), [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) (vidência 3), [**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin), [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation) · F1b exila-se para embaralhar o cemitério (resposta a ódio de cemitério) → 7 respostas a artefato/encantamento cobrem [**Rest in Peace**](https://www.ligamagic.com.br/?view=cards/card&card=Rest+in+Peace). Contra [**Bojuka Bog**](https://www.ligamagic.com.br/?view=cards/card&card=Bojuka+Bog), a mitigação é a CR 903.9a (o Phlage exilado vai à zona de comando) · F3 **artefato = histórico para o Teshar** (simetria: se conta a favor do Dial, conta contra o corte) → a lista revisada ainda tem 16 artefatos · F6 T2. **Descoberto:** 2 cartas por turno de taxa bruta de moinho. **Custo aceito**: a reanimação não precisa de cemitério cheio |
+| [**Cathartic Reunion**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Reunion) (R$ 0,14) | F1 descarta 2, compra 3: combustível 3 + 1 carta líquida → loots que ficam ([**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting), [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre), [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score), [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils), [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate)); a carta líquida → [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) · F5 descarte alimenta o [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) → os mesmos loots + [**Lesser Masticore**](https://www.ligamagic.com.br/?view=cards/card&card=Lesser+Masticore) + [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse) + o descarte de ataque do próprio Inti |
+| [**Demand Answers**](https://www.ligamagic.com.br/?view=cards/card&card=Demand+Answers) (R$ 2,80) | F1 loot instantâneo, ou sacrifica artefato em vez de descartar → loots que ficam. **Descoberto:** converter Treasure ou rocha gasta em carta. Custo aceito |
+| [**Thrill of Possibility**](https://www.ligamagic.com.br/?view=cards/card&card=Thrill+of+Possibility) (caixa, R$ 0,50 na régua) | F1 loot instantâneo → loots que ficam; o [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre) é o loot instantâneo que resta. **Regra 7:** carta da caixa que sai. Motivo: o combustível dedicado pode cair de 14 para ~11 (§12.2), e das três loots ela é a que menos faz (descarta 1, compra 2) |
+
+#### Fecho R3 (1) · categoria `wincon` → condicionado à Fase 7
+
+| Sai | Funções → quem cobre |
+|---|---|
+| [**Crackle with Power**](https://www.ligamagic.com.br/?view=cards/card&card=Crackle+with+Power) (R$ 26,40, a compra mais cara) | F1 5X de dano em até X alvos. X=3 = 15 em cada oponente com 11 manas (30 com Gisela) → o fecho espalhado passa a ser o **Helix em loop multiplicado** (Bearer 6, Torbran 5, Gisela 6) + [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) + [**Court of Ire**](https://www.ligamagic.com.br/?view=cards/card&card=Court+of+Ire); a mágica de X que fica é o [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) · F1b remoção tardia (X=1: 5 de dano por 5 manas) → 16 remoções formais + Helix · F3 feitiço vermelho (Torbran) → sem perda. **Descoberto:** o combo Gisela + Crackle de 30 por oponente num feitiço, que a Fase 7 confirmou por rulings. Custo aceito, porque libera 13% do teto. **Condicionado:** se a Fase 7 re-simular e o loop não fechar a mesa até o T11, ele volta, e o que sai no lugar é um dos pingadores |
+
+#### Sobreposição de remoção (3) · categoria `remoção` → condicionado à Fase 5
+
+Cada reanimação é um Helix: **3 de dano em qualquer alvo**. Isso é remoção condicional (o Phlage
+precisa estar no cemitério, o que é o estado normal do T3 em diante). Cortei primeiro a remoção de
+**feitiço** e a de artefato/encantamento, que o deck tinha 9 vezes. Mantive as de instantâneo, que
+a reanimação não substitui.
+
+| Sai | Funções → quem cobre |
+|---|---|
+| [**Swift Reckoning**](https://www.ligamagic.com.br/?view=cards/card&card=Swift+Reckoning) (Tori físico, R$ 0,10) | F1 destrói criatura **virada** de qualquer tamanho, com flash por spell mastery → criatura grande: [**Chaos Warp**](https://www.ligamagic.com.br/?view=cards/card&card=Chaos+Warp), [**Generous Gift**](https://www.ligamagic.com.br/?view=cards/card&card=Generous+Gift), [**Reduce to Memory**](https://www.ligamagic.com.br/?view=cards/card&card=Reduce+to+Memory), [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) (6 com delirium), [**Palace Jailer**](https://www.ligamagic.com.br/?view=cards/card&card=Palace+Jailer), [**Celebrate the Mountain-king**](https://www.ligamagic.com.br/?view=cards/card&card=Celebrate+the+Mountain-king); instantâneo de 2 manas: [**Abrade**](https://www.ligamagic.com.br/?view=cards/card&card=Abrade), [**Smite the Deathless**](https://www.ligamagic.com.br/?view=cards/card&card=Smite+the+Deathless), [**Lightning Helix**](https://www.ligamagic.com.br/?view=cards/card&card=Lightning+Helix). **Descoberto:** matar criatura de resistência 7+ em instantâneo por 2 manas |
+| [**Requisition Raid**](https://www.ligamagic.com.br/?view=cards/card&card=Requisition+Raid) (caixa, R$ 0,44) | F1 artefato **e** encantamento por `{W}{1}{1}`, em feitiço → restam **7** respostas: [**Abrade**](https://www.ligamagic.com.br/?view=cards/card&card=Abrade), [**Disenchant**](https://www.ligamagic.com.br/?view=cards/card&card=Disenchant), [**Seal of Cleansing**](https://www.ligamagic.com.br/?view=cards/card&card=Seal+of+Cleansing) (**que o Sun Titan e o Recommission re-compram**), [**Generous Gift**](https://www.ligamagic.com.br/?view=cards/card&card=Generous+Gift), [**Chaos Warp**](https://www.ligamagic.com.br/?view=cards/card&card=Chaos+Warp), [**Reduce to Memory**](https://www.ligamagic.com.br/?view=cards/card&card=Reduce+to+Memory), [**Celebrate the Mountain-king**](https://www.ligamagic.com.br/?view=cards/card&card=Celebrate+the+Mountain-king). **Regra 7:** carta da caixa que sai. **Descoberto:** o 2-por-1 artefato + encantamento |
+| [**Wear // Tear**](https://www.ligamagic.com.br/?view=cards/card&card=Wear+%2F%2F+Tear) (R$ 2,91) | F1 o mesmo 2-por-1, em instantâneo → as 7 acima. Com os dois cortes, o 2-por-1 some. **Custo aceito**: a Fase 5 decide se ele volta no lugar do [**Disenchant**](https://www.ligamagic.com.br/?view=cards/card&card=Disenchant) |
+
+#### Draw e remoção de 1 mana (3) · `draw` → Fase 3 · `remoção` → Fase 5
+
+| Sai | Funções → quem cobre |
+|---|---|
+| [**Seize Opportunity**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+Opportunity) (caixa, R$ 0,05) | F1 impulse 2 em instantâneo **ou** +2/+1 em duas criaturas → draw: [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) (repetível); pump: o Inti põe +1/+1 no Warsinger. **Regra 7:** caixa. **Descoberto:** draw instantâneo de uma vez |
+| [**Outpost Siege**](https://www.ligamagic.com.br/?view=cards/card&card=Outpost+Siege) (R$ 0,90) | F1 Khans: impulse no upkeep; Dragons: 1 de dano quando criatura sua sai (cada sacrifício do Phlage) → Khans: o `{T}` do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) é o mesmo impulse de 1 por turno, com 4 manas e ainda por cima alcance; Dragons: o dano do Ark ao reanimar. **Descoberto:** nada que o Ark não faça, com a mesma curva (CMC 4) |
+| [**Magma Spray**](https://www.ligamagic.com.br/?view=cards/card&card=Magma+Spray) (caixa, R$ 0,05) | F1 2 de dano, instantâneo, **exila** → 1 mana instantâneo: [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat); exílio: [**Smite the Deathless**](https://www.ligamagic.com.br/?view=cards/card&card=Smite+the+Deathless); 2 de dano no T1–T2: [**Flame Slash**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Slash) e [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab). **Regra 7:** caixa. **Descoberto:** a 2ª resposta de 1 mana em instantâneo |
+
+**O que **não** cortei, e por quê.** [**Lesser Masticore**](https://www.ligamagic.com.br/?view=cards/card&card=Lesser+Masticore), [**Myr Convert**](https://www.ligamagic.com.br/?view=cards/card&card=Myr+Convert), [**Ornithopter of Paradise**](https://www.ligamagic.com.br/?view=cards/card&card=Ornithopter+of+Paradise) e [**Zookeeper Mechan**](https://www.ligamagic.com.br/?view=cards/card&card=Zookeeper+Mechan)
+ganharam função: são **artefatos históricos** para o Teshar e **criaturas de MV ≤ 3** para a
+Tocasia e para as reanimações quando o Phlage está escapado. [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) ganha uma página
+**a cada reanimação** (o Phlage reanimado é o comandante entrando). [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) tem o
+spectacle ligado todo turno pelo Helix. [**Approach of the Second Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Approach+of+the+Second+Sun) é da Fase 7 e fica.
+[**Slaughter the Strong**](https://www.ligamagic.com.br/?view=cards/card&card=Slaughter+the+Strong) tem atrito com os corpos grandes novos (Sun Titan, Phlage escapado), mas a
+[**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth) devolve os sacrificados. Fica.
+
+### 12.7 Ficha F2–F7 das entradas
+
+| Carta | Categorias | Corpo (F2) | Tipo alimenta (F3) | Recebe (F4) | Facilita (F5) | Entra (F6) | Atritos (F7) |
+|---|---|---|---|---|---|---|---|
+| [**Helping Hand**](https://www.ligamagic.com.br/?view=cards/card&card=Helping+Hand) | tema, remoção (Helix), wincon | — | feitiço: cemitério, delirium | — | Helix | T4+ | devolve virado (irrelevante) |
+| [**Return Triumphant**](https://www.ligamagic.com.br/?view=cards/card&card=Return+Triumphant) | tema, remoção (Helix) | — | feitiço | — | Helix | T4+ | — |
+| [**Call a Surprise Witness**](https://www.ligamagic.com.br/?view=cards/card&card=Call+a+Surprise+Witness) | tema, remoção (Helix) | — | feitiço | — | Helix | T4+ | desliga a Broodmoth naquela volta |
+| [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) | tema, remoção (Helix/Casket) | — | feitiço | — | Helix ou artefato | T4+ | — |
+| [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) | tema, remoção (Helix ×2) | — | feitiço com flashback: Ark | — | 2 Helix + terreno/rocha | T4 / T6+ | não exilar antes do flashback |
+| [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) | tema | 2/2 voador | criatura lendária: Tocasia não (MV 4) | Angelic Renewal, Broodmoth | Helix por histórica | T4 | 21 históricas, a maioria rochas jogadas antes do T4 |
+| [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) | tema, wincon | 6/6 vigilância | tipo Giant (Bearer) | Bearer ×2, Renewal, Broodmoth | Helix/turno + recompra Casket/Seal | T6 | CMC 6; morre no Slaughter (a Broodmoth devolve) |
+| [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger) | tema | 3/3 vigilância, atropelar | criatura MV 3: Tocasia, reanimável | +1/+1 do Inti | Helix ao conectar | T3 | precisa de 3 de dano no jogador |
+| [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) | tema | tapa (a ativação é `{T}`) | artefato: Teshar, Recommission | — | escape de 3 manas + 3 cartas | T4 | disputa cemitério com o escape próprio e com o Sevinne's |
+| [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge) | tema | 3/4 vigilância | criatura lendária: Teshar | Renewal, Broodmoth | escape de 3 manas + 2 cartas | T4 | precisa atacar; disputa slot de 4 com Teshar, Broodmoth e Bearer |
+| [**Luminous Broodmoth**](https://www.ligamagic.com.br/?view=cards/card&card=Luminous+Broodmoth) | tema, proteção | 3/4 voadora | criatura | — | Helix ×2; salva o time do wipe | T4 | Call a Surprise Witness; fichas não voltam |
+| [**Angelic Renewal**](https://www.ligamagic.com.br/?view=cards/card&card=Angelic+Renewal) | tema, proteção | — | encantamento: vai ao cemitério | — | Helix extra ou salva Torbran/Gisela/Titan | T2 | uso único |
+| [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) | wincon | 3/4 | tipo Giant | Renewal, Broodmoth | Helix 6, Titan 12 | T4 | só Giant; com Torbran dá 8, não 10 |
+| [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome) | draw | — | encantamento | — | 1 carta por turno | T3 | 1 vez por turno |
+| [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | draw, wincon, tema | tapa (`{T}` moer) | artefato: Teshar | — | dano espalhado + impulse + combustível | T4 | o moinho tira do topo o que o Sin Prodder revelaria |
+
+### 12.8 Contagem por categoria — v2 → revisada
+
+| Categoria | v2 | Revisada | Meta | Nota |
+|---|---|---|---|---|
+| **Reanimação do Phlage** | 0 | **10** (+2 dobradores) | 10 (§12.4) | 5 de uma vez · 3 motores · 2 escapes concedidos |
+| **Draw** | 12 | **12** | 12–13 | sai Seize Opportunity e Outpost Siege · entra Tocasia's Welcome e Ark of Hunger (impulse de `{T}`, o mesmo critério da Fase 3 para o Siege). **No piso** |
+| **Ramp** padrão / explosivo | 9 / 2 | **9 / 2** | 10–11 / 2–3 | intocado. **Mas a curva mudou**: veja os sinais |
+| **Remoção formal** | 20 | **16** | ~10 (pipeline) · 20 (Fase 5) | + **10 fontes de Helix** (3 em qualquer alvo, condicional). Respostas a artefato/encantamento: 9 → **7** |
+| **Wipes** | 3 + 1 terreno | **3 + 1 terreno** | 2–4 | intocado; a Broodmoth os torna unilaterais |
+| **Proteção** | 1 | **1 + 2 parciais** | 2 (Fase 5) | Gods Willing + Angelic Renewal (pontual) + Broodmoth (massa, contra wipe) |
+| **Combustível dedicado** | 14 | **11** + vidência 3 do Dial | ~11 (§12.2) | motores: Millikin, Lorehold Excavation, Flame Jab, Lesser Masticore, Case of the Crimson Pulse, Ark · loots: Faithless Looting, Cathartic Pyre, Big Score, Seize the Spoils, Conflagrate |
+| **Criaturas** | 15 | **17** | 16–17 | P(mão sem criatura) 30,4% → **25,5%** |
+| **Caminhos de vitória** | 4 | **4** | 3+ | R1 Court + Helix (intacto) · **R2′ Helix em loop × Bearer/Torbran/Gisela + Ark + Excavation** (substitui os pingadores) · R3 só com Conflagrate (**enfraquecido**) · R4 Approach |
+| **Terrenos** | 37 | **37** | — | não mexi |
+| **Total** | 99 | **99** | 99 | 62 não-terrenos + 37 terrenos |
+
+**Curva (62 não-terrenos, X conta 0):** v2 `0–1: 9 · 2: 31 · 3: 12 · 4: 5 · 5: 3 · 6+: 2` (média 2,52)
+→ revisada `0–1: 8 · 2: 26 · 3: 13 · 4: 9 · 5: 3 · 6+: 3` (média **~2,75**).
+**Cor (não-terrenos):** v2 vermelho 32 · branco 13 · RW 6 · incolor 11 → revisada vermelho **22** ·
+branco **21** · RW **8** · incolor 11.
+
+### 12.9 Custo — LigaMagic (menor), cotações de 2026-08-12 a 2026-09-24
+
+| Bloco | R$ |
+|---|---|
+| v2 (conferido com `mtgdb prices`) | 176,71 |
+| − 15 cortes | −42,21 |
+| + 13 entradas cotadas | +24,75 |
+| **Total revisado, sem as 2 `a cotar`** | **159,25** |
+| [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) + [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge) | **`a cotar`** (as duas cabem se somarem até **R$ 40,75**) |
+| Se alguma estourar: [**Patch Up**](https://www.ligamagic.com.br/?view=cards/card&card=Patch+Up) (0,23) no lugar do Dial, [**Bishop of Rebirth**](https://www.ligamagic.com.br/?view=cards/card&card=Bishop+of+Rebirth) (0,45) no lugar da Desdemona | total com as duas reservas: **159,93** |
+
+Cortes somados: Crackle with Power 26,40 · Guttersnipe 5,40 · Wear // Tear 2,91 · Demand Answers 2,80 ·
+Firebrand Archer 0,99 · Outpost Siege 0,90 · Perpetual Timepiece 0,65 · Thermo-Alchemist 0,55 ·
+Thrill of Possibility 0,50 · Requisition Raid 0,44 · Erebor Flamesmith 0,33 · Cathartic Reunion 0,14 ·
+Swift Reckoning 0,10 · Seize Opportunity 0,05 · Magma Spray 0,05 = **42,21**.
+
+**Cotação mais velha no pacote:** [**Tocasia's Welcome**](https://www.ligamagic.com.br/?view=cards/card&card=Tocasia%27s+Welcome), de 2026-09-19. **Cartas da caixa que saem:**
+Thrill of Possibility, Requisition Raid, Seize Opportunity, Magma Spray. Continuam sobressalentes.
+
+### 12.10 Sinais para as outras fases
+
+| Fase | O que meus cortes tocam | Precisa ser reinvocada? |
+|---|---|---|
+| **3 · draw** | 2 fontes trocadas (Seize Opportunity e Outpost Siege → Tocasia's Welcome e Ark of Hunger), contagem **12 no piso**. Confirmar que o `{T}` do Ark conta como impulse repetível pelo critério dela. O [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) ganha página a cada reanimação. [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) (R$ 11,88) é a candidata se ela quiser a 13ª fonte | **sim, leve** (confirmação) |
+| **4 · ramp** | Nenhuma rocha saiu, mas **a curva mudou**: 4-drops 5 → 9, média 2,52 → ~2,75, e o branco subiu. A medição "a 10ª rocha vale 0,0 pp" foi feita para o escape no T6; o plano agora é Phlage no T3 + reanimação de 1–2 manas + motor de 4 no T4–T5 | **sim** |
+| **5 · interação** | Remoção formal 20 → 16, artefato/encantamento 9 → 7, 2-por-1 sumiu, e 10 fontes de Helix condicionais passam a existir. Proteção 1 → 1 + 2 parciais. Cortes condicionados: Swift Reckoning, Requisition Raid, Wear // Tear, Magma Spray | **sim** |
+| **6 · manabase** | Não toquei nos 37. A proporção de cor mudou (R 32 → 22, W 13 → 21 nas mágicas; mais `{W}{W}` em Broodmoth e Sun Titan). Conferir o 12/12 dos básicos | **sim, leve** |
+| **7 · wincons** | R2 de pingadores saiu inteira; R2′ (Helix em loop multiplicado + Ark) entra; R3 perdeu o Crackle (corte condicionado). Re-simular o relógio com o 1º Helix repetível no **T4** e o Phlage permanente no **T5** (Dial). As métricas novas do goldfishing: turno da 1ª reanimação, Helix por turno, turno do Phlage escapado por Dial/Desdemona | **sim** (já prevista) |
+| **Orquestrador** | (a) Cotar na LigaMagic [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) e [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge); se forem usar as reservas, também Emerge from the Cocoon, Late to Dinner, Roaming Throne, Strionic Resonator e Kirol. (b) O §2 do `report.md` repete a trava 2 revogada. (c) A pergunta 0.1 do report (ritmo) muda de resposta, e a 0.4 (proteção) muda em parte (§12.4 D) | — |
