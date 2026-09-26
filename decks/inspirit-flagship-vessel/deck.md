@@ -3,6 +3,9 @@
 > **Fonte de verdade.** Registro da lista **física montada**, informada pelo usuário em 2026-09-18.
 > Total: comandante + 99 (63 não-terrenos + 36 terrenos).
 >
+> **2026-09-26:** troca avulsa aprovada (1 entrada, 1 saída)
+> (ver [`decisions.md`](decisions.md)).
+>
 > Esta lista **não** é saída de rodada do pipeline: descende da v2 (versão mesão), passou pela v3 e
 > foi evoluída pelo próprio usuário depois. As diferenças medidas contra a v2 estão em
 > [`decisions.md`](decisions.md) — a v3 ficou no meio e seu relatório se perdeu, então o diff
@@ -28,7 +31,6 @@
 | Etherium Sculptor | 2 | Criatura Artefato | U | tema, ramp | reduz custo de ~40 artefatos |
 | Enthusiastic Mechanaut | 2 | Criatura Artefato | UR | tema, ramp | redutor de custo; voador |
 | Metastatic Evangel | 2 | Criatura | W | tema | proliferate por criatura nontoken sua que entra — resolve a economia de contadores do deck; ⚠️ não é artefato (exposta) |
-| Third Path Iconoclast | 2 | Criatura | UR | tema | cluster "cast noncreature spell"; token artefato; ⚠️ não é artefato (exposta) |
 | Chief of the Foundry | 3 | Criatura Artefato | C | tema | anthem +1/+1 para as outras criaturas-artefato |
 | Chrome Host Seedshark | 3 | Criatura | U | tema | cluster "cast noncreature spell"; incubate = tokens com counters; ⚠️ não é artefato |
 | Foundry Inspector | 3 | Criatura Artefato | C | tema, ramp | redutor de custo |
@@ -39,6 +41,7 @@
 | Sai, Master Thopterist | 3 | Criatura Lendária | U | tema, draw | Thopter por artifact spell; sac 2 → draw; ⚠️ não é artefato |
 | Surge Conductor | 3 | Criatura Artefato | C | tema | proliferate por artefato nontoken que entra — motor de counters |
 | Voyager Quickwelder | 3 | Criatura Artefato | W | tema, ramp | 4º redutor de custo; corpo 2/4 protegido |
+| Vraska, Soul of Stone | 3 | Criatura Lendária | WUR | tema, ramp | Sculpture Treasure 1/1 (criatura-artefato) por mágica não-criatura (~36 no deck) = corpo para Station/crew **ou** mana de qualquer cor; **vigilância às criaturas-artefato** → atacam e estacionam na 2ª fase principal (inclusive o Inspirit a 8+); ⚠️ não é artefato (exposta); ⚠️ vigilância reduz o X da Alibou |
 | Crystalline Crawler | 4 | Criatura Artefato | C | tema, ramp | +1/+1 counters = mana colorida; recarrega via gatilho 1+/proliferate |
 | Jhoira, Weatherlight Captain | 4 | Criatura Lendária | UR | draw | draw por mágica histórica (~85% do deck); ⚠️ não é artefato |
 | Padeem, Consul of Innovation | 4 | Criatura Lendária | U | draw, proteção | draw no upkeep (maior MV de artefato) + **hexproof ao próprio Inspirit**, que a estática dele não cobre |

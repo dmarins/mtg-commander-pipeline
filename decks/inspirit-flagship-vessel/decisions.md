@@ -81,3 +81,37 @@ repropor qualquer uma delas, **pergunte a ele** antes.
 v3 e **estão de volta** na lista montada. Nenhuma das entradas da v3 que as substituiu foi desfeita
 — elas convivem. `Paladin Danse, Steel Maverick` é a **única** entrada da v3 que não chegou à lista
 final. Motivos não declarados; **perguntar antes de tratar esses cortes da v3 como válidos** (regra 5).
+
+---
+
+## Troca avulsa — 2026-09-26
+
+O usuário trouxe uma carta que **já possui** e perguntou onde ela rende mais. Pela identidade
+(`{U}{R}{W}`), só o Inspirit a comporta. Ficha completa feita, troca aprovada por ele. Não é rodada
+de pipeline.
+
+| Data | Carta | Ação | Fase/agente | Motivo | Funções descobertas pelo corte |
+|---|---|---|---|---|---|
+| 2026-09-26 | Vraska, Soul of Stone | entrada | avulsa · orquestrador | Sculpture Treasure 1/1 (criatura-artefato) por mágica não-criatura (~36 no deck): corpo para Station/crew **ou** mana de qualquer cor; conta como artefato (Master of Etherium, affinity, improvise, Malcator). **Motivo que o usuário destacou:** vigilância às criaturas-artefato — atacam e ainda estacionam na 2ª fase principal (Station é velocidade de feitiço). Sculpture recém-criada pode estacionar no mesmo turno (o `{T}` é custo da nave, não habilidade da criatura). | — |
+| 2026-09-26 | Third Path Iconoclast | corte | avulsa · orquestrador | F1 contido na Vraska: mesmo token 1/1 criatura-artefato por mágica não-criatura, sem o Treasure. F2 corpo 2/1 → Vraska 3/3. F3/F4 tokens-artefato que recebem os anthems → Sculptures, mesma taxa e mesmos anthems. F5 nenhum. | **F6: o motor de tokens deixa de começar no turno 2** (2-drops 13→12, 3-drops 21→22). Custo aceito. |
+
+**Atritos da entrada, aceitos pelo usuário:**
+
+- **Alibou, Ancient Witness perde dano.** O X dela é o nº de artefatos **virados** quando o gatilho
+  resolve, e o ruling diz explicitamente que atacantes com vigilância não contam. Com a Vraska em
+  campo, X vem só do que virou antes do combate (rocks, crew, Station na 1ª fase principal). A cada
+  turno o usuário escolhe: *modo Station* (atacar e estacionar depois) ou *modo Alibou* (virar tudo
+  antes do combate). Compensação: a haste da Alibou deixa a Sculpture recém-criada atacar e ainda
+  estacionar depois.
+- **Kilo, Apogee Mind não perde:** deixa de proliferar ao atacar, mas prolifera ao ser virada para
+  Station depois do combate — ataque + proliferate + Station, onde antes era ataque + proliferate.
+- **Vraska não é artefato:** sem a proteção do comandante; morre para Organic Extinction e Chain
+  Reaction do próprio deck (as Sculptures sobrevivem). Pede `{U}{R}{W}` no turno 3, com R sendo a
+  cor mais magra da base.
+
+**Alternativas avaliadas e mantidas:** Chrome Host Seedshark (voar e tokens de tamanho X — Incubate 5
+do Dawnsire é Station de 5 — funções exclusivas) e Saheeli, Sublime Artificer (é mágica não-criatura,
+dispara Vraska/Seedshark/Whirlwind; `−2` de cópia sem par no deck). Malcator ganha com a entrada.
+
+**Custo:** Third Path Iconoclast R$ 3,58 (LigaMagic menor, cotação de 2026-09-18) sai; Vraska
+**a cotar**. Sem compra — a carta já é do usuário.

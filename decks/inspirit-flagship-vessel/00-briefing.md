@@ -59,6 +59,7 @@ proposta nem aprovada nesta passagem.
 | [v2](rounds/v2-2026-08-12/report.md) | 2026-07-25 → 2026-08-12 | segunda auditoria do zero sobre a v1; **duas listas** (torneio ≤ R$200 × mesão ≤ R$350) que compartilham 93 cartas e divergem em 7 slots — ver [`08-versoes.md`](rounds/v2-2026-08-12/08-versoes.md); repreço LigaMagic em [`09-precos-ligamagic.md`](rounds/v2-2026-08-12/09-precos-ligamagic.md) |
 | [v3](rounds/v3-2026-08-13/NOTAS-RECONSTRUIDAS.md) | 2026-08-13 | 6 trocas aplicadas (pool fechado na coleção). Achou a **causa raiz** do deck: com 0 charge counters o gatilho `1+` do comandante está desligado e ele nunca se alimenta → as duas lentidões são a mesma. **O relatório original se perdeu**; o que há é um resumo reconstruído. |
 | — (registro) | 2026-09-18 | **não é rodada**: transcrição da lista montada para [`deck.md`](deck.md) + diff v2→hoje em [`decisions.md`](decisions.md). Sem análise, sem trocas. |
+| — (troca avulsa) | 2026-09-26 | **não é rodada**: 1 troca aprovada (entra Vraska, Soul of Stone — carta do usuário; sai Third Path Iconoclast). Ficha e atritos em [`decisions.md`](decisions.md). Custo da lista passa a R$ 252,22 + Vraska (**a cotar**). |
 
 Recuperadas do histórico do git (commit `84ddb87^`) em 2026-09-18 e reunidas num único deck: antes
 viviam em dois diretórios irmãos (`inspirit-flagship-vessel` e `inspirit-flagship-vessel-v2`).
