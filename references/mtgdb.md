@@ -2,7 +2,7 @@
 
 Binário Go que mantém um SQLite construído a partir do **bulk data do Scryfall** e responde as consultas do pipeline sem rede.
 
-**Use `mtgdb` antes de qualquer consulta ao MCP `mtg`.** O MCP continua útil para o que o bulk não cobre (cartas lançadas depois do último dump, ou uma query que precise da sintaxe completa), mas ficha de carta, busca por texto, tags e rulings saem daqui — instantâneos e sem gastar uma requisição por carta.
+**Use `mtgdb` antes de qualquer consulta ao MCP `mtg`.** O banco tem a base inteira do Scryfall — toda carta já lançada ou revelada, uma entrada por carta —, então ficha de carta, busca por texto, tags e rulings saem daqui, instantâneos e sem gastar uma requisição por carta. O MCP fica para o que o bulk não cobre: carta que nem o `make refresh` trouxe (ver Manutenção), dados que o banco não guarda (impressões/edições, imagem) ou uma query que precise da sintaxe completa do Scryfall.
 
 **Preço é exceção e não vem do Scryfall em hipótese nenhuma** — nem do bulk, nem do MCP. A única fonte é a LigaMagic, capturada no navegador e guardada em `data/prices.tsv` (regra 2 do `CLAUDE.md`).
 
@@ -133,6 +133,12 @@ Perder o banco não custa nada (`make db` reconstrói). Perder os TSV custa trab
 
 ## Manutenção
 
-O Scryfall atualiza os dumps diariamente. Cartas de sets muito recentes podem faltar até o próximo `make refresh` — nesse caso, e só nesse, caia para o MCP `mtg`.
+O Scryfall atualiza os dumps diariamente (`mtgdb status` mostra a data do dump carregado). Carta não encontrada é, quase sempre, banco desatualizado — não carta desconhecida. A escada é sempre a mesma (regra 6 do `CLAUDE.md`):
+
+1. `mtgdb oracle "<nome>"` — encontrou, segue.
+2. Não encontrou → `make refresh` (~15 s) e `mtgdb oracle` de novo. Encontrou → a carta está no banco, completa (tags e rulings).
+3. Nem o refresh trouxe — a carta entrou no Scryfall há menos de um dia e ainda não está no dump — → `get_card_details` / `get_card_rulings` do MCP `mtg` para a análise. O entregável marca a pendência "ficha via MCP — sem tags do Tagger", e o usuário é avisado de que um novo `make refresh` (a partir do dia seguinte) trará a carta para o banco.
+
+O MCP não traz o texto das faces de carta de duas faces — nesse caso, leia o texto na ficha do Scryfall pelo link.
 
 `SchemaVersion` em `internal/store/store.go` deve ser incrementada sempre que o schema **ou a função `Normalize`** mudar: os nomes normalizados ficam materializados no build, e uma mudança silenciosa faria cartas sumirem das buscas sem erro aparente.

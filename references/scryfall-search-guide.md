@@ -16,7 +16,7 @@ Todos os subagentes usam este guia como fonte única de verdade para consultar c
 | `search_cards` com `otag:<tag>` | `mtgdb tag <slug> -id <cores>` |
 | `get_card_rulings` | `mtgdb rulings "<nome>"` |
 
-Recorra ao MCP quando o banco não bastar: **carta mais nova que o último dump**, ou uma consulta que precise da sintaxe completa do Scryfall. Se o banco não existir, `make db` (~15 s).
+Recorra ao MCP quando o banco não bastar: uma consulta que precise da sintaxe completa do Scryfall, ou **carta que não está no banco nem depois de `make refresh`** (escada completa na regra 6 do `CLAUDE.md` e em `references/mtgdb.md` → Manutenção). Se o banco não existir, `make db` (~15 s).
 
 ## Ferramentas MCP disponíveis
 
@@ -243,6 +243,6 @@ aparece como `a cotar` — nunca com número estimado.
 
 ## Boas práticas
 
-- Confirme detalhes de carta individual com `get_card_details` (barato) em vez de nova busca.
+- Confirme detalhes de carta individual com `mtgdb oracle` em vez de nova busca (o MCP só na escada da regra 6).
 - Anote sempre: nome exato, custo de mana, CMC, tipo e por que sinergiza (2+ pontos).
 - Rate limit: o Scryfall pede ~100 ms entre chamadas e o EDHREC ~1 s; não dispare buscas em rajada.

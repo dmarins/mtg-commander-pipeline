@@ -7,6 +7,7 @@ Pipeline de subagentes para **construção e otimização de decks de Commander 
 - `/build-deck [tema ou comandante]` — constrói um deck novo do zero.
 - `/improve-deck [caminho da decklist ou link do Archidekt]` — audita e otimiza um deck existente.
 - `/update-collection [lista de cartas]` — substitui a coleção pela lista informada; o que não estiver nela sai.
+- `/swap-card <carta> [@ <deck>]` — troca pontual: corta os decks pela identidade de cor, escolhe onde a carta rende mais e propõe a saída.
 
 A sessão principal atua como **orquestradora** (especialista em Commander): coleta preferências, delega cada fase a um subagente especialista, apresenta os resultados para revisão do usuário e consolida o deck.
 
@@ -118,7 +119,7 @@ Tabela por seção (Comandante, Criaturas, Artefatos, Encantamentos, Instantâne
 
 5. **Registro de decisão** — todo corte e toda entrada vão para `decks/<slug>/decisions.md`. Antes de propor carta que já esteve no deck, consulte o registro: a proposta precisa dizer quem cortou, por quê, e **o que mudou desde então**. Se o motivo original continua válido, a carta não volta.
 
-6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. Caia para o MCP `mtg` só quando a carta for mais nova que o último dump. Se o banco não existir, rode `make db` (~15 s).
+6. **Puxe o texto oracle na hora, sempre.** Nunca julgue carta de memória — nem as do próprio deck. Use **`bin/mtgdb`** (banco local com o bulk data do Scryfall — ver `references/mtgdb.md`): `mtgdb oracle "<nome>" ...` para cartas e `mtgdb deck <slug>` para o deck inteiro. O banco tem a base inteira do Scryfall (toda carta já lançada ou revelada, uma entrada por carta), então a ficha de carta **não** vem do MCP. Carta não encontrada segue a escada banco local → `make refresh` → MCP: (1) `mtgdb oracle`; (2) não achou → `make refresh` (~15 s) e `mtgdb oracle` de novo — quase sempre era só banco desatualizado; (3) nem o refresh trouxe (carta entrou no Scryfall há menos de um dia) → `get_card_details`/`get_card_rulings` do MCP para a análise, pendência "ficha via MCP" no entregável e aviso ao usuário de que será preciso um novo `make refresh`. O MCP também serve ao que o banco não guarda (impressões/edições, imagem) — nunca preço (regra 2). Se o banco não existir, rode `make db` (~15 s).
 
 7. **Coleção pessoal primeiro — prioridade de análise, não obrigação de uso.** Toda carta que o usuário já possui é avaliada **antes** de qualquer compra: consulte com `mtgdb collection <nomes...>` (fonte: `data/collection.tsv`, atualizada por `/update-collection`). Mas possuir a carta não a torna elegível: se a peça da coleção não servir ao deck, **comprar é a decisão correta**. O que a regra exige é que a coleção seja *considerada primeiro* e que a dispensa seja *justificada por escrito* — o especialista que propõe uma compra precisa nomear a carta equivalente da coleção e dizer por que ela não cobre a função. Nunca force uma carta ruim no deck só porque ela já está na caixa, e nunca proponha compra sem ter olhado a caixa.
 

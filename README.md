@@ -20,6 +20,7 @@ Na primeira execução, aprove o servidor MCP `mtg` do projeto. Depois:
 
 - `/build-deck Krenko, Mob Boss` — constrói um deck novo (aceita comandante ou só um tema, ex.: `/build-deck goblins agressivo`)
 - `/improve-deck meu-deck.txt` — audita e otimiza uma decklist existente (formato `1 Nome da Carta` por linha, ou link de um deck público do Archidekt)
+- `/swap-card Swords to Plowshares` — troca pontual: descobre em qual deck a carta encaixa (corte por identidade de cor primeiro) e propõe o que sai; `@ <deck>` restringe a um deck
 
 O orquestrador conduz você por checkpoints em cada fase — nenhuma carta entra no deck sem sua aprovação. Todo o estado fica em `decks/<nome-do-comandante>/`, incluindo o relatório final (`report.md`) com a lista de exportação padrão MTG Online. Se a sessão cair, rode o comando de novo: ele retoma da última fase concluída.
 
@@ -100,7 +101,7 @@ Para não receber prompts de permissão do MCP, crie `.claude/settings.local.jso
 
 ```
 .claude/agents/      # 7 subagentes especialistas
-.claude/commands/    # /build-deck e /improve-deck (orquestradores)
+.claude/commands/    # /build-deck, /improve-deck e /swap-card (orquestradores)
 references/          # guia de buscas Scryfall + checklist de avaliação + template de relatório
 decks/               # um diretório por deck: estado vivo na raiz
                      #   (00-briefing.md, deck.md, decisions.md)
