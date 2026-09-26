@@ -6,6 +6,9 @@
 > **2026-09-26:** troca avulsa aprovada (1 entrada, 1 saída)
 > (ver [`decisions.md`](decisions.md)).
 >
+> **2026-09-26 · v4 (`/swap-card`):** entra Requisition Raid, sai Reverse Engineer
+> (ver [`rounds/v4-2026-09-26/report.md`](rounds/v4-2026-09-26/report.md)).
+>
 > Esta lista **não** é saída de rodada do pipeline: descende da v2 (versão mesão), passou pela v3 e
 > foi evoluída pelo próprio usuário depois. As diferenças medidas contra a v2 estão em
 > [`decisions.md`](decisions.md) — a v3 ficou no meio e seu relatório se perdeu, então o diff
@@ -106,10 +109,10 @@
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
+| Requisition Raid | 1 | Feitiço (Spree) | W | remoção, tema | `+{1}` artefato (inclusive token) · `+{1}` encantamento · `+{1}` +1/+1 em cada criatura de um jogador; modo 3 × 5 proliferates/Deepglow/Walkers/Crawler; mágica não-criatura → Vraska, Saheeli, Whirlwind (Seedshark só Incubate 1); tokens desses gatilhos nascem a tempo de pegar o contador |
 | Sunder the Gateway | 2 | Feitiço | W | remoção, tema | destrói artefato/encantamento de oponente **+ Incubate 2**; modo 2 nunca é carta morta (corpo 2/2 artefato, 4/4 sob os anthems) |
 | Chain Reaction | 4 | Feitiço | R | wipe | assimétrico: os artefatos-criatura sobrevivem (indestrutíveis) |
 | Tezzeret's Gambit | 4 | Feitiço | U | draw, tema | draw 2 + proliferate |
-| Reverse Engineer | 5 | Feitiço | U | draw | improvise (sai por ~{U}{U}) → draw 3 |
 | Voyage Home | 7 | Feitiço | WU | draw | affinity (sai por ~{W}{U}) → draw 3 + 3 de vida |
 | Organic Extinction | 10 | Feitiço | W | wipe | muito assimétrico: só não-artefatos morrem; improvise |
 

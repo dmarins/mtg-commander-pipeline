@@ -115,3 +115,25 @@ dispara Vraska/Seedshark/Whirlwind; `−2` de cópia sem par no deck). Malcator 
 
 **Custo:** Third Path Iconoclast R$ 3,58 (LigaMagic menor, cotação de 2026-09-18) sai; Vraska
 **a cotar**. Sem compra — a carta já é do usuário.
+
+---
+
+## v4 — troca pontual (`/swap-card Requisition Raid`) · 2026-09-26
+
+O usuário trouxe `Requisition Raid` (sobressalente, custo zero) e pediu o deck onde ela rende mais.
+Corte por cor: Inspirit, Thorin e Phlage elegíveis; Krenko e Satoru fora (sem W). Inspirit venceu
+a triagem (interação 9/~10, só 2 respostas a artefato/encantamento, pacote de contadores e de
+mágica não-criatura). Ficha completa dos dois lados em
+[`rounds/v4-2026-09-26/05-interaction.md`](rounds/v4-2026-09-26/05-interaction.md); relatório em
+[`rounds/v4-2026-09-26/report.md`](rounds/v4-2026-09-26/report.md). **Aprovada pelo usuário.**
+
+| Data | Carta | Ação | Fase/agente | Motivo | Funções descobertas pelo corte |
+|---|---|---|---|---|---|
+| 2026-09-26 | Requisition Raid | entrada | v4 · swap-card · interaction-specialist | R$ 0,44 (LigaMagic menor, 2026-09-23), **da coleção** — compra zero. 3ª resposta a artefato/encantamento (pega token e artefato de qualquer jogador; os dois numa mágica por `{3}{W}`); interação 9 → 10. Modo 3: +1/+1 permanente no time × 5 proliferates + Deepglow Skate; Hangarback/Marketback/Crystalline Crawler convertem o contador. Mágica não-criatura de MV 1: dispara Vraska, Saheeli e Whirlwind, e os tokens desses gatilhos recebem o contador | — |
+| 2026-09-26 | Reverse Engineer | corte | v4 · swap-card · interaction-specialist | draw acima da meta (14 → 13, dentro de 12–13); feitiço não-artefato por feitiço não-artefato — artefatos (42), criaturas (27) e gatilhos de mágica não-criatura inalterados; alivia `{U}{U}`. Entrou na v1 pelo pipeline no slot da Ethersworn Sphinx, que o usuário trouxe de volta — o motivo da entrada caducou | compra 3 → Voyage Home, Tezzeret's Gambit, Stern Lesson, Thought Monitor, Ethersworn Sphinx + motores; gatilho de mágica não-criatura → Requisition Raid; **Incubate 5 via Chrome Host Seedshark → descoberto em parte** (Raid dá Incubate 1; custo aceito); **improvise → artefatos virados antes do combate para o X da Alibou → descoberto em parte** (custo aceito; Organic Extinction e Kappa Cannoneer seguem com improvise) |
+
+**Reserva não usada:** Voyage Home — cortada pelo pipeline na v1 e trazida de volta pelo usuário sem
+motivo declarado; não foi tocada. **Posse:** Reverse Engineer só vira sobressalente se o usuário o
+listar na próxima `/update-collection` (regra 7). **Custo da lista:** R$ 252,71 → R$ 252,95 +
+Vraska `a cotar` (LigaMagic menor, cotações de 2026-09-18 a 2026-09-23; a diferença para os R$ 252,22
+anteriores é a recotação da Chain Reaction em 2026-09-23).

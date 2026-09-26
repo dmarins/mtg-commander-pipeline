@@ -60,13 +60,14 @@ proposta nem aprovada nesta passagem.
 | [v3](rounds/v3-2026-08-13/NOTAS-RECONSTRUIDAS.md) | 2026-08-13 | 6 trocas aplicadas (pool fechado na coleção). Achou a **causa raiz** do deck: com 0 charge counters o gatilho `1+` do comandante está desligado e ele nunca se alimenta → as duas lentidões são a mesma. **O relatório original se perdeu**; o que há é um resumo reconstruído. |
 | — (registro) | 2026-09-18 | **não é rodada**: transcrição da lista montada para [`deck.md`](deck.md) + diff v2→hoje em [`decisions.md`](decisions.md). Sem análise, sem trocas. |
 | — (troca avulsa) | 2026-09-26 | **não é rodada**: 1 troca aprovada (entra Vraska, Soul of Stone — carta do usuário; sai Third Path Iconoclast). Ficha e atritos em [`decisions.md`](decisions.md). Custo da lista passa a R$ 252,22 + Vraska (**a cotar**). |
+| [v4](rounds/v4-2026-09-26/report.md) | 2026-09-26 | troca pontual (`/swap-card`), **aprovada**: entra Requisition Raid (sobressalente, compra zero), sai Reverse Engineer. Interação 9 → 10, respostas a artefato/encantamento 2 → 3, draw 14 → 13. Custo da lista R$ 252,95 + Vraska **a cotar**. |
 
 Recuperadas do histórico do git (commit `84ddb87^`) em 2026-09-18 e reunidas num único deck: antes
 viviam em dois diretórios irmãos (`inspirit-flagship-vessel` e `inspirit-flagship-vessel-v2`).
 **Versão é pasta dentro do deck, nunca sufixo de slug** — sufixo parte o `decisions.md` e quebra
 `mtgdb deck <slug>`.
 
-## Pendências para a próxima rodada (v4)
+## Pendências para a próxima rodada (v5)
 
 1. **O goldfishing nunca foi rodado, desde a v1** — é a pendência mais antiga do deck. O protocolo
    estava em `07-wincons.md` da v3 e se perdeu junto com ela; terá de ser refeito.
@@ -76,7 +77,7 @@ viviam em dois diretórios irmãos (`inspirit-flagship-vessel` e `inspirit-flags
    ⚠️ **Dispatch subiu 1013% desde 12/08** (R$ 2,83 → 31,50) — é a maior oscilação já observada no
    banco. Reconferir na LigaMagic antes de usar esse número para cortar: se for estoque escasso e
    não preço real, o deck fica a ~R$ 227.
-3. **Motivos das mudanças do usuário não estão registrados.** O primeiro item do intake da v4 é
+3. **Motivos das mudanças do usuário não estão registrados.** O primeiro item do intake da v5 é
    perguntar o porquê dos cortes de Leonin Abunas, Lux Artillery/Lux Cannon, dos dois counterspells
    e dos 2 terrenos — e por que 4 cortes da v3 foram desfeitos.
 4. **`/update-collection` pendente.** As 15 cartas que saíram **não** foram lançadas na coleção:
