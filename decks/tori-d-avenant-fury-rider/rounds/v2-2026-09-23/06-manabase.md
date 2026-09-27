@@ -718,3 +718,179 @@ divisões se comparam entre si.
 | P2 | **Opcional, de valor baixo:** trocar [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) (dupla virada) por uma dupla desvirada vale **+0,8 a +1,3 pp** nos marcos do T3–T4 (medido: Phlage T3 +0,8, Broodmoth T4 +1,0, Torbran T4 +1,3) e ~0 no Dial e no escape. As opções já cotadas, sem recotar: [**Sundown Pass**](https://www.ligamagic.com.br/?view=cards/card&card=Sundown+Pass) R$ 10,00 · [**Inspiring Vantage**](https://www.ligamagic.com.br/?view=cards/card&card=Inspiring+Vantage) R$ 12,58 (LigaMagic, menor, 2026-09-23). Nenhuma está na caixa (`mtgdb collection`). **Não recomendo com a folga atual**: é menos de 1,5 pp por R$ 10+. [**Sunscorched Divide**](https://www.ligamagic.com.br/?view=cards/card&card=Sunscorched+Divide) (R$ 1,95) é filtro `{1}`→`{R}{W}`, não entra desvirada como dupla, e não resolve o caso | orquestrador (orçamento) |
 | P3 | **A §2.2 e a §9 deste arquivo** ainda dizem 11/11 e 15 não-básicos. O estado correto é o do `report.md` §5–§6 e desta revisão: 13 não-básicos + 12/12 | orquestrador (consolidação) |
 | P4 | **Contagem por cor da §12.8 do `02`** (RW 8 · incolor 11): bate se [**Boros Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Signet) e [**Talisman of Conviction**](https://www.ligamagic.com.br/?view=cards/card&card=Talisman+of+Conviction) contam como RW por identidade. Pelo custo de mana são incolores, e aí fica RW 6 · incolor 13. Não muda nada aqui (pips contados no custo), é só para o report não misturar critérios | orquestrador |
+
+---
+
+## Revisão 2026-09-26 — troca pontual: Evolving Wilds
+
+> **Escopo (`/swap-card`, dentro da v2 aberta).** Entrada fixa: [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds). Proponho **uma**
+> saída entre os 37 terrenos da lista do `report.md` §6/§9 (13 não-básicos + 12 Mountain + 12 Plains),
+> com uma 2ª candidata ranqueada. Nenhuma outra entrada, nenhum não-terreno mexido.
+>
+> **Regra 6.** Oracle de [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds), dos 13 não-básicos e das 62 mágicas da lista puxados com
+> `bin/mtgdb oracle -json` nesta sessão (78 nomes, todos `found`). Rulings do [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation)
+> conferidos (`mtgdb rulings`): *"A permanent card is an artifact, battle, creature, enchantment, land,
+> or planeswalker card"* — terreno é alvo válido. [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) não tem ruling oficial.
+> **Regra 7.** `mtgdb collection "Evolving Wilds"`: não está nas sobressalentes → **compra**.
+> **Regra 2.** Preços de `mtgdb prices` (LigaMagic, menor): [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) R$ 0,09 (2026-09-26),
+> [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) R$ 0,25 · [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) R$ 0,23 · [**Wind-Scarred Crag**](https://www.ligamagic.com.br/?view=cards/card&card=Wind-Scarred+Crag) R$ 0,10 (2026-09-23).
+
+### W.1 Histórico (regra 5) — o que mudou desde a recusa de 23/09
+
+**Quem recusou e por quê.** Eu mesmo, na Fase 6 da v2 (§2.3 e §7.3, linha "Sokenzan, Emeria,
+fetches"): *"fetch não adiciona fonte num deck de 2 cores com 22 básicos"*. [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) nunca
+esteve no deck; a recusa foi à categoria (citei [**Arid Mesa**](https://www.ligamagic.com.br/?view=cards/card&card=Arid+Mesa) e [**Fabled Passage**](https://www.ligamagic.com.br/?view=cards/card&card=Fabled+Passage)), e **avaliou um eixo
+só — a fixação**. Não pesei cemitério, delirium nem recursão de terreno.
+
+**O motivo original continua válido no eixo que ele olhou.** Medi de novo (W.4): trocar um dual
+virado por [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) deixa a fixação **igual, dentro do ruído** (±1 pp em todos os marcos).
+A fetch não acrescenta fonte. Se fosse só isso, a carta não entraria.
+
+**O que mudou — e o que não mudou:**
+
+| Ponto trazido pelo orquestrador | Confere? | Leitura |
+|---|---|---|
+| (1) Combustível em 10, abaixo de ~11, depois que a Fase 4 tirou o [**Big Score**](https://www.ligamagic.com.br/?view=cards/card&card=Big+Score) | **Mudou, mas a Wilds não fecha a lacuna** | É **1 carta** no cemitério, só quando comprada e jogada: **8,4% das partidas até o T3 e 10,8% até o T5** (W.4) — em média **+0,11 carta** no cemitério até o T5. Um loot ([**Thrill of Possibility**](https://www.ligamagic.com.br/?view=cards/card&card=Thrill+of+Possibility), a reserva sem compra da pendência 3) põe 2 cartas por conjuração. **Discordo de usar a Wilds como resposta à pendência 3 do `report.md`**: ela continua aberta. |
+| (2) Tipo Land no cemitério para o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) | **Parcial — não mudou, foi lacuna de análise** | A [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) já estava na v2 de 23/09. Discordo também de "só o [**Glittering Massif**](https://www.ligamagic.com.br/?view=cards/card&card=Glittering+Massif) garante isso": **[**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab) com retrace descarta um terreno a cada uso**, e os loots ([**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting), [**Cathartic Pyre**](https://www.ligamagic.com.br/?view=cards/card&card=Cathartic+Pyre), [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils), [**Case of the Crimson Pulse**](https://www.ligamagic.com.br/?view=cards/card&card=Case+of+the+Crimson+Pulse), recruit da [**Celebrate the Mountain-king**](https://www.ligamagic.com.br/?view=cards/card&card=Celebrate+the+Mountain-king)) e os moinhos ([**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin), [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation), [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger)) põem terreno no cemitério em ~37% das vezes. O que a Wilds acrescenta é o terreno **mais cedo e sem gastar carta** (T1–T3). Ganho real, pequeno. |
+| (3) Fixação R/W | **Não mudou** | Neutra contra um dual virado (W.4). |
+| — **não citado pelo orquestrador** | **Mudou em 24/09** | O pacote de reanimação trouxe **[**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan)** e **[**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation)**, que devolvem *permanent card* de MV ≤ 3 — terreno incluso — e o **[**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger)**, que dispara quando carta sai do cemitério. A Wilds é o único terreno do deck que **se põe sozinho no cemitério** e **volta a ele** depois de usada. Com o [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), vira rampa repetível: cada ETB/ataque em que o Phlage não é o alvo (já escapado em campo, ou exilado) = Wilds de volta → básico → Wilds no cemitério de novo, e o Ark dispara a cada volta. A cópia do flashback do `Sevinne's` (que não pode mirar o Phlage duas vezes) ganha um alvo que é +1 terreno. |
+
+**Conclusão da checagem:** a recusa de 23/09 foi certa no eixo da fixação e incompleta nos outros. O
+que **mudou de fato** foi a entrada de [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) e [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) em
+24/09. Isso, somado ao delirium mais cedo (que já existia e não foi pesado), dá à Wilds **2+ pontos de
+sinergia** (regra 3) numa troca que é neutra na mana. A carta pode entrar — como troca marginal, **não
+como solução do combustível**.
+
+### W.2 Saída proposta: [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) · 2ª candidata: [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate)
+
+A Wilds é, na mana, um **terreno virado que escolhe a cor na hora de quebrar**: o básico entra virado.
+Trocá-la por um terreno desvirado aumenta o número de drops virados; trocá-la por um dual virado sem
+outra função mantém tudo. A saída certa é o dual virado com menos funções.
+
+| Terreno | Funções além de `{R}`/`{W}` virado | Veredito |
+|---|---|---|
+| [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) | nenhuma | **1ª — sai** |
+| [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) | tipo Gate (nenhuma carta do deck usa) | **2ª** — idêntica na mana e nas funções; perde para a Quarry só no desempate (abaixo) |
+| Wind-Scarred Crag | +1 de vida ao entrar: conta para os 3 de vida da [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) e soma ao dreno | fica — pelo mesmo critério de simetria, tem uma função a mais que as duas acima |
+| Fields of Strife | surveil 1 por `{2}{R}{W}`: mana sink que **põe carta no cemitério** (combustível) | fica |
+| Glittering Massif | cycling `{2}` (combustível, terreno no cemitério, seguro de inundação); tipos Mountain Plains (liga Clifftop e Snarl) | fica |
+| 1 Mountain ou 1 Plains | básico desvirado; conta para [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit)/[**Clifftop Retreat**](https://www.ligamagic.com.br/?view=cards/card&card=Clifftop+Retreat)/[**Furycalm Snarl**](https://www.ligamagic.com.br/?view=cards/card&card=Furycalm+Snarl) | fica — medido em W.4: drops virados sobem de 0,84 para 0,96 e o `{R}` ou `{W}` até o T2 cai até −2,3 pp |
+| Duais desviradas, Command Tower, Blast Zone, Throne | fixação desvirada ou utilidade | fora de cogitação |
+
+**Desempate Quarry × Guildgate:** a Quarry custa R$ 0,02 a mais na régua, e a pendência P2 (R.4) e o
+`report.md` §5 já apontam o [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) como o terreno a trocar por [**Sundown Pass**](https://www.ligamagic.com.br/?view=cards/card&card=Sundown+Pass) se houver
+folga. Tirando a Quarry, essa pendência continua escrita como está. Se o orquestrador preferir tirar a
+Guildgate, é equivalente — mas a P2 passa a apontar para a Quarry.
+
+### W.3 Fichas F1–F7 (as duas pontas, mesmas condições)
+
+Condições assumidas **para os dois lados**: lista do `report.md` §6, 37 terrenos, 12/12, com [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan),
+[**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation), [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger), [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat), [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab), [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) e os loots em jogo.
+
+**Entra — Evolving Wilds** (Land · CMC 0 · incolor · R$ 0,09 · compra)
+
+| Eixo | Leitura |
+|---|---|
+| F1 | `{T}`, sacrifique: busca um básico, **entra virado**, embaralha. Uma linha só. |
+| F2 | não é criatura. |
+| F3 | **Land** (não-básico, sem subtipo). No cemitério: tipo Land para o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat); carta para exilar no escape (5), no Dial (3) e na Desdemona (2). Na mão: terreno para descartar no retrace do [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab) (igual a qualquer terreno). |
+| F4 | é alvo do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) (ETB e ataque) e da cópia do [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) (MV 0 ≤ 3). Não é alvo do [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) (só artefato ou criatura) nem do [**Teshar**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) (só criatura). |
+| F5 | fixação: básico da cor que faltar, escolhido na hora de quebrar. Põe **um básico em campo** → conta para [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit) (2+ básicos) e [**Clifftop Retreat**](https://www.ligamagic.com.br/?view=cards/card&card=Clifftop+Retreat) (Mountain/Plains). Cada vez que sai do cemitério (Titan, Sevinne's, escape): +1 gatilho do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger). |
+| F6 | jogada de T1 sem custo de tempo real (o T1 do deck não gasta mana na maioria das mãos). Terreno no cemitério no T1–T3 em 8,4% das partidas. |
+| F7 | (a) **embaralha**: desfaz a vidência 3 do Dial, o scry do [**Gods Willing**](https://www.ligamagic.com.br/?view=cards/card&card=Gods+Willing) e o surveil do [**Fields of Strife**](https://www.ligamagic.com.br/?view=cards/card&card=Fields+of+Strife) que deixou carta no topo — quebre a Wilds **antes** de olhar o topo; (b) depois de quebrada, dá **uma cor só**, não as duas (custo medido: `{R}{R}{R}` do Torbran −1,0 pp no T4); (c) o gatilho do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) é um alvo único e o Phlage no cemitério vem sempre primeiro — a Wilds só ganha o gatilho quando o Phlage já está em campo ou exilado; (d) não é Mountain/Plains na mão, então não liga o [**Furycalm Snarl**](https://www.ligamagic.com.br/?view=cards/card&card=Furycalm+Snarl) (a Quarry também não). |
+
+**Sai — Stone Quarry** (Land · CMC 0 · RW · R$ 0,25 · origem Tori físico)
+
+| Eixo | Leitura | Quem cobre depois do corte |
+|---|---|---|
+| F1 | entra virada; `{T}`: `{R}` ou `{W}`. | — |
+| F2 | não é criatura. | — |
+| F3 | Land, sem subtipo. Terreno descartável para o [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab); tipo Land no cemitério **se** for descartada/moída. | [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) (terreno na mão para o retrace; e põe Land no cemitério sozinha, sem depender de loot) |
+| F4 | alvo do [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan)/`Sevinne's` **só se** chegar ao cemitério por descarte ou moinho — e volta **uma vez** (fica em campo). | [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds), com vantagem (volta e retorna ao cemitério) |
+| F5 | fixação: as duas cores, **para sempre**. Não conta como básico nem como Mountain/Plains. | **parcial**: Wilds (uma cor escolhida) + 10 duais que ficam + [**Rugged Prairie**](https://www.ligamagic.com.br/?view=cards/card&card=Rugged+Prairie) + 5 rochas de qualquer cor + [**Boros Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Signet). **Descoberto:** "as duas cores o jogo inteiro" num terreno — custo medido em W.4, ≤ 1 pp |
+| F6 | drop de T1 virado. | [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) (mesmo tempo: drop de T1, básico virado) |
+| F7 | virada; não liga `Clifftop`/`Summit`/`Snarl`. | — (a Wilds liga `Clifftop` e `Summit` depois de quebrada) |
+
+Corte **limpo**, exceto a fixação dupla permanente, declarada e medida. A Quarry é origem **Tori
+físico**: volta para a pilha solta; **não** vira sobressalente automaticamente (regra 7 — só entra em
+`data/collection.tsv` se o usuário a listar no `/update-collection`).
+
+**2ª candidata — Boros Guildgate** (R$ 0,23 · Tori físico): ficha idêntica à da Quarry linha a linha,
+mais o tipo **Gate**, que nenhuma carta do deck lê. Mesmo quadro de cobertura.
+
+### W.4 Simulação — antes e depois
+
+Mesmo modelo da R.2 (40 mil partidas por configuração, na jogada, 37 terrenos, mulligan londrino para 6
+com < 2 ou > 5 terrenos, terrenos virados e condicionais modelados, [**Rugged Prairie**](https://www.ligamagic.com.br/?view=cards/card&card=Rugged+Prairie) e [**Boros Signet**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Signet) como
+filtros, rochas com a mana que sobra depois de reservar o Phlage no T3 e 3 manas no T4, criatura de
+mana só no turno seguinte, Treasures fora). O código da R.2 não ficou salvo; **reescrevi pelo modelo
+descrito** e agora com as 10 fontes de ramp da lista atual. Por isso a linha "base" difere da R.2 em
+até ~1 pp — compare as colunas entre si. Wilds: jogada e quebrada no mesmo turno, busca a cor com menos
+fontes em campo. Erro padrão ~0,25 pp por célula. **Quarry e Guildgate são mecanicamente idênticas, e a
+diferença entre as duas colunas do meio mostra o tamanho do ruído.**
+
+| Marco (na jogada) | base (Quarry) | **Wilds ← Quarry** | Wilds ← Guildgate | Wilds ← 1 Mountain | Wilds ← 1 Plains |
+|---|---|---|---|---|---|
+| Phlage da zona de comando no T3 | 84,9 | **85,1** | 85,0 | 84,4 | 84,7 |
+| `{W}` até o T2 | 90,0 | **90,3** | 90,0 | 91,6 | 89,5 |
+| `{R}` até o T2 | 90,3 | **89,7** | 89,9 | 88,0 | 91,5 |
+| T4: `{W}` + 2 (Helping Hand + 2-drop) | 94,0 | **93,8** | 93,9 | 94,2 | 93,9 |
+| T4: 4 manas com `{W}` | 74,8 | **75,1** | 75,2 | 74,2 | 74,2 |
+| T4: 4 manas com `{R}` e `{W}` | 74,2 | **74,5** | 74,5 | 73,5 | 73,7 |
+| T4: `{W}{W}` + 2 (Broodmoth) | 67,2 | **67,6** | 67,3 | 67,9 | 65,6 |
+| T4: `{R}{R}` + 2 (Calamity Bearer) | 68,1 | **68,1** | 68,2 | 66,3 | 68,6 |
+| T4: `{R}{R}{R}` + 1 (Torbran) | 45,8 | **44,8** | 44,1 | 43,1 | 47,5 |
+| T4 ≥ 3 manas e T5 `{1}{R}{W}` (Dial) | 93,4 | **93,4** | 93,4 | 93,5 | 93,6 |
+| T5: escape do Dial + 2 manas | 57,4 | **58,0** | 57,5 | 56,8 | 56,9 |
+| T6: escape próprio `{R}{R}{W}{W}` | 82,9 | **83,3** | 83,1 | 83,5 | 83,4 |
+| T6: `{W}{W}` + 4 (Sun Titan) | 53,6 | **54,0** | 53,4 | 53,3 | 53,1 |
+| `{W}{W}` no T4, dado ≥ 4 manas | 89,0 | **89,0** | 88,8 | 90,8 | 87,6 |
+| `{R}{R}{R}` no T4, dado ≥ 4 manas | 60,7 | **59,0** | 58,1 | 57,7 | 63,5 |
+| `{R}{R}{W}{W}` no T6, dado ≥ 4 manas | 88,8 | **89,0** | 88,9 | 89,5 | 89,1 |
+| Drops virados do T1 ao T6 (média) | 0,84 | **0,83** | 0,84 | 0,96 | 0,95 |
+| Terreno no cemitério pela Wilds até o T3 | — | **8,4** | 8,5 | 8,5 | 8,5 |
+| Terreno no cemitério pela Wilds até o T5 | — | **10,8** | 10,8 | 11,0 | 10,9 |
+
+**Leitura:**
+1. **Wilds no lugar de um dual virado é neutra na mana.** Todos os marcos ficam em ±0,6 pp, exceto
+   o Torbran (−1,0 pp; −1,7 pp condicionado a ter 4 manas). É o custo de a fetch dar uma cor só depois
+   de quebrada. O ganho no Dial + 2 (+0,6) vem de a Wilds ligar [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit) e [**Clifftop Retreat**](https://www.ligamagic.com.br/?view=cards/card&card=Clifftop+Retreat),
+   o que a Quarry não faz. Os dois efeitos estão no limite do ruído.
+2. **Wilds no lugar de um básico é pior**: drops virados sobem de 0,84 para 0,96, o Phlage no T3 cai
+   0,2–0,5 pp e a cor do básico cortado perde até 2,3 pp no T2. E desequilibra os 12/12 da R.3.
+3. **Terrenos que entram virados:** hoje são 5 sempre (Massif, Fields, Quarry, Crag, Guildgate) + 3
+   condicionais. Depois: 4 sempre + a Wilds (que funciona como virada) + 3 condicionais. **Continua 5.**
+   Básicos no deck: **24, inalterado** — o [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit) e o [**Furycalm Snarl**](https://www.ligamagic.com.br/?view=cards/card&card=Furycalm+Snarl) não perdem nada. O
+   Summit e o Clifftop **ganham** um básico em campo quando a Wilds é quebrada.
+4. **Fontes por cor em terreno:** antes, 12 básicos + 11 duais = 23 de cada. Depois, 12 + 10 duais = 22
+   fixas de cada **+ a Wilds**, que vira uma das duas. Os `{W}{W}` (escape, Broodmoth) e `{R}{R}` (escape,
+   Bearer, Court) ficam iguais (tabela). O `{R}{R}{R}` do Torbran é o único que perde.
+5. **Combustível:** +1 carta no cemitério em 10,8% das partidas até o T5. **A contagem de combustível
+   dedicado continua 10**: a Wilds não entra nela, e a pendência 3 do `report.md` segue aberta.
+
+### W.5 Custo — LigaMagic (menor), cotações de 2026-09-23 e 2026-09-26
+
+| | Antes | Depois |
+|---|---|---|
+| Stone Quarry (Tori físico, conta na régua) | R$ 0,25 | — |
+| Evolving Wilds (compra) | — | R$ 0,09 |
+| **Total das 99** | **R$ 166,98** | **R$ 166,82** (−0,16) |
+| Folga até R$ 200,00 | R$ 33,02 | **R$ 33,18** |
+| A comprar | 52 · R$ 141,85 | **53 · R$ 141,94** |
+| Já existem | 47 · R$ 25,13 | **46 · R$ 24,88** |
+
+Com a 2ª candidata ([**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate), R$ 0,23): total R$ 166,84 (−0,14).
+
+### W.6 Recomendação e pendências (nada aplicado)
+
+**Troca recomendada: sai [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry), entra [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds).** Neutra na mana (medida), −R$ 0,16,
+com duas sinergias novas desde 24/09 ([**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan)/[**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) como rampa repetível, com
+gatilho do [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) a cada volta) e o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) mais cedo. É uma troca de
+**valor baixo nos dois sentidos**: não piora nada que eu consiga medir e melhora pouco.
+
+| # | Pendência | Quem decide |
+|---|---|---|
+| S1 | **Não registrar a Wilds como resposta ao combustível.** A pendência 3 do `report.md` (combustível em 10, reserva [**Thrill of Possibility**](https://www.ligamagic.com.br/?view=cards/card&card=Thrill+of+Possibility)) continua aberta: a Wilds não é fonte dedicada. | orquestrador (consolidação) |
+| S2 | Se a saída for a [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) e não a Quarry, a P2 (R.4) e o §5 do `report.md` passam a apontar a [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) como alvo do upgrade para [**Sundown Pass**](https://www.ligamagic.com.br/?view=cards/card&card=Sundown+Pass). | orquestrador |
+| S3 | Regra de jogo para o §3 do `report.md`: **quebre a Wilds antes de olhar o topo** (Dial, [**Gods Willing**](https://www.ligamagic.com.br/?view=cards/card&card=Gods+Willing), surveil do Fields), porque ela embaralha. Com o [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) em campo e o Phlage já escapado ou exilado, o gatilho vai para a Wilds. | orquestrador |
+| S4 | A [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) volta para a pilha solta do Tori (origem Tori físico); só entra na coleção via `/update-collection`. | usuário |

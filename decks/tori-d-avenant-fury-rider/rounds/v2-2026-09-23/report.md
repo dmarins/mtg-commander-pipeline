@@ -1,4 +1,4 @@
-# Relatório da rodada v2 — Phlage, Titan of Fire's Fury (revisão de 2026-09-24)
+# Relatório da rodada v2 — Phlage, Titan of Fire's Fury (revisão de 2026-09-24 + troca pontual de 2026-09-26)
 
 > **Estado:** reconsolidado em 2026-09-24 e **aguardando sua validação**. Nada foi comprado, e
 > `deck.md`/`decisions.md` ainda não têm as cartas: só entram quando você aprovar (regra 9).
@@ -11,6 +11,69 @@
 >
 > **Próximo passo sugerido:** responder às duas perguntas da §0, imprimir a lista da §9 em proxy e
 > jogar antes de comprar. Trocar agora não custa nada; depois da compra, custa.
+>
+> **Atualização de 2026-09-26 (`/swap-card Evolving Wilds`):** troca de terreno na lista de playtest,
+> **sai Stone Quarry → entra Evolving Wilds** (§T), **aprovada por você em 2026-09-27**. A lista, o custo e o bloco de
+> importação abaixo **já estão com a troca**.
+
+---
+
+## T. Troca pontual (2026-09-26): Evolving Wilds
+
+### A carta que entra
+
+[**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) — Land, incolor, `legal` em Commander. `{T}, sacrifique: busque um terreno básico,
+coloque-o no campo virado, embaralhe.` **R$ 0,09** (LigaMagic, menor, 2026-09-26; ver pendência 9).
+**Não está nas sobressalentes → compra.** Ficha via banco local (`mtgdb`), sem pendência de MCP.
+
+### Onde ela rende: corte por cor e ranking
+
+A carta é incolor, então os 5 decks passaram no corte por cor. Nenhum deles já tinha a carta.
+
+| Deck | Identidade | Pontos de sinergia (regra 3) | Resultado |
+|---|---|---|---|
+| **Phlage (Tori v2)** | RW | delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) (tipo Land no cemitério) · volta por [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) e [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) como rampa repetível, disparando o [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) a cada volta · fixação | **escolhido** |
+| Inspirit | WUR | 1: fixação real (3 cores, só 4 Mountains), mas o deck já tem a [**Perilous Landscape**](https://www.ligamagic.com.br/?view=cards/card&card=Perilous+Landscape) e 8 terrenos virados, e a Wilds não é artefato | fora (2º mais perto) |
+| Thorin | RW | 1: só fixação, com 23 básicos + [**Thrór's Map**](https://www.ligamagic.com.br/?view=cards/card&card=Thr%C3%B3r%27s+Map). A queixa do deck é justamente a lentidão, e mais um terreno virado piora isso | fora |
+| Satoru | UB | 1: só fixação; o ninjutsu quer terreno desvirado cedo. Build parado na Fase 2 | fora |
+| Krenko | R | 0: busca Mountain num deck com 30 Mountains | fora |
+
+> **Correção da triagem.** O orquestrador tinha contado a Wilds como resposta à pendência do
+> combustível (10 contra ~11). **Não é.** A Fase 6 mediu: ela põe 1 carta no cemitério até o T5 em
+> 10,8% das partidas (+0,11 carta em média). A contagem de combustível dedicado **continua 10** e a
+> pendência 3 da §11 segue aberta.
+
+**Histórico (regra 5):** a Fase 6 recusou fetches em 23/09 porque elas "não adicionam fonte num deck de 2
+cores com 22 básicos". Na fixação, o motivo continua certo: a troca é neutra na mana. O que mudou de lá
+para cá: em 24/09 entraram [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) e [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger), e com eles a Wilds vira
+terreno reciclável que dispara o Ark. O delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) já existia e não tinha sido pesado. A
+Evolving Wilds nunca esteve no deck.
+
+### A troca: sai Stone Quarry → entra Evolving Wilds
+
+| | [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) (sai) | [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) (entra) |
+|---|---|---|
+| Mana | dual R/W virada, as duas cores o jogo inteiro | virada na prática; escolhe a cor quando é quebrada e depois dá só aquela |
+| Tipos e contagens | Land, não básico | Land, não básico. Põe **um básico em campo**, o que ajuda [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit) e [**Clifftop Retreat**](https://www.ligamagic.com.br/?view=cards/card&card=Clifftop+Retreat) |
+| Cemitério | só chega lá se for destruída ou descartada | vai sozinha: tipo Land para o delirium, alvo de [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) e da cópia do Sevinne's, dispara o [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) ao sair |
+| [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab) (retrace) | terreno de descarte | idem |
+| Atrito | nenhum | embaralha: desfaz a vidência do Dial, o scry e o surveil |
+| R$ | 0,25 (Tori físico, conta na régua) | 0,09 (compra) |
+
+**Quem cobre cada função da Stone Quarry:** a fixação R/W fica com a própria Wilds e com os 10 duais que
+restam. Terreno de descarte para o [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab): a Wilds e os outros 36 terrenos. **Custo aceito:** a
+Wilds dá uma cor só depois de quebrada, e o `{R}{R}{R}` do Torbran no T4 cai 1,0 pp.
+
+**Mana (Fase 6, 40 mil partidas por configuração):** todos os marcos ficam em ±0,6 pp, menos o Torbran
+(−1,0 pp). Continuam 5 terrenos que entram virados e 24 básicos. Tirar um básico no lugar da Quarry seria
+pior (até −2,3 pp de cor no T2).
+
+**2ª candidata:** [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) (R$ 0,23), com ficha idêntica à da Quarry. Perdeu o desempate porque a
+§5 já a aponta como o terreno a trocar por [**Sundown Pass**](https://www.ligamagic.com.br/?view=cards/card&card=Sundown+Pass).
+
+**Leitura honesta:** é uma troca de **valor baixo nos dois sentidos**. Não piora nada que a Fase 6
+conseguiu medir, melhora pouco e sai R$ 0,16 mais barata. Detalhes em `06-manabase.md`, seção
+`Revisão 2026-09-26`.
 
 ---
 
@@ -53,7 +116,7 @@ A Fase 7 simulou a v2 e a lista nova com o mesmo código, na mesma régua (goldf
 
 | | Custo | Efeito medido (Fase 7) |
 |---|---|---|
-| [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) no lugar do [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) | **+R$ 9,88** (folga R$ 33,02 → R$ 23,14) | mesa morta até o T13 **+6,0 pp** |
+| [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) no lugar do [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) | **+R$ 9,88** (folga R$ 33,18 → R$ 23,30) | mesa morta até o T13 **+6,0 pp** |
 
 - O [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) (`{4}{R}{R}`, 5/5, iniciativa) dobra **todo** dano a oponentes, inclusive o que
   eles causam uns aos outros. Em você, não dobra nada.
@@ -107,11 +170,11 @@ escape, e o 6/6 **fica em campo**.
 | Comandante | [**Phlage, Titan of Fire's Fury**](https://www.ligamagic.com.br/?view=cards/card&card=Phlage%2C+Titan+of+Fire%27s+Fury) `{1}{R}{W}` · escape `{R}{R}{W}{W}` + exilar 5 do cemitério |
 | Eixo | **reanimação em loop do Phlage** + escape (concedido ou próprio) + controle |
 | Cartas | **100** (99 + comandante), todas RW e legais |
-| Terrenos | **37**: 24 básicos (12/12) + 13 não-básicos, com 11 fontes duplas |
+| Terrenos | **37**: 24 básicos (12/12) + 13 não-básicos, com 10 fontes duplas + Evolving Wilds |
 | Criaturas / artefatos / encantamentos / instantâneos / feitiços | 17 / 12 / 7 / 11 / 15 |
-| **Custo das 99** | **R$ 166,98**, folga de **R$ 33,02** no teto de R$ 200 · LigaMagic (menor), cotações de 2026-08-12 a 2026-09-24 |
-| **A comprar** | **52 cartas · R$ 141,85** |
-| Já existem | 47 cartas (R$ 25,13 na régua): 12 não-básicas do Tori físico + 11 da caixa + 24 básicos |
+| **Custo das 99** | **R$ 166,82**, folga de **R$ 33,18** no teto de R$ 200 · LigaMagic (menor), cotações de 2026-08-12 a 2026-09-26 |
+| **A comprar** | **53 cartas · R$ 141,94** |
+| Já existem | 46 cartas (R$ 24,88 na régua): 11 não-básicas do Tori físico + 11 da caixa + 24 básicos |
 | Cartas sem cotação | **nenhuma** |
 
 ### Contra as metas do pipeline
@@ -159,6 +222,9 @@ escape, e o 6/6 **fica em campo**.
 - [**Calamity Bearer**](https://www.ligamagic.com.br/?view=cards/card&card=Calamity+Bearer) + [**Torbran, Thane of Red Fell**](https://www.ligamagic.com.br/?view=cards/card&card=Torbran%2C+Thane+of+Red+Fell): quem sofre o dano ordena os efeitos, e o
   resultado é **8**, não 10.
 - Não exile o [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) pagando escape antes de usar o flashback dele.
+- **Quebre a Evolving Wilds antes de olhar o topo** (vidência do Dial, scry do [**Gods Willing**](https://www.ligamagic.com.br/?view=cards/card&card=Gods+Willing), surveil do
+  [**Fields of Strife**](https://www.ligamagic.com.br/?view=cards/card&card=Fields+of+Strife)), porque ela embaralha. Com o [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) em campo e o Phlage já escapado ou exilado,
+  o gatilho dele devolve a Wilds.
 
 **Pontos fortes:** jogada útil do T3 ao T6; resiliência a wipe (Broodmoth, Duty e o próprio escape);
 compra ligada ao motor; 15 remoções, 9 respostas a artefato/encantamento.
@@ -193,7 +259,8 @@ Approach −4,2 · Torbran −4,0. As reanimações avulsas valem ~0 no fechamen
 
 ## 5. Base de mana
 
-- **37 terrenos**, 13 não-básicos intocados; a fórmula recalculada pela Fase 6 dá 36,4.
+- **37 terrenos**, 13 não-básicos; a fórmula recalculada pela Fase 6 dá 36,4. Troca de 26/09:
+  Stone Quarry → Evolving Wilds (§T), neutra na mana.
 - **Básicos 12 Mountain / 12 Plains, mantidos.** As mágicas agora pedem cor quase meio a meio
   (33 símbolos de `{R}`, 34 de `{W}`), e há 23 fontes de cada cor em terreno. Passar para 11/13 ajudaria
   a Broodmoth em 1,4 pp e tiraria 2,8 pp do Torbran.
@@ -308,6 +375,7 @@ cartas do seu cemitério.
 | [**Boros Guildgate**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Guildgate) | 0 | — | terreno | dual virada; substitui Sunbillow Verge (R$ 56,00) | Tori físico | 0,23 |
 | [**Clifftop Retreat**](https://www.ligamagic.com.br/?view=cards/card&card=Clifftop+Retreat) | 0 | — | terreno | dual desvirada com Mountain/Plains (22 básicos + 2 Mountain Plains) · origem: EDHREC/Archidekt | compra | 2,90 |
 | [**Command Tower**](https://www.ligamagic.com.br/?view=cards/card&card=Command+Tower) | 0 | — | terreno | intocável; {R}/{W} desvirado | Tori físico | 1,50 |
+| [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) | 0 | — | terreno, tema | busca o básico da cor que falta; tipo Land no cemitério p/ delirium; Sun Titan/Sevinne's a devolvem (rampa + gatilho do Ark) · troca de 26/09 (§T) | compra | 0,09 |
 | [**Fields of Strife**](https://www.ligamagic.com.br/?view=cards/card&card=Fields+of+Strife) | 0 | — | terreno | dual virada + surveil 1 por {2}{R}{W} | Tori físico | 0,01 |
 | [**Furycalm Snarl**](https://www.ligamagic.com.br/?view=cards/card&card=Furycalm+Snarl) | 0 | — | terreno | dual; desvirada revelando básico | compra | 1,10 |
 | [**Glittering Massif**](https://www.ligamagic.com.br/?view=cards/card&card=Glittering+Massif) | 0 | — | terreno, tema | dual virada + cycling {2}: combustível, tipo Land no cemitério p/ delirium da Unholy Heat, seguro contra inundação | compra | 2,48 |
@@ -315,7 +383,6 @@ cartas do seu cemitério.
 | **12×** [**Plains**](https://www.ligamagic.com.br/?view=cards/card&card=Plains) | 0 | — | terreno | básico | Tori físico | 2,64 |
 | [**Radiant Summit**](https://www.ligamagic.com.br/?view=cards/card&card=Radiant+Summit) | 0 | — | terreno | desvirada com 2+ básicos (22 no deck) · origem: EDHREC/Archidekt | compra | 5,46 |
 | [**Rugged Prairie**](https://www.ligamagic.com.br/?view=cards/card&card=Rugged+Prairie) | 0 | — | terreno | filtro {R/W}→{R}{R}/{R}{W}/{W}{W}: Mountain + Prairie = {W}{W} do escape · origem: EDHREC/Archidekt | compra | 2,73 |
-| [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) | 0 | — | terreno | dual virada | Tori físico | 0,25 |
 | [**Throne of the High City**](https://www.ligamagic.com.br/?view=cards/card&card=Throne+of+the+High+City) | 0 | — | terreno, draw | 3ª entrada para a coroa (Jailer, Court); conta nas 12 de draw da Fase 3 | compra | 0,65 |
 | [**Wind-Scarred Crag**](https://www.ligamagic.com.br/?view=cards/card&card=Wind-Scarred+Crag) | 0 | — | terreno | dual virada + 1 de vida | Tori físico | 0,10 |
 
@@ -348,6 +415,12 @@ cartas do seu cemitério.
 
 O [**Wear // Tear**](https://www.ligamagic.com.br/?view=cards/card&card=Wear+%2F%2F+Tear) foi cortado pela Fase 2 e **devolvido** pela Fase 5, por isso não está na lista acima.
 
+### 7.1b Saiu na troca pontual de 2026-09-26
+
+| Sai | R$ | Fase | Motivo | Quem cobre |
+|---|---|---|---|---|
+| [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) | 0,25 (Tori) | 6 | abre o slot da Evolving Wilds: dual virada sem outra função; a Wilds faz o mesmo papel de mana e vai ao cemitério | Evolving Wilds + 10 duais. Custo aceito: −1,0 pp no Torbran do T4 |
+
 As cartas que saíram e vieram da caixa ou do Tori físico **continuam sobressalentes**. Fichas F1–F7 de
 cada corte: `02-theme.md` §12.6, `03-draw.md`, `04-ramp.md` e `05-interaction.md` (seções de revisão).
 
@@ -375,7 +448,7 @@ cada corte: `02-theme.md` §12.6, `03-draw.md`, `04-ramp.md` e `05-interaction.m
 
 ---
 
-## 8. Custo — LigaMagic (menor), cotações de 2026-08-12 a 2026-09-24
+## 8. Custo — LigaMagic (menor), cotações de 2026-08-12 a 2026-09-26
 
 Régua: **R$ 200,00 nas 99 cartas**. O comandante não conta; os básicos contam (critério
 conservador do briefing). Toda cotação é o **primeiro** número do bloco "Preço Médio de Venda no
@@ -383,13 +456,13 @@ Marketplace" e está registrada com `mtgdb prices -add`.
 
 | Bloco | Cartas | R$ |
 |---|---|---|
-| **A comprar** | 52 | **141,85** |
-| Já existem (Tori físico + caixa), contam na régua | 47 | 25,13 |
-| **Total das 99** | **99** | **166,98** |
-| **Folga até R$ 200,00** | | **33,02** |
-| Com o [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) da §0.2 | | total 176,86 · folga 23,14 |
+| **A comprar** | 53 | **141,94** |
+| Já existem (Tori físico + caixa), contam na régua | 46 | 24,88 |
+| **Total das 99** | **99** | **166,82** |
+| **Folga até R$ 200,00** | | **33,18** |
+| Com o [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) da §0.2 | | total 176,70 · folga 23,30 |
 
-### Lista de compra (52), da mais cara para a mais barata
+### Lista de compra (53), da mais cara para a mais barata
 
 | Carta | R$ (menor) |
 |---|---|
@@ -441,6 +514,7 @@ Marketplace" e está registrada com `mtgdb prices -add`.
 | [**Slaughter the Strong**](https://www.ligamagic.com.br/?view=cards/card&card=Slaughter+the+Strong) | 0,20 |
 | [**Millikin**](https://www.ligamagic.com.br/?view=cards/card&card=Millikin) | 0,18 |
 | [**Call a Surprise Witness**](https://www.ligamagic.com.br/?view=cards/card&card=Call+a+Surprise+Witness) | 0,15 |
+| [**Evolving Wilds**](https://www.ligamagic.com.br/?view=cards/card&card=Evolving+Wilds) | 0,09 |
 | [**Lorehold Excavation**](https://www.ligamagic.com.br/?view=cards/card&card=Lorehold+Excavation) | 0,08 |
 | [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) | 0,07 |
 | [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) | 0,06 |
@@ -522,6 +596,7 @@ Conflagrate.
 1 Boros Guildgate
 1 Clifftop Retreat
 1 Command Tower
+1 Evolving Wilds
 1 Fields of Strife
 1 Furycalm Snarl
 1 Glittering Massif
@@ -529,7 +604,6 @@ Conflagrate.
 12 Plains
 1 Radiant Summit
 1 Rugged Prairie
-1 Stone Quarry
 1 Throne of the High City
 1 Wind-Scarred Crag
 
@@ -599,6 +673,11 @@ Quando tiver os registros, é só trazer: eu os passo ao `wincon-tester` em modo
 8. **Arquivos de fase desatualizados:** a §2.2 e a §9 do `06-manabase.md` ainda falam em 11/11 e em
    15 não-básicos, e a contagem de cor da §12.8 do `02-theme.md` conta Boros Signet e Talisman como RW.
    Nada disso muda a lista.
+9. **Troca pontual de 26/09 (§T) aprovada em 27/09.** No playtest: imprima a Evolving Wilds e tire
+   a Stone Quarry. A cotação da Wilds (R$ 0,09) é o **menor entre as impressões** visíveis: a página
+   da LigaMagic abre na lista de 76 versões, sem o bloco "Preço Médio", e só 24 carregaram.
+10. [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) volta para a pilha solta do Tori. Só entra na coleção se você a listar no
+    `/update-collection`.
 
 ---
 
