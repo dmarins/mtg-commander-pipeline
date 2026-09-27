@@ -87,3 +87,18 @@ imposto de comandante quando é carta do deck. Preço **a cotar**, junto com `Fi
    > `rounds/v2-2026-09-23/08-meta-edhrec.md`.
 3. Conjurado da zona de comando, o Helix (3 de dano + 3 de vida) **acontece assim mesmo** — são
    duas habilidades separadas, e o dano dispara sempre que ele entra, escapado ou não.
+
+## 2026-09-27 — troca pontual na v2 (`/swap-card Evolving Wilds`), aprovada pelo usuário
+
+Aprovada **dentro da v2 em playtest de proxy**. A v2 como um todo ainda **não** foi validada, e
+`deck.md` segue com a lista antiga. Proposta de 2026-09-26 feita pelo `manabase-engineer`
+(`rounds/v2-2026-09-23/06-manabase.md`, seção `Revisão 2026-09-26`).
+
+| Carta | Movimento | Motivo |
+|---|---|---|
+| `Evolving Wilds` | **entra** (compra, R$ 0,09) | Único dos 5 decks com 2+ sinergias: tipo Land no cemitério para o delirium da `Unholy Heat`; `Sun Titan` e a cópia do `Sevinne's Reclamation` a devolvem (rampa repetível que dispara o `Ark of Hunger`); fixação R/W. A Fase 6 mediu a mana como neutra (±0,6 pp). **Não** é fonte de combustível (+0,11 carta até o T5): a pendência do combustível em 10 continua aberta. |
+| `Stone Quarry` | **sai** (Tori físico) | Dual virada sem outra função. Quem cobre: a própria Wilds e os 10 duais que ficam, e qualquer terreno serve de descarte para o `Flame Jab`. **Custo aceito:** `{R}{R}{R}` do `Torbran` no T4 −1,0 pp. Volta para a pilha solta do Tori e **não** vira sobressalente sozinha (regra 7). |
+
+**Histórico (regra 5):** a recusa de fetches em 23/09 ("não adiciona fonte num deck de 2 cores")
+continua certa **na fixação**. O que mudou foram Sun Titan, Sevinne's e Ark, que entraram em 24/09.
+2ª candidata a sair era `Boros Guildgate`, preterida por já estar reservada para `Sundown Pass`.
