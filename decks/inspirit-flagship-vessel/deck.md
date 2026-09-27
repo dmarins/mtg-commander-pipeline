@@ -9,6 +9,9 @@
 > **2026-09-26 · v4 (`/swap-card`):** entra Requisition Raid, sai Reverse Engineer
 > (ver [`rounds/v4-2026-09-26/report.md`](rounds/v4-2026-09-26/report.md)).
 >
+> **2026-09-27 · v5 (`/swap-card`):** entra Traxos, Academy Guardian, sai Stern Lesson
+> (ver [`rounds/v5-2026-09-27/report.md`](rounds/v5-2026-09-27/report.md)).
+>
 > Esta lista **não** é saída de rodada do pipeline: descende da v2 (versão mesão), passou pela v3 e
 > foi evoluída pelo próprio usuário depois. As diferenças medidas contra a v2 estão em
 > [`decisions.md`](decisions.md) — a v3 ficou no meio e seu relatório se perdeu, então o diff
@@ -20,10 +23,10 @@
 |---|---|---|---|---|---|
 | Inspirit, Flagship Vessel | 3 | Artefato Lendário — Spacecraft (criatura só a **8+**) | WUR | tema, proteção | estática `other artifacts → hexproof + indestructible` vale **desde 0 contadores**; o gatilho `1+` (+1/+1 ou 2 charges por combate) só liga com **1+ charge counter** e mira `other target artifact` — **nunca se alimenta** (ruling Adagia, 2025-07-25); 8+ acrescenta corpo 5/5 com voar |
 
-## Criaturas (27) — incluindo Veículos/Spacecraft (⛽), que **não** são corpos em repouso
+## Criaturas (28) — incluindo Veículos/Spacecraft (⛽), que **não** são corpos em repouso
 
-> ⛽ marca o que só vira criatura pagando **crew** ou **station**. Corpos de verdade: **24**
-> (as 27 linhas abaixo menos os 3 marcados). Os ⛽ da seção de artefatos seguem a mesma regra.
+> ⛽ marca o que só vira criatura pagando **crew** ou **station**. Corpos de verdade: **25**
+> (as 28 linhas abaixo menos os 3 marcados). Os ⛽ da seção de artefatos seguem a mesma regra.
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
@@ -48,6 +51,7 @@
 | Crystalline Crawler | 4 | Criatura Artefato | C | tema, ramp | +1/+1 counters = mana colorida; recarrega via gatilho 1+/proliferate |
 | Jhoira, Weatherlight Captain | 4 | Criatura Lendária | UR | draw | draw por mágica histórica (~85% do deck); ⚠️ não é artefato |
 | Padeem, Consul of Innovation | 4 | Criatura Lendária | U | draw, proteção | draw no upkeep (maior MV de artefato) + **hexproof ao próprio Inspirit**, que a estática dele não cobre |
+| Traxos, Academy Guardian | 4 | Criatura Artefato Lendária — Dragon Construct | U | tema | custa `{1}{U}` após mágica não-criatura (`{U}` com 1 redutor); 1/5 voadora, vigilância, prowess × ~35 mágicas não-criatura → poder extra para Station/crew no turno; protegida pela estática; anthems de Chief/Master (3/7); dispara Pinnacle/Sai/Golem Foundry/Uthros/Jhoira/Surge Conductor/Evangel; ⚠️ poder base 1; vigilância redundante com a Vraska e reduz o X da Alibou |
 | Alibou, Ancient Witness | 5 | Criatura Artefato Lendária | WR | tema, remoção, wincon | haste ao time; dano + scry por artefato virado (Station e crew contam) |
 | Deepglow Skate | 5 | Criatura | U | tema | dobra contadores (estaciona o Inspirit de uma vez); ⚠️ não é artefato |
 | Cyberdrive Awakener | 6 | Criatura Artefato | U | tema, wincon | anima rocks/Bridges em 4/4 hexproof+indestrutíveis e dá voar às criaturas-artefato |
@@ -92,7 +96,7 @@
 |---|---|---|---|---|---|
 | Saheeli, Sublime Artificer | 3 | Planeswalker | UR | tema | Servo 1/1 por mágica não-criatura; -2 copia artefato |
 
-## Instantâneos (8)
+## Instantâneos (7)
 
 | Carta | CMC | Tipo | Cores | Categorias | Sinergias |
 |---|---|---|---|---|---|
@@ -103,7 +107,6 @@
 | Swords to Plowshares | 1 | Instantâneo | W | remoção | melhor remoção branca |
 | Invisible Force Field | 2 | Instantâneo | W | proteção | indestrutível a até 4 permanentes + Rebound (recasta grátis); cobre a lacuna do próprio Inspirit e o cluster de criaturas não-artefato |
 | Stone by Sunlight | 2 | Instantâneo | W | remoção, proteção | modal: destrói criatura de poder 4+ **ou** dá indestrutível + **torna a criatura um artefato** (entra sob a estática do comandante) |
-| Stern Lesson | 3 | Instantâneo | U | draw, ramp | draw 2 + descarte 1 + Powerstone |
 
 ## Feitiços (6)
 

@@ -137,3 +137,37 @@ motivo declarado; não foi tocada. **Posse:** Reverse Engineer só vira sobressa
 listar na próxima `/update-collection` (regra 7). **Custo da lista:** R$ 252,71 → R$ 252,95 +
 Vraska `a cotar` (LigaMagic menor, cotações de 2026-09-18 a 2026-09-23; a diferença para os R$ 252,22
 anteriores é a recotação da Chain Reaction em 2026-09-23).
+
+---
+
+## v5 — troca pontual (`/swap-card Traxos, Academy Guardian`) · 2026-09-27
+
+O usuário trouxe `Traxos, Academy Guardian` (fora das sobressalentes → compra, R$ 1,89 LigaMagic menor,
+2026-09-27) e pediu o deck onde ela rende mais. Corte por cor: Inspirit e Satoru elegíveis (U); Krenko,
+Thorin e Phlage fora. Satoru descartado (em `build`; ativador de ninjutsu de 4 manas contra os de 0–2 do
+pool). Ficha completa dos dois lados em
+[`rounds/v5-2026-09-27/02-theme.md`](rounds/v5-2026-09-27/02-theme.md); relatório em
+[`rounds/v5-2026-09-27/report.md`](rounds/v5-2026-09-27/report.md). **Aprovada pelo usuário em 2026-09-27.**
+
+| Data | Carta | Ação | Fase/agente | Motivo | Funções descobertas pelo corte |
+|---|---|---|---|---|---|
+| 2026-09-27 | Traxos, Academy Guardian | entrada | v5 · swap-card · theme-analyst | Corpo permanente e protegido (artefato → hexproof + indestrutível do comandante) por `{1}{U}`/`{U}` depois de uma mágica não-criatura; 1/5 voadora; anthems de Chief/Master → 3/7; prowess × 35 mágicas não-criatura = poder extra para Station no turno; artifact spell lendária → Pinnacle, Sai, Golem Foundry, Uthros, Jhoira, redutores; nontoken que entra → Surge Conductor, Metastatic Evangel. **Pontos fracos aceitos:** poder base 1; vigilância redundante com a Vraska; atacar com vigilância não conta no X da Alibou | — |
+| 2026-09-27 | Stern Lesson | corte | v5 · swap-card · theme-analyst | Fonte de draw de saldo líquido 0 (loot 2/1) e a única do deck que não põe corpo nem motor em campo. A v1 a manteve com draw em 8 e ~7 ramps; hoje draw 13 → **12** e ramp 11 → **10** + 1, as duas metas cumpridas. Estava na lista original do usuário; nunca foi cortada nem reposta | loot → 12 fontes de draw restantes; Powerstone (ramp) → 10 rocks/fontes + 5 redutores; +1 artefato → a própria Traxos; **mágica não-criatura (Vraska/Saheeli/Whirlwind/Seedshark/prowess) 36 → 35 e a única compra em instant speed que gera token → descobertas (custo aceito)** |
+
+**Alternativa não usada:** Talisman of Progress (tiraria aceleração de T2 e dispara mais gatilhos do deck
+que a Stern Lesson). **Posse:** Stern Lesson só vira sobressalente se o usuário a listar na próxima
+`/update-collection` (regra 7); Traxos tratada como compra — posse não declarada. **Custo da lista:**
+R$ 252,95 → R$ 254,74 + Vraska `a cotar` (LigaMagic menor, cotações de 2026-09-18 a 2026-09-27).
+
+## 2026-09-27 — v6 (`/swap-card Room of Refuge`): corte da Temple of Enlightenment reprovado
+
+Proposta do `manabase-engineer`: Temple of Enlightenment → Room of Refuge (tapland por tapland), com o
+scry 1 declarado como função descoberta ("custo aceito"). **Reprovada pelo usuário em 2026-09-27:**
+*"Temple of Enlightenment faz scry 1, isso ajuda o deck"*. A Temple fica, e o scry dela conta como
+função a proteger. Com a v5 aplicada, a Stern Lesson (uma das coberturas de seleção citadas) também
+saiu. A proposta voltou ao `manabase-engineer`, contra o `deck.md` pós-v5.
+
+| Data | Carta | Ação | Fase/agente | Motivo | Funções descobertas pelo corte |
+|---|---|---|---|---|---|
+| 2026-09-27 | Temple of Enlightenment | corte **reprovado** (fica) | v6 · swap-card · manabase-engineer | usuário: o scry 1 ajuda o deck; a seleção de início de jogo não é custo aceitável | — |
+| 2026-09-27 | Room of Refuge | entrada **recusada** (v6 fechada sem troca) | v6 · swap-card · manabase-engineer | refeita contra o `deck.md` pós-v5 e com a Temple protegida, nenhuma saída passa. Cycling e filtro têm a mesma régua do scry; básicos, destapados e condicionais levariam os virados de 8 para 9; as Bridges são artefato; a Mystic Monastery fixa melhor; a Vivid Crag é troca lateral. Como 37º terreno, desfaria os 36 e todas as categorias estão no piso. Para voltar a ser proposta, precisa de fato novo: mudança na contagem de virados, falta de R medida em jogo, ou um eixo de sacrificar terreno | — |

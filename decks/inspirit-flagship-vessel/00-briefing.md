@@ -61,6 +61,8 @@ proposta nem aprovada nesta passagem.
 | — (registro) | 2026-09-18 | **não é rodada**: transcrição da lista montada para [`deck.md`](deck.md) + diff v2→hoje em [`decisions.md`](decisions.md). Sem análise, sem trocas. |
 | — (troca avulsa) | 2026-09-26 | **não é rodada**: 1 troca aprovada (entra Vraska, Soul of Stone — carta do usuário; sai Third Path Iconoclast). Ficha e atritos em [`decisions.md`](decisions.md). Custo da lista passa a R$ 252,22 + Vraska (**a cotar**). |
 | [v4](rounds/v4-2026-09-26/report.md) | 2026-09-26 | troca pontual (`/swap-card`), **aprovada**: entra Requisition Raid (sobressalente, compra zero), sai Reverse Engineer. Interação 9 → 10, respostas a artefato/encantamento 2 → 3, draw 14 → 13. Custo da lista R$ 252,95 + Vraska **a cotar**. |
+| [v5](rounds/v5-2026-09-27/report.md) | 2026-09-27 | troca pontual (`/swap-card`), **aprovada**: entra Traxos, Academy Guardian (compra R$ 1,89), sai Stern Lesson. Criaturas 27 → 28, artefatos 42 → 43, draw 13 → 12, ramp 11 → 10 + 1. Custo da lista R$ 254,74 + Vraska **a cotar**. |
+| [v6](rounds/v6-2026-09-27/report.md) | 2026-09-27 | troca pontual (`/swap-card Room of Refuge`), **fechada sem troca**. A proposta Temple of Enlightenment → Room of Refuge foi reprovada pelo usuário, porque o scry 1 ajuda o deck. Refeita contra a lista pós-v5, nenhuma saída passou (seleção, 8 virados, artefatos, fixação). Lista e custo inalterados. |
 
 Recuperadas do histórico do git (commit `84ddb87^`) em 2026-09-18 e reunidas num único deck: antes
 viviam em dois diretórios irmãos (`inspirit-flagship-vessel` e `inspirit-flagship-vessel-v2`).
