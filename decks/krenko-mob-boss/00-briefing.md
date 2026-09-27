@@ -16,6 +16,7 @@
 | v1 / v2 | 2026-08-21 → 2026-08-22 | não produziram relatório próprio; consolidadas no relatório da v3 |
 | [v3](rounds/v3-2026-08-22/report.md) | 2026-08-22 | 26 trocas aplicadas; fases 02–07 em `rounds/v3-2026-08-22/` |
 | [v4](rounds/v4-2026-09-01/report.md) | 2026-08-25 → 2026-09-01 | 14 trocas (39 acumuladas desde a v1); deck fechado em 100. **Goldfishing pendente** |
+| [v5](rounds/v5-2026-09-27/report.md) | 2026-09-26 → 2026-09-27 | `/swap-card`: Mountain → Hall of Echoes (R$ 19,98, a comprar); 35 terrenos mantidos. **Goldfishing pendente** |
 
 ## Respostas do intake
 

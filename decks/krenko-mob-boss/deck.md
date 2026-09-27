@@ -1,6 +1,6 @@
 # deck.md — Krenko, Mob Boss
 
-**Fonte de verdade viva.** Estado: **v5 em curso** — v3 fechada (26 trocas); 9 trocas da v4 em 2026-08-25
+**Fonte de verdade viva.** Estado: **v5 fechada em 2026-09-27** (`/swap-card`: Mountain → Hall of Echoes) — v3 fechada (26 trocas); 9 trocas da v4 em 2026-08-25
 (Metallic Mimic + pacote do vídeo + subplano Zada), **2 trocas do pacote Treasure em 2026-08-26** e
 **3 trocas da montagem física em 2026-09-01** (Howlsquad Heavy, Brightstone Ritual e Sarpadian
 Simulacrum — todas cartas que o usuário já tinha).
@@ -118,6 +118,7 @@ Categorias e pontos de sinergia vêm de `02-theme.md` e dos relatórios de fase.
 | Den of the Bugbear | — | Land | R | terreno, tema, wincon | 4 pts · núcleo |
 | Dwarven Mine | — | Land — Mountain | R | terreno, tema | 2 pts · sólida |
 | Sokenzan, Crucible of Defiance | — | Leg. Land | R | terreno, tema | 3 pts · sólida |
-| Mountain ×30 | — | Basic Land — Mountain | R | terreno | — pts · base |
+| Hall of Echoes | — | Land | C | terreno, tema | 5 pts · núcleo — `{5}`: vira cópia de Krenko sem regra da lenda → 2ª ativação no turno, em velocidade de instantâneo |
+| Mountain ×29 | — | Basic Land — Mountain | R | terreno | — pts · base |
 | The Autonomous Furnace | — | Land — Sphere | R | terreno, draw | 1 pts · marginal |
 
