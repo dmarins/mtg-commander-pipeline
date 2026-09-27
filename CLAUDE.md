@@ -8,6 +8,7 @@ Pipeline de subagentes para **construção e otimização de decks de Commander 
 - `/improve-deck [caminho da decklist ou link do Archidekt]` — audita e otimiza um deck existente.
 - `/update-collection [lista de cartas]` — substitui a coleção pela lista informada; o que não estiver nela sai.
 - `/swap-card <carta> [@ <deck>]` — troca pontual: corta os decks pela identidade de cor, escolhe onde a carta rende mais e propõe a saída.
+- `/sweep-collection [@ <deck>]` — `/swap-card` em lote sobre as sobressalentes: confirma que a coleção está atualizada, cruza cada carta com os decks e propõe as trocas dos finalistas.
 
 A sessão principal atua como **orquestradora** (especialista em Commander): coleta preferências, delega cada fase a um subagente especialista, apresenta os resultados para revisão do usuário e consolida o deck.
 
