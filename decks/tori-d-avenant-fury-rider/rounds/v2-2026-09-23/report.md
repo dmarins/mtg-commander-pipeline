@@ -15,6 +15,93 @@
 > **Atualização de 2026-09-26 (`/swap-card Evolving Wilds`):** troca de terreno na lista de playtest,
 > **sai Stone Quarry → entra Evolving Wilds** (§T), **aprovada por você em 2026-09-27**. A lista, o custo e o bloco de
 > importação abaixo **já estão com a troca**.
+>
+> **Atualização de 2026-09-27 (`/swap-card Murmuring Volume`):** troca de rocha na lista de playtest,
+> **sai Commander's Sphere → entra Murmuring Volume** (§T2), **aprovada por você em 2026-09-27**. A lista, o
+> custo e o bloco de importação abaixo **já estão com a troca**.
+
+---
+
+## T2. Troca pontual (2026-09-27): Murmuring Volume, aprovada
+
+### A carta que entra
+
+[**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume): `{3}`, Artifact — Book, incolor, `legal` em Commander. Comum de Reality Fracture (FRA, 2026).
+Oracle: `{T}: Add one mana of any color.` · `{2}, {T}, Discard a card: Draw a card.`
+**R$ 0,50** (LigaMagic, menor, 2026-09-27). A coleção é nova e a página tem listagens de pré-venda, então
+reconfira o preço antes de comprar. **Não está nas sobressalentes, então é compra.** Ficha via banco local
+(`mtgdb`), sem pendência de MCP.
+
+### Onde ela rende: corte por cor e ranking
+
+A carta é incolor, então os 5 decks passam no corte por cor. Nenhum deles tem a carta nem a teve antes
+(`grep` em todos os `decks/`, zero ocorrências).
+
+| Deck | Identidade | Pontos de sinergia (regra 3) | Lacuna | Resultado |
+|---|---|---|---|---|
+| **Phlage (Tori v2)** | RW | combustível de escape (1 carta por ativação) · cada descarte dispara o [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) (impulse) · rocha de 3 que mantém o histórico do [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) · fixação · converte a mana que sobra do T7 ao T11 (a Fase 7 mediu 7–9 manas sobrando) | **combustível em 10 contra ~11** (pendência 3) | **escolhido** |
+| Inspirit | WUR | 3+: conta como artefato ([**Master of Etherium**](https://www.ligamagic.com.br/?view=cards/card&card=Master+of+Etherium)), histórico para a [**Jhoira, Weatherlight Captain**](https://www.ligamagic.com.br/?view=cards/card&card=Jhoira%2C+Weatherlight+Captain), barateada pelos redutores, fixação de 3 cores | nenhuma: ramp em **17** (meta 10–11 + 2–3), draw em 13. A régua de torneio já estourou (R$ 252,95) | 2º. Exigiria outra cópia e só trocaria uma rocha por outra |
+| Thorin | RW | 1: só ramp. O anthem do Thorin conta **fichas** de artefato, não artefatos. A queixa do deck é falta de Anões, e uma rocha de 3 não a resolve | ramp 10, draw 12, no piso | fora |
+| Krenko | R | 0–1: a fixação não serve num deck mono-R, e rummage a `{2}` disputa mana com o Krenko no T4 | ramp 17, draw 19 | fora |
+| Satoru | UB | build parado na Fase 2: vira **candidata ao pool** da v1 se o build for retomado, sem troca | — | registro só |
+
+### A troca: sai Commander's Sphere → entra Murmuring Volume
+
+Análise do `theme-analyst` em `02-theme.md`, na seção `Revisão 2026-09-27`. O gate de swap (ficha,
+cobertura, simetria, histórico, alvo protegido) passou.
+
+**Por que a Sphere e não uma rocha de 2:** a Volume merece o slot, mas no lugar de **outra rocha de 3**.
+Tirar uma rocha de 2 por ela custaria Phlage no T3, que está em 86%. A [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) é a
+única peça da lista com o mesmo custo, o mesmo tipo e a mesma mana.
+
+| | [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) (sai) | [**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume) (entra) |
+|---|---|---|
+| Mana | `{T}`: `{R}` ou `{W}` | `{T}`: qualquer cor (em RW, é igual) |
+| Carta | sacrifica: compra 1, **uma vez**, a custo zero, em instantâneo. **Com a mão vazia é +1 carta real** | `{2}`, `{T}`, descarta: compra 1, **toda rodada**. É neutra em carta e filtra terreno morto. Com o Inti, é +1 carta |
+| Cemitério | vai sozinha: 1 carta de combustível, alvo de [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan), [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission) e da cópia do [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation), dispara o [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | **não** vai sozinha. Põe **1 carta por ativação** no cemitério |
+| Teshar / Haliya | artefato histórico / +0 | igual / igual (nenhuma das duas ganha vida) |
+| Curva | T3 | T3 |
+| Atrito | sacrificar tira a mana de vez | o `{T}` é o mesmo da mana: batida para mana no seu turno, ela não faz rummage no end step do oponente. Cada rummage custa na prática 3 manas. Com a mão vazia, não ativa |
+| R$ | 0,50 (caixa, conta na régua) | 0,50 (compra) |
+
+**Quem cobre cada função da Commander's Sphere:**
+- **Mana R/W, fixação, curva e histórico para o Teshar:** a Volume, 1 por 1. A medição da Fase 4 (sem a
+  Sphere, −1,9 pp no Sun Titan do T6 e −2,7 pp na Gisela do T7) se mantém, desde que o `{T}` da Volume vá
+  para mana nesses turnos.
+- **Descoberto (custo aceito):**
+  - o **+1 carta com a mão vazia**. É o único estado em que a Sphere é melhor, e é a dor 2. O registro 7
+    do goldfishing mede se ele é frequente;
+  - **ir sozinha ao cemitério** para Sun Titan, Recommission, a cópia do Sevinne's e o gatilho do Ark. Os
+    três preferem o Phlage sempre que ele está lá;
+  - virar carta em resposta a remoção de artefato;
+  - a parte de "ir ao cemitério" que a Sphere cobria pelo [**Boros Locket**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Locket) desde a Fase 6.
+
+**Ressalva da Fase 4.** A carta é da categoria `ramp`, e a Fase 4 a manteve em 24/09 ("rocha do jogo
+longo. Fica") justamente pelo "sacrifica, compra 1, vai ao cemitério". Essa medição foi feita contra uma
+**carta em branco**, não contra uma rocha de 3 com rummage, que não existia no pool. A função de ramp
+fica coberta 1 por 1. O que se perde é o que está declarado acima.
+
+**Histórico (regra 5):** nenhuma das duas cartas tem linha no `decisions.md` nem aparece na §7. A Sphere
+nunca saiu do deck.
+
+**Contagens:**
+
+| | Hoje | Com a troca |
+|---|---|---|
+| Combustível de cemitério | 10 | **11**: fecha a pendência 3 (com o Fiendish Duo da §0.2, fica em 10, não em 9) |
+| Draw / ramp padrão / explosivo | 12 / 10 / 1 | 12 / 10 / 1 |
+| Artefatos / históricos para o Teshar | 12 / 22 | 12 / 22 |
+| Criaturas / terrenos / total | 17 / 37 / 100 | 17 / 37 / 100 |
+| **Custo das 99** | R$ 166,82 | **R$ 166,82** (±0,00). Compras: 53 → **54**, R$ 141,94 → **R$ 142,44** |
+
+**2ª candidata:** [**Seize the Spoils**](https://www.ligamagic.com.br/?view=cards/card&card=Seize+the+Spoils) (compra, R$ 0,06). Com ela, o custo das 99 vai a R$ 167,26, o ramp
+a 11/0 e os históricos a 23. Mas o **combustível fica em 10**, e esse é o motivo principal da troca. Ela
+só vale se você quiser manter a Sphere.
+
+**Leitura honesta:** é uma troca de **valor baixo** e não mexe no relógio (§0.1). O ganho aparece no
+jogo longo, com mana sobrando e 0,8 mágica por turno, onde a Volume troca terreno morto por carta. O
+balanço entre as duas é **estimativa de mesa, não simulação**. No playtest, imprima a Volume e tire a
+Sphere.
 
 ---
 
@@ -172,9 +259,9 @@ escape, e o 6/6 **fica em campo**.
 | Cartas | **100** (99 + comandante), todas RW e legais |
 | Terrenos | **37**: 24 básicos (12/12) + 13 não-básicos, com 10 fontes duplas + Evolving Wilds |
 | Criaturas / artefatos / encantamentos / instantâneos / feitiços | 17 / 12 / 7 / 11 / 15 |
-| **Custo das 99** | **R$ 166,82**, folga de **R$ 33,18** no teto de R$ 200 · LigaMagic (menor), cotações de 2026-08-12 a 2026-09-26 |
-| **A comprar** | **53 cartas · R$ 141,94** |
-| Já existem | 46 cartas (R$ 24,88 na régua): 11 não-básicas do Tori físico + 11 da caixa + 24 básicos |
+| **Custo das 99** | **R$ 166,82**, folga de **R$ 33,18** no teto de R$ 200 · LigaMagic (menor), cotações de 2026-08-12 a 2026-09-27 |
+| **A comprar** | **54 cartas · R$ 142,44** |
+| Já existem | 45 cartas (R$ 24,38 na régua): 11 não-básicas do Tori físico + 10 da caixa + 24 básicos |
 | Cartas sem cotação | **nenhuma** |
 
 ### Contra as metas do pipeline
@@ -188,7 +275,7 @@ escape, e o 6/6 **fica em campo**.
 | Respostas a artefato/encantamento | 9 | **9** | — | inclui o 2-por-1 [**Wear // Tear**](https://www.ligamagic.com.br/?view=cards/card&card=Wear+%2F%2F+Tear) |
 | Wipes | 3 + 1 terreno | **3 + 1 terreno** | 2–4 | + overload do [**Mizzium Mortars**](https://www.ligamagic.com.br/?view=cards/card&card=Mizzium+Mortars) e o [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) |
 | Proteção | 1 | **2 + 2 parciais** | 2 | Gods Willing e Duty Beyond Death; parciais: Angelic Renewal e Broodmoth |
-| Combustível de cemitério | 14 | **10** + vidência 3 do Dial | ~11 | abaixo do alvo depois que o Big Score saiu (§11) |
+| Combustível de cemitério | 14 | **11** + vidência 3 do Dial | ~11 | voltou ao alvo com a Murmuring Volume (§T2); era 10 depois que o Big Score saiu |
 | Caminhos de vitória | 4 | **4** | 3+ | §4 |
 | Terrenos | 37 | **37** | — | Fase 6: divisão 12/12 mantida |
 
@@ -314,7 +401,7 @@ cartas do seu cemitério.
 | [**Sphere of the Suns**](https://www.ligamagic.com.br/?view=cards/card&card=Sphere+of+the+Suns) | 2 | `{2}` | ramp | 3 manas de qualquer cor (entra virada); histórico para o Teshar | caixa | 0,11 |
 | [**Talisman of Conviction**](https://www.ligamagic.com.br/?view=cards/card&card=Talisman+of+Conviction) | 2 | `{2}` | ramp | mv2 de cor à escolha; 1 de vida pago pelo Helix | compra | 3,80 |
 | [**Tome of Legends**](https://www.ligamagic.com.br/?view=cards/card&card=Tome+of+Legends) | 2 | `{2}` | draw | página a cada entrada ou ataque do comandante; **cada reanimação é uma entrada** | compra | 1,20 |
-| [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) | 3 | `{3}` | ramp | {R}/{W}; sacrifica para comprar; histórico para o Teshar | caixa | 0,50 |
+| [**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume) | 3 | `{3}` | ramp, tema | mana de qualquer cor; `{2}`,`{T}`, descarta: compra (rummage repetível = combustível, dispara o Inti); histórico para o Teshar · troca de 27/09 (§T2) | compra | 0,50 |
 | [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) | 3 | `{3}` | tema | {T}: o Phlage ganha escape de {1}{R}{W} + 3 cartas: o 6/6 **fica**; ETB vidência 3 | compra | 1,42 |
 | [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | 4 | `{2}{R}{W}` | draw, wincon, tema | 1 a cada oponente + 1 de vida sempre que carta sai do cemitério; {T}: moe 1 e pode jogá-la | compra | 0,45 |
 
@@ -421,6 +508,12 @@ O [**Wear // Tear**](https://www.ligamagic.com.br/?view=cards/card&card=Wear+%2F
 |---|---|---|---|---|
 | [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) | 0,25 (Tori) | 6 | abre o slot da Evolving Wilds: dual virada sem outra função; a Wilds faz o mesmo papel de mana e vai ao cemitério | Evolving Wilds + 10 duais. Custo aceito: −1,0 pp no Torbran do T4 |
 
+### 7.1c Saiu na troca pontual de 2026-09-27
+
+| Sai | R$ | Fase | Motivo | Quem cobre |
+|---|---|---|---|---|
+| [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) | 0,50 (caixa) | 2 | abre o slot da Murmuring Volume: a mesma rocha de 3, que troca "compra 1 uma vez" por rummage repetível | Volume (mana, fixação, Teshar, curva). Descobertos: +1 carta com a mão vazia e ir sozinha ao cemitério (§T2) |
+
 As cartas que saíram e vieram da caixa ou do Tori físico **continuam sobressalentes**. Fichas F1–F7 de
 cada corte: `02-theme.md` §12.6, `03-draw.md`, `04-ramp.md` e `05-interaction.md` (seções de revisão).
 
@@ -448,7 +541,7 @@ cada corte: `02-theme.md` §12.6, `03-draw.md`, `04-ramp.md` e `05-interaction.m
 
 ---
 
-## 8. Custo — LigaMagic (menor), cotações de 2026-08-12 a 2026-09-26
+## 8. Custo — LigaMagic (menor), cotações de 2026-08-12 a 2026-09-27
 
 Régua: **R$ 200,00 nas 99 cartas**. O comandante não conta; os básicos contam (critério
 conservador do briefing). Toda cotação é o **primeiro** número do bloco "Preço Médio de Venda no
@@ -456,13 +549,13 @@ Marketplace" e está registrada com `mtgdb prices -add`.
 
 | Bloco | Cartas | R$ |
 |---|---|---|
-| **A comprar** | 53 | **141,94** |
-| Já existem (Tori físico + caixa), contam na régua | 46 | 24,88 |
+| **A comprar** | 54 | **142,44** |
+| Já existem (Tori físico + caixa), contam na régua | 45 | 24,38 |
 | **Total das 99** | **99** | **166,82** |
 | **Folga até R$ 200,00** | | **33,18** |
 | Com o [**Fiendish Duo**](https://www.ligamagic.com.br/?view=cards/card&card=Fiendish+Duo) da §0.2 | | total 176,70 · folga 23,30 |
 
-### Lista de compra (53), da mais cara para a mais barata
+### Lista de compra (54), da mais cara para a mais barata
 
 | Carta | R$ (menor) |
 |---|---|
@@ -502,6 +595,7 @@ Marketplace" e está registrada com `mtgdb prices -add`.
 | [**Light Up the Stage**](https://www.ligamagic.com.br/?view=cards/card&card=Light+Up+the+Stage) | 0,74 |
 | [**Throne of the High City**](https://www.ligamagic.com.br/?view=cards/card&card=Throne+of+the+High+City) | 0,65 |
 | [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle) | 0,60 |
+| [**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume) | 0,50 |
 | [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) | 0,50 |
 | [**Venerable Warsinger**](https://www.ligamagic.com.br/?view=cards/card&card=Venerable+Warsinger) | 0,49 |
 | [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | 0,45 |
@@ -555,7 +649,7 @@ Conflagrate.
 1 Sphere of the Suns
 1 Talisman of Conviction
 1 Tome of Legends
-1 Commander's Sphere
+1 Murmuring Volume
 1 Confession Dial
 1 Ark of Hunger
 1 Angelic Renewal
@@ -660,7 +754,8 @@ Quando tiver os registros, é só trazer: eu os passo ao `wincon-tester` em modo
 
 1. **As duas decisões da §0** (ritmo e Fiendish Duo).
 2. **Goldfishing e teste em proxy** antes de comprar (§10).
-3. **Combustível em 10**, abaixo do alvo de ~11 da Fase 2, depois que a Fase 4 tirou o Big Score. A
+3. **Combustível: 11 com a troca da §T2** (era 10, abaixo do alvo de ~11 da Fase 2, depois que a Fase 4
+   tirou o Big Score). A
    reserva sem compra é o [**Thrill of Possibility**](https://www.ligamagic.com.br/?view=cards/card&card=Thrill+of+Possibility) (caixa, +1,2 pp). O registro 5 do goldfishing
    mede se falta.
 4. **Reservas sem compra, já avaliadas:** [**Culling Dais**](https://www.ligamagic.com.br/?view=cards/card&card=Culling+Dais) (caixa, R$ 0,08: o Phlage sacrificado
@@ -678,6 +773,11 @@ Quando tiver os registros, é só trazer: eu os passo ao `wincon-tester` em modo
    da LigaMagic abre na lista de 76 versões, sem o bloco "Preço Médio", e só 24 carregaram.
 10. [**Stone Quarry**](https://www.ligamagic.com.br/?view=cards/card&card=Stone+Quarry) volta para a pilha solta do Tori. Só entra na coleção se você a listar no
     `/update-collection`.
+11. **Troca pontual de 27/09 (§T2) aprovada em 27/09.** No playtest, imprima a [**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume)
+    e tire a [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere). Reconfira o preço da Volume (R$ 0,50) antes de comprar: é de coleção
+    nova, com pré-venda.
+12. A [**Commander's Sphere**](https://www.ligamagic.com.br/?view=cards/card&card=Commander%27s+Sphere) já está em `data/collection.tsv` (caixa) e
+    continua sobressalente, sem nenhuma ação sua.
 
 ---
 

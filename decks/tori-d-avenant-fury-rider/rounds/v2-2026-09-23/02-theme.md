@@ -874,3 +874,173 @@ Thrill of Possibility, Requisition Raid, Seize Opportunity, Magma Spray. Continu
 | **6 · manabase** | Não toquei nos 37. A proporção de cor mudou (R 32 → 22, W 13 → 21 nas mágicas; mais `{W}{W}` em Broodmoth e Sun Titan). Conferir o 12/12 dos básicos | **sim, leve** |
 | **7 · wincons** | R2 de pingadores saiu inteira; R2′ (Helix em loop multiplicado + Ark) entra; R3 perdeu o Crackle (corte condicionado). Re-simular o relógio com o 1º Helix repetível no **T4** e o Phlage permanente no **T5** (Dial). As métricas novas do goldfishing: turno da 1ª reanimação, Helix por turno, turno do Phlage escapado por Dial/Desdemona | **sim** (já prevista) |
 | **Orquestrador** | (a) Cotar na LigaMagic [**Confession Dial**](https://www.ligamagic.com.br/?view=cards/card&card=Confession+Dial) e [**Desdemona, Freedom's Edge**](https://www.ligamagic.com.br/?view=cards/card&card=Desdemona%2C+Freedom%27s+Edge); se forem usar as reservas, também Emerge from the Cocoon, Late to Dinner, Roaming Throne, Strionic Resonator e Kirol. (b) O §2 do `report.md` repete a trava 2 revogada. (c) A pergunta 0.1 do report (ritmo) muda de resposta, e a 0.4 (proteção) muda em parte (§12.4 D) | — |
+
+---
+
+## Revisão 2026-09-27 — troca pontual: Murmuring Volume
+
+> **Escopo.** `/swap-card`, modo `improve`. A entrada é fixa ([**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume)). Esta seção propõe
+> **uma** saída da lista de playtest da v2 (`report.md` §6, já com a Evolving Wilds) e ranqueia uma 2ª.
+> Não proponho outras entradas e não busquei no Scryfall.
+>
+> **Regra 6.** Oracle puxado nesta sessão com `bin/mtgdb oracle` para as 62 não-terrenos da §6 (ficha
+> curta) e, completo, para Murmuring Volume, Commander's Sphere, Seize the Spoils, Inti, Teshar, Sun Titan,
+> Recommission, Sevinne's Reclamation, Haliya, Flame Jab, Helping Hand, Faithless Looting, Conflagrate e
+> Confession Dial. `bin/mtgdb rulings "Murmuring Volume"` não tem nenhum ruling oficial. **Regra 2.** Os
+> preços vêm só de `bin/mtgdb prices` (LigaMagic, menor). **Regra 7.** `mtgdb collection`: a Volume
+> **não** está na caixa, então é compra. A Commander's Sphere **está** (`tem 1`). **EDHREC** não foi chamado.
+> A Volume é de 2026 e não aparece no radar do `08` §3.
+
+### R.1 A carta que entra: ficha F1–F7
+
+[**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume): `{3}`, Artifact — Book, incolor, legal em Commander. FRA (2026), comum.
+
+| Eixo | Leitura (oracle de hoje) |
+|---|---|
+| F1 | `{T}`: 1 mana de **qualquer cor**. · `{2}, {T}, descartar uma carta: comprar uma carta`. É **rummage** (o descarte é custo e vem antes da compra), **não** loot. Em velocidade de instantâneo e repetível |
+| F2 | Sem corpo |
+| F3 | **Artefato**: conjurá-lo é mágica histórica para o [**Teshar, Ancestor's Apostle**](https://www.ligamagic.com.br/?view=cards/card&card=Teshar%2C+Ancestor%27s+Apostle), e ele é alvo de [**Recommission**](https://www.ligamagic.com.br/?view=cards/card&card=Recommission), [**Sun Titan**](https://www.ligamagic.com.br/?view=cards/card&card=Sun+Titan) e da cópia do [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) (MV 3). Mas ele **nunca vai sozinho ao cemitério**, então esses três só o reaproveitam se o oponente o destruir. O subtipo Book não é lido por nenhuma carta do deck |
+| F4 | Não recebe nada |
+| F5 | Fixação (`{R}` ou `{W}`) · **cada ativação é um descarte**: dispara o [**Inti, Seneschal of the Sun**](https://www.ligamagic.com.br/?view=cards/card&card=Inti%2C+Seneschal+of+the+Sun) (impulse até o seu próximo end step) e põe 1 carta no cemitério (combustível) · +1 de vida na [**Haliya, Guided by Light**](https://www.ligamagic.com.br/?view=cards/card&card=Haliya%2C+Guided+by+Light) ao entrar |
+| F6 | T3 no mínimo. É rocha de 3, que a Fase 4 mede como "não mexe no começo" (§R7 do `04`: Manalith e Boros Locket) |
+| F7 | (a) **O `{T}` é o mesmo da mana**: cada rummage custa na prática **3 manas** (`{2}` + a mana que ela não deu naquela rodada), e só volta a desvirar no seu untap. Batida no seu turno, ela não faz rummage no end step do oponente. (b) O `{2}` disputa mana com as reanimações de 1–2 manas no T4–T5, então ali ela quase só dá mana. (c) Com a mão vazia, não ativa, porque o descarte é custo. (d) Disputa terreno excedente com o retrace do [**Flame Jab**](https://www.ligamagic.com.br/?view=cards/card&card=Flame+Jab) e carta na mão com o flashback do [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) (descartar X). Com 37 terrenos, a primeira disputa quase nunca aperta |
+
+**A triagem do orquestrador, conferida no oracle:**
+
+| # | Argumento | Veredito |
+|---|---|---|
+| 1 | Combustível repetível, em instantâneo | **Confirmado.** 1 carta por ativação. Entra na contagem como **motor**, ao lado de Millikin, Excavation, Flame Jab, Masticore, Case e Ark |
+| 2 | Inti: loot + impulse | **Confirmado com ajuste.** É rummage, não loot, e a janela do impulse é "até o seu próximo end step". Com o Inti em campo, cada ativação vale **+1 carta** (impulse, descontado a 2/3 pelo critério da Fase 3, dá ~+0,65) |
+| 3 | Teshar: artefato = histórico | **Confirmado, mas não soma contra a Commander's Sphere**, que também é artefato. Só conta se a saída não for histórica (ver a 2ª candidata) |
+| 4 | Ramp: rocha de qualquer cor; o Sun Titan a devolve | Rocha **confirmada**. O "Sun Titan a devolve" é **fraco**: ela não vai ao cemitério sozinha. Nisso ela é **pior** que a Commander's Sphere, que se sacrifica |
+| 5 | Descartar alvo de reanimação ou carta de cemitério | **Parcial.** O Phlage nunca está na mão (é o comandante), então "alvo de reanimação" só serve para criaturas de MV ≤ 3 secundárias, e toda reanimação prefere o Phlage. Valem [**Sevinne's Reclamation**](https://www.ligamagic.com.br/?view=cards/card&card=Sevinne%27s+Reclamation) (descartada, já sai direto no modo que copia, por `{4}{W}`), [**Conflagrate**](https://www.ligamagic.com.br/?view=cards/card&card=Conflagrate) (flashback `{R}{R}` + descartar X) e [**Faithless Looting**](https://www.ligamagic.com.br/?view=cards/card&card=Faithless+Looting) (flashback `{2}{R}`) |
+
+**Onde ela rende de verdade.** A Fase 7 (`07` §3.4) mediu que do T7 ao T11 o deck tem **7–9 manas
+sobrando e 0,8 mágica por turno**: falta carta boa, não mana. Nesse estado a mão costuma ter terreno
+sobrando. Cada rummage troca uma carta morta por uma carta do topo, que é mágica em ~63% das vezes (62
+não-terrenos em 99). Num deck de controle com **11 instantâneos**, o uso natural é: segurar a mana da
+remoção no turno do oponente e, se não precisar, fazer o rummage no end step dele. Isso é mana que hoje
+se perde. *Estimativa de mesa, não simulação.*
+
+**Veredito sobre o slot: ela merece.** Mas **não** como rocha a mais. Numa troca por rocha de 2 manas
+ela custa Phlage no T3 (a métrica mais valiosa do deck, 86%). O lugar dela é o de outra **rocha de 3**.
+
+### R.2 Saída recomendada: Commander's Sphere
+
+**Por que ela.** É a única peça da lista com o mesmo custo, o mesmo tipo e a mesma mana. As funções de
+ramp, de curva e de Teshar passam inteiras para a Volume. O que muda é o que cada uma faz com a mana
+que sobra: a Sphere **vira 1 carta uma vez**, a Volume **filtra 1 carta por rodada**.
+
+**Ficha F1–F7 da que sai** (`{3}` Artifact, oracle de hoje, **caixa**, R$ 0,50 na régua):
+
+| Eixo | Função | Quem cobre depois do corte |
+|---|---|---|
+| F1a | `{T}`: 1 mana de cor da identidade (`{R}`/`{W}`) | [**Murmuring Volume**](https://www.ligamagic.com.br/?view=cards/card&card=Murmuring+Volume), com o mesmo efeito (qualquer cor, que em RW é igual). A medição da Fase 4 (§R5 do `04`: sem ela, −1,9 pp no Sun Titan do T6 e −2,7 pp na Gisela do T7) fica **preservada**, desde que o `{T}` da Volume vá para mana nesses turnos. A condição vale igual para a Sphere, que sacrificada também não dá mana |
+| F1b | Sacrifique: compre 1, a custo zero e em instantâneo. **Com a mão vazia, é +1 carta real** | Volume: rummage repetível, **neutro em carta** (sem Inti). **Descoberto: +1 carta bruta, uma vez, no modo topdeck (dor 2)**, porque a Volume precisa de uma carta na mão para ativar. Custo aceito (ver balanço abaixo) |
+| F1c | Sacrificar em resposta a remoção de artefato (vira carta) | **Descoberto.** Custo aceito: a Volume em resposta pode fazer 1 rummage se houver `{2}` |
+| F2 | Sem corpo | — |
+| F3a | Artefato: histórico para o Teshar | Volume (22 → **22**) |
+| F3b | **Vai sozinha ao cemitério.** Vira alvo de Sun Titan, Recommission e da cópia do Sevinne's, e cada volta dispara o [**Ark of Hunger**](https://www.ligamagic.com.br/?view=cards/card&card=Ark+of+Hunger) | **Descoberto.** Custo aceito: os três preferem o Phlage sempre que ele está no cemitério. O Sun Titan tem **um** alvo por gatilho, e a cópia do Sevinne's já tem a Evolving Wilds, o Glass Casket e as rochas mortas como alvo. É o argumento que a Fase 4 usou para mantê-la acima da Sphere of the Suns (§R7 do `04`), e o declaro aqui |
+| F3c | 1 carta de combustível, uma vez (ela mesma) | Volume: 1 por ativação (ver contagem) |
+| F4 | Não recebe nada | — |
+| F5 | Fixação R/W · +1 de vida na Haliya ao entrar | Volume (as duas coisas) |
+| F6 | T3 | Volume, T3 |
+| F7 | `{T}` e sacrifício disputam: a rocha que vira carta deixa de dar mana | Na Volume a disputa é por rodada, não definitiva |
+
+**Cadeia de cobertura herdada.** Na Fase 6 (`06` C9), a Commander's Sphere cobriu o *saque tardio + ir ao
+cemitério* do [**Boros Locket**](https://www.ligamagic.com.br/?view=cards/card&card=Boros+Locket) quando ele saiu para o [**Ornithopter of Paradise**](https://www.ligamagic.com.br/?view=cards/card&card=Ornithopter+of+Paradise). Com esta troca, o saque
+tardio passa à Volume (em forma de rummage) e a parte de "ir ao cemitério" fica descoberta, como já
+declarado em F3b.
+
+**Balanço honesto.** A Sphere dá **1 carta** (≈0,63 mágica) numa partida. A Volume, com 2–3 ativações
+no jogo longo, onde sobra mana, troca 2–3 terrenos mortos por ≈1,3–1,9 mágicas, põe 2–3 cartas no
+cemitério e, com o Inti, soma impulse. Ela só perde no **topdeck puro de mão vazia**, que é exatamente o
+estado em que a Sphere compra. *Estimativa, não simulação*: o registro 7 do goldfishing (§10 do report)
+mede cartas compradas, e o 11 mede a inundação.
+
+**Simetria (checklist §3).** Assumi as mesmas condições dos dois lados: nenhum anthem; o Inti em campo
+**ou não** (sem ele a Volume é neutra em carta, e foi assim que a comparei no balanço); o Teshar e a
+Haliya contam igual para as duas; e o Sun Titan conta **a favor da Sphere**, porque só ela vai ao cemitério
+sozinha. O ramp da Fase 4 vale para as duas com o `{T}` indo para mana.
+
+**Corte condicionado à Fase 4 (leve).** A carta é da categoria `ramp`. A função de ramp está coberta
+1 por 1, mas a Fase 4 defendeu a Sphere pelo "sacrifica: compra 1 → cemitério → recursão" (§R7 do `04`).
+Essa é a função que fica descoberta (F1b + F3b). Se a Fase 4 a considerar insubstituível, a troca
+recomendada cai e fica a 2ª.
+
+### R.3 2ª candidata: Seize the Spoils
+
+**Ficha F1–F7** (`{2}{R}` Sorcery, oracle de hoje, **compra**, R$ 0,06):
+
+| Eixo | Função | Quem cobre se ela sair para a Volume |
+|---|---|---|
+| F1 | Custo adicional: descarte 1. Compre 2 e crie 1 Treasure | Loot: Volume (repetível, 1 por 1), Faithless Looting, Cathartic Pyre, Case, Conflagrate · Treasure: a mana permanente da Volume |
+| F2 | Sem corpo | — |
+| F3 | Feitiço vermelho que vai ao cemitério: **2 cartas de combustível numa vez** (ela e o descarte), tipo Sorcery para o delirium da [**Unholy Heat**](https://www.ligamagic.com.br/?view=cards/card&card=Unholy+Heat) | Combustível: a Volume, por ativação. Delirium: ficam 14 feitiços. **A contagem de combustível não sobe (10 → 10)**. Muda só a taxa |
+| F4 | Não recebe nada | — |
+| F5 | Descarte dispara o Inti · Treasure dá +1 de vida na Haliya e mana de qualquer cor em burst | Volume (as duas coisas, repetíveis) |
+| F6 | T3, feitiço | Volume, T3 |
+| F7 | Com a mão vazia não se conjura (descarte é custo), igual à Volume | — |
+
+**Por que ela perde para a Sphere como saída.** Com ela saindo, o **combustível fica em 10**, e esse é
+o 1º motivo da triagem. O ramp vai a 11/0 (o explosivo nominal some, e a Fase 4 já declarou que a meta de
+explosivos não se aplica, §R5 do `04`), e os históricos vão a 23. É a troca que dá **mais ramp e menos
+combustível**. Só a recomendo se a Fase 4 segurar a Commander's Sphere.
+
+### R.4 Histórico (regra 5)
+
+- **Murmuring Volume:** nunca esteve em pauta. Zero ocorrências em `decisions.md` e em todos os
+  arquivos das rodadas v1 e v2. A carta é de 2026 e não existia nas varreduras anteriores.
+- **Commander's Sphere:** **não** tem linha no `decisions.md` e **nunca saiu** do deck. Está na
+  lista da v2 desde a Fase 4 original (`04` §3, pacote titular, nº 7) e foi **mantida** duas vezes:
+  (1) Fase 6, que cortou o Boros Locket e a nomeou como cobertura (`06` C9); (2) revisão de 24/09 da
+  Fase 4, que a chamou de "rocha do jogo longo. Fica" (§R5) e recusou trocá-la pela Sphere of the Suns
+  (§R7). **O que mudou desde então:** nenhum dos dois pareceres avaliou uma rocha de 3 com rummage
+  repetível, porque ela não existia no pool. A §R5 mediu a Sphere contra uma **carta em branco**, não
+  contra outra rocha de 3 que dá a mesma mana. A função que a Fase 4 valorizou (mana no jogo longo)
+  continua inteira. A que ela citou na §R7 (carta + cemitério) é a que eu declaro descoberta.
+- **Seize the Spoils:** sem registro de corte. Foi mantida pela Fase 4 na §R5 ("fica: é loot da Fase 2
+  por R$ 0,06").
+- A §7 do report não lista nenhuma das três.
+
+### R.5 Impacto nas contagens (troca recomendada: Commander's Sphere → Murmuring Volume)
+
+| Contagem | Hoje (v2 §6) | Com a troca | 2ª (Seize the Spoils → Volume) |
+|---|---|---|---|
+| **Combustível dedicado** | 10 + vidência 3 do Dial | **11**: fecha a pendência 3 da §11, e com o Fiendish Duo da §0.2 fica em **10**, não em 9 | 10 |
+| Draw (12–13) | 12 | **12**. Nenhuma das duas conta: rummage não é card advantage pelo critério da Fase 3 | 12 |
+| Ramp padrão / explosivo | 10 / 1 | **10 / 1** | 11 / 0 |
+| Artefatos / históricos para o Teshar | 17 / 22 | **17 / 22** | 18 / 23 |
+| Curva (62 não-terrenos) | 3-drops: 13 | **igual** (CMC 3 por CMC 3, incolor por incolor) | igual (CMC 3 por CMC 3); feitiços 15 → 14 |
+| Cor das mágicas | — | igual | vermelho −1, incolor +1 |
+| **Criaturas** | 17 | **17** (não mexe) | 17 |
+| Terrenos | 37 | 37 | 37 |
+| Total | 100 | **100** | 100 |
+
+### R.6 Impacto no custo (LigaMagic, menor)
+
+| | Hoje | Commander's Sphere → Volume | Seize the Spoils → Volume |
+|---|---|---|---|
+| Sai | — | Commander's Sphere **R$ 0,50** (caixa, 2026-09-23) | Seize the Spoils **R$ 0,06** (compra, 2026-09-23) |
+| Entra | — | Murmuring Volume **R$ 0,50** (compra, 2026-09-27) | Murmuring Volume **R$ 0,50** |
+| **Custo das 99** | **R$ 166,82** | **R$ 166,82 (±0,00)**, folga R$ 33,18 | R$ 167,26 (+0,44), folga R$ 32,74 |
+| A comprar | 53 · R$ 141,94 | **54 · R$ 142,44** | 53 · R$ 142,38 |
+| Já existem | 46 · R$ 24,88 | 45 · R$ 24,38 | 46 · R$ 24,88 |
+
+Cotações de 2026-09-23 (Sphere, Seize) e 2026-09-27 (Volume). A Commander's Sphere **continua na caixa**
+(`collection.tsv`, `tem 1`). Ela nunca saiu de lá, então nada muda na coleção.
+
+### R.7 Riscos
+
+1. **Preço da Volume.** A coleção é nova e tem listagens de pré-venda. Com a folga de R$ 33,18, só
+   inverteria a troca num salto de mais de 60×. **Reconferir antes da compra**
+   (`mtgdb prices -volatile` depois de uma 2ª observação).
+2. **A troca é de valor baixo.** Ela não muda o relógio. O ganho está na qualidade da mão no jogo longo
+   e no combustível para o Dial, a Desdemona e o escape próprio. Nenhum marco medido pela Fase 4 ou pela
+   Fase 7 deve se mover mais que ruído.
+3. **Topdeck de mão vazia.** É o único estado em que a Sphere era melhor, e ele é a dor 2 do intake.
+   O registro 7 do goldfishing mostra se esse estado é frequente.
+4. **Linha de jogo nova a declarar no report:** não bata a Volume para mana no seu turno se quiser o
+   rummage no end step do oponente. O `{T}` só volta no seu untap.
+5. **Condicionado à Fase 4** (§R.2). Se ela segurar a Commander's Sphere, a saída passa a ser a Seize the
+   Spoils, e aí o combustível **não** sobe.

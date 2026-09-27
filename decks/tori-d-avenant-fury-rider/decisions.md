@@ -102,3 +102,19 @@ Aprovada **dentro da v2 em playtest de proxy**. A v2 como um todo ainda **não**
 **Histórico (regra 5):** a recusa de fetches em 23/09 ("não adiciona fonte num deck de 2 cores")
 continua certa **na fixação**. O que mudou foram Sun Titan, Sevinne's e Ark, que entraram em 24/09.
 2ª candidata a sair era `Boros Guildgate`, preterida por já estar reservada para `Sundown Pass`.
+
+## 2026-09-27 — troca pontual na v2 (`/swap-card Murmuring Volume`), aprovada pelo usuário
+
+Aprovada **dentro da v2 em playtest de proxy**. A v2 como um todo ainda **não** foi validada, e
+`deck.md` segue com a lista antiga. Proposta feita pelo `theme-analyst`
+(`rounds/v2-2026-09-23/02-theme.md`, seção `Revisão 2026-09-27`). Relatório: §T2 do `report.md`.
+
+| Carta | Movimento | Motivo |
+|---|---|---|
+| `Murmuring Volume` | **entra** (compra, R$ 0,50 em 2026-09-27, coleção nova com pré-venda) | Rocha de 3 de qualquer cor + rummage repetível (`{2}`, `{T}`, descartar: comprar). Deck escolhido entre os 5 (Inspirit em 2º, sem lacuna de ramp). Sinergias: combustível de escape (**10 → 11**, fecha a pendência 3), cada descarte dispara o `Inti, Seneschal of the Sun`, histórico para o `Teshar, Ancestor's Apostle`, converte a mana que sobra no jogo longo (T7–T11). |
+| `Commander's Sphere` | **sai** (caixa) | A mesma rocha de 3, com a mesma mana. Quem cobre: a Volume cobre mana R/W, fixação, curva e histórico para o Teshar. **Custo aceito:** perde o +1 carta com a mão vazia (dor 2) e o "ir sozinha ao cemitério" para `Sun Titan`, `Recommission`, a cópia do `Sevinne's Reclamation` e o `Ark of Hunger`, incluindo a cobertura herdada do `Boros Locket` (Fase 6, C9). Continua em `data/collection.tsv` como sobressalente. |
+
+**Histórico (regra 5):** nenhuma das duas tinha linha aqui. A Fase 4 manteve a Sphere em 24/09 ("rocha
+do jogo longo. Fica"), medida contra uma carta em branco. **O que mudou:** a Volume não existia no pool,
+e a comparação agora é com uma rocha de 3 que faz rummage. Custo das 99 inalterado (R$ 166,82).
+2ª candidata a sair era `Seize the Spoils`, preterida por não subir o combustível.

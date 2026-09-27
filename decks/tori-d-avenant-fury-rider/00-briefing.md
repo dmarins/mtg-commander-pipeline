@@ -97,7 +97,7 @@ inclusive se o comandante mudar.
 | Rodada | Data | Estado | Relatório |
 |---|---|---|---|
 | v1 | 2026-09-18 | **encerrada sem aplicação** — consolidada (20/09), testada em proxy (23/09), 7 trocas aplicadas no report; **reprovada pelo usuário em 2026-09-23** (eixo, não peças). Nada comprado, `deck.md` não escrito | `rounds/v1-2026-09-18/report.md` |
-| v2 | 2026-09-23 | **reconsolidada em 24/09; em playtest de proxy desde 26/09** (44 impressas + Phlage; Radiant Summit e Conflagrate mantidos; §0 aguarda o feedback de mesa) — revisão pelo EDHREC: trava "sem reanimação" revogada, eixo = reanimação em loop + escape; Fases 2–7 revisadas, 19 trocas; 99 cartas a R$ 166,82 (53 compras, R$ 141,94) depois da **troca pontual de 27/09** (Stone Quarry → Evolving Wilds, `/swap-card`, aprovada). Mesa morta na mediana do T13 (igual à v2), mais ativa do T4 ao T6. 2 decisões na §0 (ritmo, Fiendish Duo). Nada comprado, `deck.md` não escrito | `rounds/v2-2026-09-23/report.md` |
+| v2 | 2026-09-23 | **reconsolidada em 24/09; em playtest de proxy desde 26/09** (44 impressas + Phlage; Radiant Summit e Conflagrate mantidos; §0 aguarda o feedback de mesa) — revisão pelo EDHREC: trava "sem reanimação" revogada, eixo = reanimação em loop + escape; Fases 2–7 revisadas, 19 trocas; 99 cartas a R$ 166,82 (54 compras, R$ 142,44) depois das **trocas pontuais de 27/09** (`/swap-card`, aprovadas: Stone Quarry → Evolving Wilds, §T; Commander's Sphere → Murmuring Volume, §T2, combustível 10 → 11). Mesa morta na mediana do T13 (igual à v2), mais ativa do T4 ao T6. 2 decisões na §0 (ritmo, Fiendish Duo). Nada comprado, `deck.md` não escrito | `rounds/v2-2026-09-23/report.md` |
 
 ---
 ## ESTADO — 2026-09-19
