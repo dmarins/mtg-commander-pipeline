@@ -186,7 +186,7 @@ A única cotação válida é o **menor valor da LigaMagic** (regra 2 do `CLAUDE
 
 - Consulte primeiro o que já foi capturado: `mtgdb prices <nomes...>`.
 - O que faltar: `https://www.ligamagic.com.br/?view=cards/card&card=<Nome+Em+Ingles>`
-- Use o **primeiro** dos três números de "Preço Médio de Venda no Marketplace" (menor / médio / maior). Confira também a linha Foil — às vezes o foil é mais barato que o normal.
+- Use o **menor preço entre as edições normais legais** (variável `cards_editions` da página, `price[0].p`), não o primeiro número do bloco "Preço Médio de Venda no Marketplace" — o bloco mostra uma edição só. Exclua `ced`/`cedi` e `wcd` (não valem em torneio). Regra completa: regra 2 do `CLAUDE.md`.
 - A página monta o preço por JS: **WebFetch não pega** (retorna só o gif de loading). Use as ferramentas de browser (`claude-in-chrome`): navegar, esperar ~2,5s, ler o texto da página.
 - Registre o resultado com `mtgdb prices -add "<carta>" <valor>`.
 - Se o usuário mantiver o deck cadastrado na LigaMagic (`?view=dks/deck&id=<id>`), a página do deck já traz o preço carta a carta e o total — muito mais rápido que consultar uma a uma.

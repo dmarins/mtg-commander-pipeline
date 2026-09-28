@@ -27,7 +27,7 @@ Todo nome de carta citado no relatório é um **link clicável para a ficha da c
   `Purphoros` → `Purphoros, God of the Forge`.
 - Terreno básico repetido leva um único link: `**31×** [**Mountain**](...)`.
 - O link é **ficha da carta, não cotação**: ele não substitui a regra 2 do `CLAUDE.md` — preço continua
-  sendo o menor valor do bloco "Preço Médio de Venda no Marketplace", conferido no navegador e
+  sendo o menor preço entre as edições normais legais (regra 2 do `CLAUDE.md`), conferido no navegador e
   registrado com data via `mtgdb prices -add`.
 
 ## Informações Gerais do Deck
