@@ -31,11 +31,16 @@
 - Cartas dentro de outros decks montados **não** estão disponíveis.
 
 ## Status físico
-**Só no papel** — deck novo, nenhuma carta comprada (2026-09-23). Lista de referência: nenhuma
+**Só no papel** — deck novo (2026-09-23). Lista de referência: nenhuma
 ainda. Pelo histórico do usuário, a lista aprovada deve ser **testada em proxy antes da compra**.
+
+Atualização 2026-09-27 (sincronização da coleção): o usuário já separou fisicamente, com a nota
+`separada p/ Satoru` em `data/collection.tsv`, o **Satoru Umezawa** e 6 terrenos — Dimir Guildgate,
+Dismal Backwater, Evolving Wilds, Hexhaven Dueling Arena, Sinister Hideout, Theorix Annex. Continuam
+sobressalentes até a lista ser aprovada e montada.
 
 ## Índice de rodadas
 
 | Rodada | Data | Estado | Link |
 |---|---|---|---|
-| v1 | 2026-09-23 | aberta — pipeline em curso | `rounds/v1-2026-09-23/` |
+| v1 | 2026-09-23 | aberta — Fases 2–7 concluídas; `report.md` consolidado (99 + comandante, R$ 182,93) **aguardando validação do usuário** (2026-09-28) | [`rounds/v1-2026-09-23/report.md`](rounds/v1-2026-09-23/report.md) |
