@@ -39,6 +39,12 @@ Atualização 2026-09-27 (sincronização da coleção): o usuário já separou 
 Dismal Backwater, Evolving Wilds, Hexhaven Dueling Arena, Sinister Hideout, Theorix Annex. Continuam
 sobressalentes até a lista ser aprovada e montada.
 
+Atualização 2026-09-28 (`/update-collection`): o usuário confirmou que essas 7 cartas **e o Sol Ring**
+estão fisicamente separadas para o deck do Satoru. As 8 saíram de `data/collection.tsv` e **não estão mais
+disponíveis como sobressalentes**. O deck continua **só no papel**: são as 8 únicas cartas físicas
+(Sol Ring e Evolving Wilds são cópias próprias; o Tori tem outra Evolving Wilds). O resto da v1 segue a
+comprar ou em proxy.
+
 ## Índice de rodadas
 
 | Rodada | Data | Estado | Link |
