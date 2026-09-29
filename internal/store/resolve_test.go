@@ -82,3 +82,99 @@ func TestCardAllTextIncluiFaces(t *testing.T) {
 		}
 	}
 }
+
+// seedCard grava uma carta mínima com os aliases que o build geraria: o nome
+// completo e cada face com nome diferente dele.
+func seedCard(t *testing.T, d *DB, id, name, layout string, faces ...string) {
+	t.Helper()
+	if _, err := d.sql.Exec(`INSERT INTO cards (oracle_id,name,layout) VALUES (?,?,?)`,
+		id, name, layout); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := d.sql.Exec(`INSERT OR IGNORE INTO card_names (norm,oracle_id,is_face) VALUES (?,?,0)`,
+		Normalize(name), id); err != nil {
+		t.Fatal(err)
+	}
+	for i, f := range faces {
+		if _, err := d.sql.Exec(`INSERT INTO card_faces (oracle_id,idx,name) VALUES (?,?,?)`,
+			id, i, f); err != nil {
+			t.Fatal(err)
+		}
+		if !strings.EqualFold(f, name) {
+			if _, err := d.sql.Exec(`INSERT OR IGNORE INTO card_names (norm,oracle_id,is_face) VALUES (?,?,1)`,
+				Normalize(f), id); err != nil {
+				t.Fatal(err)
+			}
+		}
+	}
+}
+
+func openTestDB(t *testing.T) *DB {
+	t.Helper()
+	d, err := Open(t.TempDir() + "/test.db")
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { d.Close() })
+	return d
+}
+
+// O bulk oracle_cards traz entradas que não são cartas de jogo — cartas de arte
+// ("Goblin Glasswright // Goblin Glasswright", layout art_series), tokens,
+// emblemas. Elas compartilham o nome da face com a carta real, e a lista do
+// usuário chega só com a primeira face ("Goblin Glasswright // Craft with Pride"
+// vira "Goblin Glasswright"). Sem desempate, a resolução ficava ambígua e a
+// coleção gravava um nome fantasma.
+func TestResolvePrefereCartaDeJogo(t *testing.T) {
+	d := openTestDB(t)
+	seedCard(t, d, "real", "Goblin Glasswright // Craft with Pride", "prepare",
+		"Goblin Glasswright", "Craft with Pride")
+	seedCard(t, d, "arte", "Goblin Glasswright // Goblin Glasswright", "art_series",
+		"Goblin Glasswright", "Goblin Glasswright")
+
+	m, err := d.Resolve("Goblin Glasswright")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !m.Found || m.Card.OracleID != "real" {
+		t.Fatalf("quer a carta de jogo, veio found=%v card=%q ambígua=%v", m.Found, m.Card.Name, m.Ambigs)
+	}
+	if m.How != "face" {
+		t.Errorf("How = %q, quer face", m.How)
+	}
+}
+
+// Quando duas cartas de jogo disputam o nome, o desempate não pode escolher
+// nenhuma: a ambiguidade é real e o usuário precisa ver os candidatos.
+func TestResolveAmbiguidadeEntreCartasDeJogo(t *testing.T) {
+	d := openTestDB(t)
+	seedCard(t, d, "a", "Fire // Ice", "split", "Fire", "Ice")
+	seedCard(t, d, "b", "Fire // Brimstone", "split", "Fire", "Brimstone")
+	seedCard(t, d, "arte", "Fire // Fire", "art_series", "Fire", "Fire")
+
+	m, err := d.Resolve("Fire")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if m.Found {
+		t.Fatalf("não devia resolver, resolveu %q", m.Card.Name)
+	}
+	if len(m.Ambigs) != 2 {
+		t.Errorf("candidatos = %v, quer só as 2 cartas de jogo", m.Ambigs)
+	}
+}
+
+// Uma entrada fora de jogo que é a única dona do nome continua resolvendo:
+// o desempate só age quando há disputa.
+func TestResolveEntradaUnicaForaDeJogo(t *testing.T) {
+	d := openTestDB(t)
+	seedCard(t, d, "tok", "Marit Lage", "token")
+
+	m, err := d.Resolve("marit lage")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !m.Found || m.Card.OracleID != "tok" {
+		t.Fatalf("quer o token, veio found=%v card=%q", m.Found, m.Card.Name)
+	}
+}

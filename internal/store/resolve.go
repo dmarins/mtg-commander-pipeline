@@ -66,8 +66,10 @@ func (d *DB) Resolve(query string) (Match, error) {
 		return m, nil
 	}
 
-	// 1. Nome oficial exato (case-insensitive).
-	row := d.sql.QueryRow(`SELECT `+cardCols+` FROM cards WHERE name = ? COLLATE NOCASE`, q)
+	// 1. Nome oficial exato (case-insensitive). Se um token ou carta de arte
+	//    tiver o mesmo nome de uma carta de jogo, a carta de jogo vem primeiro.
+	row := d.sql.QueryRow(`SELECT `+cardCols+` FROM cards WHERE name = ? COLLATE NOCASE
+		ORDER BY layout IN (`+nonGameLayoutsSQL+`) LIMIT 1`, q)
 	if c, err := scanCard(row); err == nil {
 		return d.finish(&m, c, "exact")
 	} else if err != sql.ErrNoRows {
@@ -81,21 +83,13 @@ func (d *DB) Resolve(query string) (Match, error) {
 	if err != nil {
 		return m, err
 	}
-	if len(ids) == 1 {
-		c, ok, err := d.ByOracleID(ids[0])
-		if err != nil {
-			return m, err
+	if done, err := d.settle(&m, ids, func(c Card) string {
+		if !strings.EqualFold(Normalize(c.Name), norm) {
+			return "face"
 		}
-		if ok {
-			how := "normalized"
-			if !strings.EqualFold(Normalize(c.Name), norm) {
-				how = "face"
-			}
-			m.Card, m.Found, m.How = c, true, how
-			return m, nil
-		}
-	} else if len(ids) > 1 {
-		return d.ambiguous(&m, ids)
+		return "normalized"
+	}); done {
+		return m, err
 	}
 
 	// 3. Prefixo — resolve abreviações ("Alibou", "Kilo").
@@ -103,17 +97,8 @@ func (d *DB) Resolve(query string) (Match, error) {
 	if err != nil {
 		return m, err
 	}
-	if len(ids) == 1 {
-		c, ok, err := d.ByOracleID(ids[0])
-		if err != nil {
-			return m, err
-		}
-		if ok {
-			m.Card, m.Found, m.How = c, true, "prefix"
-			return m, nil
-		}
-	} else if len(ids) > 1 {
-		return d.ambiguous(&m, ids)
+	if done, err := d.settle(&m, ids, fixedHow("prefix")); done {
+		return m, err
 	}
 
 	// 4. Última tentativa: busca textual no nome. Menos confiável — o chamador
@@ -125,27 +110,79 @@ func (d *DB) Resolve(query string) (Match, error) {
 		return m, nil // FTS falhou (sintaxe): trata como não encontrado
 	}
 	defer rows.Close()
-	var found []string
-	for rows.Next() {
-		var id string
-		if err := rows.Scan(&id); err != nil {
-			return m, err
-		}
-		found = append(found, id)
+	found, err := scanIDs(rows)
+	if err != nil {
+		return m, err
 	}
-	if len(found) == 1 {
-		c, ok, err := d.ByOracleID(found[0])
+	_, err = d.settle(&m, found, fixedHow("fts"))
+	return m, err
+}
+
+// nonGameLayouts são os layouts do bulk oracle_cards que não são cartas de jogo:
+// cartas de arte, tokens, emblemas e as peças de variantes casuais. Elas repetem
+// o nome de cartas reais — a carta de arte "Goblin Glasswright // Goblin
+// Glasswright" tem a mesma face que "Goblin Glasswright // Craft with Pride" —
+// e, sem desempate, tornavam ambígua a resolução pela face.
+var nonGameLayouts = map[string]bool{
+	"art_series": true, "token": true, "double_faced_token": true, "emblem": true,
+	"front_card": true, "vanguard": true, "planar": true, "scheme": true,
+}
+
+const nonGameLayoutsSQL = `'art_series','token','double_faced_token','emblem',
+	'front_card','vanguard','planar','scheme'`
+
+func fixedHow(how string) func(Card) string {
+	return func(Card) string { return how }
+}
+
+// settle decide entre os candidatos de um degrau da escada e preenche m.
+// done indica que a escada para aqui — por acerto ou por ambiguidade; sem
+// candidatos, a resolução segue para o próximo degrau.
+func (d *DB) settle(m *Match, ids []string, how func(Card) string) (done bool, err error) {
+	if len(ids) == 0 {
+		return false, nil
+	}
+	c, ok, err := d.pick(m, ids)
+	if err != nil {
+		return true, err
+	}
+	if ok {
+		m.Card, m.Found, m.How = c, true, how(c)
+		return true, nil
+	}
+	return len(m.Ambigs) > 0, nil
+}
+
+// pick escolhe entre cartas que casaram o mesmo nome. Uma entrada fora de jogo
+// só vence quando não há carta de jogo na disputa; entre cartas de jogo não há
+// desempate — os candidatos vão para m.Ambigs e o chamador decide.
+func (d *DB) pick(m *Match, ids []string) (Card, bool, error) {
+	var game, other []Card
+	for _, id := range ids {
+		c, ok, err := d.ByOracleID(id)
 		if err != nil {
-			return m, err
+			return Card{}, false, err
 		}
-		if ok {
-			m.Card, m.Found, m.How = c, true, "fts"
-			return m, nil
+		if !ok {
+			continue
 		}
-	} else if len(found) > 1 {
-		return d.ambiguous(&m, found)
+		if nonGameLayouts[c.Layout] {
+			other = append(other, c)
+		} else {
+			game = append(game, c)
+		}
 	}
-	return m, nil
+	cands := game
+	if len(cands) == 0 {
+		cands = other
+	}
+	if len(cands) == 1 {
+		return cands[0], true, nil
+	}
+	for _, c := range cands {
+		m.Ambigs = append(m.Ambigs, c.Name)
+	}
+	return Card{}, false, nil
 }
 
 func (d *DB) finish(m *Match, c Card, how string) (Match, error) {
@@ -185,15 +222,6 @@ func scanIDs(rows *sql.Rows) ([]string, error) {
 		out = append(out, id)
 	}
 	return out, rows.Err()
-}
-
-func (d *DB) ambiguous(m *Match, ids []string) (Match, error) {
-	for _, id := range ids {
-		if c, ok, err := d.ByOracleID(id); err == nil && ok {
-			m.Ambigs = append(m.Ambigs, c.Name)
-		}
-	}
-	return *m, nil
 }
 
 // ftsQuote escapa um termo para uso literal numa query FTS5.
